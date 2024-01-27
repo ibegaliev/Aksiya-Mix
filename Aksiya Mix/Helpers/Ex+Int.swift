@@ -13,4 +13,8 @@ extension Int {
         return CGFloat(UIWindow().frame.width) * CGFloat(self) / 375
     }
     
+    var screenWight: CGFloat {
+        return UIWindow().frame.width
+    }
+    
 }
