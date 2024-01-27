@@ -8,10 +8,12 @@
 import UIKit
 
 class BaseViewController: UIViewController {
+        
+    var backView = BaseView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = BaseView()
+        self.view = backView
     }
 
     override func viewWillAppear(_ animated: Bool) {

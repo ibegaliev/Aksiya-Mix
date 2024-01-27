@@ -53,6 +53,9 @@ class SearchView: UIView {
         mainStack.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(self).inset(16)
         }
+        rightButton.snp.makeConstraints { make in
+            
+        }
     }
     
 }

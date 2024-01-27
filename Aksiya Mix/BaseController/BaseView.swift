@@ -15,6 +15,12 @@ class BaseView: UIView {
         return search
     }()
     
+    lazy var backView: UIView = {
+        let view = UIView()
+        
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
@@ -30,7 +36,7 @@ class BaseView: UIView {
         backgroundColor = .backColor
         
         addSubview(searchView)
-        
+        addSubview(backView)
     }
     
     private func setConstraints() {
@@ -42,6 +48,10 @@ class BaseView: UIView {
             searchView.heightAnchor.constraint(equalToConstant: 108.toScreen)
         ])
         
+        backView.snp.makeConstraints { make in
+            make.top.equalTo(searchView.snp_bottomMargin)
+            make.left.right.bottom.equalTo(self)
+        }
     }
     
 }

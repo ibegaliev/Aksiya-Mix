@@ -9,9 +9,14 @@ import UIKit
 
 class HomeViewController: BaseViewController {
     
+    let homeView = HomeView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        backView.backView.addSubview(homeView)
+        homeView.snp.makeConstraints { make in
+            make.edges.equalTo(backView.backView)
+        }
     }
     
 }
