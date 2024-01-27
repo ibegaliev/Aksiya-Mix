@@ -5,4 +5,12 @@
 //  Created by iBegaliev on 1/26/24.
 //
 
-import Foundation
+import UIKit
+
+extension Int {
+    
+    var toScreen: CGFloat {
+        return CGFloat(UIWindow().frame.width) * CGFloat(self) / 375
+    }
+    
+}

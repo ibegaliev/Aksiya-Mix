@@ -11,15 +11,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
-        setConstraints()
-    }
-
-    private func setUI () {
-        view.backgroundColor = .backColor
+        self.view = BaseView()
     }
     
-    private func setConstraints() {
-        
-    }
 }

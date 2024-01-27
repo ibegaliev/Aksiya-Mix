@@ -15,6 +15,10 @@
 		8C19B0C42B63556C007D8872 /* Aksiya_MixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0C32B63556C007D8872 /* Aksiya_MixTests.swift */; };
 		8C19B0CE2B63556C007D8872 /* Aksiya_MixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0CD2B63556C007D8872 /* Aksiya_MixUITests.swift */; };
 		8C19B0D02B63556C007D8872 /* Aksiya_MixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0CF2B63556C007D8872 /* Aksiya_MixUITestsLaunchTests.swift */; };
+		8C661F902B641D1C00437F0D /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F8F2B641D1C00437F0D /* BaseView.swift */; };
+		8C661F922B641E7500437F0D /* Ex+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F912B641E7500437F0D /* Ex+Int.swift */; };
+		8C661F952B64232300437F0D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F942B64232300437F0D /* SearchView.swift */; };
+		8C9894E72B64AFFF0079F78C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9894E62B64AFFF0079F78C /* SnapKit */; };
 		8CE832DD2B637909004B4E6D /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE832DC2B637909004B4E6D /* HomeModel.swift */; };
 		8CE832DF2B637910004B4E6D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE832DE2B637910004B4E6D /* HomeView.swift */; };
 		8CE832E12B637919004B4E6D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE832E02B637919004B4E6D /* HomeViewModel.swift */; };
@@ -58,6 +62,9 @@
 		8C19B0C92B63556C007D8872 /* Aksiya MixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aksiya MixUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C19B0CD2B63556C007D8872 /* Aksiya_MixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aksiya_MixUITests.swift; sourceTree = "<group>"; };
 		8C19B0CF2B63556C007D8872 /* Aksiya_MixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aksiya_MixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8C661F8F2B641D1C00437F0D /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		8C661F912B641E7500437F0D /* Ex+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+Int.swift"; sourceTree = "<group>"; };
+		8C661F942B64232300437F0D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		8CE832DC2B637909004B4E6D /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		8CE832DE2B637910004B4E6D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8CE832E02B637919004B4E6D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -75,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C9894E72B64AFFF0079F78C /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +128,7 @@
 			children = (
 				8C19B0A82B63556A007D8872 /* AppDelegate.swift */,
 				8C19B0AA2B63556A007D8872 /* SceneDelegate.swift */,
+				8C661F932B64230D00437F0D /* Customs */,
 				8CE832E52B637A59004B4E6D /* Helpers */,
 				8CE832E22B6379A5004B4E6D /* TabbarController */,
 				8CE832EC2B638286004B4E6D /* BaseController */,
@@ -149,6 +158,14 @@
 				8C19B0CF2B63556C007D8872 /* Aksiya_MixUITestsLaunchTests.swift */,
 			);
 			path = "Aksiya MixUITests";
+			sourceTree = "<group>";
+		};
+		8C661F932B64230D00437F0D /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				8C661F942B64232300437F0D /* SearchView.swift */,
+			);
+			path = Customs;
 			sourceTree = "<group>";
 		};
 		8CE832D82B637495004B4E6D /* Home */ = {
@@ -200,6 +217,7 @@
 				8CE832E62B637A6D004B4E6D /* Ex+String.swift */,
 				8CE832EA2B637C5D004B4E6D /* Ex+Uiimage.swift */,
 				8CE832F12B6384A8004B4E6D /* Ex+UIColor.swift */,
+				8C661F912B641E7500437F0D /* Ex+Int.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -208,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				8CE832ED2B638400004B4E6D /* BaseViewController.swift */,
+				8C661F8F2B641D1C00437F0D /* BaseView.swift */,
 			);
 			path = BaseController;
 			sourceTree = "<group>";
@@ -228,6 +247,9 @@
 			dependencies = (
 			);
 			name = "Aksiya Mix";
+			packageProductDependencies = (
+				8C9894E62B64AFFF0079F78C /* SnapKit */,
+			);
 			productName = "Aksiya Mix";
 			productReference = 8C19B0A52B63556A007D8872 /* Aksiya Mix.app */;
 			productType = "com.apple.product-type.application";
@@ -300,6 +322,9 @@
 				Base,
 			);
 			mainGroup = 8C19B09C2B63556A007D8872;
+			packageReferences = (
+				8C9894E52B64AFFF0079F78C /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 8C19B0A62B63556A007D8872 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,13 +369,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CE832DD2B637909004B4E6D /* HomeModel.swift in Sources */,
+				8C661F902B641D1C00437F0D /* BaseView.swift in Sources */,
 				8CE832E12B637919004B4E6D /* HomeViewModel.swift in Sources */,
 				8CE832EE2B638400004B4E6D /* BaseViewController.swift in Sources */,
 				8C19B0A92B63556A007D8872 /* AppDelegate.swift in Sources */,
 				8C19B0B32B63556A007D8872 /* Aksiya_Mix.xcdatamodeld in Sources */,
 				8CE832E72B637A6D004B4E6D /* Ex+String.swift in Sources */,
 				8CE832E92B637B6D004B4E6D /* HomeViewController.swift in Sources */,
+				8C661F922B641E7500437F0D /* Ex+Int.swift in Sources */,
 				8CE832DF2B637910004B4E6D /* HomeView.swift in Sources */,
+				8C661F952B64232300437F0D /* SearchView.swift in Sources */,
 				8CE832F22B6384A8004B4E6D /* Ex+UIColor.swift in Sources */,
 				8C19B0AB2B63556A007D8872 /* SceneDelegate.swift in Sources */,
 				8CE832EB2B637C5D004B4E6D /* Ex+Uiimage.swift in Sources */,
@@ -533,6 +561,8 @@
 				DEVELOPMENT_TEAM = 8996593D3H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Aksiya Mix/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Aksiya Mix";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -569,6 +599,8 @@
 				DEVELOPMENT_TEAM = 8996593D3H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Aksiya Mix/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Aksiya Mix";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -709,6 +741,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8C9894E52B64AFFF0079F78C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8C9894E62B64AFFF0079F78C /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C9894E52B64AFFF0079F78C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8C19B0B12B63556A007D8872 /* Aksiya_Mix.xcdatamodeld */ = {
