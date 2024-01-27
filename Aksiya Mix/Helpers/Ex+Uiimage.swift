@@ -18,4 +18,7 @@ extension UIImage {
     static let tabbar_Heard_Unselect = UIImage.heartUnSelect
     static let tabbar_Person_Unselect = UIImage.userUnselected
     
+    static let navigation_bell = UIImage.bell
+    static let navigation_search = UIImage.searchMd
+    
 }

@@ -19,6 +19,7 @@
 		8C661F922B641E7500437F0D /* Ex+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F912B641E7500437F0D /* Ex+Int.swift */; };
 		8C661F952B64232300437F0D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F942B64232300437F0D /* SearchView.swift */; };
 		8C9894E72B64AFFF0079F78C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9894E62B64AFFF0079F78C /* SnapKit */; };
+		8C9894EA2B64B7D60079F78C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9894E92B64B7D60079F78C /* IQKeyboardManagerSwift */; };
 		8CE832DD2B637909004B4E6D /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE832DC2B637909004B4E6D /* HomeModel.swift */; };
 		8CE832DF2B637910004B4E6D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE832DE2B637910004B4E6D /* HomeView.swift */; };
 		8CE832E12B637919004B4E6D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE832E02B637919004B4E6D /* HomeViewModel.swift */; };
@@ -83,6 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C9894E72B64AFFF0079F78C /* SnapKit in Frameworks */,
+				8C9894EA2B64B7D60079F78C /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +251,7 @@
 			name = "Aksiya Mix";
 			packageProductDependencies = (
 				8C9894E62B64AFFF0079F78C /* SnapKit */,
+				8C9894E92B64B7D60079F78C /* IQKeyboardManagerSwift */,
 			);
 			productName = "Aksiya Mix";
 			productReference = 8C19B0A52B63556A007D8872 /* Aksiya Mix.app */;
@@ -324,6 +327,7 @@
 			mainGroup = 8C19B09C2B63556A007D8872;
 			packageReferences = (
 				8C9894E52B64AFFF0079F78C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8C9894E82B64B7D60079F78C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 8C19B0A62B63556A007D8872 /* Products */;
 			projectDirPath = "";
@@ -565,10 +569,10 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -603,10 +607,10 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -751,6 +755,14 @@
 				minimumVersion = 5.7.0;
 			};
 		};
+		8C9894E82B64B7D60079F78C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -758,6 +770,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8C9894E52B64AFFF0079F78C /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		8C9894E92B64B7D60079F78C /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C9894E82B64B7D60079F78C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 
