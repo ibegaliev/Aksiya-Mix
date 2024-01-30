@@ -160,7 +160,7 @@ class TitleBottomView: UIView {
 
     lazy var newCost: UILabel = {
         var lbl = UILabel()
-        lbl.text = "18 5000 000 сум"
+        lbl.text = "17 000 000 сум"
         lbl.font = .boldSystemFont(ofSize: 12)
         return lbl
     }()

@@ -105,9 +105,9 @@ class HomeView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
             } else if indexPath.row == 1 {
                 return CGSize(width: 0.screenWight, height: 168.toScreen)
             } else if indexPath.row == 2 {
-                return CGSize(width: 0.screenWight, height: 168.toScreen)
+                return CGSize(width: 0.screenWight, height: 331.toScreen)
             } else if indexPath.row == 3 {
-                return CGSize(width: 0.screenWight, height: 168.toScreen)
+                return CGSize(width: 0.screenWight, height: 331.toScreen)
             } else if indexPath.row == 4 {
                 return CGSize(width: 0.screenWight, height: 48.toScreen)
             } else {
