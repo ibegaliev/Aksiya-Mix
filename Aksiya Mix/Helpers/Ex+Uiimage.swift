@@ -23,5 +23,6 @@ extension UIImage {
     
     
     static let heard_Icon = UIImage.heart
+    static let eye_Icon = UIImage.eyeCount
     
 }

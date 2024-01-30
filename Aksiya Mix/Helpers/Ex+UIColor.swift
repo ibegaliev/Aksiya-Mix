@@ -13,4 +13,6 @@ extension UIColor {
     
     static var select_Blue = "SelectBlue".toColor
     
+    static var space_Text = "Spacetext".toColor
+    
 }
