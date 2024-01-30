@@ -11,4 +11,6 @@ extension UIColor {
     
     static var backColor = "backColor".toColor
     
+    static var select_Blue = "SelectBlue".toColor
+    
 }
