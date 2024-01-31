@@ -15,6 +15,7 @@ class SingleTopCell: UICollectionViewCell {
         stack.axis = .vertical
         stack.alignment = .center
         stack.distribution = .fill
+        stack.backgroundColor = .white
         return stack
     }()
     
@@ -36,10 +37,10 @@ class SingleTopCell: UICollectionViewCell {
         return stack
     }()
     
-    lazy var costStack: UIStackView = {
-        let stack = UIStackView()
+    lazy var costView: UIView = {
+        let view = CostView()
         
-        return stack
+        return view
     }()
     
     lazy var topImage: UIImageView = {
@@ -66,7 +67,7 @@ class SingleTopCell: UICollectionViewCell {
         super.init(frame: frame)
         setUI()
         setConstraints()
-        backgroundColor = .green
+        backgroundColor = .backColor
     }
     
     required init?(coder: NSCoder) {
@@ -80,7 +81,7 @@ class SingleTopCell: UICollectionViewCell {
             mainStack.addArrangedSubview(item)
         }
         
-        [titlesStack, costStack].forEach { item in
+        [titlesStack, costView].forEach { item in
             bottomStack.addArrangedSubview(item)
         }
         
@@ -100,6 +101,10 @@ class SingleTopCell: UICollectionViewCell {
         }
         bottomStack.snp.makeConstraints { make in
             make.width.equalTo(0.screenWight - 32)
+        }
+        costView.snp.makeConstraints { make in
+            make.width.equalTo(200)
+            make.height.equalTo(50)
         }
     }
     

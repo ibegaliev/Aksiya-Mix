@@ -24,6 +24,7 @@ class SingleProductView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         view.bounces = true
         view.contentInset = .init(top: -5, left: 0, bottom: 50, right: 0)
         view.register(SingleTopCell.self, forCellWithReuseIdentifier: "SingleTopCell")
+        view.backgroundColor = .backColor
         return view
     }()
     
