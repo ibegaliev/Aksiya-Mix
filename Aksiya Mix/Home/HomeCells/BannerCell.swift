@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import SwiftUI
 
 class BannerCell: UICollectionViewCell {
-        
+    
+    lazy var hostingController = UIHostingController(rootView: BannerView())
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
         setConstraints()
-        contentView.backgroundColor = .backColor
+        contentView.backgroundColor = .none
     }
     
     required init?(coder: NSCoder) {
@@ -21,10 +24,17 @@ class BannerCell: UICollectionViewCell {
     }
     
     private func setUI() {
-        
+        addSubview(hostingController.view)
     }
     
     private func setConstraints() {
+        
+        hostingController.view.snp.makeConstraints { make in
+            make.edges.equalTo(self)
+        }
+        
+        hostingController.didMove(toParent: UIViewController())
+        contentView.isUserInteractionEnabled = false
         
     }
     

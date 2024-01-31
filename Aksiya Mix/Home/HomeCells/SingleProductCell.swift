@@ -27,6 +27,12 @@ class SingleProductCell: UICollectionViewCell {
         return view
     }()
     
+    lazy var saleIcon: UIView = {
+        let view = UIImageView()
+        view.image = .saleIcon
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .white
@@ -42,6 +48,9 @@ class SingleProductCell: UICollectionViewCell {
         contentView.addSubview(imageView)
         contentView.addSubview(bottomTitles)
         imageView.addSubview(headerView)
+        
+        contentView.addSubview(saleIcon)
+        
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 4
     }
@@ -59,6 +68,11 @@ class SingleProductCell: UICollectionViewCell {
             make.top.equalTo(imageView.snp_topMargin)
             make.left.right.equalTo(imageView)
             make.height.equalTo(24)
+        }
+        saleIcon.snp.makeConstraints { make in
+            make.width.height.equalTo(30)
+            make.top.equalTo(imageView.snp_bottomMargin).inset(10)
+            make.right.equalTo(self)
         }
     }
     

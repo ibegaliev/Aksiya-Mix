@@ -17,6 +17,7 @@ class HomeViewController: BaseViewController {
         homeView.snp.makeConstraints { make in
             make.edges.equalTo(backView.backView)
         }
+        
     }
     
 }

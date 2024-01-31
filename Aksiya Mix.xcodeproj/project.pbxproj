@@ -22,6 +22,7 @@
 		8C661F952B64232300437F0D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F942B64232300437F0D /* SearchView.swift */; };
 		8C8D4AF62B68AD60007D1D77 /* BottomTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */; };
 		8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D4AF72B68AD76007D1D77 /* HeaderView.swift */; };
+		8C9593302B69A8A900D87AB6 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C95932F2B69A8A900D87AB6 /* BannerView.swift */; };
 		8C9894E72B64AFFF0079F78C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9894E62B64AFFF0079F78C /* SnapKit */; };
 		8C9894EA2B64B7D60079F78C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9894E92B64B7D60079F78C /* IQKeyboardManagerSwift */; };
 		8CE832DD2B637909004B4E6D /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE832DC2B637909004B4E6D /* HomeModel.swift */; };
@@ -78,6 +79,7 @@
 		8C661F942B64232300437F0D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTitlesView.swift; sourceTree = "<group>"; };
 		8C8D4AF72B68AD76007D1D77 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		8C95932F2B69A8A900D87AB6 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		8CE832DC2B637909004B4E6D /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		8CE832DE2B637910004B4E6D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8CE832E02B637919004B4E6D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				8C8D4AF72B68AD76007D1D77 /* HeaderView.swift */,
 				8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */,
+				8C95932F2B69A8A900D87AB6 /* BannerView.swift */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				8CF4559B2B64EB7900E3EAB4 /* BottomTypeCell.swift in Sources */,
 				8C661F952B64232300437F0D /* SearchView.swift in Sources */,
 				8CE832F22B6384A8004B4E6D /* Ex+UIColor.swift in Sources */,
+				8C9593302B69A8A900D87AB6 /* BannerView.swift in Sources */,
 				8C19B0AB2B63556A007D8872 /* SceneDelegate.swift in Sources */,
 				8CE832EB2B637C5D004B4E6D /* Ex+Uiimage.swift in Sources */,
 				8CE832E42B6379B1004B4E6D /* TabbarController.swift in Sources */,
@@ -621,7 +625,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -659,7 +663,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
