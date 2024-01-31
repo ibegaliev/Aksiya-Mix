@@ -16,26 +16,26 @@ class TabbarController: UITabBarController {
     }()
 
     lazy var categoryViewController: UIViewController = {
-        let vc = HomeViewController()
-        vc.view.backgroundColor = .yellow
+        let vc = SingleProductViewController()
+
         return vc
     }()
 
     lazy var companyViewController: UIViewController = {
         let vc = HomeViewController()
-        vc.view.backgroundColor = .green
+
         return vc
     }()
 
     lazy var selectViewController: UIViewController = {
         let vc = HomeViewController()
-        vc.view.backgroundColor = .systemMint
+
         return vc
     }()
 
     lazy var userViewController: UIViewController = {
         let vc = HomeViewController()
-        vc.view.backgroundColor = .systemTeal
+
         return vc
     }()
     
