@@ -10,13 +10,13 @@ import UIKit
 class TabbarController: UITabBarController {
     
     lazy var homeViewController: UIViewController = {
-        let vc = HomeViewController()
+        let vc = SingleProductViewController()
 
         return vc
     }()
 
     lazy var categoryViewController: UIViewController = {
-        let vc = SingleProductViewController()
+        let vc = HomeViewController()
 
         return vc
     }()

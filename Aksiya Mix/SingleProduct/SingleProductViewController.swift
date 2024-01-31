@@ -7,13 +7,16 @@
 
 import UIKit
 
-class SingleProductViewController: UIViewController {
+class SingleProductViewController: BaseViewController {
     
     var viewModel = SingleProductViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = viewModel.view
+        backView.addSubview(viewModel.view)
+        viewModel.view.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
     }
     
 }
