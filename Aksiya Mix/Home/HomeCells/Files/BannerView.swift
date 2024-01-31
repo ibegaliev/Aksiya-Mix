@@ -50,6 +50,7 @@ struct BannerView: View {
             .padding(15)
         }
         .scrollIndicators(.hidden)
+        .background(Color.clear)
     }
 }
 
@@ -67,4 +68,3 @@ var locations: [Location] = [
     Location(image: "SamsungAd"),
     Location(image: "YandexAd")
 ]
-

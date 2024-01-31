@@ -153,6 +153,7 @@
 				8CE832E22B6379A5004B4E6D /* TabbarController */,
 				8CE832EC2B638286004B4E6D /* BaseController */,
 				8CE832D82B637495004B4E6D /* Home */,
+				8C926F952B69F1700049A1B7 /* SingleProduct */,
 				8C19B0B42B63556C007D8872 /* Assets.xcassets */,
 				8CE832EF2B638480004B4E6D /* Colors.xcassets */,
 				8C19B0B62B63556C007D8872 /* LaunchScreen.storyboard */,
@@ -210,6 +211,13 @@
 				8C95932F2B69A8A900D87AB6 /* BannerView.swift */,
 			);
 			path = Files;
+			sourceTree = "<group>";
+		};
+		8C926F952B69F1700049A1B7 /* SingleProduct */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SingleProduct;
 			sourceTree = "<group>";
 		};
 		8CE832D82B637495004B4E6D /* Home */ = {

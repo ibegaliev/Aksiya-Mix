@@ -101,7 +101,7 @@ class HomeView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                return CGSize(width: 0.screenWight, height: 200.toScreen)
+                return CGSize(width: 0.screenWight, height: 500.toScreen)
             } else if indexPath.row == 1 {
                 return CGSize(width: 0.screenWight, height: 168.toScreen)
             } else if indexPath.row == 2 {
