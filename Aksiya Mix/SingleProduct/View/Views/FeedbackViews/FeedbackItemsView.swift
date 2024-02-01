@@ -11,16 +11,29 @@ class FeedbackItemsView: UIView {
         
     lazy var lineView: UIView = {
         let line = UIView()
-        
+        line.backgroundColor = .spaceLine
         return line
     }()
         
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
-        stack.spacing = 8
+        stack.spacing = -4
         stack.axis = .horizontal
-        stack.alignment = .fill
+        stack.alignment = .center
         return stack
+    }()
+    
+    lazy var likeButton: FeedbackButton = {
+        let btn = FeedbackButton()
+        btn.title = "5.6 тыс"
+        btn.image = .thumbUp
+        return btn
+    }()
+    
+    lazy var dislikeButton: FeedbackButton = {
+        let btn = FeedbackButton()
+        btn.image = .thumbDown
+        return btn
     }()
     
     override init(frame: CGRect) {
@@ -36,17 +49,22 @@ class FeedbackItemsView: UIView {
     private func setUI() {
         addSubview(mainStack)
         
-//        [leftView, lineView, rightView].forEach { item in
-//            mainStack.addArrangedSubview(item)
-//        }
+        [likeButton, lineView, dislikeButton].forEach { item in
+            mainStack.addArrangedSubview(item)
+        }
         
         backgroundColor = .backColor
+        layer.cornerRadius = 8
     }
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
             make.top.bottom.equalTo(self)
-            make.left.right.equalTo(self).inset(12)
+            make.left.right.equalTo(self)
+        }
+        lineView.snp.makeConstraints { make in
+            make.width.equalTo(1)
+            make.height.equalTo(16)
         }
     }
     
