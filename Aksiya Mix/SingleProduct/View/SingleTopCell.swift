@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SingleTopCell: UICollectionViewCell {
+class SingleTopView: UITableViewCell {
     
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
@@ -86,13 +86,18 @@ class SingleTopCell: UICollectionViewCell {
         view.title = "Встроенная память (ROM)"
         return view
     }()
-
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    
+    lazy var descriptionView: DescriptionView = {
+        let view = DescriptionView()
+        
+        return view
+    }()
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUI()
         setConstraints()
-        backgroundColor = .backColor
     }
     
     required init?(coder: NSCoder) {
@@ -102,7 +107,7 @@ class SingleTopCell: UICollectionViewCell {
     private func setUI (){
         addSubview(mainStack)
         
-        [topImage, bottomStack].forEach { item in
+        [topImage, bottomStack, descriptionView].forEach { item in
             mainStack.addArrangedSubview(item)
         }
         
@@ -114,6 +119,8 @@ class SingleTopCell: UICollectionViewCell {
             titlesStack.addArrangedSubview(item)
         }
         
+        backgroundColor = .backColor
+
     }
     
     private func setConstraints() {

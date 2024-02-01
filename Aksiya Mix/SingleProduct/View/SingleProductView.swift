@@ -7,23 +7,14 @@
 
 import UIKit
 
-class SingleProductView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    lazy var layout: UICollectionViewFlowLayout = {
-        let lay = UICollectionViewFlowLayout()
+class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource {
         
-        return lay
-    }()
-    
-    lazy var collectionView: UICollectionView = { [self] in
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    lazy var tableView: UITableView = {
+        let view = UITableView()
         view.delegate = self
         view.dataSource = self
-        view.showsHorizontalScrollIndicator = false
-        view.showsVerticalScrollIndicator = false
-        view.bounces = true
-        view.contentInset = .init(top: -5, left: 0, bottom: 50, right: 0)
-        view.register(SingleTopCell.self, forCellWithReuseIdentifier: "SingleTopCell")
+        view.register(SingleTopView.self, forCellReuseIdentifier: "SingleTopView")
+        view.contentInset = .init(top: -10, left: 0, bottom: 100, right: 0)
         view.backgroundColor = .backColor
         return view
     }()
@@ -54,7 +45,7 @@ class SingleProductView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }
     
     private func setUI() {
-        addSubview(collectionView)
+        addSubview(tableView)
         addSubview(navigationView)
         addSubview(topNavigation)
     }
@@ -66,8 +57,8 @@ class SingleProductView: UIView, UICollectionViewDelegate, UICollectionViewDataS
             make.height.equalTo(50)
         }
         
-        collectionView.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalTo(self)
+        tableView.snp.makeConstraints { make in
+            make.edges.equalTo(self)
         }
         
         navigationView.snp.makeConstraints { make in
@@ -77,36 +68,16 @@ class SingleProductView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else {
-            return 20
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0 {
-            
-        }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SingleTopCell", for: indexPath) as! SingleTopCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SingleTopView", for: indexPath)
         
         return cell
     }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row == 0 {
-            CGSize(
-                width: collectionView.frame.width,
-                height: 780.toScreen
-            )
-        } else {
-            CGSize(width: 0, height: 0)
-        }
-    }
+    
+    
     
 }
