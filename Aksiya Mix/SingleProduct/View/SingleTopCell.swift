@@ -36,19 +36,19 @@ class SingleTopCell: UICollectionViewCell {
         stack.distribution = .fill
         return stack
     }()
-    
-    lazy var costView: UIView = {
-        let view = CostView()
         
-        return view
-    }()
-    
     lazy var topImage: UIImageView = {
         let image = UIImageView()
         image.image = .macIMge
         return image
     }()
+    
+    lazy var countView: TitleTopView = {
+        let view = TitleTopView()
         
+        return view
+    }()
+    
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Смартфон Apple iPhone 14 nano-SIM+eSIM, 5G, Wi-Fi 6, NFC"
@@ -57,8 +57,14 @@ class SingleTopCell: UICollectionViewCell {
         return lbl
     }()
     
-    lazy var countView: TitleTopView = {
-        let view = TitleTopView()
+    lazy var feedbackView: UIView = {
+        let view = FeedbackView()
+        
+        return view
+    }()
+        
+    lazy var costView: UIView = {
+        let view = CostView()
         
         return view
     }()
@@ -77,11 +83,11 @@ class SingleTopCell: UICollectionViewCell {
     private func setUI (){
         addSubview(mainStack)
         
-        [topImage, bottomStack].forEach { item in
+        [topImage, bottomStack, UIStackView()].forEach { item in
             mainStack.addArrangedSubview(item)
         }
         
-        [titlesStack, costView].forEach { item in
+        [titlesStack, costView, feedbackView].forEach { item in
             bottomStack.addArrangedSubview(item)
         }
         

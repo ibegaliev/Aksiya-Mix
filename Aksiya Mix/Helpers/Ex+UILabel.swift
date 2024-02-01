@@ -33,7 +33,7 @@ extension UILabel {
 
         let textSize: CGSize = gradientText.size(withAttributes: [NSAttributedString.Key.font: self.font])
         let width:CGFloat = textSize.width
-        let height:CGFloat = textSize.height/2
+        let height:CGFloat = textSize.height
 
         UIGraphicsBeginImageContext(CGSize(width: width, height: height))
 
@@ -47,7 +47,7 @@ extension UILabel {
         let glossGradient:CGGradient?
         let rgbColorspace:CGColorSpace?
         let num_locations:size_t = 2
-        let locations:[CGFloat] = [0.0, 1.0]
+        let locations:[CGFloat] = [ 0.0, 1.0 ]
         let components:[CGFloat] = [startColorRed, startColorGreen, startColorBlue, startAlpha, endColorRed, endColorGreen, endColorBlue, endAlpha]
         rgbColorspace = CGColorSpaceCreateDeviceRGB()
         glossGradient = CGGradient(colorSpace: rgbColorspace!, colorComponents: components, locations: locations, count: num_locations)
@@ -67,6 +67,7 @@ extension UILabel {
         self.textColor = UIColor(patternImage: gradientImage)
 
         return true
+
     }
 
 }

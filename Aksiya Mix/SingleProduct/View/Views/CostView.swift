@@ -32,7 +32,10 @@ class CostView: UIView {
         let lbl = UILabel()
         lbl.text = "13 499 000 сум"
         lbl.font = .boldSystemFont(ofSize: 18)
-        lbl.applyGradientWith(startColor: .garnierPink, endColor: .garnierOrgane)
+        lbl.applyGradientWith(
+            startColor: .garnierPink,
+            endColor: .garnierOrgane
+        )
         return lbl
     }()
     
