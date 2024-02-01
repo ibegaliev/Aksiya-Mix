@@ -102,7 +102,7 @@ class SingleProductView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         if indexPath.row == 0 {
             CGSize(
                 width: collectionView.frame.width,
-                height: 875.toScreen
+                height: 780.toScreen
             )
         } else {
             CGSize(width: 0, height: 0)

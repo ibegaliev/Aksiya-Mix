@@ -56,18 +56,37 @@ class SingleTopCell: UICollectionViewCell {
         lbl.font = .boldSystemFont(ofSize: 14)
         return lbl
     }()
+            
+    lazy var costView: UIView = {
+        let view = CostView()
+        
+        return view
+    }()
     
     lazy var feedbackView: UIView = {
         let view = FeedbackView()
         
         return view
     }()
-        
-    lazy var costView: UIView = {
-        let view = CostView()
-        
+
+    lazy var selectIsNew: SelectableTextView = {
+        let view = SelectableTextView()
+        view.title = "Состояние товара"
         return view
     }()
+    
+    lazy var selectColors: SelectableColorView = {
+        let view = SelectableColorView()
+        view.title = "Цвет товара: Черный"
+        return view
+    }()
+    
+    lazy var selectRom: SelectableTextView = {
+        let view = SelectableTextView()
+        view.title = "Встроенная память (ROM)"
+        return view
+    }()
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -83,11 +102,11 @@ class SingleTopCell: UICollectionViewCell {
     private func setUI (){
         addSubview(mainStack)
         
-        [topImage, bottomStack, UIStackView()].forEach { item in
+        [topImage, bottomStack].forEach { item in
             mainStack.addArrangedSubview(item)
         }
         
-        [titlesStack, costView, feedbackView].forEach { item in
+        [titlesStack, costView, feedbackView, selectIsNew, selectColors, selectRom].forEach { item in
             bottomStack.addArrangedSubview(item)
         }
         
@@ -107,6 +126,7 @@ class SingleTopCell: UICollectionViewCell {
         }
         bottomStack.snp.makeConstraints { make in
             make.width.equalTo(0.screenWight - 32)
+            make.bottom.equalTo(self).inset(12)
         }
         costView.snp.makeConstraints { make in
             make.width.equalTo(200)

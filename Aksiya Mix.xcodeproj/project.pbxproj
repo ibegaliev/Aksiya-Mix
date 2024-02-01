@@ -27,6 +27,7 @@
 		8C8D4AF62B68AD60007D1D77 /* BottomTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */; };
 		8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D4AF72B68AD76007D1D77 /* HeaderView.swift */; };
 		8C9593302B69A8A900D87AB6 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C95932F2B69A8A900D87AB6 /* BannerView.swift */; };
+		8C979E1E2B6C535D00C43155 /* SelectableColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C979E1D2B6C535D00C43155 /* SelectableColorView.swift */; };
 		8C9894E72B64AFFF0079F78C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9894E62B64AFFF0079F78C /* SnapKit */; };
 		8C9894EA2B64B7D60079F78C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9894E92B64B7D60079F78C /* IQKeyboardManagerSwift */; };
 		8C9BA7942B6A1ED5008C9420 /* SingleProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7932B6A1ED5008C9420 /* SingleProductViewController.swift */; };
@@ -97,6 +98,7 @@
 		8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTitlesView.swift; sourceTree = "<group>"; };
 		8C8D4AF72B68AD76007D1D77 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8C95932F2B69A8A900D87AB6 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		8C979E1D2B6C535D00C43155 /* SelectableColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableColorView.swift; sourceTree = "<group>"; };
 		8C9BA7932B6A1ED5008C9420 /* SingleProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductViewController.swift; sourceTree = "<group>"; };
 		8C9BA7952B6A1F88008C9420 /* SingleProductDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductDM.swift; sourceTree = "<group>"; };
 		8C9BA7972B6A1F93008C9420 /* SingleProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductView.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				8C77817A2B6A6ADE00CA6D0A /* CostView.swift */,
 				8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */,
 				8CE67A2F2B6BA07100D6E428 /* SelectableView.swift */,
+				8C979E1D2B6C535D00C43155 /* SelectableColorView.swift */,
 				8CD354532B6B8971004FFE0F /* FeedbackViews */,
 			);
 			path = Views;
@@ -516,6 +519,7 @@
 				8C19B0A92B63556A007D8872 /* AppDelegate.swift in Sources */,
 				8CE67A302B6BA07100D6E428 /* SelectableView.swift in Sources */,
 				8C9BA79A2B6A1F9E008C9420 /* SingleProductViewModel.swift in Sources */,
+				8C979E1E2B6C535D00C43155 /* SelectableColorView.swift in Sources */,
 				8CF455992B64E67600E3EAB4 /* TypesCell.swift in Sources */,
 				8C289D4A2B693AF300B2FEAC /* TypeCell.swift in Sources */,
 				8C19B0B32B63556A007D8872 /* Aksiya_Mix.xcdatamodeld in Sources */,

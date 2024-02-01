@@ -1,13 +1,13 @@
 //
-//  SelectableView.swift
+//  SelectableColorView.swift
 //  Aksiya Mix
 //
-//  Created by iBegaliev on 2/1/24.
+//  Created by iBegaliev on 2/2/24.
 //
 
 import UIKit
 
-class SelectableTextView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class SelectableColorView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var title: String? {
         get {
@@ -36,7 +36,7 @@ class SelectableTextView: UIView, UICollectionViewDelegate, UICollectionViewData
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.delegate = self
         cv.dataSource = self
-        cv.register(SelectableTextCell.self, forCellWithReuseIdentifier: "SelectableTextCell")
+        cv.register(SelectableColorCell.self, forCellWithReuseIdentifier: "SelectableColorCell")
         return cv
     }()
     
@@ -70,7 +70,7 @@ class SelectableTextView: UIView, UICollectionViewDelegate, UICollectionViewData
         }
         
         collectionView.snp.makeConstraints { make in
-            make.height.equalTo(32)
+            make.height.equalTo(40)
             make.width.equalTo(0.screenWight - 32)
         }
     }
@@ -80,13 +80,13 @@ class SelectableTextView: UIView, UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectableTextCell", for: indexPath) as! SelectableTextCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectableColorCell", for: indexPath) as! SelectableColorCell
         
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 55, height: 32)
+        CGSize(width: 40, height: 40)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -95,13 +95,13 @@ class SelectableTextView: UIView, UICollectionViewDelegate, UICollectionViewData
     
 }
 
-class SelectableTextCell: UICollectionViewCell {
-    
-    lazy var label: UILabel = {
-        let lbl = UILabel()
-        lbl.text = "Новый"
-        lbl.font = .systemFont(ofSize: 12)
-        return lbl
+class SelectableColorCell: UICollectionViewCell {
+
+    lazy var colorView: UIView = {
+        let color = UIView()
+        color.backgroundColor = .systemTeal
+        color.layer.cornerRadius = 4
+        return color
     }()
     
     override init(frame: CGRect) {
@@ -122,14 +122,14 @@ class SelectableTextCell: UICollectionViewCell {
         contentView.layer.borderColor = UIColor.spaceLine.cgColor
         contentView.layer.borderWidth = 1
         
-        addSubview(label)
+        contentView.addSubview(colorView)
     }
     
     private func setCOnstraints() {
-        label.snp.makeConstraints { make in
-            make.top.bottom.equalTo(self).inset(6)
-            make.left.right.equalTo(self).inset(8)
+        colorView.snp.makeConstraints { make in
+            make.edges.equalTo(contentView).inset(2)
         }
     }
 
 }
+
