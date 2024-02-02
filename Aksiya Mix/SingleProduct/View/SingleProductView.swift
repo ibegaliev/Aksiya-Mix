@@ -8,12 +8,16 @@
 import UIKit
 
 class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource {
-        
+    
     lazy var tableView: UITableView = {
         let view = UITableView()
         view.delegate = self
         view.dataSource = self
+        view.separatorStyle = .none
+        view.rowHeight = UITableView.automaticDimension
         view.register(SingleTopView.self, forCellReuseIdentifier: "SingleTopView")
+        view.register(DescriptionView.self, forCellReuseIdentifier: "DescriptionView")
+        view.register(SingleProductHorizontalCell.self, forCellReuseIdentifier: "SingleProductHorizontalCell")
         view.contentInset = .init(top: -10, left: 0, bottom: 100, right: 0)
         view.backgroundColor = .backColor
         return view
@@ -29,7 +33,7 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     lazy var navigationView: UIView = {
         let view = SingleNavigationVIew()
-
+        
         return view
     }()
     
@@ -65,19 +69,38 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource {
             make.top.equalTo(self).inset(44)
             make.left.right.equalTo(self)
         }
-
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        if section == 0 {
+            2
+        } else {
+            10
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SingleTopView", for: indexPath)
-        
-        return cell
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SingleTopView", for: indexPath) as! SingleTopView
+                
+                return cell
+            } else if indexPath.row == 1 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SingleTopView", for: indexPath) as! SingleTopView
+                
+                return cell
+            }
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SingleProductHorizontalCell", for: indexPath) as! SingleProductHorizontalCell
+            
+            return cell
+        }
+        return UITableViewCell()
     }
-    
-    
-    
+            
 }

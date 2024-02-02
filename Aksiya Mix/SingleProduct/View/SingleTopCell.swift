@@ -90,7 +90,7 @@ class SingleTopView: UITableViewCell {
     
     lazy var descriptionView: DescriptionView = {
         let view = DescriptionView()
-        
+        view.backgroundColor = .red
         return view
     }()
 
@@ -107,7 +107,7 @@ class SingleTopView: UITableViewCell {
     private func setUI (){
         addSubview(mainStack)
         
-        [topImage, bottomStack, descriptionView].forEach { item in
+        [topImage, bottomStack].forEach { item in
             mainStack.addArrangedSubview(item)
         }
         
