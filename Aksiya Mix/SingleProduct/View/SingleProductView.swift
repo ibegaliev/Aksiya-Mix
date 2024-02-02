@@ -14,6 +14,7 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource {
         view.delegate = self
         view.dataSource = self
         view.separatorStyle = .none
+        view.showsVerticalScrollIndicator = false
         view.rowHeight = UITableView.automaticDimension
         view.register(SingleTopView.self, forCellReuseIdentifier: "SingleTopView")
         view.register(DescriptionView.self, forCellReuseIdentifier: "DescriptionView")
@@ -91,7 +92,7 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource {
                 
                 return cell
             } else if indexPath.row == 1 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "SingleTopView", for: indexPath) as! SingleTopView
+                let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionView", for: indexPath) as! DescriptionView
                 
                 return cell
             }
