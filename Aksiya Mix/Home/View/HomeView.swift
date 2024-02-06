@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol HomeViewDelegate {
+    func tapped()
+}
+
 class HomeView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    var delegate: HomeViewDelegate?
     
     lazy var collectionView: UICollectionView = { [self] in
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -131,6 +137,12 @@ class HomeView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
             UIEdgeInsets(top: 0, left: 0, bottom: 12, right: 0)
         } else {
             UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            delegate?.tapped()
         }
     }
     

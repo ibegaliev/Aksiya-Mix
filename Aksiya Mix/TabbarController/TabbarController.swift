@@ -10,7 +10,7 @@ import UIKit
 class TabbarController: UITabBarController {
     
     lazy var homeViewController: UIViewController = {
-        let vc = SingleProductViewController()
+        let vc = HomeViewController()
 
         return vc
     }()

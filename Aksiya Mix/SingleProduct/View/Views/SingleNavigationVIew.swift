@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol SingleNavigationViewDelegate {
+    func backViewTapped()
+    func shareButtonTapped()
+    func likeButtonTapped()
+}
+
 class SingleNavigationVIew: UIView {
+    
+    var delegate: SingleNavigationViewDelegate?
     
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
@@ -30,18 +38,21 @@ class SingleNavigationVIew: UIView {
     lazy var closeButton: UIButton = {
         let btn = UIButton()
         btn.setImage(.arrowLeft, for: .normal)
+        btn.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         return btn
     }()
     
     lazy var shareButton: UIButton = {
         let btn = UIButton()
         btn.setImage(.shareProduct, for: .normal)
+        btn.addTarget(self, action: #selector(shareTapped), for: .touchUpInside)
         return btn
     }()
     
     lazy var heardButton: UIButton = {
         let btn = UIButton()
         btn.setImage(.heart, for: .normal)
+        btn.addTarget(self, action: #selector(likeTapped), for: .touchUpInside)
         return btn
     }()
 
@@ -77,6 +88,21 @@ class SingleNavigationVIew: UIView {
                 make.width.height.equalTo(24)
             }
         }
+    }
+    
+    @objc
+    func backTapped() {
+        delegate?.backViewTapped()
+    }
+    
+    @objc
+    func shareTapped() {
+        delegate?.shareButtonTapped()
+    }
+    
+    @objc
+    func likeTapped() {
+        delegate?.likeButtonTapped()
     }
     
 }

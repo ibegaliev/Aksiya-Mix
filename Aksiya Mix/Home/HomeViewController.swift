@@ -7,17 +7,24 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+class HomeViewController: BaseViewController, HomeViewDelegate {
     
     let homeView = HomeView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        homeView.delegate = self
         backView.backView.addSubview(homeView)
         homeView.snp.makeConstraints { make in
             make.edges.equalTo(backView.backView)
         }
         
+    }
+    
+    func tapped() {
+        let controller = SingleProductViewController()
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }

@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol SingleProductCellDelegate {
+    func selectedSingleProdoct()
+}
+
 class SingleProductCell: UICollectionViewCell {
+    
+    var delegate: SingleProductCellDelegate?
     
     lazy var imageView: UIImageView = {
         let image = UIImageView()
@@ -75,6 +81,8 @@ class SingleProductCell: UICollectionViewCell {
             make.right.equalTo(self)
         }
     }
+    
+    
     
 }
 

@@ -15,6 +15,7 @@
 		8C19B0C42B63556C007D8872 /* Aksiya_MixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0C32B63556C007D8872 /* Aksiya_MixTests.swift */; };
 		8C19B0CE2B63556C007D8872 /* Aksiya_MixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0CD2B63556C007D8872 /* Aksiya_MixUITests.swift */; };
 		8C19B0D02B63556C007D8872 /* Aksiya_MixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0CF2B63556C007D8872 /* Aksiya_MixUITestsLaunchTests.swift */; };
+		8C25CE082B6DEB7C00B345BA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25CE072B6DEB7C00B345BA /* MapView.swift */; };
 		8C289D4A2B693AF300B2FEAC /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C289D492B693AF300B2FEAC /* TypeCell.swift */; };
 		8C461EBF2B64CEF8004DC171 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C461EBE2B64CEF8004DC171 /* BannerCell.swift */; };
 		8C661F902B641D1C00437F0D /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F8F2B641D1C00437F0D /* BaseView.swift */; };
@@ -34,9 +35,11 @@
 		8C9BA7962B6A1F88008C9420 /* SingleProductDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7952B6A1F88008C9420 /* SingleProductDM.swift */; };
 		8C9BA7982B6A1F93008C9420 /* SingleProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7972B6A1F93008C9420 /* SingleProductView.swift */; };
 		8C9BA79A2B6A1F9E008C9420 /* SingleProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7992B6A1F9E008C9420 /* SingleProductViewModel.swift */; };
+		8CAD0BB12B6CE60A0001D02B /* UserCellViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */; };
 		8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354542B6B8985004FFE0F /* FeedbackItemsView.swift */; };
 		8CD354572B6B89CB004FFE0F /* FeedbackPityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354562B6B89CB004FFE0F /* FeedbackPityView.swift */; };
 		8CD354592B6B8A2D004FFE0F /* FeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354582B6B8A2D004FFE0F /* FeedbackButton.swift */; };
+		8CE260F62B6CA98E00B4E2C9 /* UserDatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE260F52B6CA98E00B4E2C9 /* UserDatesView.swift */; };
 		8CE424542B6A4DA600E6CDA9 /* SingleNavigationVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE424532B6A4DA600E6CDA9 /* SingleNavigationVIew.swift */; };
 		8CE67A302B6BA07100D6E428 /* SelectableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE67A2F2B6BA07100D6E428 /* SelectableView.swift */; };
 		8CE832DD2B637909004B4E6D /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE832DC2B637909004B4E6D /* HomeModel.swift */; };
@@ -50,6 +53,7 @@
 		8CE832F02B638480004B4E6D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CE832EF2B638480004B4E6D /* Colors.xcassets */; };
 		8CE832F22B6384A8004B4E6D /* Ex+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE832F12B6384A8004B4E6D /* Ex+UIColor.swift */; };
 		8CEA12FF2B6C6498009CADEB /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEA12FE2B6C6498009CADEB /* DescriptionView.swift */; };
+		8CEF41602B6D3603000D9A0E /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF415F2B6D3603000D9A0E /* StoreCell.swift */; };
 		8CF23A1F2B6C6FB60044BB4D /* SingleProductHorizontalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF23A1E2B6C6FB60044BB4D /* SingleProductHorizontalCell.swift */; };
 		8CF455972B64DFA700E3EAB4 /* ItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF455962B64DFA700E3EAB4 /* ItemsCell.swift */; };
 		8CF455992B64E67600E3EAB4 /* TypesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF455982B64E67600E3EAB4 /* TypesCell.swift */; };
@@ -88,6 +92,7 @@
 		8C19B0C92B63556C007D8872 /* Aksiya MixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aksiya MixUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C19B0CD2B63556C007D8872 /* Aksiya_MixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aksiya_MixUITests.swift; sourceTree = "<group>"; };
 		8C19B0CF2B63556C007D8872 /* Aksiya_MixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aksiya_MixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8C25CE072B6DEB7C00B345BA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8C289D492B693AF300B2FEAC /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 		8C461EBE2B64CEF8004DC171 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		8C661F8F2B641D1C00437F0D /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -105,9 +110,11 @@
 		8C9BA7952B6A1F88008C9420 /* SingleProductDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductDM.swift; sourceTree = "<group>"; };
 		8C9BA7972B6A1F93008C9420 /* SingleProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductView.swift; sourceTree = "<group>"; };
 		8C9BA7992B6A1F9E008C9420 /* SingleProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductViewModel.swift; sourceTree = "<group>"; };
+		8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViews.swift; sourceTree = "<group>"; };
 		8CD354542B6B8985004FFE0F /* FeedbackItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackItemsView.swift; sourceTree = "<group>"; };
 		8CD354562B6B89CB004FFE0F /* FeedbackPityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPityView.swift; sourceTree = "<group>"; };
 		8CD354582B6B8A2D004FFE0F /* FeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackButton.swift; sourceTree = "<group>"; };
+		8CE260F52B6CA98E00B4E2C9 /* UserDatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatesView.swift; sourceTree = "<group>"; };
 		8CE424532B6A4DA600E6CDA9 /* SingleNavigationVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleNavigationVIew.swift; sourceTree = "<group>"; };
 		8CE67A2F2B6BA07100D6E428 /* SelectableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableView.swift; sourceTree = "<group>"; };
 		8CE832DC2B637909004B4E6D /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -121,6 +128,7 @@
 		8CE832EF2B638480004B4E6D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		8CE832F12B6384A8004B4E6D /* Ex+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIColor.swift"; sourceTree = "<group>"; };
 		8CEA12FE2B6C6498009CADEB /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		8CEF415F2B6D3603000D9A0E /* StoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
 		8CF23A1E2B6C6FB60044BB4D /* SingleProductHorizontalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductHorizontalCell.swift; sourceTree = "<group>"; };
 		8CF455962B64DFA700E3EAB4 /* ItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCell.swift; sourceTree = "<group>"; };
 		8CF455982B64E67600E3EAB4 /* TypesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesCell.swift; sourceTree = "<group>"; };
@@ -270,7 +278,9 @@
 				8C9BA7972B6A1F93008C9420 /* SingleProductView.swift */,
 				8C73A90C2B6A272000AA80B5 /* SingleTopCell.swift */,
 				8CEA12FE2B6C6498009CADEB /* DescriptionView.swift */,
+				8CE260F52B6CA98E00B4E2C9 /* UserDatesView.swift */,
 				8CF23A1E2B6C6FB60044BB4D /* SingleProductHorizontalCell.swift */,
+				8CEF415F2B6D3603000D9A0E /* StoreCell.swift */,
 				8CE424522B6A4D9900E6CDA9 /* Views */,
 			);
 			path = View;
@@ -302,6 +312,8 @@
 				8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */,
 				8CE67A2F2B6BA07100D6E428 /* SelectableView.swift */,
 				8C979E1D2B6C535D00C43155 /* SelectableColorView.swift */,
+				8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */,
+				8C25CE072B6DEB7C00B345BA /* MapView.swift */,
 				8CD354532B6B8971004FFE0F /* FeedbackViews */,
 			);
 			path = Views;
@@ -515,6 +527,7 @@
 				8CE832DD2B637909004B4E6D /* HomeModel.swift in Sources */,
 				8C461EBF2B64CEF8004DC171 /* BannerCell.swift in Sources */,
 				8CF455972B64DFA700E3EAB4 /* ItemsCell.swift in Sources */,
+				8CEF41602B6D3603000D9A0E /* StoreCell.swift in Sources */,
 				8C9BA7942B6A1ED5008C9420 /* SingleProductViewController.swift in Sources */,
 				8C661F902B641D1C00437F0D /* BaseView.swift in Sources */,
 				8CE832E12B637919004B4E6D /* HomeViewModel.swift in Sources */,
@@ -535,6 +548,7 @@
 				8CE832E92B637B6D004B4E6D /* HomeViewController.swift in Sources */,
 				8C8D4AF62B68AD60007D1D77 /* BottomTitlesView.swift in Sources */,
 				8CD354592B6B8A2D004FFE0F /* FeedbackButton.swift in Sources */,
+				8C25CE082B6DEB7C00B345BA /* MapView.swift in Sources */,
 				8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */,
 				8C661F922B641E7500437F0D /* Ex+Int.swift in Sources */,
 				8CD354572B6B89CB004FFE0F /* FeedbackPityView.swift in Sources */,
@@ -543,6 +557,7 @@
 				8CF4559B2B64EB7900E3EAB4 /* BottomTypeCell.swift in Sources */,
 				8C73A90D2B6A272000AA80B5 /* SingleTopCell.swift in Sources */,
 				8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */,
+				8CE260F62B6CA98E00B4E2C9 /* UserDatesView.swift in Sources */,
 				8C661F952B64232300437F0D /* SearchView.swift in Sources */,
 				8C9BA7982B6A1F93008C9420 /* SingleProductView.swift in Sources */,
 				8CE832F22B6384A8004B4E6D /* Ex+UIColor.swift in Sources */,
@@ -551,6 +566,7 @@
 				8C19B0AB2B63556A007D8872 /* SceneDelegate.swift in Sources */,
 				8CE832EB2B637C5D004B4E6D /* Ex+Uiimage.swift in Sources */,
 				8CE832E42B6379B1004B4E6D /* TabbarController.swift in Sources */,
+				8CAD0BB12B6CE60A0001D02B /* UserCellViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,7 +741,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Aksiya Mix/Aksiya_Mix.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8996593D3H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Aksiya Mix/Info.plist";
@@ -743,7 +759,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Aksiya-Mix.uz";
+				PRODUCT_BUNDLE_IDENTIFIER = AksiyaMix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -763,7 +779,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Aksiya Mix/Aksiya_Mix.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8996593D3H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Aksiya Mix/Info.plist";
@@ -781,7 +797,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Aksiya-Mix.uz";
+				PRODUCT_BUNDLE_IDENTIFIER = AksiyaMix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
