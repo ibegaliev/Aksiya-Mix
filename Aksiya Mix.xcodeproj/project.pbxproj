@@ -49,6 +49,7 @@
 		8CD354572B6B89CB004FFE0F /* FeedbackPityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354562B6B89CB004FFE0F /* FeedbackPityView.swift */; };
 		8CD354592B6B8A2D004FFE0F /* FeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354582B6B8A2D004FFE0F /* FeedbackButton.swift */; };
 		8CD858282B7391C20077B2A8 /* ChooseLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD858272B7391C20077B2A8 /* ChooseLanguageViewModel.swift */; };
+		8CD8582A2B739C9E0077B2A8 /* LanguageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD858292B739C9E0077B2A8 /* LanguageButton.swift */; };
 		8CE260F62B6CA98E00B4E2C9 /* UserDatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE260F52B6CA98E00B4E2C9 /* UserDatesView.swift */; };
 		8CE424542B6A4DA600E6CDA9 /* SingleNavigationVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE424532B6A4DA600E6CDA9 /* SingleNavigationVIew.swift */; };
 		8CE67A302B6BA07100D6E428 /* SelectableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE67A2F2B6BA07100D6E428 /* SelectableView.swift */; };
@@ -134,6 +135,7 @@
 		8CD354562B6B89CB004FFE0F /* FeedbackPityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPityView.swift; sourceTree = "<group>"; };
 		8CD354582B6B8A2D004FFE0F /* FeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackButton.swift; sourceTree = "<group>"; };
 		8CD858272B7391C20077B2A8 /* ChooseLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageViewModel.swift; sourceTree = "<group>"; };
+		8CD858292B739C9E0077B2A8 /* LanguageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageButton.swift; sourceTree = "<group>"; };
 		8CE260F52B6CA98E00B4E2C9 /* UserDatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatesView.swift; sourceTree = "<group>"; };
 		8CE424532B6A4DA600E6CDA9 /* SingleNavigationVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleNavigationVIew.swift; sourceTree = "<group>"; };
 		8CE67A2F2B6BA07100D6E428 /* SelectableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableView.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				8C06581A2B7328E700F6C9C3 /* ChooseLanguageView.swift */,
+				8CD858292B739C9E0077B2A8 /* LanguageButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 				8CE832E92B637B6D004B4E6D /* HomeViewController.swift in Sources */,
 				8C8D4AF62B68AD60007D1D77 /* BottomTitlesView.swift in Sources */,
 				8C06580E2B73249300F6C9C3 /* RegisterModel.swift in Sources */,
+				8CD8582A2B739C9E0077B2A8 /* LanguageButton.swift in Sources */,
 				8CD354592B6B8A2D004FFE0F /* FeedbackButton.swift in Sources */,
 				8C25CE082B6DEB7C00B345BA /* MapView.swift in Sources */,
 				8C958FE12B73402C00299AF8 /* LaunchView.swift in Sources */,
