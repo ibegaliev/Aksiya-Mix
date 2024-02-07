@@ -82,6 +82,7 @@ class ChooseLanguageView: UIView {
         [uzbButton, ruButton].forEach { item in
             buttonsStack.addArrangedSubview(item)
         }
+        
     }
     
     private func setConstraints() {

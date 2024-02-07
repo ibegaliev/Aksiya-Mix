@@ -68,6 +68,7 @@ class LanguageButton: UIView {
         layer.cornerRadius = 8
         clipsToBounds = true
         backgroundColor = .fieldBack
+        
     }
     
     private func setConstraints() {
