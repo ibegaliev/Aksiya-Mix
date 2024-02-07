@@ -12,6 +12,8 @@
 		8C0658102B73249E00F6C9C3 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C06580F2B73249E00F6C9C3 /* RegisterViewModel.swift */; };
 		8C0658122B73254200F6C9C3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0658112B73254200F6C9C3 /* RegisterViewController.swift */; };
 		8C0658162B73287600F6C9C3 /* ChooseLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0658152B73287600F6C9C3 /* ChooseLanguageViewController.swift */; };
+		8C06581B2B7328E700F6C9C3 /* ChooseLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C06581A2B7328E700F6C9C3 /* ChooseLanguageView.swift */; };
+		8C17F2E12B73424400CD6506 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C17F2E02B73424400CD6506 /* LaunchViewModel.swift */; };
 		8C19B0A92B63556A007D8872 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0A82B63556A007D8872 /* AppDelegate.swift */; };
 		8C19B0AB2B63556A007D8872 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0AA2B63556A007D8872 /* SceneDelegate.swift */; };
 		8C19B0B32B63556A007D8872 /* Aksiya_Mix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0B12B63556A007D8872 /* Aksiya_Mix.xcdatamodeld */; };
@@ -32,6 +34,8 @@
 		8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */; };
 		8C8D4AF62B68AD60007D1D77 /* BottomTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */; };
 		8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D4AF72B68AD76007D1D77 /* HeaderView.swift */; };
+		8C958FDF2B73402300299AF8 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C958FDE2B73402300299AF8 /* LaunchScreenController.swift */; };
+		8C958FE12B73402C00299AF8 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C958FE02B73402C00299AF8 /* LaunchView.swift */; };
 		8C9593302B69A8A900D87AB6 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C95932F2B69A8A900D87AB6 /* BannerView.swift */; };
 		8C979E1E2B6C535D00C43155 /* SelectableColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C979E1D2B6C535D00C43155 /* SelectableColorView.swift */; };
 		8C9894E72B64AFFF0079F78C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9894E62B64AFFF0079F78C /* SnapKit */; };
@@ -44,6 +48,7 @@
 		8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354542B6B8985004FFE0F /* FeedbackItemsView.swift */; };
 		8CD354572B6B89CB004FFE0F /* FeedbackPityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354562B6B89CB004FFE0F /* FeedbackPityView.swift */; };
 		8CD354592B6B8A2D004FFE0F /* FeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354582B6B8A2D004FFE0F /* FeedbackButton.swift */; };
+		8CD858282B7391C20077B2A8 /* ChooseLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD858272B7391C20077B2A8 /* ChooseLanguageViewModel.swift */; };
 		8CE260F62B6CA98E00B4E2C9 /* UserDatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE260F52B6CA98E00B4E2C9 /* UserDatesView.swift */; };
 		8CE424542B6A4DA600E6CDA9 /* SingleNavigationVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE424532B6A4DA600E6CDA9 /* SingleNavigationVIew.swift */; };
 		8CE67A302B6BA07100D6E428 /* SelectableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE67A2F2B6BA07100D6E428 /* SelectableView.swift */; };
@@ -89,6 +94,8 @@
 		8C06580F2B73249E00F6C9C3 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		8C0658112B73254200F6C9C3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8C0658152B73287600F6C9C3 /* ChooseLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageViewController.swift; sourceTree = "<group>"; };
+		8C06581A2B7328E700F6C9C3 /* ChooseLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageView.swift; sourceTree = "<group>"; };
+		8C17F2E02B73424400CD6506 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		8C19B0A52B63556A007D8872 /* Aksiya Mix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aksiya Mix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C19B0A82B63556A007D8872 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C19B0AA2B63556A007D8872 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +121,8 @@
 		8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTitlesView.swift; sourceTree = "<group>"; };
 		8C8D4AF72B68AD76007D1D77 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		8C958FDE2B73402300299AF8 /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
+		8C958FE02B73402C00299AF8 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		8C95932F2B69A8A900D87AB6 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		8C979E1D2B6C535D00C43155 /* SelectableColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableColorView.swift; sourceTree = "<group>"; };
 		8C9BA7932B6A1ED5008C9420 /* SingleProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +133,7 @@
 		8CD354542B6B8985004FFE0F /* FeedbackItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackItemsView.swift; sourceTree = "<group>"; };
 		8CD354562B6B89CB004FFE0F /* FeedbackPityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPityView.swift; sourceTree = "<group>"; };
 		8CD354582B6B8A2D004FFE0F /* FeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackButton.swift; sourceTree = "<group>"; };
+		8CD858272B7391C20077B2A8 /* ChooseLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageViewModel.swift; sourceTree = "<group>"; };
 		8CE260F52B6CA98E00B4E2C9 /* UserDatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatesView.swift; sourceTree = "<group>"; };
 		8CE424532B6A4DA600E6CDA9 /* SingleNavigationVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleNavigationVIew.swift; sourceTree = "<group>"; };
 		8CE67A2F2B6BA07100D6E428 /* SelectableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableView.swift; sourceTree = "<group>"; };
@@ -211,6 +221,7 @@
 		8C0658132B73284D00F6C9C3 /* Aksiya Mix */ = {
 			isa = PBXGroup;
 			children = (
+				8C958FDA2B733E9100299AF8 /* LaunchScreen */,
 				8C0658142B73286100F6C9C3 /* ChooseLanguage */,
 				8C0658072B73234600F6C9C3 /* Register */,
 				8CE832E22B6379A5004B4E6D /* TabbarController */,
@@ -225,8 +236,34 @@
 			isa = PBXGroup;
 			children = (
 				8C0658152B73287600F6C9C3 /* ChooseLanguageViewController.swift */,
+				8C0658192B7328DB00F6C9C3 /* View */,
+				8C0658182B7328D100F6C9C3 /* Model */,
+				8C0658172B7328C300F6C9C3 /* ViewModel */,
 			);
 			path = ChooseLanguage;
+			sourceTree = "<group>";
+		};
+		8C0658172B7328C300F6C9C3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8CD858272B7391C20077B2A8 /* ChooseLanguageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C0658182B7328D100F6C9C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C0658192B7328DB00F6C9C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C06581A2B7328E700F6C9C3 /* ChooseLanguageView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8C19B09C2B63556A007D8872 = {
@@ -355,6 +392,40 @@
 				8C9BA7952B6A1F88008C9420 /* SingleProductDM.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8C958FDA2B733E9100299AF8 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8C958FDE2B73402300299AF8 /* LaunchScreenController.swift */,
+				8C958FDD2B73401900299AF8 /* View */,
+				8C958FDC2B73400E00299AF8 /* Model */,
+				8C958FDB2B733F7900299AF8 /* ViewModel */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		8C958FDB2B733F7900299AF8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8C17F2E02B73424400CD6506 /* LaunchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C958FDC2B73400E00299AF8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C958FDD2B73401900299AF8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C958FE02B73402C00299AF8 /* LaunchView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8CD354532B6B8971004FFE0F /* FeedbackViews */ = {
@@ -601,6 +672,8 @@
 				8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */,
 				8C19B0A92B63556A007D8872 /* AppDelegate.swift in Sources */,
 				8CE67A302B6BA07100D6E428 /* SelectableView.swift in Sources */,
+				8CD858282B7391C20077B2A8 /* ChooseLanguageViewModel.swift in Sources */,
+				8C958FDF2B73402300299AF8 /* LaunchScreenController.swift in Sources */,
 				8C9BA79A2B6A1F9E008C9420 /* SingleProductViewModel.swift in Sources */,
 				8C979E1E2B6C535D00C43155 /* SelectableColorView.swift in Sources */,
 				8CEA12FF2B6C6498009CADEB /* DescriptionView.swift in Sources */,
@@ -614,12 +687,14 @@
 				8C06580E2B73249300F6C9C3 /* RegisterModel.swift in Sources */,
 				8CD354592B6B8A2D004FFE0F /* FeedbackButton.swift in Sources */,
 				8C25CE082B6DEB7C00B345BA /* MapView.swift in Sources */,
+				8C958FE12B73402C00299AF8 /* LaunchView.swift in Sources */,
 				8C0658122B73254200F6C9C3 /* RegisterViewController.swift in Sources */,
 				8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */,
 				8C661F922B641E7500437F0D /* Ex+Int.swift in Sources */,
 				8CD354572B6B89CB004FFE0F /* FeedbackPityView.swift in Sources */,
 				8CE832DF2B637910004B4E6D /* HomeView.swift in Sources */,
 				8C9BA7962B6A1F88008C9420 /* SingleProductDM.swift in Sources */,
+				8C17F2E12B73424400CD6506 /* LaunchViewModel.swift in Sources */,
 				8CF4559B2B64EB7900E3EAB4 /* BottomTypeCell.swift in Sources */,
 				8C73A90D2B6A272000AA80B5 /* SingleTopCell.swift in Sources */,
 				8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */,
@@ -633,6 +708,7 @@
 				8C9593302B69A8A900D87AB6 /* BannerView.swift in Sources */,
 				8C19B0AB2B63556A007D8872 /* SceneDelegate.swift in Sources */,
 				8CE832EB2B637C5D004B4E6D /* Ex+Uiimage.swift in Sources */,
+				8C06581B2B7328E700F6C9C3 /* ChooseLanguageView.swift in Sources */,
 				8CE832E42B6379B1004B4E6D /* TabbarController.swift in Sources */,
 				8CAD0BB12B6CE60A0001D02B /* UserCellViews.swift in Sources */,
 			);
