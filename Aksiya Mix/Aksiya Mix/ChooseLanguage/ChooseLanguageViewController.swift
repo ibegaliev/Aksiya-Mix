@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChooseLanguageViewController: UIViewController {
+class ChooseLanguageViewController: UIViewController, ChooseLanguageViewDelegate {
     
     let viewModel = ChooseLanguageViewModel()
     
@@ -18,6 +18,12 @@ class ChooseLanguageViewController: UIViewController {
     
     private func setController() {
         view = viewModel.view
+        viewModel.view.delegate = self
     }
+    
+    func confirmTapped() {
+        print("SUCSESS")
+    }
+
     
 }

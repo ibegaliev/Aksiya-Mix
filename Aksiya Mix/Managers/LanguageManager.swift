@@ -36,5 +36,5 @@ class LanguageManager {
             return "uz"
         }
     }
-    
+        
 }

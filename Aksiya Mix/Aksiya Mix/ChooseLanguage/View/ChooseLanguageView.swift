@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol ChooseLanguageViewDelegate {
+    func confirmTapped()
+}
+
 struct LanguageDM {
     var langName: String
     var isSelect: Bool
 }
 
 class ChooseLanguageView: UIView, LanguageButtonDelegate {
+    
+    var delegate: ChooseLanguageViewDelegate?
         
     var langData:[LanguageDM] = [
         LanguageDM(langName: "O’zbekcha", isSelect: false),
@@ -76,6 +82,7 @@ class ChooseLanguageView: UIView, LanguageButtonDelegate {
     lazy var bottomButton: BlueButton = {
         let btn = BlueButton()
         btn.isHidden = true
+        btn.addTarget(self, action: #selector(confirmButtonTapped), for: .touchUpInside)
         btn.setTitle(LyricsManager.getLyrics(type: .confirmation), for: .normal)
         return btn
     }()
@@ -146,6 +153,11 @@ class ChooseLanguageView: UIView, LanguageButtonDelegate {
         titleLabel.text = LyricsManager.getLyrics(type: .selectLang)
         uzbButton.isSelected = langData[0].isSelect
         ruButton.isSelected = langData[1].isSelect
+    }
+    
+    @objc
+    func confirmButtonTapped() {
+        delegate?.confirmTapped()
     }
     
 }

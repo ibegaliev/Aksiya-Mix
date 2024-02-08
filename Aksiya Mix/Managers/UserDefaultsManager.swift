@@ -16,7 +16,7 @@ class UserDefaultsManager {
     }
     
     func getObject(key: String) -> Any {
-        standart.object(forKey: key)
+        standart.object(forKey: key) ?? 0
     }
-    
+        
 }
