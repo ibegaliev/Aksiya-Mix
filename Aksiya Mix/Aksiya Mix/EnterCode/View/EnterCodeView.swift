@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol EnterCodeViewDelegate {
+    func sentTapped()
+}
+
 class EnterCodeView: UIView {
+    
+    var delegate: EnterCodeViewDelegate?
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -42,6 +48,7 @@ class EnterCodeView: UIView {
     lazy var sentCode: BlueButton = {
         let btn = BlueButton()
         btn.setTitle(LyricsManager.getLyrics(type: .getCode), for: .normal)
+        btn.addTarget(self, action: #selector(sentTapped), for: .touchUpInside)
         return btn
     }()
     
@@ -105,6 +112,11 @@ class EnterCodeView: UIView {
             make.top.equalTo(self).inset(116.toScreen)
             make.left.right.equalTo(self).inset(24)
         }
+    }
+    
+    @objc
+    func sentTapped() {
+        delegate?.sentTapped()
     }
     
 }

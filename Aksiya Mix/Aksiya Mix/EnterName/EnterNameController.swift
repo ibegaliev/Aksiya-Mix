@@ -5,4 +5,8 @@
 //  Created by iBegaliev on 2/8/24.
 //
 
-import Foundation
+import UIKit
+
+class EnterNameController: UIViewController {
+    
+}
