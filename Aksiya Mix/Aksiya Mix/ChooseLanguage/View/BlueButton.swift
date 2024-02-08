@@ -16,6 +16,10 @@ class BlueButton: UIButton {
         layer.cornerRadius = 8
         clipsToBounds = true
         titleLabel?.font = .appFont(ofSize: 16, weight: .medium)
+        
+        snp.makeConstraints { make in
+            make.height.equalTo(48)
+        }
     }
     
     required init?(coder: NSCoder) {

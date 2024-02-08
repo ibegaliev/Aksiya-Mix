@@ -7,13 +7,18 @@
 
 import UIKit
 
-class EnterPhoneViewController: UIViewController {
+class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate {
     
     let viewModel = EnterPhoneViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view = viewModel.view
+        viewModel.view.delegate = self
     }
-    
+
+    func saveTapped(number: String?) {
+        
+    }
+
 }
