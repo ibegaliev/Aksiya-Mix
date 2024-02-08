@@ -18,7 +18,9 @@ class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate {
     }
 
     func saveTapped(number: String?) {
-        
+        let controller = EnterCodeViewController()
+        controller.modalPresentationStyle = .overFullScreen
+        present(controller, animated: true)
     }
 
 }

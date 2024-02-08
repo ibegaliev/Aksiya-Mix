@@ -68,6 +68,11 @@
 		8CAB7CCE2B74606E0075C4DE /* SF-Pro-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CAB7CBC2B74606E0075C4DE /* SF-Pro-Text-SemiboldItalic.otf */; };
 		8CAB7CD02B7464AA0075C4DE /* Ex+UIFond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */; };
 		8CAD0BB12B6CE60A0001D02B /* UserCellViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */; };
+		8CC185F42B751A5400B13400 /* EnterCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185F32B751A5400B13400 /* EnterCodeViewController.swift */; };
+		8CC185F62B751A6000B13400 /* EnterNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185F52B751A6000B13400 /* EnterNameController.swift */; };
+		8CC185F82B751BCE00B13400 /* EnterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185F72B751BCE00B13400 /* EnterCodeView.swift */; };
+		8CC185FA2B751BDC00B13400 /* EnterCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185F92B751BDC00B13400 /* EnterCodeViewModel.swift */; };
+		8CC185FC2B75259900B13400 /* OtpFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185FB2B75259900B13400 /* OtpFieldView.swift */; };
 		8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354542B6B8985004FFE0F /* FeedbackItemsView.swift */; };
 		8CD354572B6B89CB004FFE0F /* FeedbackPityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354562B6B89CB004FFE0F /* FeedbackPityView.swift */; };
 		8CD354592B6B8A2D004FFE0F /* FeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354582B6B8A2D004FFE0F /* FeedbackButton.swift */; };
@@ -181,6 +186,11 @@
 		8CAB7CBC2B74606E0075C4DE /* SF-Pro-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIFond.swift"; sourceTree = "<group>"; };
 		8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViews.swift; sourceTree = "<group>"; };
+		8CC185F32B751A5400B13400 /* EnterCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeViewController.swift; sourceTree = "<group>"; };
+		8CC185F52B751A6000B13400 /* EnterNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameController.swift; sourceTree = "<group>"; };
+		8CC185F72B751BCE00B13400 /* EnterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeView.swift; sourceTree = "<group>"; };
+		8CC185F92B751BDC00B13400 /* EnterCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeViewModel.swift; sourceTree = "<group>"; };
+		8CC185FB2B75259900B13400 /* OtpFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpFieldView.swift; sourceTree = "<group>"; };
 		8CD354542B6B8985004FFE0F /* FeedbackItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackItemsView.swift; sourceTree = "<group>"; };
 		8CD354562B6B89CB004FFE0F /* FeedbackPityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPityView.swift; sourceTree = "<group>"; };
 		8CD354582B6B8A2D004FFE0F /* FeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackButton.swift; sourceTree = "<group>"; };
@@ -280,6 +290,8 @@
 				8C958FDA2B733E9100299AF8 /* LaunchScreen */,
 				8C0658142B73286100F6C9C3 /* ChooseLanguage */,
 				8CAB7CD12B746B7E0075C4DE /* EnterPhone */,
+				8CC185EE2B7519C600B13400 /* EnterCode */,
+				8CC185EF2B7519DB00B13400 /* EnterName */,
 				8C0658072B73234600F6C9C3 /* Register */,
 				8CE832E22B6379A5004B4E6D /* TabbarController */,
 				8CE832EC2B638286004B4E6D /* BaseController */,
@@ -556,6 +568,49 @@
 			path = EnterPhone;
 			sourceTree = "<group>";
 		};
+		8CC185EE2B7519C600B13400 /* EnterCode */ = {
+			isa = PBXGroup;
+			children = (
+				8CC185F32B751A5400B13400 /* EnterCodeViewController.swift */,
+				8CC185F22B751A0E00B13400 /* View */,
+				8CC185F12B7519FB00B13400 /* Model */,
+				8CC185F02B7519F300B13400 /* ViewModel */,
+			);
+			path = EnterCode;
+			sourceTree = "<group>";
+		};
+		8CC185EF2B7519DB00B13400 /* EnterName */ = {
+			isa = PBXGroup;
+			children = (
+				8CC185F52B751A6000B13400 /* EnterNameController.swift */,
+			);
+			path = EnterName;
+			sourceTree = "<group>";
+		};
+		8CC185F02B7519F300B13400 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8CC185F92B751BDC00B13400 /* EnterCodeViewModel.swift */,
+				8CC185FB2B75259900B13400 /* OtpFieldView.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8CC185F12B7519FB00B13400 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8CC185F22B751A0E00B13400 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8CC185F72B751BCE00B13400 /* EnterCodeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8CD354532B6B8971004FFE0F /* FeedbackViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -828,6 +883,7 @@
 				8CE832E12B637919004B4E6D /* HomeViewModel.swift in Sources */,
 				8CE424542B6A4DA600E6CDA9 /* SingleNavigationVIew.swift in Sources */,
 				8C0658162B73287600F6C9C3 /* ChooseLanguageViewController.swift in Sources */,
+				8CC185F62B751A6000B13400 /* EnterNameController.swift in Sources */,
 				8CF4559D2B64EF0C00E3EAB4 /* SingleProductCell.swift in Sources */,
 				8CE832EE2B638400004B4E6D /* BaseViewController.swift in Sources */,
 				8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */,
@@ -853,8 +909,10 @@
 				8CD354592B6B8A2D004FFE0F /* FeedbackButton.swift in Sources */,
 				8C25CE082B6DEB7C00B345BA /* MapView.swift in Sources */,
 				8C958FE12B73402C00299AF8 /* LaunchView.swift in Sources */,
+				8CC185FA2B751BDC00B13400 /* EnterCodeViewModel.swift in Sources */,
 				8CA197B92B7472440025E9F9 /* EnterPhoneView.swift in Sources */,
 				8CAB7CD02B7464AA0075C4DE /* Ex+UIFond.swift in Sources */,
+				8CC185F42B751A5400B13400 /* EnterCodeViewController.swift in Sources */,
 				8C0658122B73254200F6C9C3 /* RegisterViewController.swift in Sources */,
 				8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */,
 				8C661F922B641E7500437F0D /* Ex+Int.swift in Sources */,
@@ -864,8 +922,10 @@
 				8C17F2E12B73424400CD6506 /* LaunchViewModel.swift in Sources */,
 				8CF4559B2B64EB7900E3EAB4 /* BottomTypeCell.swift in Sources */,
 				8C73A90D2B6A272000AA80B5 /* SingleTopCell.swift in Sources */,
+				8CC185F82B751BCE00B13400 /* EnterCodeView.swift in Sources */,
 				8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */,
 				8C0658102B73249E00F6C9C3 /* RegisterViewModel.swift in Sources */,
+				8CC185FC2B75259900B13400 /* OtpFieldView.swift in Sources */,
 				8CE260F62B6CA98E00B4E2C9 /* UserDatesView.swift in Sources */,
 				8CF5A7FC2B73D89700D65039 /* LyricsManager.swift in Sources */,
 				8C661F952B64232300437F0D /* SearchView.swift in Sources */,

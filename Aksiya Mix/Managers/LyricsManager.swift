@@ -14,6 +14,9 @@ enum LyricsManagerType {
     case enterNumberDescription
     case phoneNumber
     case getCode
+    case enterCode
+    case enterDescription
+    case resentCode
 }
 
 class LyricsManager {
@@ -33,6 +36,12 @@ class LyricsManager {
                     return "Telefon raqami"
                 case .getCode:
                     return "Kodni olish"
+                case .enterCode:
+                    return "Kodni kiriting"
+                case .enterDescription:
+                    return "Telefon raqamingizni tasdiqlash uchun 5 xonali kodni yuboring "
+                case .resentCode:
+                    return "Qayta kod yuborish"
             }
         } else {
             switch type {
@@ -48,6 +57,12 @@ class LyricsManager {
                     return "Номер телефона"
                 case .getCode:
                     return "Получить код"
+                case .enterCode:
+                    return "Введите код"
+                case .enterDescription:
+                    return "Для подтверждения телефона отправили 5-значный код на "
+                case .resentCode:
+                    return "Повторный ввод номера"
             }
         }
     }
