@@ -49,7 +49,7 @@ class LanguageButton: UIView {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        
+        lbl.font = .appFont(ofSize: 16, weight: .black)
         return lbl
     }()
     

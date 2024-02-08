@@ -8,6 +8,10 @@
 import UIKit
 
 extension UILabel {
+    
+    func setFond(size: Int) {
+        
+    }
 
     func applyGradientWith(startColor: UIColor, endColor: UIColor) -> Bool {
 

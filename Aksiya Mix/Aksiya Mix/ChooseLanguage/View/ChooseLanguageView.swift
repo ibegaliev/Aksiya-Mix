@@ -33,7 +33,10 @@ class ChooseLanguageView: UIView, LanguageButtonDelegate {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
+        lbl.font = .appFont(ofSize: 16, weight: .medium)
+        lbl.textColor = .spacetext
         lbl.text = LyricsManager.getLyrics(type: .selectLang)
+        print(lbl.font ?? "1")
         return lbl
     }()
     

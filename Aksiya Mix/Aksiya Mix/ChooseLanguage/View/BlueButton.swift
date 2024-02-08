@@ -15,6 +15,7 @@ class BlueButton: UIButton {
         setTitleColor(.white, for: .normal)
         layer.cornerRadius = 8
         clipsToBounds = true
+        titleLabel?.font = .appFont(ofSize: 16, weight: .medium)
     }
     
     required init?(coder: NSCoder) {
