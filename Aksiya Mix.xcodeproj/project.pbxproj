@@ -271,6 +271,7 @@
 			children = (
 				8C958FDA2B733E9100299AF8 /* LaunchScreen */,
 				8C0658142B73286100F6C9C3 /* ChooseLanguage */,
+				8CAB7CD12B746B7E0075C4DE /* EnterPhone */,
 				8C0658072B73234600F6C9C3 /* Register */,
 				8CE832E22B6379A5004B4E6D /* TabbarController */,
 				8CE832EC2B638286004B4E6D /* BaseController */,
@@ -510,6 +511,13 @@
 				8CAB7CBC2B74606E0075C4DE /* SF-Pro-Text-SemiboldItalic.otf */,
 			);
 			path = "SF Pro Text";
+			sourceTree = "<group>";
+		};
+		8CAB7CD12B746B7E0075C4DE /* EnterPhone */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EnterPhone;
 			sourceTree = "<group>";
 		};
 		8CD354532B6B8971004FFE0F /* FeedbackViews */ = {

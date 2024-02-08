@@ -9,6 +9,7 @@ import UIKit
 
 extension UIFont {
     static func appFont(ofSize: CGFloat, weight: MyFontType = .regular) -> UIFont {
+        
         var font = UIFont(name: "SF Pro Text", size: ofSize)
         switch weight {
             case .black:

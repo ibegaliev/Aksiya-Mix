@@ -2,27 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-        <string>SF-Pro-Text-Black</string>
-        <string>SF-Pro-Text-BlackItalic</string>
-        <string>SF-Pro-Text-Bold</string>
-        <string>SF-Pro-Text-BoldItalic</string>
-        <string>SF-Pro-Text-Heavy</string>
-        <string>SF-Pro-Text-HeavyItalic</string>
-        <string>SF-Pro-Text-Light</string>
-        <string>SF-Pro-Text-LightItalic</string>
-        <string>SF-Pro-Text-Medium</string>
-        <string>SF-Pro-Text-MediumItalic</string>
-        <string>SF-Pro-Text-Regular</string>
-        <string>SF-Pro-Text-RegularItalic</string>
-        <string>SF-Pro-Text-Semibold</string>
-        <string>SF-Pro-Text-SemiboldItalic</string>
-        <string>SF-Pro-Text-Thin</string>
-        <string>SF-Pro-Text-ThinItalic</string>
-        <string>SF-Pro-Text-Ultralight</string>
-        <string>SF-Pro-Text-UltralightItalic</string>
-	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -46,5 +25,26 @@
 	<array/>
 	<key>com.apple.developer.ubiquity-kvstore-identifier</key>
 	<string>com.AksiyaMix.uzbek</string>
+    <key>UIAppFonts</key>
+    <array>
+        <string>SF-Pro-Text-Black.ttf</string>
+        <string>SF-Pro-Text-BlackItalic.ttf</string>
+        <string>SF-Pro-Text-Bold.ttf</string>
+        <string>SF-Pro-Text-BoldItalic.ttf</string>
+        <string>SF-Pro-Text-Heavy.ttf</string>
+        <string>SF-Pro-Text-HeavyItalic.ttf</string>
+        <string>SF-Pro-Text-Light.ttf</string>
+        <string>SF-Pro-Text-LightItalic.ttf</string>
+        <string>SF-Pro-Text-Medium.ttf</string>
+        <string>SF-Pro-Text-MediumItalic.ttf</string>
+        <string>SF-Pro-Text-Regular.ttf</string>
+        <string>SF-Pro-Text-RegularItalic.ttf</string>
+        <string>SF-Pro-Text-Semibold.ttf</string>
+        <string>SF-Pro-Text-SemiboldItalic.ttf</string>
+        <string>SF-Pro-Text-Thin.ttf</string>
+        <string>SF-Pro-Text-ThinItalic.ttf</string>
+        <string>SF-Pro-Text-Ultralight.ttf</string>
+        <string>SF-Pro-Text-UltralightItalic.ttf</string>
+    </array>
 </dict>
 </plist>
