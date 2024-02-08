@@ -71,6 +71,9 @@
 		8CF455992B64E67600E3EAB4 /* TypesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF455982B64E67600E3EAB4 /* TypesCell.swift */; };
 		8CF4559B2B64EB7900E3EAB4 /* BottomTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF4559A2B64EB7900E3EAB4 /* BottomTypeCell.swift */; };
 		8CF4559D2B64EF0C00E3EAB4 /* SingleProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF4559C2B64EF0C00E3EAB4 /* SingleProductCell.swift */; };
+		8CF5A7F82B73D51600D65039 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A7F72B73D51600D65039 /* UserDefaultsManager.swift */; };
+		8CF5A7FA2B73D58600D65039 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A7F92B73D58600D65039 /* LanguageManager.swift */; };
+		8CF5A7FC2B73D89700D65039 /* LyricsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A7FB2B73D89700D65039 /* LyricsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +161,9 @@
 		8CF455982B64E67600E3EAB4 /* TypesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesCell.swift; sourceTree = "<group>"; };
 		8CF4559A2B64EB7900E3EAB4 /* BottomTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTypeCell.swift; sourceTree = "<group>"; };
 		8CF4559C2B64EF0C00E3EAB4 /* SingleProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductCell.swift; sourceTree = "<group>"; };
+		8CF5A7F72B73D51600D65039 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		8CF5A7F92B73D58600D65039 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		8CF5A7FB2B73D89700D65039 /* LyricsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +303,7 @@
 			children = (
 				8C19B0A82B63556A007D8872 /* AppDelegate.swift */,
 				8C19B0AA2B63556A007D8872 /* SceneDelegate.swift */,
+				8CF5A7F62B73D50200D65039 /* Managers */,
 				8C661F932B64230D00437F0D /* Customs */,
 				8CE832E52B637A59004B4E6D /* Helpers */,
 				8C0658132B73284D00F6C9C3 /* Aksiya Mix */,
@@ -524,6 +531,16 @@
 			path = BaseController;
 			sourceTree = "<group>";
 		};
+		8CF5A7F62B73D50200D65039 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8CF5A7F72B73D51600D65039 /* UserDefaultsManager.swift */,
+				8CF5A7F92B73D58600D65039 /* LanguageManager.swift */,
+				8CF5A7FB2B73D89700D65039 /* LyricsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -664,6 +681,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C77817B2B6A6ADE00CA6D0A /* CostView.swift in Sources */,
+				8CF5A7FA2B73D58600D65039 /* LanguageManager.swift in Sources */,
 				8CE832DD2B637909004B4E6D /* HomeModel.swift in Sources */,
 				8C461EBF2B64CEF8004DC171 /* BannerCell.swift in Sources */,
 				8CF455972B64DFA700E3EAB4 /* ItemsCell.swift in Sources */,
@@ -682,6 +700,7 @@
 				8CD858282B7391C20077B2A8 /* ChooseLanguageViewModel.swift in Sources */,
 				8C958FDF2B73402300299AF8 /* LaunchScreenController.swift in Sources */,
 				8C9BA79A2B6A1F9E008C9420 /* SingleProductViewModel.swift in Sources */,
+				8CF5A7F82B73D51600D65039 /* UserDefaultsManager.swift in Sources */,
 				8C979E1E2B6C535D00C43155 /* SelectableColorView.swift in Sources */,
 				8CEA12FF2B6C6498009CADEB /* DescriptionView.swift in Sources */,
 				8CF455992B64E67600E3EAB4 /* TypesCell.swift in Sources */,
@@ -708,6 +727,7 @@
 				8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */,
 				8C0658102B73249E00F6C9C3 /* RegisterViewModel.swift in Sources */,
 				8CE260F62B6CA98E00B4E2C9 /* UserDatesView.swift in Sources */,
+				8CF5A7FC2B73D89700D65039 /* LyricsManager.swift in Sources */,
 				8C661F952B64232300437F0D /* SearchView.swift in Sources */,
 				8C06580C2B73248700F6C9C3 /* RegisterView.swift in Sources */,
 				8C9BA7982B6A1F93008C9420 /* SingleProductView.swift in Sources */,

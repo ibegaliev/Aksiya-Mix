@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol LanguageButtonDelegate {
+    func selected(index: Int)
+}
+
 class LanguageButton: UIView {
+    
+    var delegate: LanguageButtonDelegate?
     
     var isSelected: Bool? {
         get {
@@ -49,7 +55,10 @@ class LanguageButton: UIView {
     
     lazy var stack: UIStackView = {
         let stack = UIStackView()
-        
+        stack.spacing = 16
+        stack.axis = .horizontal
+        stack.distribution = .fill
+        stack.alignment = .fill
         return stack
     }()
     
@@ -57,6 +66,7 @@ class LanguageButton: UIView {
         super.init(frame: frame)
         setUI()
         setConstraints()
+        setGestures()
     }
     
     required init?(coder: NSCoder) {
@@ -69,10 +79,33 @@ class LanguageButton: UIView {
         clipsToBounds = true
         backgroundColor = .fieldBack
         
+        addSubview(stack)
+        
+        [icon, titleLabel].forEach { item in
+            stack.addArrangedSubview(item)
+        }
+        
     }
     
     private func setConstraints() {
-        
+        stack.snp.makeConstraints { make in
+            make.top.bottom.equalTo(self).inset(14)
+            make.left.right.equalTo(self).inset(16)
+        }
+        icon.snp.makeConstraints { make in
+            make.height.width.equalTo(20)
+        }
+    }
+    
+    private func setGestures() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(selected))
+        addGestureRecognizer(gesture)
+        isUserInteractionEnabled = true
+    }
+    
+    @objc
+    func selected() {
+        delegate?.selected(index: tag)
     }
     
 }
