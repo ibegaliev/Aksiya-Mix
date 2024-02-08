@@ -44,6 +44,9 @@
 		8C9BA7962B6A1F88008C9420 /* SingleProductDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7952B6A1F88008C9420 /* SingleProductDM.swift */; };
 		8C9BA7982B6A1F93008C9420 /* SingleProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7972B6A1F93008C9420 /* SingleProductView.swift */; };
 		8C9BA79A2B6A1F9E008C9420 /* SingleProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7992B6A1F9E008C9420 /* SingleProductViewModel.swift */; };
+		8CA197B52B7472170025E9F9 /* EnterPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA197B42B7472170025E9F9 /* EnterPhoneViewController.swift */; };
+		8CA197B72B74723D0025E9F9 /* EnterPhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA197B62B74723D0025E9F9 /* EnterPhoneViewModel.swift */; };
+		8CA197B92B7472440025E9F9 /* EnterPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA197B82B7472440025E9F9 /* EnterPhoneView.swift */; };
 		8CAB7CBD2B74606E0075C4DE /* SF-Pro-Text-UltralightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CAB7CAB2B74606E0075C4DE /* SF-Pro-Text-UltralightItalic.otf */; };
 		8CAB7CBE2B74606E0075C4DE /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CAB7CAC2B74606E0075C4DE /* SF-Pro-Text-Heavy.otf */; };
 		8CAB7CBF2B74606E0075C4DE /* SF-Pro-Text-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CAB7CAD2B74606E0075C4DE /* SF-Pro-Text-MediumItalic.otf */; };
@@ -153,6 +156,9 @@
 		8C9BA7952B6A1F88008C9420 /* SingleProductDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductDM.swift; sourceTree = "<group>"; };
 		8C9BA7972B6A1F93008C9420 /* SingleProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductView.swift; sourceTree = "<group>"; };
 		8C9BA7992B6A1F9E008C9420 /* SingleProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductViewModel.swift; sourceTree = "<group>"; };
+		8CA197B42B7472170025E9F9 /* EnterPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewController.swift; sourceTree = "<group>"; };
+		8CA197B62B74723D0025E9F9 /* EnterPhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewModel.swift; sourceTree = "<group>"; };
+		8CA197B82B7472440025E9F9 /* EnterPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneView.swift; sourceTree = "<group>"; };
 		8CAB7CAB2B74606E0075C4DE /* SF-Pro-Text-UltralightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-UltralightItalic.otf"; sourceTree = "<group>"; };
 		8CAB7CAC2B74606E0075C4DE /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
 		8CAB7CAD2B74606E0075C4DE /* SF-Pro-Text-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-MediumItalic.otf"; sourceTree = "<group>"; };
@@ -480,6 +486,29 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8CA197B12B7471EF0025E9F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8CA197B62B74723D0025E9F9 /* EnterPhoneViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8CA197B22B7471F70025E9F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8CA197B32B7471FE0025E9F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8CA197B82B7472440025E9F9 /* EnterPhoneView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8CAB7CA92B7460520075C4DE /* Fonds */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +545,10 @@
 		8CAB7CD12B746B7E0075C4DE /* EnterPhone */ = {
 			isa = PBXGroup;
 			children = (
+				8CA197B42B7472170025E9F9 /* EnterPhoneViewController.swift */,
+				8CA197B32B7471FE0025E9F9 /* View */,
+				8CA197B22B7471F70025E9F9 /* Model */,
+				8CA197B12B7471EF0025E9F9 /* ViewModel */,
 			);
 			path = EnterPhone;
 			sourceTree = "<group>";
@@ -805,15 +838,18 @@
 				8CF455992B64E67600E3EAB4 /* TypesCell.swift in Sources */,
 				8C289D4A2B693AF300B2FEAC /* TypeCell.swift in Sources */,
 				8C19B0B32B63556A007D8872 /* Aksiya_Mix.xcdatamodeld in Sources */,
+				8CA197B52B7472170025E9F9 /* EnterPhoneViewController.swift in Sources */,
 				8CE832E72B637A6D004B4E6D /* Ex+String.swift in Sources */,
 				8C77817D2B6A6DC500CA6D0A /* Ex+UILabel.swift in Sources */,
 				8CE832E92B637B6D004B4E6D /* HomeViewController.swift in Sources */,
+				8CA197B72B74723D0025E9F9 /* EnterPhoneViewModel.swift in Sources */,
 				8C8D4AF62B68AD60007D1D77 /* BottomTitlesView.swift in Sources */,
 				8C06580E2B73249300F6C9C3 /* RegisterModel.swift in Sources */,
 				8CD8582A2B739C9E0077B2A8 /* LanguageButton.swift in Sources */,
 				8CD354592B6B8A2D004FFE0F /* FeedbackButton.swift in Sources */,
 				8C25CE082B6DEB7C00B345BA /* MapView.swift in Sources */,
 				8C958FE12B73402C00299AF8 /* LaunchView.swift in Sources */,
+				8CA197B92B7472440025E9F9 /* EnterPhoneView.swift in Sources */,
 				8CAB7CD02B7464AA0075C4DE /* Ex+UIFond.swift in Sources */,
 				8C0658122B73254200F6C9C3 /* RegisterViewController.swift in Sources */,
 				8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */,
