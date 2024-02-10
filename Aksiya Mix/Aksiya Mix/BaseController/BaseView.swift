@@ -7,10 +7,36 @@
 
 import UIKit
 
-class BaseView: UIView {
+protocol BaseViewDelegate {
+    func backButtonTapped()
+    func notificationTapped()
+    func optionsTapped()
     
-    lazy var searchView: UIView = {
+    func textFieldDidBeginEditing(textField: UITextField)
+    func textFieldDidEndEditing(_ textField: UITextField)
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)
+}
+
+enum BaseMode {
+    case home, search
+}
+
+class BaseView: UIView, SearchViewDelegate {
+    
+    var delegate: BaseViewDelegate?
+    
+    var mode: BaseMode? {
+        get {
+            return .home
+        }
+        set {
+            searchView.mode = newValue
+        }
+    }
+    
+    lazy var searchView: SearchView = {
         let search = SearchView()
+        search.delegate = self
         search.translatesAutoresizingMaskIntoConstraints = false
         return search
     }()
@@ -53,5 +79,31 @@ class BaseView: UIView {
             make.left.right.bottom.equalTo(self)
         }
     }
+    
+    func backButtonTapped() {
+        delegate?.backButtonTapped()
+    }
+    
+    func notificationTapped() {
+        delegate?.notificationTapped()
+    }
+    
+    func optionsTapped() {
+        delegate?.optionsTapped()
+    }
+
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        delegate?.textFieldDidBeginEditing(textField: textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        delegate?.textFieldDidEndEditing(textField)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) {
+        delegate?.textField(textField, shouldChangeCharactersIn: range, replacementString: string)
+    }
+
     
 }

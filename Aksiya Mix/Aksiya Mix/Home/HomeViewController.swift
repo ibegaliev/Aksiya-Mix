@@ -13,7 +13,11 @@ class HomeViewController: BaseViewController, HomeViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mode = .home
+
         homeView.delegate = self
+        
         backView.backView.addSubview(homeView)
         homeView.snp.makeConstraints { make in
             make.edges.equalTo(backView.backView)
@@ -25,6 +29,12 @@ class HomeViewController: BaseViewController, HomeViewDelegate {
         let controller = SingleProductViewController()
         
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    override func textFieldDidBeginEditing(textField: UITextField) {
+        let controller = SearchController()
+        controller.modalPresentationStyle = .overFullScreen
+        present(controller, animated: true)
     }
     
 }

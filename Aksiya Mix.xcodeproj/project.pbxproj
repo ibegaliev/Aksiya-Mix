@@ -34,6 +34,8 @@
 		8C7507A82B7540C200DFB69A /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7507A72B7540C200DFB69A /* InputFieldView.swift */; };
 		8C77817B2B6A6ADE00CA6D0A /* CostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C77817A2B6A6ADE00CA6D0A /* CostView.swift */; };
 		8C77817D2B6A6DC500CA6D0A /* Ex+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C77817C2B6A6DC500CA6D0A /* Ex+UILabel.swift */; };
+		8C7FB0002B7738AB0062BF59 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FAFFF2B7738AB0062BF59 /* SearchController.swift */; };
+		8C7FB0022B7747CB0062BF59 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FB0012B7747CB0062BF59 /* BaseViewModel.swift */; };
 		8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */; };
 		8C8D4AF62B68AD60007D1D77 /* BottomTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */; };
 		8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D4AF72B68AD76007D1D77 /* HeaderView.swift */; };
@@ -157,6 +159,8 @@
 		8C7507A72B7540C200DFB69A /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 		8C77817A2B6A6ADE00CA6D0A /* CostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostView.swift; sourceTree = "<group>"; };
 		8C77817C2B6A6DC500CA6D0A /* Ex+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UILabel.swift"; sourceTree = "<group>"; };
+		8C7FAFFF2B7738AB0062BF59 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		8C7FB0012B7747CB0062BF59 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTitlesView.swift; sourceTree = "<group>"; };
 		8C8D4AF72B68AD76007D1D77 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -302,6 +306,7 @@
 				8CE832E22B6379A5004B4E6D /* TabbarController */,
 				8CE832EC2B638286004B4E6D /* BaseController */,
 				8CE832D82B637495004B4E6D /* Home */,
+				8C7FAFFE2B7738710062BF59 /* SearchHome */,
 				8C926F952B69F1700049A1B7 /* SingleProduct */,
 			);
 			path = "Aksiya Mix";
@@ -443,6 +448,14 @@
 				8C7507A72B7540C200DFB69A /* InputFieldView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8C7FAFFE2B7738710062BF59 /* SearchHome */ = {
+			isa = PBXGroup;
+			children = (
+				8C7FAFFF2B7738AB0062BF59 /* SearchController.swift */,
+			);
+			path = SearchHome;
 			sourceTree = "<group>";
 		};
 		8C8D4AF42B68AD53007D1D77 /* Files */ = {
@@ -732,6 +745,7 @@
 			children = (
 				8CE832ED2B638400004B4E6D /* BaseViewController.swift */,
 				8C661F8F2B641D1C00437F0D /* BaseView.swift */,
+				8C7FB0012B7747CB0062BF59 /* BaseViewModel.swift */,
 			);
 			path = BaseController;
 			sourceTree = "<group>";
@@ -907,6 +921,7 @@
 				8CF5A7FA2B73D58600D65039 /* LanguageManager.swift in Sources */,
 				8C7507A42B753C9F00DFB69A /* EnterNameView.swift in Sources */,
 				8CE832DD2B637909004B4E6D /* HomeModel.swift in Sources */,
+				8C7FB0002B7738AB0062BF59 /* SearchController.swift in Sources */,
 				8C461EBF2B64CEF8004DC171 /* BannerCell.swift in Sources */,
 				8CA97E732B74F0B60020A80F /* InputNumberView.swift in Sources */,
 				8CF455972B64DFA700E3EAB4 /* ItemsCell.swift in Sources */,
@@ -929,6 +944,7 @@
 				8CF5A7F82B73D51600D65039 /* UserDefaultsManager.swift in Sources */,
 				8C979E1E2B6C535D00C43155 /* SelectableColorView.swift in Sources */,
 				8CEA12FF2B6C6498009CADEB /* DescriptionView.swift in Sources */,
+				8C7FB0022B7747CB0062BF59 /* BaseViewModel.swift in Sources */,
 				8CF455992B64E67600E3EAB4 /* TypesCell.swift in Sources */,
 				8C7507A62B753CA900DFB69A /* EnterNameViewModel.swift in Sources */,
 				8C289D4A2B693AF300B2FEAC /* TypeCell.swift in Sources */,
