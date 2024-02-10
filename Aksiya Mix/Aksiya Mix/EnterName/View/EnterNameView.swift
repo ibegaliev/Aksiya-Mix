@@ -1,5 +1,5 @@
 //
-//  EnterCodeView.swift
+//  EnterNameView.swift
 //  Aksiya Mix
 //
 //  Created by iBegaliev on 2/8/24.
@@ -7,43 +7,29 @@
 
 import UIKit
 
-protocol EnterCodeViewDelegate {
-    func sentTapped()
-}
-
-class EnterCodeView: UIView {
-    
-    var delegate: EnterCodeViewDelegate?
+class EnterNameView: UIView {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = .appFont(ofSize: 24, weight: .semibold)
-        lbl.text = LyricsManager.getLyrics(type: .enterCode)
+        lbl.text = LyricsManager.getLyrics(type: .enterName)
         return lbl
     }()
     
     lazy var descriptionLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = .appFont(ofSize: 16, weight: .regular)
-        lbl.text = LyricsManager.getLyrics(type: .enterDescription)
+        lbl.text = LyricsManager.getLyrics(type: .enterNameDescription)
         lbl.numberOfLines = 0
         lbl.textAlignment = .center
         lbl.textColor = .spacetext
         return lbl
     }()
     
-    lazy var otpField: OtpFieldView = {
-        let view = OtpFieldView()
+    lazy var inputFieldView: InputFieldView = {
+        let view = InputFieldView()
         
         return view
-    }()
-    
-    lazy var returnButton: UIButton = {
-        let btn = UIButton()
-        btn.setTitle(LyricsManager.getLyrics(type: .resentCode), for: .normal)
-        btn.setTitleColor(.selectBlue, for: .normal)
-        btn.titleLabel?.font = .appFont(ofSize: 16, weight: .regular)
-        return btn
     }()
     
     lazy var sentCode: BlueButton = {
@@ -77,6 +63,7 @@ class EnterCodeView: UIView {
         stack.spacing = 32
         return stack
     }()
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -91,7 +78,7 @@ class EnterCodeView: UIView {
     private func setUI() {
         
         backgroundColor = .backColor
-
+        
         addSubview(mainStack)
         
         [topStack, bottomStack].forEach { item in
@@ -102,10 +89,10 @@ class EnterCodeView: UIView {
             topStack.addArrangedSubview(item)
         }
         
-        [otpField, returnButton, sentCode].forEach { item in
+        [inputFieldView, sentCode].forEach { item in
             bottomStack.addArrangedSubview(item)
         }
-        
+
     }
     
     private func setConstraints() {
@@ -117,7 +104,7 @@ class EnterCodeView: UIView {
     
     @objc
     func sentTapped() {
-        delegate?.sentTapped()
+        
     }
     
 }

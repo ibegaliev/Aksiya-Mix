@@ -9,4 +9,10 @@ import UIKit
 
 class EnterNameController: UIViewController {
     
+    let viewModel = EnterNameViewModel()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view = viewModel.view
+    }
 }
