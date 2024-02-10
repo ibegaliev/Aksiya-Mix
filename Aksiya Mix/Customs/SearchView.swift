@@ -54,6 +54,8 @@ class SearchView: UIView, SearchTextFieldDelegate {
                     [closeButton, rightButton].forEach { item in
                         item.isHidden = true
                     }
+                case .none:
+                    isHidden = true
             }
         }
     }

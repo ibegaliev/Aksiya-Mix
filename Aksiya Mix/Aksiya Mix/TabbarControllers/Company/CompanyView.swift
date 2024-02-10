@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol CompanyViewDelegate {
+    func selectedCompany(index: Int)
+}
+
 class CompanyView: UIView, UITableViewDelegate, UITableViewDataSource {
+    
+    var delegate: CompanyViewDelegate?
     
     lazy var tableView: UITableView = {
         let table = UITableView()
@@ -50,6 +56,10 @@ class CompanyView: UIView, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyCell", for: indexPath) as! CompanyCell
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.selectedCompany(index: indexPath.row)
     }
     
 }

@@ -18,7 +18,7 @@ protocol BaseViewDelegate {
 }
 
 enum BaseMode {
-    case home, search, option
+    case home, search, option, none
 }
 
 class BaseView: UIView, SearchViewDelegate {
