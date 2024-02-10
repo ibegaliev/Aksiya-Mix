@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol EnterNameViewDelegate {
+    func nextTapped()
+}
+
 class EnterNameView: UIView {
+    
+    var delegate: EnterNameViewDelegate?
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -104,7 +110,7 @@ class EnterNameView: UIView {
     
     @objc
     func sentTapped() {
-        
+        delegate?.nextTapped()
     }
     
 }
