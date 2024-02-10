@@ -34,7 +34,12 @@ class BaseViewController: UIViewController, BaseViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.isNavigationBarHidden = false
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.isNavigationBarHidden = true
         navigationController?.navigationBar.isUserInteractionEnabled = true
     }
     

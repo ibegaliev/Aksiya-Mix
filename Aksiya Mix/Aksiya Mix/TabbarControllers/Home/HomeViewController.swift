@@ -13,16 +13,12 @@ class HomeViewController: BaseViewController, HomeViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         mode = .home
-
         homeView.delegate = self
-        
         backView.backView.addSubview(homeView)
         homeView.snp.makeConstraints { make in
             make.edges.equalTo(backView.backView)
         }
-        
     }
     
     func tapped() {

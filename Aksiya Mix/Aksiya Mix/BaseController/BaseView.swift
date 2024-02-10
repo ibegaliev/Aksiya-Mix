@@ -60,9 +60,10 @@ class BaseView: UIView, SearchViewDelegate {
     private func setUI() {
         
         backgroundColor = .backColor
-        
+
         addSubview(searchView)
         addSubview(backView)
+        
     }
     
     private func setConstraints() {
