@@ -45,6 +45,13 @@ class SearchView: UIView, SearchTextFieldDelegate {
                         item.isHidden = false
                     }
                     textField.tf.becomeFirstResponder()
+                case .option:
+                    layer.cornerRadius = 8
+                    layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+                    mainStack.spacing = 8
+                    [closeButton, rightButton].forEach { item in
+                        item.isHidden = true
+                    }
             }
         }
     }

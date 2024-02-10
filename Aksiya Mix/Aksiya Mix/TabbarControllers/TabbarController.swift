@@ -22,7 +22,7 @@ class TabbarController: UITabBarController {
     }()
 
     lazy var companyViewController: UIViewController = {
-        let vc = HomeViewController()
+        let vc = CompanyController()
 
         return vc
     }()
@@ -66,7 +66,7 @@ class TabbarController: UITabBarController {
         
         homeViewController.tabBarItem.selectedImage = UIImage.tabbar_home_Selected
         categoryViewController.tabBarItem.selectedImage = UIImage.tabbar_Grid_Selected
-        companyViewController.tabBarItem.selectedImage = UIImage.tabbar_Company_Unselect
+        companyViewController.tabBarItem.selectedImage = UIImage.tabbar_Company_Select
         selectViewController.tabBarItem.selectedImage = UIImage.tabbar_Heard_Unselect
         userViewController.tabBarItem.selectedImage = UIImage.tabbar_Person_Unselect
         

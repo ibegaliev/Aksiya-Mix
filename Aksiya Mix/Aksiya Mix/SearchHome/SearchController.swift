@@ -18,4 +18,8 @@ class SearchController: BaseViewController {
         dismiss(animated: true)
     }
     
+    override func optionsTapped() {
+        
+    }
+    
 }
