@@ -37,6 +37,8 @@ class BottomTypeCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
     }
     
     private func setUI() {
+        contentView.layer.cornerRadius = 8
+        contentView.clipsToBounds = true
         contentView.backgroundColor = .white
         contentView.addSubview(collectionView)
     }

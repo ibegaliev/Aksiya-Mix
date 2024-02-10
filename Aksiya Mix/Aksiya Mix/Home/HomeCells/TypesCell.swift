@@ -86,7 +86,10 @@ class TypesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
     }
  
     private func setUI() {
+        
         contentView.addSubview(mainStack)
+        contentView.layer.cornerRadius = 8
+        contentView.clipsToBounds = true
         
         [titleStack, collectionStack].forEach { item in
             mainStack.addArrangedSubview(item)

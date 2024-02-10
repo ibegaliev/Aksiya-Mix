@@ -54,7 +54,10 @@ class ItemsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
     }
     
     private func setUI() {
-        addSubview(stack)
+        
+        contentView.addSubview(stack)
+        contentView.layer.cornerRadius = 8
+        contentView.clipsToBounds = true
         
         [titleLabel, collectionView].forEach { item in
             stack.addArrangedSubview(item)
@@ -64,14 +67,14 @@ class ItemsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
     
     private func setConstraints() {
         stack.snp.makeConstraints { make in
-            make.top.bottom.equalTo(self).inset(12)
-            make.left.right.equalTo(self)
+            make.top.bottom.equalTo(contentView).inset(12)
+            make.left.right.equalTo(contentView)
         }
         titleLabel.snp.makeConstraints { make in
-            make.left.right.equalTo(self).inset(16)
+            make.left.right.equalTo(contentView).inset(16)
         }
         collectionView.snp.makeConstraints { make in
-            make.left.right.equalTo(self)
+            make.left.right.equalTo(contentView)
         }
     }
  

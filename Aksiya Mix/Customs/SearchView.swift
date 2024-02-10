@@ -43,6 +43,8 @@ class SearchView: UIView {
     }
     
     private func setUI() {
+        
+        backgroundColor = .white
         addSubview(mainStack)
         
         mainStack.addArrangedSubview(textField)

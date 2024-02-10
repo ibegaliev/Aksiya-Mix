@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.overrideUserInterfaceStyle = .light
-        window?.rootViewController = UINavigationController(rootViewController: LaunchScreenController())
+//        window?.rootViewController = UINavigationController(rootViewController: LaunchScreenController())
+        window?.rootViewController = UINavigationController(rootViewController: TabbarController())
         window?.makeKeyAndVisible()
     }
     

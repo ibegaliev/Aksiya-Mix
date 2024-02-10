@@ -50,7 +50,7 @@ struct BannerView: View {
             .padding(15)
         }
         .scrollIndicators(.hidden)
-        .background(Color.clear)
+        .background(Color.init(uiColor: .backColor))
     }
 }
 
