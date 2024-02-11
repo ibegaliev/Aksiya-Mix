@@ -17,7 +17,11 @@ struct BannerView: View {
                         HStack(spacing: 5) {
                             ForEach(locations) { location in
                                 GeometryReader { proxy in
-                                    let cardSize = proxy.size
+                                    
+                                    var cardSize = CGSize(
+                                        width: 0.screenWight,
+                                        height: 0.screenWight/2.5
+                                    )
                                     
                                     let minX = min((proxy.frame(in: .scrollView).minX - 30) * 1.4, size.width * 1.4)
                                     
@@ -38,16 +42,16 @@ struct BannerView: View {
                         }
                         .padding(.horizontal, 30)
                         .scrollTargetLayout()
-                        .frame(height: size.height, alignment: .top)
+                        .frame(height: 0.screenWight/2.5, alignment: .top)
                     }
                     .scrollTargetBehavior(.viewAligned)
                     .scrollIndicators(.hidden)
                 }
-                .frame(height: 500)
+                .frame(height: 0.screenWight/2.5)
                 .padding(.horizontal, -15)
                 .padding(.top, 20)
             }
-            .padding(15)
+//            .padding(15)
         }
         .scrollIndicators(.hidden)
         .background(Color.init(uiColor: .backColor))

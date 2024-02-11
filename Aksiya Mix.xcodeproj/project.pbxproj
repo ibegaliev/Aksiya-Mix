@@ -81,8 +81,8 @@
 		8CBA40072B77934300F92F98 /* SingleCompanyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40062B77934300F92F98 /* SingleCompanyView.swift */; };
 		8CBA40092B77935200F92F98 /* SingleCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40082B77935200F92F98 /* SingleCompanyController.swift */; };
 		8CBE7BC92B78F101001559E9 /* SingleCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE7BC82B78F101001559E9 /* SingleCategoryController.swift */; };
-		8CBE7BCB2B78F3BE001559E9 /* SingleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE7BCA2B78F3BE001559E9 /* SingleViewModel.swift */; };
-		8CBE7BCD2B78F4FD001559E9 /* SingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE7BCC2B78F4FD001559E9 /* SingleView.swift */; };
+		8CBE7BCB2B78F3BE001559E9 /* SingleCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE7BCA2B78F3BE001559E9 /* SingleCategoryViewModel.swift */; };
+		8CBE7BCD2B78F4FD001559E9 /* SingleCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE7BCC2B78F4FD001559E9 /* SingleCategoryView.swift */; };
 		8CC185F42B751A5400B13400 /* EnterCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185F32B751A5400B13400 /* EnterCodeViewController.swift */; };
 		8CC185F62B751A6000B13400 /* EnterNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185F52B751A6000B13400 /* EnterNameController.swift */; };
 		8CC185F82B751BCE00B13400 /* EnterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185F72B751BCE00B13400 /* EnterCodeView.swift */; };
@@ -219,8 +219,8 @@
 		8CBA40062B77934300F92F98 /* SingleCompanyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCompanyView.swift; sourceTree = "<group>"; };
 		8CBA40082B77935200F92F98 /* SingleCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCompanyController.swift; sourceTree = "<group>"; };
 		8CBE7BC82B78F101001559E9 /* SingleCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCategoryController.swift; sourceTree = "<group>"; };
-		8CBE7BCA2B78F3BE001559E9 /* SingleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleViewModel.swift; sourceTree = "<group>"; };
-		8CBE7BCC2B78F4FD001559E9 /* SingleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleView.swift; sourceTree = "<group>"; };
+		8CBE7BCA2B78F3BE001559E9 /* SingleCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCategoryViewModel.swift; sourceTree = "<group>"; };
+		8CBE7BCC2B78F4FD001559E9 /* SingleCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCategoryView.swift; sourceTree = "<group>"; };
 		8CC185F32B751A5400B13400 /* EnterCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeViewController.swift; sourceTree = "<group>"; };
 		8CC185F52B751A6000B13400 /* EnterNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameController.swift; sourceTree = "<group>"; };
 		8CC185F72B751BCE00B13400 /* EnterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeView.swift; sourceTree = "<group>"; };
@@ -672,8 +672,8 @@
 			isa = PBXGroup;
 			children = (
 				8CBE7BC82B78F101001559E9 /* SingleCategoryController.swift */,
-				8CBE7BCA2B78F3BE001559E9 /* SingleViewModel.swift */,
-				8CBE7BCC2B78F4FD001559E9 /* SingleView.swift */,
+				8CBE7BCA2B78F3BE001559E9 /* SingleCategoryViewModel.swift */,
+				8CBE7BCC2B78F4FD001559E9 /* SingleCategoryView.swift */,
 			);
 			path = SingleCategory;
 			sourceTree = "<group>";
@@ -1021,7 +1021,7 @@
 				8CE832E12B637919004B4E6D /* HomeViewModel.swift in Sources */,
 				8CE424542B6A4DA600E6CDA9 /* SingleNavigationVIew.swift in Sources */,
 				8C0658162B73287600F6C9C3 /* ChooseLanguageViewController.swift in Sources */,
-				8CBE7BCD2B78F4FD001559E9 /* SingleView.swift in Sources */,
+				8CBE7BCD2B78F4FD001559E9 /* SingleCategoryView.swift in Sources */,
 				8CC185F62B751A6000B13400 /* EnterNameController.swift in Sources */,
 				8CF4559D2B64EF0C00E3EAB4 /* SingleProductCell.swift in Sources */,
 				8CE832EE2B638400004B4E6D /* BaseViewController.swift in Sources */,
@@ -1041,7 +1041,7 @@
 				8C80FB022B7892830053A9EB /* CategoryCell.swift in Sources */,
 				8CBA40072B77934300F92F98 /* SingleCompanyView.swift in Sources */,
 				8C289D4A2B693AF300B2FEAC /* TypeCell.swift in Sources */,
-				8CBE7BCB2B78F3BE001559E9 /* SingleViewModel.swift in Sources */,
+				8CBE7BCB2B78F3BE001559E9 /* SingleCategoryViewModel.swift in Sources */,
 				8C19B0B32B63556A007D8872 /* Aksiya_Mix.xcdatamodeld in Sources */,
 				8CA197B52B7472170025E9F9 /* EnterPhoneViewController.swift in Sources */,
 				8CE832E72B637A6D004B4E6D /* Ex+String.swift in Sources */,
