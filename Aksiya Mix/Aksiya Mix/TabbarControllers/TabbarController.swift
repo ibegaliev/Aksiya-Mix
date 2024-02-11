@@ -16,7 +16,7 @@ class TabbarController: UITabBarController {
     }()
 
     lazy var categoryViewController: UIViewController = {
-        let vc = HomeViewController()
+        let vc = CategoryController()
 
         return vc
     }()

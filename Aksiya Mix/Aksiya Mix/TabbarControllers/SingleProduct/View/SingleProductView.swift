@@ -28,7 +28,7 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
         view.register(UserDatesCell.self, forCellReuseIdentifier: "UserDatesCell")
         view.register(LineCell.self, forCellReuseIdentifier: "LineCell")
         view.register(StoreCell.self, forCellReuseIdentifier: "StoreCell")
-        view.contentInset = .init(top: -10, left: 0, bottom: 100, right: 0)
+        view.contentInset = .init(top: -47, left: 0, bottom: 100, right: 0)
         view.backgroundColor = .backColor
         return view
     }()
@@ -41,11 +41,11 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
         return view
     }()
     
-    lazy var navigationView: UIView = {
-        let view = SingleNavigationVIew()
-        view.delegate = self
-        return view
-    }()
+//    lazy var navigationView: UIView = {
+//        let view = SingleNavigationVIew()
+//        view.delegate = self
+//        return view
+//    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,7 +60,7 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
     
     private func setUI() {
         addSubview(tableView)
-        addSubview(navigationView)
+//        addSubview(navigationView)
         addSubview(topNavigation)
     }
     
@@ -75,10 +75,10 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
             make.edges.equalTo(self)
         }
         
-        navigationView.snp.makeConstraints { make in
-            make.top.equalTo(self).inset(44)
-            make.left.right.equalTo(self)
-        }
+//        navigationView.snp.makeConstraints { make in
+//            make.top.equalTo(self).inset(44)
+//            make.left.right.equalTo(self)
+//        }
         
     }
     

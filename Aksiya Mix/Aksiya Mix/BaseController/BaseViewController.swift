@@ -24,25 +24,25 @@ class BaseViewController: UIViewController, BaseViewDelegate {
         super.viewDidLoad()
         self.view = backView
         backView.delegate = self
+        setNavigation()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
+        navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.isUserInteractionEnabled = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.isUserInteractionEnabled = false
+    }
+    
+    private func setNavigation() {
+        navigationItem.backButtonTitle = " "
+    }
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        navigationController?.isNavigationBarHidden = true
-        navigationController?.navigationBar.isUserInteractionEnabled = true
-    }
-    
     func backButtonTapped() {
         
     }
