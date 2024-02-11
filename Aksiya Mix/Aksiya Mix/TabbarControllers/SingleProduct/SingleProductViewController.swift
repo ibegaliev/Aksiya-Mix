@@ -13,7 +13,7 @@ class SingleProductViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mode = .none
+        mode = BaseMode.none
         viewModel.view.delegate = self
         backView.addSubview(viewModel.view)
         viewModel.view.snp.makeConstraints { make in

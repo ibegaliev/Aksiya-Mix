@@ -7,13 +7,20 @@
 
 import UIKit
 
-class CategoryController: UIViewController {
+class CategoryController: UIViewController, CategoryViewDelegate {
     
     let viewModel = CategoryViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view = viewModel.view
+        viewModel.view.delegate = self
+    }
+    
+    func selected(index: Int) {
+        let controller = SingleCategoryController()
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }

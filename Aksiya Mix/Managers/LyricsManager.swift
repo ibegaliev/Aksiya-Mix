@@ -21,6 +21,7 @@ enum LyricsManagerType {
     case enterNameDescription
     case save
     case name
+    case departaments
 }
 
 class LyricsManager {
@@ -54,6 +55,8 @@ class LyricsManager {
                     return "Saqlash"
                 case .name:
                     return "Ism"
+                case .departaments:
+                    return "Bo'limlar"
             }
         } else {
             switch type {
@@ -83,6 +86,8 @@ class LyricsManager {
                     return "Сохранить"
                 case .name:
                     return "Имя"
+                case .departaments:
+                    return "Отделы"
             }
         }
     }
