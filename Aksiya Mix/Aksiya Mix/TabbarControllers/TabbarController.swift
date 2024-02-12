@@ -11,7 +11,7 @@ class TabbarController: UITabBarController {
     
     lazy var homeViewController: UIViewController = {
         let vc = HomeViewController()
-
+        
         return vc
     }()
 
@@ -58,6 +58,7 @@ class TabbarController: UITabBarController {
     }
     
     private func setOthers() {
+        
         homeViewController.tabBarItem.image = UIImage.tabbar_home_UnSelected
         categoryViewController.tabBarItem.image = UIImage.tabbar_Grid_Unselected
         companyViewController.tabBarItem.image = UIImage.tabbar_Company_Unselect
@@ -71,6 +72,10 @@ class TabbarController: UITabBarController {
         userViewController.tabBarItem.selectedImage = UIImage.tabbar_Person_Unselect
         
         tabBar.backgroundColor = .white
+        
+        navigationItem.backButtonTitle = ""
+        navigationController?.navigationBar.tintColor = .red
+        
     }
     
 }

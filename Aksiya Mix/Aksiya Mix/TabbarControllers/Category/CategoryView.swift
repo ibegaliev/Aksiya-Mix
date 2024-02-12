@@ -68,7 +68,7 @@ class CategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
             make.left.right.equalTo(navigationView).inset(16)
         }
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(navigationView.snp_bottomMargin)
+            make.top.equalTo(navigationView.snp_bottomMargin).inset(-8)
             make.left.right.bottom.equalTo(self)
         }
     }

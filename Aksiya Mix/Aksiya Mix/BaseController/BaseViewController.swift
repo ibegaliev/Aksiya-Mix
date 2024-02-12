@@ -25,6 +25,7 @@ class BaseViewController: UIViewController, BaseViewDelegate {
         self.view = backView
         backView.delegate = self
         setNavigation()
+        navigationItem.backButtonTitle = ""
     }
 
     override func viewWillAppear(_ animated: Bool) {

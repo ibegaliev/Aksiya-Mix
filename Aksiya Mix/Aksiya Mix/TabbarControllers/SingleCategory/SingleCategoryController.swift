@@ -7,13 +7,23 @@
 
 import UIKit
 
-class SingleCategoryController: BaseViewController {
+class SingleCategoryController: BaseViewController, SingleCategoryViewDelegate {
     
     let viewModel = SingleCategoryViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = viewModel.view
+        viewModel.view.delegate = self
+        view.addSubview(viewModel.view)
+        viewModel.view.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
+    }
+    
+    func selectCategory(index: Int) {
+        let controller = SingleCategoryController()
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }

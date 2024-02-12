@@ -14,8 +14,8 @@ class BannerCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUI()
-        setConstraints()
+//        setUI()
+//        setConstraints()
         contentView.backgroundColor = .none
     }
     

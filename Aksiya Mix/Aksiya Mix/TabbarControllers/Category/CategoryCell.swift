@@ -49,6 +49,7 @@ class CategoryCell: UITableViewCell {
     lazy var leftStack: UIStackView = {
         let stack = UIStackView()
         stack.spacing = 8
+        stack.alignment = .center
         return stack
     }()
     
@@ -90,7 +91,7 @@ class CategoryCell: UITableViewCell {
         }
         
         mainImage.snp.makeConstraints { make in
-            make.height.width.equalTo(60)
+            make.height.width.equalTo(48)
         }
     }
     
