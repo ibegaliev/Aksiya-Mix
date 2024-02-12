@@ -13,6 +13,9 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         let tv = UITableView()
         tv.delegate = self
         tv.dataSource = self
+        tv.backgroundColor = .backColor
+        tv.register(CategoryCell.self, forCellReuseIdentifier: "CategoryCell")
+        tv.register(SingleCategoryCell.self, forCellReuseIdentifier: "SingleCategoryCell")
         return tv
     }()
     
@@ -37,14 +40,28 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        if section == 0 {
+            return 1
+        } else {
+            return 10
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SingleCategoryCell", for: indexPath) as! SingleCategoryCell
-        
-        return cell
+        if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SingleCategoryCell", for: indexPath) as! SingleCategoryCell
+            cell.separatorInset = .init(top: 0, left: 16, bottom: 16, right: 0)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+            cell.separatorInset = .init(top: 0, left: 0, bottom: 0, right: 0)
+            return cell
+        }
     }
     
 }
