@@ -7,7 +7,29 @@
 
 import UIKit
 
-class LikedSordsView: UIView {
+protocol LikedSordsViewDelegate {
+    func selectedSaved()
+    func selectedSeen()
+    func selectedended()
+}
+
+class LikedSordsView: UIView, LikedSordsItemDelegate {
+    
+    var delegate: LikedSordsViewDelegate?
+    
+    var selectedItem: Int? {
+        get {
+            return nil
+        }
+        set {
+            guard let newValue else { return }
+            let items = [savedView, seenView, endedView]
+            items.forEach { item in
+                item.isSelect = false
+            }
+            items[newValue].isSelect = true
+        }
+    }
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -19,18 +41,24 @@ class LikedSordsView: UIView {
     lazy var savedView: LikedSordsItem = {
         let view = LikedSordsItem()
         view.title = "Saralanganlar"
+        view.delegate = self
+        view.tag = 0
         return view
     }()
 
     lazy var seenView: LikedSordsItem = {
         let view = LikedSordsItem()
         view.title = "Yaqinda ko'rilganlar"
+        view.delegate = self
+        view.tag = 1
         return view
     }()
 
     lazy var endedView: LikedSordsItem = {
         let view = LikedSordsItem()
         view.title = "Tugagan e'lonlar"
+        view.delegate = self
+        view.tag = 2
         return view
     }()
     
@@ -57,6 +85,7 @@ class LikedSordsView: UIView {
         [savedView, seenView, endedView].forEach { item in
             mainStack.addArrangedSubview(item)
         }
+        addSubview(titleLabel)
     }
     
     private func setConstraints() {
@@ -65,73 +94,20 @@ class LikedSordsView: UIView {
             make.left.right.equalTo(self).inset(8)
         }
         titleLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(mainStack.snp_bottomMargin).inset(20)
+            make.bottom.equalTo(mainStack.snp_topMargin).inset(-10)
             make.left.right.equalTo(self).inset(16)
         }
     }
     
-}
+    func selected(tag: Int) {
+        if tag == 0 {
+            delegate?.selectedSaved()
+        } else if tag == 1 {
+            delegate?.selectedSeen()
+        } else if tag == 2 {
+            delegate?.selectedended()
+        }
+    }
 
-
-class LikedSordsItem: UIView {
-    
-    var title: String? {
-        get {
-            return nil
-        }
-        set {
-            titleLabel.text = newValue
-        }
-    }
-    
-    lazy var titleLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.textAlignment = .center
-        lbl.font = .appFont(ofSize: 14, weight: .medium)
-        return lbl
-    }()
-    
-    lazy var lineView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 1
-        view.clipsToBounds = true
-        view.backgroundColor = .clear
-        return view
-    }()
-    
-    lazy var stack: UIStackView = {
-        let stack = UIStackView()
-        stack.spacing = 4
-        stack.distribution = .fill
-        stack.alignment = .fill
-        stack.axis = .vertical
-        return stack
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setUI()
-        setConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
-    
-    private func setUI() {
-        addSubview(stack)
-        [titleLabel, lineView].forEach { item in
-            stack.addArrangedSubview(item)
-        }
-    }
-    
-    private func setConstraints() {
-        stack.snp.makeConstraints { make in
-            make.edges.equalTo(self).inset(2)
-        }
-        lineView.snp.makeConstraints { make in
-            make.height.equalTo(2)
-        }
-    }
     
 }

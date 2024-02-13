@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class LikedController: BaseViewController {
+class LikedController: BaseViewController, LikedViewDelegate {
     
     let viewModel = LikedViewModel()
     
@@ -18,10 +18,24 @@ class LikedController: BaseViewController {
     }
     
     private func setController() {
+        viewModel.view.delegate = self
         view.addSubview(viewModel.view)
         viewModel.view.snp.makeConstraints { make in
             make.edges.equalTo(view)
         }
     }
+    
+    func selectedSaved() {
+        viewModel.view.selectedItem = 0
+    }
+    
+    func selectedSeen() {
+        viewModel.view.selectedItem = 1
+    }
+    
+    func selectedended() {
+        viewModel.view.selectedItem = 2
+    }
+
     
 }

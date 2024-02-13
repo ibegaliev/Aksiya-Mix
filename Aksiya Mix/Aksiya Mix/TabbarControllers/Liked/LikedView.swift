@@ -6,10 +6,25 @@
 //
 
 import UIKit
-import Tabman
 
+protocol LikedViewDelegate {
+    func selectedSaved()
+    func selectedSeen()
+    func selectedended()
+}
 
-class LikedView: UIView {
+class LikedView: UIView, LikedSordsViewDelegate {
+    
+    var delegate: LikedViewDelegate?
+    
+    var selectedItem: Int? {
+        get {
+            return nil
+        }
+        set {
+            headerView.selectedItem = newValue
+        }
+    }
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -20,6 +35,7 @@ class LikedView: UIView {
     
     lazy var headerView: LikedSordsView = {
         let view = LikedSordsView()
+        view.delegate = self
         view.backgroundColor = .white
         return view
     }()
@@ -62,6 +78,31 @@ class LikedView: UIView {
         headerView.snp.makeConstraints { make in
             make.height.equalTo(120)
         }
+    }
+    
+    func selectedSaved() {
+        delegate?.selectedSaved()
+    }
+    
+    func selectedSeen() {
+        delegate?.selectedSeen()
+    }
+    
+    func selectedended() {
+        delegate?.selectedended()
+    }
+    
+}
+
+class LikedCollectionCell: UICollectionViewCell {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
     }
     
 }
