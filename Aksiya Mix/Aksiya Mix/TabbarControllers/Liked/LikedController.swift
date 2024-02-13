@@ -18,11 +18,15 @@ class LikedController: BaseViewController, LikedViewDelegate {
     }
     
     private func setController() {
+        
         viewModel.view.delegate = self
+        viewModel.view.selectedItem = 0
+        
         view.addSubview(viewModel.view)
         viewModel.view.snp.makeConstraints { make in
             make.edges.equalTo(view)
         }
+        
     }
     
     func selectedSaved() {

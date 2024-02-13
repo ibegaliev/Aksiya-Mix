@@ -34,13 +34,13 @@ class LikedSordsView: UIView, LikedSordsItemDelegate {
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = .appFont(ofSize: 18, weight: .bold)
-        lbl.text = LyricsManager.getLyrics(type: .departaments)
+        lbl.text = LyricsManager.getLyrics(type: .likedTitle)
         return lbl
     }()
     
     lazy var savedView: LikedSordsItem = {
         let view = LikedSordsItem()
-        view.title = "Saralanganlar"
+        view.title = LyricsManager.getLyrics(type: .likedTitle)
         view.delegate = self
         view.tag = 0
         return view
@@ -48,7 +48,7 @@ class LikedSordsView: UIView, LikedSordsItemDelegate {
 
     lazy var seenView: LikedSordsItem = {
         let view = LikedSordsItem()
-        view.title = "Yaqinda ko'rilganlar"
+        view.title = LyricsManager.getLyrics(type: .resentlySeen)
         view.delegate = self
         view.tag = 1
         return view
@@ -56,7 +56,7 @@ class LikedSordsView: UIView, LikedSordsItemDelegate {
 
     lazy var endedView: LikedSordsItem = {
         let view = LikedSordsItem()
-        view.title = "Tugagan e'lonlar"
+        view.title = LyricsManager.getLyrics(type: .endedTitle)
         view.delegate = self
         view.tag = 2
         return view
