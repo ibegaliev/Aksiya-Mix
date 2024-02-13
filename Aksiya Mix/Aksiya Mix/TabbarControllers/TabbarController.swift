@@ -28,7 +28,7 @@ class TabbarController: UITabBarController {
     }()
 
     lazy var selectViewController: UIViewController = {
-        let vc = HomeViewController()
+        let vc = LikedController()
 
         return vc
     }()

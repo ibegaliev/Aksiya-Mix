@@ -36,6 +36,11 @@
 		8C77817D2B6A6DC500CA6D0A /* Ex+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C77817C2B6A6DC500CA6D0A /* Ex+UILabel.swift */; };
 		8C7FB0002B7738AB0062BF59 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FAFFF2B7738AB0062BF59 /* SearchController.swift */; };
 		8C80FB022B7892830053A9EB /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80FB012B7892830053A9EB /* CategoryCell.swift */; };
+		8C8275CC2B7B67E0004C445B /* LikedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8275CB2B7B67E0004C445B /* LikedController.swift */; };
+		8C8275CE2B7B6A3D004C445B /* LikedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8275CD2B7B6A3D004C445B /* LikedView.swift */; };
+		8C8275D02B7B6A47004C445B /* LikedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8275CF2B7B6A47004C445B /* LikedViewModel.swift */; };
+		8C8275D32B7B6EEA004C445B /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 8C8275D22B7B6EEA004C445B /* Tabman */; };
+		8C8275D52B7B7B1F004C445B /* LikedSordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8275D42B7B7B1F004C445B /* LikedSordsView.swift */; };
 		8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */; };
 		8C85AF6C2B77A6DD00B3A7FC /* CompanyMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C85AF6B2B77A6DD00B3A7FC /* CompanyMainCell.swift */; };
 		8C8D4AF62B68AD60007D1D77 /* BottomTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */; };
@@ -176,6 +181,10 @@
 		8C77817C2B6A6DC500CA6D0A /* Ex+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UILabel.swift"; sourceTree = "<group>"; };
 		8C7FAFFF2B7738AB0062BF59 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		8C80FB012B7892830053A9EB /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		8C8275CB2B7B67E0004C445B /* LikedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedController.swift; sourceTree = "<group>"; };
+		8C8275CD2B7B6A3D004C445B /* LikedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedView.swift; sourceTree = "<group>"; };
+		8C8275CF2B7B6A47004C445B /* LikedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedViewModel.swift; sourceTree = "<group>"; };
+		8C8275D42B7B7B1F004C445B /* LikedSordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedSordsView.swift; sourceTree = "<group>"; };
 		8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		8C85AF6B2B77A6DD00B3A7FC /* CompanyMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyMainCell.swift; sourceTree = "<group>"; };
 		8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTitlesView.swift; sourceTree = "<group>"; };
@@ -269,6 +278,7 @@
 			files = (
 				8C9894E72B64AFFF0079F78C /* SnapKit in Frameworks */,
 				8C9894EA2B64B7D60079F78C /* IQKeyboardManagerSwift in Frameworks */,
+				8C8275D32B7B6EEA004C445B /* Tabman in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +493,17 @@
 				8C7FAFFF2B7738AB0062BF59 /* SearchController.swift */,
 			);
 			path = SearchHome;
+			sourceTree = "<group>";
+		};
+		8C8275CA2B7B6733004C445B /* Liked */ = {
+			isa = PBXGroup;
+			children = (
+				8C8275CB2B7B67E0004C445B /* LikedController.swift */,
+				8C8275CD2B7B6A3D004C445B /* LikedView.swift */,
+				8C8275CF2B7B6A47004C445B /* LikedViewModel.swift */,
+				8C8275D42B7B7B1F004C445B /* LikedSordsView.swift */,
+			);
+			path = Liked;
 			sourceTree = "<group>";
 		};
 		8C85AF6A2B77A6C600B3A7FC /* Cells */ = {
@@ -792,6 +813,7 @@
 				8CE832D82B637495004B4E6D /* Home */,
 				8C8EFF8E2B7871B3002DE31D /* Category */,
 				8CEA8A3B2B775958000071FC /* Company */,
+				8C8275CA2B7B6733004C445B /* Liked */,
 				8C7FAFFE2B7738710062BF59 /* SearchHome */,
 				8C926F952B69F1700049A1B7 /* SingleProduct */,
 				8CBA40032B77905100F92F98 /* SingleCompany */,
@@ -864,6 +886,7 @@
 			packageProductDependencies = (
 				8C9894E62B64AFFF0079F78C /* SnapKit */,
 				8C9894E92B64B7D60079F78C /* IQKeyboardManagerSwift */,
+				8C8275D22B7B6EEA004C445B /* Tabman */,
 			);
 			productName = "Aksiya Mix";
 			productReference = 8C19B0A52B63556A007D8872 /* Aksiya Mix.app */;
@@ -940,6 +963,7 @@
 			packageReferences = (
 				8C9894E52B64AFFF0079F78C /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8C9894E82B64B7D60079F78C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				8C8275D12B7B6EEA004C445B /* XCRemoteSwiftPackageReference "Tabman" */,
 			);
 			productRefGroup = 8C19B0A62B63556A007D8872 /* Products */;
 			projectDirPath = "";
@@ -1014,6 +1038,7 @@
 				8CA97E732B74F0B60020A80F /* InputNumberView.swift in Sources */,
 				8CBA40092B77935200F92F98 /* SingleCompanyController.swift in Sources */,
 				8CF455972B64DFA700E3EAB4 /* ItemsCell.swift in Sources */,
+				8C8275D02B7B6A47004C445B /* LikedViewModel.swift in Sources */,
 				8CEF41602B6D3603000D9A0E /* StoreCell.swift in Sources */,
 				8C9BA7942B6A1ED5008C9420 /* SingleProductViewController.swift in Sources */,
 				8C661F902B641D1C00437F0D /* BaseView.swift in Sources */,
@@ -1024,6 +1049,7 @@
 				8CBE7BCD2B78F4FD001559E9 /* SingleCategoryView.swift in Sources */,
 				8CC185F62B751A6000B13400 /* EnterNameController.swift in Sources */,
 				8CF4559D2B64EF0C00E3EAB4 /* SingleProductCell.swift in Sources */,
+				8C8275D52B7B7B1F004C445B /* LikedSordsView.swift in Sources */,
 				8CE832EE2B638400004B4E6D /* BaseViewController.swift in Sources */,
 				8C8EFF942B7871E0002DE31D /* CategoryController.swift in Sources */,
 				8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */,
@@ -1042,6 +1068,7 @@
 				8CBA40072B77934300F92F98 /* SingleCompanyView.swift in Sources */,
 				8C289D4A2B693AF300B2FEAC /* TypeCell.swift in Sources */,
 				8CBE7BCB2B78F3BE001559E9 /* SingleCategoryViewModel.swift in Sources */,
+				8C8275CE2B7B6A3D004C445B /* LikedView.swift in Sources */,
 				8C19B0B32B63556A007D8872 /* Aksiya_Mix.xcdatamodeld in Sources */,
 				8CA197B52B7472170025E9F9 /* EnterPhoneViewController.swift in Sources */,
 				8CE832E72B637A6D004B4E6D /* Ex+String.swift in Sources */,
@@ -1067,6 +1094,7 @@
 				8CD354572B6B89CB004FFE0F /* FeedbackPityView.swift in Sources */,
 				8CE832DF2B637910004B4E6D /* HomeView.swift in Sources */,
 				8C9BA7962B6A1F88008C9420 /* SingleProductDM.swift in Sources */,
+				8C8275CC2B7B67E0004C445B /* LikedController.swift in Sources */,
 				8C17F2E12B73424400CD6506 /* LaunchViewModel.swift in Sources */,
 				8CF4559B2B64EB7900E3EAB4 /* BottomTypeCell.swift in Sources */,
 				8C73A90D2B6A272000AA80B5 /* SingleTopCell.swift in Sources */,
@@ -1451,6 +1479,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8C8275D12B7B6EEA004C445B /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman?tab=readme-ov-file";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.2;
+			};
+		};
 		8C9894E52B64AFFF0079F78C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -1470,6 +1506,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8C8275D22B7B6EEA004C445B /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C8275D12B7B6EEA004C445B /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
+		};
 		8C9894E62B64AFFF0079F78C /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8C9894E52B64AFFF0079F78C /* XCRemoteSwiftPackageReference "SnapKit" */;
