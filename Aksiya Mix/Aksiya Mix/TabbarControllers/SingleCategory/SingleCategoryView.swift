@@ -21,6 +21,7 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         tv.dataSource = self
         tv.backgroundColor = .backColor
         tv.separatorStyle = .none
+        tv.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 50, right: 0)
         tv.register(CategoryCell.self, forCellReuseIdentifier: "CategoryCell")
         tv.register(SingleCategoryCell.self, forCellReuseIdentifier: "SingleCategoryCell")
         return tv
@@ -30,6 +31,13 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         let view = UIView()
         view.backgroundColor = .white
         return view
+    }()
+    
+    lazy var titleLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.font = .appFont(ofSize: 18, weight: .bold)
+        lbl.text = LyricsManager.getLyrics(type: .departaments)
+        return lbl
     }()
         
     override init(frame: CGRect) {
@@ -46,6 +54,7 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         backgroundColor = .backColor
         addSubview(navigationView)
         addSubview(tableView)
+        navigationView.addSubview(titleLabel)
     }
     
     private func setConstraints() {
@@ -56,6 +65,10 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(navigationView.snp_bottomMargin).inset(-8)
             make.left.right.bottom.equalTo(self)
+        }
+        titleLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(navigationView).inset(20)
+            make.left.right.equalTo(navigationView).inset(32)
         }
     }
     

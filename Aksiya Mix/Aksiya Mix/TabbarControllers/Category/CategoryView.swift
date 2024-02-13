@@ -64,7 +64,7 @@ class CategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
             make.height.equalTo(100)
         }
         titleLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(navigationView).inset(16)
+            make.bottom.equalTo(navigationView).inset(20)
             make.left.right.equalTo(navigationView).inset(16)
         }
         tableView.snp.makeConstraints { make in
