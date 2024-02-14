@@ -11,8 +11,9 @@ class BlueButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .selectBlue
-        setTitleColor(.white, for: .normal)
+        
+        backgroundColor = .backBlue
+        setTitleColor(.selectBlue, for: .normal)
         layer.cornerRadius = 8
         clipsToBounds = true
         titleLabel?.font = .appFont(ofSize: 16, weight: .medium)
@@ -20,6 +21,7 @@ class BlueButton: UIButton {
         snp.makeConstraints { make in
             make.height.equalTo(48)
         }
+        
     }
     
     required init?(coder: NSCoder) {

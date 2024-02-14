@@ -32,9 +32,32 @@ class CompanyCell: UITableViewCell {
     
     lazy var descriptionLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "22k  Подписаться"
+        lbl.text = "2.5 тыс"
+        lbl.font = .appFont(ofSize: 10, weight: .regular)
+        lbl.textColor = .spacetext
+        return lbl
+    }()
+    
+    lazy var usernameLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "@karzinka_uz"
+        lbl.font = .appFont(ofSize: 12, weight: .bold)
+        lbl.textColor = .spacetext
+        return lbl
+    }()
+
+    lazy var starsIcon: UIImageView = {
+        let image = UIImageView()
+        image.image = .rating
+        image.tintColor = .spacetext
+        return image
+    }()
+    
+    lazy var countStars: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "4.9"
+        lbl.textColor = .spacetext
         lbl.font = .appFont(ofSize: 12, weight: .regular)
-        lbl.textColor = .spacetext 
         return lbl
     }()
     
@@ -69,6 +92,24 @@ class CompanyCell: UITableViewCell {
         return stack
     }()
     
+    lazy var bottomTitlesStack: UIStackView = {
+        let stack = UIStackView()
+        stack.spacing = 2
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        return stack
+    }()
+    
+    lazy var starsStack: UIStackView = {
+        let stack = UIStackView()
+        stack.spacing = 2
+        stack.axis = .horizontal
+        stack.alignment = .center
+        stack.distribution = .fill
+        return stack
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUI()
@@ -91,8 +132,14 @@ class CompanyCell: UITableViewCell {
         [mainImage, titleStack].forEach { item in
             leftStack.addArrangedSubview(item)
         }
-        [titleLabel, descriptionLabel].forEach { item in
+        [titleLabel, bottomTitlesStack, starsStack].forEach { item in
             titleStack.addArrangedSubview(item)
+        }
+        [descriptionLabel, usernameLabel].forEach { item in
+            bottomTitlesStack.addArrangedSubview(item)
+        }
+        [countStars, starsIcon].forEach { item in
+            starsStack.addArrangedSubview(item)
         }
     }
     
@@ -111,6 +158,9 @@ class CompanyCell: UITableViewCell {
         mainButton.snp.makeConstraints { make in
             make.height.equalTo(32)
             make.width.equalTo(104)
+        }
+        starsIcon.snp.makeConstraints { make in
+            make.width.height.equalTo(8)
         }
     }
     

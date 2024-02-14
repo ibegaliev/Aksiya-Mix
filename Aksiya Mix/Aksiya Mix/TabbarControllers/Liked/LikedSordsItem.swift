@@ -85,7 +85,7 @@ class LikedSordsItem: UIView {
             make.edges.equalTo(self).inset(2)
         }
         lineView.snp.makeConstraints { make in
-            make.height.equalTo(2)
+            make.height.equalTo(2.5)
         }
     }
     
