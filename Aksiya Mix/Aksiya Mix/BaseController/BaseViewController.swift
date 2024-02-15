@@ -20,6 +20,16 @@ class BaseViewController: UIViewController, BaseViewDelegate {
         }
     }
     
+    var showBackView: Bool? {
+        get {
+            return nil
+        }
+        set {
+            guard let newValue else { return }
+
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = backView

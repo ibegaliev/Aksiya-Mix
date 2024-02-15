@@ -29,8 +29,10 @@ class SearchView: UIView, SearchTextFieldDelegate {
         }
         set {
             guard let newValue else { return }
+            textField.tf.text = ""
             switch newValue {
                 case .home:
+                    textField.tf.resignFirstResponder()
                     mainStack.spacing = 8
                     rightButton.isHidden = false
                     [closeButton, optionsButton].forEach { item in

@@ -40,7 +40,7 @@ class CompanyCell: UITableViewCell {
     
     lazy var usernameLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "@karzinka_uz"
+        lbl.text = "@korzinka_uz"
         lbl.font = .appFont(ofSize: 12, weight: .bold)
         lbl.textColor = .spacetext
         return lbl
@@ -160,7 +160,7 @@ class CompanyCell: UITableViewCell {
             make.width.equalTo(104)
         }
         starsIcon.snp.makeConstraints { make in
-            make.width.height.equalTo(8)
+            make.width.height.equalTo(14)
         }
     }
     

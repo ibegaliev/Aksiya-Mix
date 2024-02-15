@@ -28,10 +28,15 @@ class HomeViewController: BaseViewController, HomeViewDelegate {
     }
     
     override func textFieldDidBeginEditing(textField: UITextField) {
-        view = SearchView()
-//        let controller = SearchController()
-//        controller.modalPresentationStyle = .overFullScreen
-//        present(controller, animated: true)
+        mode = .search
+    }
+    
+    override func textFieldDidEndEditing(_ textField: UITextField) {
+        mode = .home
+    }
+    
+    override func backButtonTapped() {
+        mode = .home
     }
     
 }
