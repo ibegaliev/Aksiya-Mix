@@ -80,7 +80,6 @@ class HomeView: UIView {
     lazy var offerView: OfferView = {
         let view = OfferView()
         view.isHidden = true
-        view.backgroundColor = .systemTeal
         return view
     }()
     
