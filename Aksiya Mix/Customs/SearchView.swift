@@ -34,18 +34,24 @@ class SearchView: UIView, SearchTextFieldDelegate {
                 case .home:
                     textField.tf.resignFirstResponder()
                     mainStack.spacing = 8
-                    rightButton.isHidden = false
-                    [closeButton, optionsButton].forEach { item in
-                        item.isHidden = true
+                    UIView.animate(withDuration: 0.1) { [self] in
+                        rightButton.isHidden = false
+                        [closeButton, optionsButton].forEach { item in
+                            item.isHidden = true
+                        }
                     }
                 case .search:
                     clipsToBounds = true
                     layer.cornerRadius = 8
                     layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-                    mainStack.spacing = 16
-                    rightButton.isHidden = true
-                    [closeButton, optionsButton].forEach { item in
-                        item.isHidden = false
+                    mainStack.spacing = 8
+                    UIView.animate(withDuration: 0.1) { [self] in
+                        [rightButton, optionsButton].forEach { item in
+                            item.isHidden = true
+                        }
+                        [closeButton].forEach { item in
+                            item.isHidden = false
+                        }
                     }
                     textField.tf.becomeFirstResponder()
                 case .option:
@@ -53,8 +59,10 @@ class SearchView: UIView, SearchTextFieldDelegate {
                     layer.cornerRadius = 8
                     layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
                     mainStack.spacing = 8
-                    [closeButton, rightButton].forEach { item in
-                        item.isHidden = true
+                    UIView.animate(withDuration: 0.1) { [self] in
+                        [closeButton, rightButton].forEach { item in
+                            item.isHidden = true
+                        }
                     }
                 case .none:
                     isHidden = true

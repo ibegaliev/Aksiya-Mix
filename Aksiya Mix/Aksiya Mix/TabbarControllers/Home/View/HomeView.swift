@@ -11,9 +11,55 @@ protocol HomeViewDelegate {
     func tapped()
 }
 
-class HomeView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+enum HomeViewType {
+    case home, search, results
+}
+
+class HomeView: UIView {
     
     var delegate: HomeViewDelegate?
+    
+    var viewType: HomeViewType? {
+        get {
+            return nil
+        }
+        set {
+            guard let newValue else { return }
+            switch newValue {
+                case .home:
+                    UIView.animate(withDuration: 0.25) { [self] in
+                        collectionView.isHidden = false
+                        offerView.isHidden = true
+                        searchItemsView.isHidden = true
+                    }
+                case .search:
+                    UIView.animate(withDuration: 0.25) { [self] in
+                        collectionView.isHidden = true
+                        offerView.isHidden = false
+                        searchItemsView.isHidden = true
+                    }
+                case .results:
+                    UIView.animate(withDuration: 0.25) { [self] in
+                        collectionView.isHidden = true
+                        offerView.isHidden = true
+                        searchItemsView.isHidden = false
+                    }
+            }
+        }
+    }
+    
+    lazy var mainStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        return stack
+    }()
+    
+    lazy var layout: UICollectionViewFlowLayout = {
+        let lay = UICollectionViewFlowLayout()
+        lay.scrollDirection = .vertical
+        lay.minimumLineSpacing = 10
+        return lay
+    }()
     
     lazy var collectionView: UICollectionView = { [self] in
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -31,11 +77,18 @@ class HomeView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         return cv
     }()
     
-    lazy var layout: UICollectionViewFlowLayout = {
-        let lay = UICollectionViewFlowLayout()
-        lay.scrollDirection = .vertical
-        lay.minimumLineSpacing = 10
-        return lay
+    lazy var offerView: OfferView = {
+        let view = OfferView()
+        view.isHidden = true
+        view.backgroundColor = .systemTeal
+        return view
+    }()
+    
+    lazy var searchItemsView: UIView = {
+        let view = UIView()
+        view.isHidden = true
+        view.backgroundColor = .cyan
+        return view
     }()
     
     override init(frame: CGRect) {
@@ -49,14 +102,21 @@ class HomeView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     private func setUI() {
-        addSubview(collectionView)
+        addSubview(mainStack)
+        [searchItemsView, offerView, collectionView].forEach { item in
+            mainStack.addArrangedSubview(item)
+        }
     }
     
     private func setConstraints() {
-        collectionView.snp.makeConstraints { make in
+        mainStack.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }
     }
+    
+}
+
+extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         2

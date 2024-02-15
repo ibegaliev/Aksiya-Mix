@@ -29,10 +29,12 @@ class HomeViewController: BaseViewController, HomeViewDelegate {
     
     override func textFieldDidBeginEditing(textField: UITextField) {
         mode = .search
+        homeView.viewType = .search
     }
     
     override func textFieldDidEndEditing(_ textField: UITextField) {
         mode = .home
+        homeView.viewType = .home
     }
     
     override func backButtonTapped() {
