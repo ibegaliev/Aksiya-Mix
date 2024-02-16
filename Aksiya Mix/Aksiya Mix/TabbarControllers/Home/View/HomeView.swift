@@ -9,13 +9,14 @@ import UIKit
 
 protocol HomeViewDelegate {
     func tapped()
+    func offerViewSelected(index: Int?)
 }
 
 enum HomeViewType {
     case home, search, results
 }
 
-class HomeView: UIView {
+class HomeView: UIView, OfferViewDelegate {
     
     var delegate: HomeViewDelegate?
     
@@ -80,13 +81,13 @@ class HomeView: UIView {
     lazy var offerView: OfferView = {
         let view = OfferView()
         view.isHidden = true
+        view.delegate = self
         return view
     }()
     
-    lazy var searchItemsView: UIView = {
-        let view = UIView()
+    lazy var searchItemsView: LikedCollectionCell = {
+        let view = LikedCollectionCell()
         view.isHidden = true
-        view.backgroundColor = .cyan
         return view
     }()
     
@@ -111,6 +112,11 @@ class HomeView: UIView {
         mainStack.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }
+    }
+    
+    func didSelect(indexPath: IndexPath) {
+        viewType = .results
+        delegate?.offerViewSelected(index: indexPath.row)
     }
     
 }

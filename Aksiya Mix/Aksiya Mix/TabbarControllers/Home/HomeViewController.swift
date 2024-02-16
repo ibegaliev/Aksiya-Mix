@@ -33,12 +33,17 @@ class HomeViewController: BaseViewController, HomeViewDelegate {
     }
     
     override func textFieldDidEndEditing(_ textField: UITextField) {
-        mode = .home
-        homeView.viewType = .home
+//        mode = .home
+//        homeView.viewType = .home
     }
     
     override func backButtonTapped() {
         mode = .home
+        homeView.viewType = .home
+    }
+    
+    func offerViewSelected(index: Int?) {
+        
     }
     
 }
