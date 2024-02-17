@@ -26,6 +26,7 @@ class HomeView: UIView, OfferViewDelegate {
         }
         set {
             guard let newValue else { return }
+            print("WWWW", newValue)
             switch newValue {
                 case .home:
                     UIView.animate(withDuration: 0.25) { [self] in
@@ -35,17 +36,19 @@ class HomeView: UIView, OfferViewDelegate {
                     }
                 case .search:
                     UIView.animate(withDuration: 0.25) { [self] in
-                        collectionView.isHidden = true
                         offerView.isHidden = false
-                        searchItemsView.isHidden = true
                     }
+                    collectionView.isHidden = true
+                    searchItemsView.isHidden = true
                 case .results:
                     UIView.animate(withDuration: 0.25) { [self] in
-                        collectionView.isHidden = true
-                        offerView.isHidden = true
                         searchItemsView.isHidden = false
                     }
+                    collectionView.isHidden = true
+                    offerView.isHidden = true
             }
+            layoutSubviews()
+            reloadInputViews()
         }
     }
     
@@ -85,8 +88,8 @@ class HomeView: UIView, OfferViewDelegate {
         return view
     }()
     
-    lazy var searchItemsView: LikedCollectionCell = {
-        let view = LikedCollectionCell()
+    lazy var searchItemsView: OfferItemsView = {
+        let view = OfferItemsView()
         view.isHidden = true
         return view
     }()
@@ -115,7 +118,7 @@ class HomeView: UIView, OfferViewDelegate {
     }
     
     func didSelect(indexPath: IndexPath) {
-        viewType = .results
+        endEditing(true)
         delegate?.offerViewSelected(index: indexPath.row)
     }
     

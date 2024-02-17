@@ -23,15 +23,18 @@ class SearchView: UIView, SearchTextFieldDelegate {
     
     var delegate: SearchViewDelegate?
     
+    var selfMode: BaseMode = .none
+    
     var mode: BaseMode? {
         get {
             return .home
         }
         set {
             guard let newValue else { return }
-            textField.tf.text = ""
+            selfMode = newValue
             switch newValue {
                 case .home:
+                    textField.tf.text = ""
                     textField.tf.resignFirstResponder()
                     mainStack.spacing = 8
                     UIView.animate(withDuration: 0.1) { [self] in
@@ -41,6 +44,7 @@ class SearchView: UIView, SearchTextFieldDelegate {
                         }
                     }
                 case .search:
+                    textField.tf.text = ""
                     clipsToBounds = true
                     layer.cornerRadius = 8
                     layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
@@ -158,7 +162,7 @@ class SearchView: UIView, SearchTextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        delegate?.textFieldDidEndEditing(textField)
+//        delegate?.textFieldDidEndEditing(textField)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) {
