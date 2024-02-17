@@ -70,9 +70,6 @@ class OfferItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         mainStack.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }
-        topSelectableView.snp.makeConstraints { make in
-            make.height.equalTo(50)
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
