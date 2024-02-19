@@ -357,6 +357,10 @@
 				8C0658072B73234600F6C9C3 /* Register */,
 				8CE832EC2B638286004B4E6D /* BaseController */,
 				8CE832E22B6379A5004B4E6D /* TabbarControllers */,
+				8C7FAFFE2B7738710062BF59 /* SearchHome */,
+				8C926F952B69F1700049A1B7 /* SingleProduct */,
+				8CBA40032B77905100F92F98 /* SingleCompany */,
+				8CBE7BC72B78F0E0001559E9 /* SingleCategory */,
 			);
 			path = "Aksiya Mix";
 			sourceTree = "<group>";
@@ -840,10 +844,6 @@
 				8CEA8A3B2B775958000071FC /* Company */,
 				8C8275CA2B7B6733004C445B /* Liked */,
 				8C85BC292B8265040047F54C /* User */,
-				8C7FAFFE2B7738710062BF59 /* SearchHome */,
-				8C926F952B69F1700049A1B7 /* SingleProduct */,
-				8CBA40032B77905100F92F98 /* SingleCompany */,
-				8CBE7BC72B78F0E0001559E9 /* SingleCategory */,
 			);
 			path = TabbarControllers;
 			sourceTree = "<group>";
