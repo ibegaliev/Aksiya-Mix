@@ -35,6 +35,10 @@
 		8C7507A82B7540C200DFB69A /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7507A72B7540C200DFB69A /* InputFieldView.swift */; };
 		8C77817B2B6A6ADE00CA6D0A /* CostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C77817A2B6A6ADE00CA6D0A /* CostView.swift */; };
 		8C77817D2B6A6DC500CA6D0A /* Ex+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C77817C2B6A6DC500CA6D0A /* Ex+UILabel.swift */; };
+		8C7B9DC42B83649100372CB1 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7B9DC32B83649100372CB1 /* ImageManager.swift */; };
+		8C7B9DC62B836AD400372CB1 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7B9DC52B836AD400372CB1 /* UserView.swift */; };
+		8C7B9DC82B836ADB00372CB1 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7B9DC72B836ADB00372CB1 /* UserViewModel.swift */; };
+		8C7B9DCA2B83747700372CB1 /* UserTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7B9DC92B83747700372CB1 /* UserTopView.swift */; };
 		8C7FB0002B7738AB0062BF59 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FAFFF2B7738AB0062BF59 /* SearchController.swift */; };
 		8C80FB022B7892830053A9EB /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80FB012B7892830053A9EB /* CategoryCell.swift */; };
 		8C8275CC2B7B67E0004C445B /* LikedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8275CB2B7B67E0004C445B /* LikedController.swift */; };
@@ -186,6 +190,10 @@
 		8C7507A72B7540C200DFB69A /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 		8C77817A2B6A6ADE00CA6D0A /* CostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostView.swift; sourceTree = "<group>"; };
 		8C77817C2B6A6DC500CA6D0A /* Ex+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UILabel.swift"; sourceTree = "<group>"; };
+		8C7B9DC32B83649100372CB1 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		8C7B9DC52B836AD400372CB1 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		8C7B9DC72B836ADB00372CB1 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		8C7B9DC92B83747700372CB1 /* UserTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTopView.swift; sourceTree = "<group>"; };
 		8C7FAFFF2B7738AB0062BF59 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		8C80FB012B7892830053A9EB /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		8C8275CB2B7B67E0004C445B /* LikedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedController.swift; sourceTree = "<group>"; };
@@ -535,6 +543,9 @@
 			isa = PBXGroup;
 			children = (
 				8C85BC2A2B8265220047F54C /* UserViewController.swift */,
+				8C7B9DC52B836AD400372CB1 /* UserView.swift */,
+				8C7B9DC72B836ADB00372CB1 /* UserViewModel.swift */,
+				8C7B9DC92B83747700372CB1 /* UserTopView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -889,6 +900,7 @@
 				8CF5A7F72B73D51600D65039 /* UserDefaultsManager.swift */,
 				8CF5A7F92B73D58600D65039 /* LanguageManager.swift */,
 				8CF5A7FB2B73D89700D65039 /* LyricsManager.swift */,
+				8C7B9DC32B83649100372CB1 /* ImageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1083,6 +1095,7 @@
 				8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */,
 				8C19B0A92B63556A007D8872 /* AppDelegate.swift in Sources */,
 				8CE67A302B6BA07100D6E428 /* SelectableView.swift in Sources */,
+				8C7B9DC82B836ADB00372CB1 /* UserViewModel.swift in Sources */,
 				8C85AF6C2B77A6DD00B3A7FC /* CompanyMainCell.swift in Sources */,
 				8CD858282B7391C20077B2A8 /* ChooseLanguageViewModel.swift in Sources */,
 				8C958FDF2B73402300299AF8 /* LaunchScreenController.swift in Sources */,
@@ -1100,6 +1113,7 @@
 				8C8275CE2B7B6A3D004C445B /* LikedView.swift in Sources */,
 				8C19B0B32B63556A007D8872 /* Aksiya_Mix.xcdatamodeld in Sources */,
 				8CA197B52B7472170025E9F9 /* EnterPhoneViewController.swift in Sources */,
+				8C7B9DC62B836AD400372CB1 /* UserView.swift in Sources */,
 				8CE832E72B637A6D004B4E6D /* Ex+String.swift in Sources */,
 				8C77817D2B6A6DC500CA6D0A /* Ex+UILabel.swift in Sources */,
 				8CE832E92B637B6D004B4E6D /* HomeViewController.swift in Sources */,
@@ -1123,6 +1137,7 @@
 				8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */,
 				8C661F922B641E7500437F0D /* Ex+Int.swift in Sources */,
 				8CD354572B6B89CB004FFE0F /* FeedbackPityView.swift in Sources */,
+				8C7B9DC42B83649100372CB1 /* ImageManager.swift in Sources */,
 				8CE832DF2B637910004B4E6D /* HomeView.swift in Sources */,
 				8C9BA7962B6A1F88008C9420 /* SingleProductDM.swift in Sources */,
 				8C8275CC2B7B67E0004C445B /* LikedController.swift in Sources */,
@@ -1136,6 +1151,7 @@
 				8CE260F62B6CA98E00B4E2C9 /* UserDatesView.swift in Sources */,
 				8CBA40052B77933800F92F98 /* SingleCompanyViewModel.swift in Sources */,
 				8CF5A7FC2B73D89700D65039 /* LyricsManager.swift in Sources */,
+				8C7B9DCA2B83747700372CB1 /* UserTopView.swift in Sources */,
 				8C661F952B64232300437F0D /* SearchView.swift in Sources */,
 				8C06580C2B73248700F6C9C3 /* RegisterView.swift in Sources */,
 				8C7507A82B7540C200DFB69A /* InputFieldView.swift in Sources */,

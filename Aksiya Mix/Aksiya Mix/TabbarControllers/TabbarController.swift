@@ -34,7 +34,7 @@ class TabbarController: UITabBarController {
     }()
 
     lazy var userViewController: UIViewController = {
-        let vc = UIViewController()
+        let vc = UserViewController()
 
         return vc
     }()
