@@ -18,7 +18,7 @@ class UserTopView: UITableViewCell {
     
     lazy var titleView: UILabel = {
         let lbl = UILabel()
-        lbl.text = "AksiyaMix-ga xush kelibsiz!"
+        lbl.text = "AksiyaMixga xush kelibsiz!"
         lbl.font = .appFont(ofSize: 24, weight: .bold)
         return lbl
     }()
@@ -68,6 +68,7 @@ class UserTopView: UITableViewCell {
     
     private func setUI() {
         
+        selectionStyle = .none
         backgroundColor = .backColor
         
         addSubview(mainStack)

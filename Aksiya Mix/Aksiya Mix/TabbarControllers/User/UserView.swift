@@ -7,7 +7,21 @@
 
 import UIKit
 
+struct UserViewData {
+    var icon: UIImage
+    var title: String
+}
+
 class UserView: UIView {
+    
+    var data: [UserViewData] = [
+        UserViewData(icon: .actions, title: "Sozlamalar"),
+        UserViewData(icon: .actions, title: "Fikir-mulohazalar"),
+        UserViewData(icon: .actions, title: "Shartlar va qoidalar"),
+        UserViewData(icon: .actions, title: "Ishtimoiy tarmoqlarda"),
+        UserViewData(icon: .actions, title: "Ilova haqida"),
+        UserViewData(icon: .actions, title: "Chiqish")
+    ]
     
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
@@ -23,9 +37,10 @@ class UserView: UIView {
         table.delegate = self
         table.dataSource = self
         table.backgroundColor = .backColor
-        table.contentInset = UIEdgeInsets(top: -50, left: 0, bottom: 50, right: 0)
+        table.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 50, right: 0)
         table.showsHorizontalScrollIndicator = false
         table.showsVerticalScrollIndicator = false
+        table.separatorStyle = .none
         table.register(UserTopView.self, forCellReuseIdentifier: "UserTopView")
         table.register(UserCell.self, forCellReuseIdentifier: "UserCell")
         return table
@@ -69,7 +84,7 @@ extension UserView: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         }
-        return 10
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
