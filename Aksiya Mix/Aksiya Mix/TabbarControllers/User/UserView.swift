@@ -9,19 +9,26 @@ import UIKit
 
 class UserView: UIView {
     
+    lazy var mainStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.distribution = .fill
+        stack.alignment = .fill
+        stack.spacing = 16
+        return stack
+    }()
+        
     lazy var tableView: UITableView = {
         let table = UITableView()
         table.delegate = self
         table.dataSource = self
+        table.backgroundColor = .backColor
+        table.contentInset = UIEdgeInsets(top: -50, left: 0, bottom: 50, right: 0)
         table.showsHorizontalScrollIndicator = false
         table.showsVerticalScrollIndicator = false
+        table.register(UserTopView.self, forCellReuseIdentifier: "UserTopView")
+        table.register(UserCell.self, forCellReuseIdentifier: "UserCell")
         return table
-    }()
-        
-    lazy var topView: UIView = {
-        let view = UIView()
-        
-        return view
     }()
     
     lazy var bottomView: UIView = {
@@ -41,7 +48,6 @@ class UserView: UIView {
     }
     
     private func setUI() {
-        backgroundColor = .backColor
         addSubview(tableView)
     }
     
@@ -54,17 +60,25 @@ class UserView: UIView {
 }
 
 extension UserView: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        topView
+        
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        if section == 0 {
+            return 1
+        }
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UserTopView", for: indexPath) as! UserTopView
+            
+            return cell
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
         
         return cell
     }

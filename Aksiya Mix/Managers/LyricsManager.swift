@@ -25,6 +25,7 @@ enum LyricsManagerType {
     case likedTitle
     case resentlySeen
     case endedTitle
+    case log
 }
 
 class LyricsManager {
@@ -66,6 +67,8 @@ class LyricsManager {
                     return "Yaqinda ko'rilganlar"
                 case .endedTitle:
                     return "Tugagan e'lonlar"
+                case .log:
+                    return "Tizimga kirish"
             }
         } else {
             switch type {
@@ -103,6 +106,8 @@ class LyricsManager {
                     return "Недавно просмотренные"
                 case .endedTitle:
                     return "Законченные объявления"
+                case .log:
+                    return "Авторизоваться"
             }
         }
     }
