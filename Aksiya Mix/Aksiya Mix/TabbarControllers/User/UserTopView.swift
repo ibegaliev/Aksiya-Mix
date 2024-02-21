@@ -34,6 +34,8 @@ class UserTopView: UITableViewCell {
     
     lazy var blueButton: BlueButton = {
         let btn = BlueButton()
+        btn.backgroundColor = .selectBlue
+        btn.setTitleColor(.white, for: .normal)
         btn.setTitle(LyricsManager.getLyrics(type: .log), for: .normal)
         return btn
     }()

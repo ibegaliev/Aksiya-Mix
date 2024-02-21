@@ -15,12 +15,12 @@ struct UserViewData {
 class UserView: UIView {
     
     var data: [UserViewData] = [
-        UserViewData(icon: .actions, title: "Sozlamalar"),
-        UserViewData(icon: .actions, title: "Fikir-mulohazalar"),
-        UserViewData(icon: .actions, title: "Shartlar va qoidalar"),
-        UserViewData(icon: .actions, title: "Ishtimoiy tarmoqlarda"),
-        UserViewData(icon: .actions, title: "Ilova haqida"),
-        UserViewData(icon: .actions, title: "Chiqish")
+        UserViewData(icon: .tabbar_Person_Select, title: "Sozlamalar"),
+        UserViewData(icon: .tabbar_Person_Select, title: "Fikir-mulohazalar"),
+        UserViewData(icon: .tabbar_Person_Select, title: "Shartlar va qoidalar"),
+        UserViewData(icon: .tabbar_Person_Select, title: "Ishtimoiy tarmoqlarda"),
+        UserViewData(icon: .tabbar_Person_Select, title: "Ilova haqida"),
+        UserViewData(icon: .tabbar_Person_Select, title: "Chiqish")
     ]
     
     lazy var mainStack: UIStackView = {
@@ -84,7 +84,7 @@ extension UserView: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         }
-        return 6
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,7 +94,8 @@ extension UserView: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
-        
+        cell.cellData = data[indexPath.row]
+        if indexPath.row == 0 { cell.cellType = .top } else if indexPath.row == 5 { cell.cellType = .bottom }
         return cell
     }
     
