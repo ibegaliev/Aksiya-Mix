@@ -15,12 +15,12 @@ struct UserViewData {
 class UserView: UIView {
     
     var data: [UserViewData] = [
-        UserViewData(icon: .tabbar_Person_Select, title: "Sozlamalar"),
-        UserViewData(icon: .tabbar_Person_Select, title: "Fikir-mulohazalar"),
-        UserViewData(icon: .tabbar_Person_Select, title: "Shartlar va qoidalar"),
-        UserViewData(icon: .tabbar_Person_Select, title: "Ishtimoiy tarmoqlarda"),
-        UserViewData(icon: .tabbar_Person_Select, title: "Ilova haqida"),
-        UserViewData(icon: .tabbar_Person_Select, title: "Chiqish")
+        UserViewData(icon: .settingsUser, title: "Sozlamalar"),
+        UserViewData(icon: .messageDotsCircle, title: "Fikir-mulohazalar"),
+        UserViewData(icon: .shieldTick, title: "Shartlar va qoidalar"),
+        UserViewData(icon: .messageDotsCircle, title: "Ishtimoiy tarmoqlarda"),
+        UserViewData(icon: .infoCircle, title: "Ilova haqida"),
+        UserViewData(icon: .logOut, title: "Chiqish")
     ]
     
     lazy var mainStack: UIStackView = {

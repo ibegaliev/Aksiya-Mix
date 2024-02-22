@@ -10,7 +10,21 @@ import UIKit
 extension UIFont {
     static func appFont(ofSize: CGFloat, weight: MyFontType = .regular) -> UIFont {
         
-        var font = UIFont(name: "SF Pro Text", size: ofSize)
+        var font = UIFont(name: "SF-Pro-Text", size: ofSize)
+        
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
+        
+        guard let customFont = UIFont(name: "SF-Pro-Text", size: UIFont.labelFontSize) else {
+            fatalError("""
+                Failed to load the "CustomFont-Light" font.
+                Make sure the font file is included in the project and the font name is spelled correctly.
+                """
+            )
+        }
+        
         switch weight {
             case .black:
                 font = UIFont(name: "SF-Pro-Text-Black", size: ofSize)
@@ -49,6 +63,7 @@ extension UIFont {
             case .ultralightItalic:
                 font = UIFont(name: "SF-Pro-Text-UltralightItalic", size: ofSize)
         }
+        print(font?.familyName ?? "10000000")
         return font ?? UIFont.systemFont(ofSize: ofSize)
     }
 

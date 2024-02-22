@@ -3,4 +3,54 @@
    uuid = "05BFFE5D-8C1E-45EC-A8D7-028E980F2D69"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "576F55B1-7D7F-46FA-8452-D2EC5B7B8669"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Aksiya Mix/Helpers/Ex+UIFond.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "appFont(ofSize:weight:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "576F55B1-7D7F-46FA-8452-D2EC5B7B8669 - 6e3aaf5f1379ab14"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static __C.UIFont.appFont(ofSize: CoreGraphics.CGFloat, weight: Aksiya_Mix.MyFontType) -&gt; __C.UIFont"
+                  moduleName = "Aksiya Mix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ibrohimbegaliev/Desktop/Aksiya%20Mix/Aksiya%20Mix/Helpers/Ex+UIFond.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "1384">
+               </Location>
+               <Location
+                  uuid = "576F55B1-7D7F-46FA-8452-D2EC5B7B8669 - 6e3aaf5f1379abf5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static __C.UIFont.appFont(ofSize: CoreGraphics.CGFloat, weight: Aksiya_Mix.MyFontType) -&gt; __C.UIFont"
+                  moduleName = "Aksiya Mix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ibrohimbegaliev/Desktop/Aksiya%20Mix/Aksiya%20Mix/Helpers/Ex+UIFond.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1220">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

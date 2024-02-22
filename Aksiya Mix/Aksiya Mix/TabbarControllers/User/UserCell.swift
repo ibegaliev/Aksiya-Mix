@@ -52,7 +52,8 @@ class UserCell: UITableViewCell {
     
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
-        
+        stack.spacing = 8
+        stack.alignment = .center
         return stack
     }()
     
@@ -73,7 +74,7 @@ class UserCell: UITableViewCell {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .appFont(ofSize: 14, weight: .regular)
+        lbl.font = .appFont(ofSize: 14, weight: .semibold)
         return lbl
     }()
     
@@ -122,10 +123,10 @@ class UserCell: UITableViewCell {
             make.edges.equalTo(backView).inset(12)
         }
         iconView.snp.makeConstraints { make in
-            make.width.height.equalTo(28)
+            make.width.height.equalTo(32)
         }
         rightIcon.snp.makeConstraints { make in
-            make.width.height.equalTo(28)
+            make.width.height.equalTo(18)
         }
         lineView.snp.makeConstraints { make in
             make.left.right.equalTo(contentView).inset(28)
