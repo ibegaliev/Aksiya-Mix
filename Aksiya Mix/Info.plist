@@ -27,25 +27,18 @@
 	<string>com.AksiyaMix.uzbek</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>SFProText-Medium.ttf</string>
+		<string>SFProText-Heavy.ttf</string>
+		<string>SFProText-RegularItalic.ttf</string>
+		<string>SFProText-Semibold.ttf</string>
+		<string>SFProText-Regular.ttf</string>
+		<string>SFProText-BoldItalic.ttf</string>
+		<string>SFProText-MediumItalic.ttf</string>
+		<string>SFProText-LightItalic.ttf</string>
+		<string>SFProText-Light.ttf</string>
+		<string>SFProText-HeavyItalic.ttf</string>
+		<string>SFProText-SemiboldItalic.ttf</string>
 		<string>SFProText-Bold.ttf</string>
-		<string>SF-Pro-Text-Black.ttf</string>
-		<string>SF-Pro-Text-BlackItalic.ttf</string>
-		<string>SF-Pro-Text-Bold.ttf</string>
-		<string>SF-Pro-Text-BoldItalic.ttf</string>
-		<string>SF-Pro-Text-Heavy.ttf</string>
-		<string>SF-Pro-Text-HeavyItalic.ttf</string>
-		<string>SF-Pro-Text-Light.ttf</string>
-		<string>SF-Pro-Text-LightItalic.ttf</string>
-		<string>SF-Pro-Text-Medium.ttf</string>
-		<string>SF-Pro-Text-MediumItalic.ttf</string>
-		<string>SF-Pro-Text-Regular.ttf</string>
-		<string>SF-Pro-Text-RegularItalic.ttf</string>
-		<string>SF-Pro-Text-Semibold.ttf</string>
-		<string>SF-Pro-Text-SemiboldItalic.ttf</string>
-		<string>SF-Pro-Text-Thin.ttf</string>
-		<string>SF-Pro-Text-ThinItalic.ttf</string>
-		<string>SF-Pro-Text-Ultralight.ttf</string>
-		<string>SF-Pro-Text-UltralightItalic.ttf</string>
 	</array>
 </dict>
 </plist>
