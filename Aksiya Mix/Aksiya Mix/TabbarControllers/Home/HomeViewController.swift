@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController, HomeViewDelegate {
+class HomeViewController: AksiyaViewController, HomeViewDelegate {
     
     let homeView = HomeView()
     

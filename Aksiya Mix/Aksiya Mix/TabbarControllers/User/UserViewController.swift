@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserViewController: BaseViewController {
+class UserViewController: AksiyaViewController {
     
     var viewModel = UserViewModel()
     

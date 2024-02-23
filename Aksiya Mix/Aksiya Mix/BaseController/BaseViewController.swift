@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController, BaseViewDelegate {
+class AksiyaViewController: UIViewController, BaseViewDelegate {
         
     var backView = BaseView()
     

@@ -63,8 +63,8 @@ class CompanyCell: UITableViewCell {
     
     lazy var mainButton: BlueButton = {
         let btn = BlueButton()
-        btn.titleLabel?.font = .appFont(ofSize: 12, weight: .medium)
         btn.setTitle("Подписаться", for: .normal)
+        btn.titleLabel?.font = .appFont(ofSize: 12, weight: .semibold)
         return btn
     }()
     

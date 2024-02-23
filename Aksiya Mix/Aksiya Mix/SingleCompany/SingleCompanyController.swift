@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SingleCompanyController: BaseViewController {
+class SingleCompanyController: AksiyaViewController {
     
     let viewModel = SingleCompanyViewModel()
     

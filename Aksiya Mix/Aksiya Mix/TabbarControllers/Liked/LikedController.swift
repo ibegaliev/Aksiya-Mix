@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class LikedController: BaseViewController, LikedViewDelegate {
+class LikedController: AksiyaViewController, LikedViewDelegate {
     
     let viewModel = LikedViewModel()
     

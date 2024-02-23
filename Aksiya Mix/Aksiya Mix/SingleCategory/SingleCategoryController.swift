@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SingleCategoryController: BaseViewController, SingleCategoryViewDelegate {
+class SingleCategoryController: AksiyaViewController, SingleCategoryViewDelegate {
     
     let viewModel = SingleCategoryViewModel()
     

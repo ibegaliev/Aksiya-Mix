@@ -16,7 +16,7 @@ class BlueButton: UIButton {
         setTitleColor(.selectBlue, for: .normal)
         layer.cornerRadius = 8
         clipsToBounds = true
-        titleLabel?.font = .appFont(ofSize: 16, weight: .medium)
+        titleLabel?.font = .appFont(ofSize: 16, weight: .semibold)
         
         snp.makeConstraints { make in
             make.height.equalTo(48)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SingleProductViewController: BaseViewController {
+class SingleProductViewController: AksiyaViewController {
     
     var viewModel = SingleProductViewModel()
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CompanyController: BaseViewController, CompanyViewDelegate {
+class CompanyController: AksiyaViewController, CompanyViewDelegate {
     
     var viewModel = CompanyViewModel()
     
