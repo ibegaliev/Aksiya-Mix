@@ -33,7 +33,7 @@ class HeaderView: UIView {
         let lbl = UILabel()
         lbl.text = "Mak bro"
         lbl.textColor = .white
-        lbl.font = .boldSystemFont(ofSize: 10)
+        lbl.font = .appFont(ofSize: 10, weight: .semibold)
         return lbl
     }()
     

@@ -12,7 +12,7 @@ class ItemsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Новинки"
-        lbl.font = .boldSystemFont(ofSize: 16)
+        lbl.font = .appFont(ofSize: 16, weight: .bold)
         return lbl
     }()
     

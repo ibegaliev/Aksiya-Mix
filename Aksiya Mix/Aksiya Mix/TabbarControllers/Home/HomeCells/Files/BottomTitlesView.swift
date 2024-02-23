@@ -28,7 +28,7 @@ class BottomTitlesView: UIView {
         lbl.backgroundColor = .white
         lbl.text = "Смартфон Apple iPhone 13 pro 256ГБ"
         lbl.numberOfLines = 2
-        lbl.font = .boldSystemFont(ofSize: 12)
+        lbl.font = .appFont(ofSize: 12, weight: .bold)
         return lbl
     }()
     
@@ -82,7 +82,7 @@ class TitleTopView: UIView {
     lazy var countLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "1.5 тыс"
-        lbl.font = .systemFont(ofSize: 10)
+        lbl.font = .appFont(ofSize: 10)
         lbl.textColor = .spacetext
         return lbl
     }()
@@ -95,7 +95,7 @@ class TitleTopView: UIView {
     
     lazy var cityLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .systemFont(ofSize: 10)
+        lbl.font = .appFont(ofSize: 10)
         lbl.text = "Ташкент"
         lbl.textColor = .spacetext
         return lbl
@@ -154,14 +154,14 @@ class TitleBottomView: UIView {
         )
         lbl.attributedText = attributeString
         lbl.textColor = .spacetext
-        lbl.font = .systemFont(ofSize: 10)
+        lbl.font = .appFont(ofSize: 10)
         return lbl
     }()
 
     lazy var newCost: UILabel = {
         var lbl = UILabel()
         lbl.text = "17 000 000 сум"
-        lbl.font = .boldSystemFont(ofSize: 12)
+        lbl.font = .appFont(ofSize: 12, weight: .bold)
         return lbl
     }()
     

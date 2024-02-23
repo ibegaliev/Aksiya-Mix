@@ -74,7 +74,7 @@ class BottomItemsCell: UICollectionViewCell {
         let lbl = UILabel()
         lbl.text = "Ommabop"
         lbl.textAlignment = .center
-        lbl.font = .systemFont(ofSize: 12)
+        lbl.font = .appFont(ofSize: 12, weight: .semibold)
         return lbl
     }()
     

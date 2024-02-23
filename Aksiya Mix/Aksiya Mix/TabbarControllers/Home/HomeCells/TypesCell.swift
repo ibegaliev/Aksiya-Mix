@@ -12,15 +12,14 @@ class TypesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Разделы"
-        lbl.font = .boldSystemFont(ofSize: 16)
-        
+        lbl.font = .appFont(ofSize: 16, weight: .bold)
         return lbl
     }()
     
     lazy var rightButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("Все", for: .normal)
-        btn.titleLabel?.font = .systemFont(ofSize: 12)
+        btn.titleLabel?.font = .appFont(ofSize: 12, weight: .regular)
         btn.setTitleColor(.selectBlue, for: .normal)
         return btn
     }()
