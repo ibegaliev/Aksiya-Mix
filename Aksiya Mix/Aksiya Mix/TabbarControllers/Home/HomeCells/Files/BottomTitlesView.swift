@@ -64,7 +64,7 @@ class BottomTitlesView: UIView {
     
 }
 
-class TitleTopView: UIView {
+class er: UIView {
     
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
