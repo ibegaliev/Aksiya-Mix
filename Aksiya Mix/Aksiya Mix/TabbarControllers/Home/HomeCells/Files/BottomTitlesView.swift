@@ -18,7 +18,7 @@ class BottomTitlesView: UIView {
     }()
     
     lazy var topView: UIView = {
-        let view = TitleTopView()
+        let view = UIView()
 
         return view
     }()

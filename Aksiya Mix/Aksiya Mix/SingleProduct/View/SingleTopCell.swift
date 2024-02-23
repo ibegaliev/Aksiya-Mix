@@ -43,8 +43,8 @@ class SingleTopView: UITableViewCell {
         return image
     }()
     
-    lazy var countView: TitleTopView = {
-        let view = TitleTopView()
+    lazy var countView: UIImageView = {
+        let view = UIImageView()
         
         return view
     }()
