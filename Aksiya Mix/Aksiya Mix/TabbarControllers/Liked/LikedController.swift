@@ -27,14 +27,13 @@ class LikedController: TabmanViewController, PageboyViewControllerDataSource, TM
         bar.indicator.weight = .custom(value: 4)
         bar.hoverStyle = .init(effect: .highlight)
         
-        
-        
         addBar(bar, dataSource: self, at: .top)
         bar.snp.makeConstraints { make in
             make.top.equalTo(view).inset(50)
             make.left.right.equalTo(view).inset(12)
             make.height.equalTo(30)
         }
+        
     }
     
     
