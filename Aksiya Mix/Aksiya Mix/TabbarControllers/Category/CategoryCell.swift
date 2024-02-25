@@ -26,9 +26,9 @@ class CategoryCell: UITableViewCell {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .appFont(ofSize: 16, weight: .semibold)
+        lbl.font = .appFont(ofSize: 16, weight: .medium)
         lbl.text = "Barcha toifalar"
-        lbl.textColor = .spacetext
+        lbl.textColor = .black
         return lbl
     }()
     

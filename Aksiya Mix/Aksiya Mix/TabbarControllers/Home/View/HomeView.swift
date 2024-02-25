@@ -124,7 +124,7 @@ class HomeView: UIView, OfferViewDelegate {
     
 }
 
-extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ItemsCellDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         2
@@ -150,11 +150,11 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 return cell
             } else if indexPath.row == 2 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsCell", for: indexPath) as! ItemsCell
-                
+                cell.delegate = self
                 return cell
             } else if indexPath.row == 3 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsCell", for: indexPath) as! ItemsCell
-                
+                cell.delegate = self
                 return cell
             } else if indexPath.row == 4 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BottomTypeCell", for: indexPath) as! BottomTypeCell
@@ -212,6 +212,10 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         if indexPath.section == 1 {
             delegate?.tapped()
         }
+    }
+    
+    func didSelectItematIndex(index: Int?) {
+        delegate?.tapped()
     }
     
 }

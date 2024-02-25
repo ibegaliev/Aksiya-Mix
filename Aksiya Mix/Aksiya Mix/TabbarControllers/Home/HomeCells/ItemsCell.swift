@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ItemsCellDelegate {
-    func didSelectItem(index: Int?)
+protocol ItemsCellDelegate {
+    func didSelectItematIndex(index: Int?)
 }
 
 class ItemsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -102,7 +102,7 @@ class ItemsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.didSelectItem(index: indexPath.row)
+        delegate?.didSelectItematIndex(index: indexPath.row)
     }
     
 }
