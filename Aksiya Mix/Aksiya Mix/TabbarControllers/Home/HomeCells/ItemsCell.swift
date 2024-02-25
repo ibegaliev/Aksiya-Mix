@@ -7,7 +7,13 @@
 
 import UIKit
 
+class ItemsCellDelegate {
+    func didSelectItem(index: Int?)
+}
+
 class ItemsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    var delegate: ItemsCellDelegate?
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -95,5 +101,8 @@ class ItemsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
         )
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectItem(index: indexPath.row)
+    }
     
 }
