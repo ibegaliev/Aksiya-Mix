@@ -7,7 +7,18 @@
 
 import UIKit
 
+struct BannerData {
+    let isShow: Bool
+    let image: UIImage
+}
+
 class BannerCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    var data: [BannerData] = [
+        BannerData(isShow: false, image: .samsungAd),
+        BannerData(isShow: true, image: .marketAd),
+        BannerData(isShow: false, image: .yandexAd)
+    ]
     
     lazy var collectionView: UICollectionView = { [self] in
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layoutCollection)
@@ -18,6 +29,7 @@ class BannerCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVi
         collection.register(BannerItemCell.self, forCellWithReuseIdentifier: "BannerItemCell")
         collection.showsVerticalScrollIndicator = false
         collection.showsHorizontalScrollIndicator = false
+        collection.isPagingEnabled = true
         return collection
     }()
     
@@ -31,11 +43,7 @@ class BannerCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVi
         super.init(frame: frame)
         setUI()
         setConstraints()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        collectionView.scrollToItem(at: IndexPath(row: 1, section: 0), at: .centeredHorizontally, animated: false)
+        reloadData()
     }
     
     required init?(coder: NSCoder) {
@@ -52,28 +60,65 @@ class BannerCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVi
         }
     }
     
+    private func reloadData() {
+        if data.count == 1 {
+            
+        } else if data.count == 2 {
+            
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerItemCell", for: indexPath) as! BannerItemCell
-        
+        cell.data = data[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 52, height: collectionView.frame.height - 12)
+        if data[indexPath.row].isShow {
+            return CGSize(width: collectionView.frame.width - 52, height: collectionView.frame.height - 12)
+        } else {
+            return CGSize(width: collectionView.frame.width - 52, height: collectionView.frame.height - 35)
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
     }
     
 }
 
 class BannerItemCell: UICollectionViewCell {
     
+    var data: BannerData? {
+        get {
+            return nil
+        }
+        set {
+            guard let newValue else { return }
+            imageView.image = newValue.image
+//            if newValue.isShow {
+//                UIView.animate(withDuration: 0.1) { [self] in
+//                    imageView.transform = .identity
+//                }
+//            } else {
+//                UIView.animate(withDuration: 0.1) { [self] in
+//                    imageView.transform = CGAffineTransform(
+//                        scaleX: 0.8,
+//                        y: 1
+//                    )
+//                }
+//            }
+        }
+    }
+        
     lazy var imageView: UIImageView = {
         let image = UIImageView()
-        image.image = .yandexAd
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleToFill
         image.layer.cornerRadius = 8
         image.clipsToBounds = true
         return image
