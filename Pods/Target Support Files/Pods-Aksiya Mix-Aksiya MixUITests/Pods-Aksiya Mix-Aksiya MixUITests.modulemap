@@ -1,0 +1,6 @@
+framework module Pods_Aksiya_Mix_Aksiya_MixUITests {
+  umbrella header "Pods-Aksiya Mix-Aksiya MixUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

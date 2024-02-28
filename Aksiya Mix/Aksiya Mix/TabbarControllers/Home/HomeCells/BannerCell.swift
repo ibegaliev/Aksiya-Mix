@@ -5,6 +5,8 @@
 //  Created by iBegaliev on 1/27/24.
 //
 
+//https://github.com/Coder-TanJX/JXBanner
+
 import UIKit
 
 struct BannerData {
