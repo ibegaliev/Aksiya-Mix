@@ -13,6 +13,7 @@
 		8C0658122B73254200F6C9C3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0658112B73254200F6C9C3 /* RegisterViewController.swift */; };
 		8C0658162B73287600F6C9C3 /* ChooseLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0658152B73287600F6C9C3 /* ChooseLanguageViewController.swift */; };
 		8C06581B2B7328E700F6C9C3 /* ChooseLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C06581A2B7328E700F6C9C3 /* ChooseLanguageView.swift */; };
+		8C10377C2B8ECA91007E6530 /* BannerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10377B2B8ECA91007E6530 /* BannerItemCell.swift */; };
 		8C17F2E12B73424400CD6506 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C17F2E02B73424400CD6506 /* LaunchViewModel.swift */; };
 		8C19B0A92B63556A007D8872 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0A82B63556A007D8872 /* AppDelegate.swift */; };
 		8C19B0AB2B63556A007D8872 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0AA2B63556A007D8872 /* SceneDelegate.swift */; };
@@ -159,6 +160,7 @@
 		8C0658112B73254200F6C9C3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8C0658152B73287600F6C9C3 /* ChooseLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageViewController.swift; sourceTree = "<group>"; };
 		8C06581A2B7328E700F6C9C3 /* ChooseLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageView.swift; sourceTree = "<group>"; };
+		8C10377B2B8ECA91007E6530 /* BannerItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerItemCell.swift; sourceTree = "<group>"; };
 		8C17F2E02B73424400CD6506 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		8C19B0A52B63556A007D8872 /* Aksiya Mix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aksiya Mix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C19B0A82B63556A007D8872 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 			children = (
 				8C8D4AF72B68AD76007D1D77 /* HeaderView.swift */,
 				8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */,
+				8C10377B2B8ECA91007E6530 /* BannerItemCell.swift */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -1107,6 +1110,7 @@
 				8C06580E2B73249300F6C9C3 /* RegisterModel.swift in Sources */,
 				8CD8582A2B739C9E0077B2A8 /* LanguageButton.swift in Sources */,
 				8CD354592B6B8A2D004FFE0F /* FeedbackButton.swift in Sources */,
+				8C10377C2B8ECA91007E6530 /* BannerItemCell.swift in Sources */,
 				8C25CE082B6DEB7C00B345BA /* MapView.swift in Sources */,
 				8C958FE12B73402C00299AF8 /* LaunchView.swift in Sources */,
 				8CEA8A402B775B23000071FC /* CompanyView.swift in Sources */,
