@@ -25,7 +25,6 @@ class LikedController: TabmanViewController, PageboyViewControllerDataSource, TM
         bar.backgroundColor = .clear
         bar.indicator.overscrollBehavior = .bounce
         bar.indicator.weight = .custom(value: 4)
-        bar.hoverStyle = .init(effect: .highlight)
         
         addBar(bar, dataSource: self, at: .top)
         bar.snp.makeConstraints { make in

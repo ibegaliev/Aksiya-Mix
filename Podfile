@@ -6,6 +6,9 @@ target 'Aksiya Mix' do
   use_frameworks!
 
   pod 'JXBanner'
+  pod 'SnapKit'
+  pod 'Tabman'
+  pod 'IQKeyboardManagerSwift'
 
   target 'Aksiya MixTests' do
     inherit! :search_paths

@@ -46,7 +46,6 @@
 		8C8275CC2B7B67E0004C445B /* LikedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8275CB2B7B67E0004C445B /* LikedController.swift */; };
 		8C8275CE2B7B6A3D004C445B /* LikedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8275CD2B7B6A3D004C445B /* LikedView.swift */; };
 		8C8275D02B7B6A47004C445B /* LikedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8275CF2B7B6A47004C445B /* LikedViewModel.swift */; };
-		8C8275D32B7B6EEA004C445B /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 8C8275D22B7B6EEA004C445B /* Tabman */; };
 		8C8275D52B7B7B1F004C445B /* LikedSordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8275D42B7B7B1F004C445B /* LikedSordsView.swift */; };
 		8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */; };
 		8C85AF6C2B77A6DD00B3A7FC /* CompanyMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C85AF6B2B77A6DD00B3A7FC /* CompanyMainCell.swift */; };
@@ -59,8 +58,6 @@
 		8C958FDF2B73402300299AF8 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C958FDE2B73402300299AF8 /* LaunchScreenController.swift */; };
 		8C958FE12B73402C00299AF8 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C958FE02B73402C00299AF8 /* LaunchView.swift */; };
 		8C979E1E2B6C535D00C43155 /* SelectableColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C979E1D2B6C535D00C43155 /* SelectableColorView.swift */; };
-		8C9894E72B64AFFF0079F78C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9894E62B64AFFF0079F78C /* SnapKit */; };
-		8C9894EA2B64B7D60079F78C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9894E92B64B7D60079F78C /* IQKeyboardManagerSwift */; };
 		8C9BA7942B6A1ED5008C9420 /* SingleProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7932B6A1ED5008C9420 /* SingleProductViewController.swift */; };
 		8C9BA7962B6A1F88008C9420 /* SingleProductDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7952B6A1F88008C9420 /* SingleProductDM.swift */; };
 		8C9BA7982B6A1F93008C9420 /* SingleProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7972B6A1F93008C9420 /* SingleProductView.swift */; };
@@ -83,8 +80,6 @@
 		8CC185F82B751BCE00B13400 /* EnterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185F72B751BCE00B13400 /* EnterCodeView.swift */; };
 		8CC185FA2B751BDC00B13400 /* EnterCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185F92B751BDC00B13400 /* EnterCodeViewModel.swift */; };
 		8CC185FC2B75259900B13400 /* OtpFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185FB2B75259900B13400 /* OtpFieldView.swift */; };
-		8CCB71952B8C88E60039D4DD /* InfiniteLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 8CCB71942B8C88E60039D4DD /* InfiniteLayout */; };
-		8CCB71972B8C88E60039D4DD /* RxInfiniteLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 8CCB71962B8C88E60039D4DD /* RxInfiniteLayout */; };
 		8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354542B6B8985004FFE0F /* FeedbackItemsView.swift */; };
 		8CD354572B6B89CB004FFE0F /* FeedbackPityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354562B6B89CB004FFE0F /* FeedbackPityView.swift */; };
 		8CD354592B6B8A2D004FFE0F /* FeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354582B6B8A2D004FFE0F /* FeedbackButton.swift */; };
@@ -302,11 +297,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C9894E72B64AFFF0079F78C /* SnapKit in Frameworks */,
-				8C9894EA2B64B7D60079F78C /* IQKeyboardManagerSwift in Frameworks */,
-				8CCB71952B8C88E60039D4DD /* InfiniteLayout in Frameworks */,
-				8CCB71972B8C88E60039D4DD /* RxInfiniteLayout in Frameworks */,
-				8C8275D32B7B6EEA004C445B /* Tabman in Frameworks */,
 				CFC7308AEDE4B4E20D548EB6 /* Pods_Aksiya_Mix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -956,11 +946,6 @@
 			);
 			name = "Aksiya Mix";
 			packageProductDependencies = (
-				8C9894E62B64AFFF0079F78C /* SnapKit */,
-				8C9894E92B64B7D60079F78C /* IQKeyboardManagerSwift */,
-				8C8275D22B7B6EEA004C445B /* Tabman */,
-				8CCB71942B8C88E60039D4DD /* InfiniteLayout */,
-				8CCB71962B8C88E60039D4DD /* RxInfiniteLayout */,
 			);
 			productName = "Aksiya Mix";
 			productReference = 8C19B0A52B63556A007D8872 /* Aksiya Mix.app */;
@@ -1038,11 +1023,6 @@
 			);
 			mainGroup = 8C19B09C2B63556A007D8872;
 			packageReferences = (
-				8C9894E52B64AFFF0079F78C /* XCRemoteSwiftPackageReference "SnapKit" */,
-				8C9894E82B64B7D60079F78C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				8C8275D12B7B6EEA004C445B /* XCRemoteSwiftPackageReference "Tabman" */,
-				8CCB71932B8C885E0039D4DD /* XCRemoteSwiftPackageReference "InfiniteLayout" */,
-				8C6B068F2B8F085C0011C214 /* XCRemoteSwiftPackageReference "JXBanner" */,
 			);
 			productRefGroup = 8C19B0A62B63556A007D8872 /* Products */;
 			projectDirPath = "";
@@ -1406,7 +1386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1463,7 +1443,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1494,7 +1474,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1533,7 +1513,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1671,77 +1651,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		8C6B068F2B8F085C0011C214 /* XCRemoteSwiftPackageReference "JXBanner" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Coder-TanJX/JXBanner";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.6;
-			};
-		};
-		8C8275D12B7B6EEA004C445B /* XCRemoteSwiftPackageReference "Tabman" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/uias/Tabman?tab=readme-ov-file";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.2;
-			};
-		};
-		8C9894E52B64AFFF0079F78C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.0;
-			};
-		};
-		8C9894E82B64B7D60079F78C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-		8CCB71932B8C885E0039D4DD /* XCRemoteSwiftPackageReference "InfiniteLayout" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/arnauddorgans/InfiniteLayout.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.5.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		8C8275D22B7B6EEA004C445B /* Tabman */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8C8275D12B7B6EEA004C445B /* XCRemoteSwiftPackageReference "Tabman" */;
-			productName = Tabman;
-		};
-		8C9894E62B64AFFF0079F78C /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8C9894E52B64AFFF0079F78C /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		8C9894E92B64B7D60079F78C /* IQKeyboardManagerSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8C9894E82B64B7D60079F78C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
-			productName = IQKeyboardManagerSwift;
-		};
-		8CCB71942B8C88E60039D4DD /* InfiniteLayout */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8CCB71932B8C885E0039D4DD /* XCRemoteSwiftPackageReference "InfiniteLayout" */;
-			productName = InfiniteLayout;
-		};
-		8CCB71962B8C88E60039D4DD /* RxInfiniteLayout */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8CCB71932B8C885E0039D4DD /* XCRemoteSwiftPackageReference "InfiniteLayout" */;
-			productName = RxInfiniteLayout;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8C19B0B12B63556A007D8872 /* Aksiya_Mix.xcdatamodeld */ = {

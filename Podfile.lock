@@ -1,4 +1,5 @@
 PODS:
+  - IQKeyboardManagerSwift (6.5.10)
   - JXBanner (0.3.6):
     - JXBanner/Banner (= 0.3.6)
     - JXBanner/PageControl (= 0.3.6)
@@ -30,19 +31,34 @@ PODS:
     - JXPageControl/Common
   - JXPageControl/Transform (0.1.5):
     - JXPageControl/Common
+  - Pageboy (4.0.2)
+  - SnapKit (5.6.0)
+  - Tabman (3.0.2):
+    - Pageboy (~> 4.0.2)
 
 DEPENDENCIES:
+  - IQKeyboardManagerSwift
   - JXBanner
+  - SnapKit
+  - Tabman
 
 SPEC REPOS:
   trunk:
+    - IQKeyboardManagerSwift
     - JXBanner
     - JXPageControl
+    - Pageboy
+    - SnapKit
+    - Tabman
 
 SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   JXBanner: 348dbef856e786494cbf30fb45d6b84826f2d3c5
   JXPageControl: e9487b39e2e58fc17790833214f3b8e935bef98b
+  Pageboy: 34ff11e8d1041b81769d5bcde9b19a0cb7218bd9
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Tabman: 6326ec3a792da1c2a6e79c7eddb56af7b591c9d6
 
-PODFILE CHECKSUM: 5fbfa9dda1584be98452cd9d0e916dda786fc5b2
+PODFILE CHECKSUM: b2bc0a5ab4087c43fe1899d6669bffedfe3bd1aa
 
 COCOAPODS: 1.15.2
