@@ -12,6 +12,7 @@ class InputNumberView: UIView {
     lazy var leftLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "+998"
+        lbl.textAlignment = .right
         lbl.font = .appFont(ofSize: 14, weight: .regular)
         return lbl
     }()
@@ -62,7 +63,7 @@ class InputNumberView: UIView {
         }
         
         leftLabel.snp.makeConstraints { make in
-            make.width.equalTo(35)
+            make.width.equalTo(40)
         }
     }
     

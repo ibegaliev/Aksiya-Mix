@@ -146,11 +146,11 @@ class CompanyCell: UITableViewCell {
     private func setConstraints() {
         backView.snp.makeConstraints { make in
             make.top.bottom.equalTo(contentView).inset(4)
-            make.left.right.equalTo(contentView)
+            make.left.right.equalTo(contentView).inset(16)
         }
         mainStack.snp.makeConstraints { make in
-            make.top.bottom.equalTo(contentView).inset(12)
-            make.left.right.equalTo(contentView).inset(16)
+            make.top.bottom.equalTo(backView).inset(12)
+            make.left.right.equalTo(backView).inset(16)
         }
         mainImage.snp.makeConstraints { make in
             make.width.height.equalTo(64.toScreen)

@@ -93,7 +93,7 @@ class EnterPhoneView: UIView {
     
     private func setUI() {
         
-        backgroundColor = .backColor
+        backgroundColor = .white
 
         addSubview(mainStack)
         
