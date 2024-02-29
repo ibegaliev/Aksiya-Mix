@@ -13,7 +13,7 @@ import Pageboy
 class LikedController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
     
     let viewModel = LikedViewModel()
-    private var viewControllers = [UIViewController(), UIViewController(), UIViewController()]
+    private var viewControllers = [ManyItemsController(), ManyItemsController(), ManyItemsController()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,36 +67,12 @@ class LikedController: TabmanViewController, PageboyViewControllerDataSource, TM
     }
     
 }
+
+class ManyItemsController: UIViewController {
     
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        setController()
-//    }
-//    
-//    private func setController() {
-//        
-//        viewModel.view.delegate = self
-//        viewModel.view.selectedItem = 0
-//        
-//        view.addSubview(viewModel.view)
-//        viewModel.view.snp.makeConstraints { make in
-//            make.edges.equalTo(view)
-//        }
-//        
-//    }
-//    
-//    func selectedSaved() {
-//        viewModel.view.selectedItem = 0
-//    }
-//    
-//    func selectedSeen() {
-//        viewModel.view.selectedItem = 1
-//    }
-//    
-//    func selectedended() {
-//        viewModel.view.selectedItem = 2
-//    }
-//
-//    
-//}
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+}

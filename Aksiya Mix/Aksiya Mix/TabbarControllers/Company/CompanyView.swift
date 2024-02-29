@@ -22,7 +22,7 @@ class CompanyView: UIView, UITableViewDelegate, UITableViewDataSource {
         table.showsVerticalScrollIndicator = false
         table.separatorStyle = .none
         table.backgroundColor = .backColor
-        table.contentInset = .init(top: 4, left: 0, bottom: 50, right: 0)
+        table.contentInset = .init(top: 10, left: 0, bottom: 50, right: 0)
         table.register(CompanyCell.self, forCellReuseIdentifier: "CompanyCell")
         return table
     }()
