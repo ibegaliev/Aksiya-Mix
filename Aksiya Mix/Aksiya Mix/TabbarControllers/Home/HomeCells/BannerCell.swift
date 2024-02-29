@@ -41,9 +41,9 @@ class BannerCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVi
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUI()
-        setConstraints()
-        reloadData()
+//        setUI()
+//        setConstraints()
+//        reloadData()
     }
     
     required init?(coder: NSCoder) {

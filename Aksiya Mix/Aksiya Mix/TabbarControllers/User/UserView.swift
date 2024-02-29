@@ -37,7 +37,7 @@ class UserView: UIView {
         table.delegate = self
         table.dataSource = self
         table.backgroundColor = .backColor
-        table.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 50, right: 0)
+        table.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 50, right: 0)
         table.showsHorizontalScrollIndicator = false
         table.showsVerticalScrollIndicator = false
         table.separatorStyle = .none
