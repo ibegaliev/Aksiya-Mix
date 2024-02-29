@@ -68,7 +68,6 @@
 		8CA97E732B74F0B60020A80F /* InputNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA97E722B74F0B60020A80F /* InputNumberView.swift */; };
 		8CAB7CD02B7464AA0075C4DE /* Ex+UIFond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */; };
 		8CAD0BB12B6CE60A0001D02B /* UserCellViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */; };
-		8CB3D6052B8F0BFA0085F921 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8CB3D6042B8F0BFA0085F921 /* .gitignore */; };
 		8CBA40052B77933800F92F98 /* SingleCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40042B77933800F92F98 /* SingleCompanyViewModel.swift */; };
 		8CBA40072B77934300F92F98 /* SingleCompanyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40062B77934300F92F98 /* SingleCompanyView.swift */; };
 		8CBA40092B77935200F92F98 /* SingleCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40082B77935200F92F98 /* SingleCompanyController.swift */; };
@@ -153,15 +152,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2834C19E440286B3B7345C59 /* Pods-Aksiya Mix-Aksiya MixUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aksiya Mix-Aksiya MixUITests.release.xcconfig"; path = "Target Support Files/Pods-Aksiya Mix-Aksiya MixUITests/Pods-Aksiya Mix-Aksiya MixUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2ABD462D8BFF7C7B8701299A /* Pods_Aksiya_Mix_Aksiya_MixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aksiya_Mix_Aksiya_MixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5BBE2E24E97C09A48DA69F /* Pods_Aksiya_MixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aksiya_MixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		45DAE5886B0D0B1B0D2069F1 /* Pods-Aksiya Mix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aksiya Mix.debug.xcconfig"; path = "Target Support Files/Pods-Aksiya Mix/Pods-Aksiya Mix.debug.xcconfig"; sourceTree = "<group>"; };
-		49405E0B971C80CE44EE4A07 /* Pods-Aksiya MixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aksiya MixTests.debug.xcconfig"; path = "Target Support Files/Pods-Aksiya MixTests/Pods-Aksiya MixTests.debug.xcconfig"; sourceTree = "<group>"; };
-		49F0BB8A5381807D90161D90 /* Pods-Aksiya Mix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aksiya Mix.release.xcconfig"; path = "Target Support Files/Pods-Aksiya Mix/Pods-Aksiya Mix.release.xcconfig"; sourceTree = "<group>"; };
 		4D759E4A9F8DE6FD5B7FBBA4 /* Pods_Aksiya_Mix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aksiya_Mix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		759A78BC561ECF2875FBD5B0 /* Pods-Aksiya MixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aksiya MixTests.release.xcconfig"; path = "Target Support Files/Pods-Aksiya MixTests/Pods-Aksiya MixTests.release.xcconfig"; sourceTree = "<group>"; };
-		868BE9E3978232FF047FA39E /* Pods-Aksiya Mix-Aksiya MixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aksiya Mix-Aksiya MixUITests.debug.xcconfig"; path = "Target Support Files/Pods-Aksiya Mix-Aksiya MixUITests/Pods-Aksiya Mix-Aksiya MixUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C06580B2B73248700F6C9C3 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		8C06580D2B73249300F6C9C3 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		8C06580F2B73249E00F6C9C3 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -227,7 +220,6 @@
 		8CA97E722B74F0B60020A80F /* InputNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNumberView.swift; sourceTree = "<group>"; };
 		8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIFond.swift"; sourceTree = "<group>"; };
 		8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViews.swift; sourceTree = "<group>"; };
-		8CB3D6042B8F0BFA0085F921 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8CBA40042B77933800F92F98 /* SingleCompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCompanyViewModel.swift; sourceTree = "<group>"; };
 		8CBA40062B77934300F92F98 /* SingleCompanyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCompanyView.swift; sourceTree = "<group>"; };
 		8CBA40082B77935200F92F98 /* SingleCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCompanyController.swift; sourceTree = "<group>"; };
@@ -320,19 +312,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		555DC44D396BEA4739F5512C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				45DAE5886B0D0B1B0D2069F1 /* Pods-Aksiya Mix.debug.xcconfig */,
-				49F0BB8A5381807D90161D90 /* Pods-Aksiya Mix.release.xcconfig */,
-				868BE9E3978232FF047FA39E /* Pods-Aksiya Mix-Aksiya MixUITests.debug.xcconfig */,
-				2834C19E440286B3B7345C59 /* Pods-Aksiya Mix-Aksiya MixUITests.release.xcconfig */,
-				49405E0B971C80CE44EE4A07 /* Pods-Aksiya MixTests.debug.xcconfig */,
-				759A78BC561ECF2875FBD5B0 /* Pods-Aksiya MixTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		8C0658072B73234600F6C9C3 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,12 +405,10 @@
 		8C19B09C2B63556A007D8872 = {
 			isa = PBXGroup;
 			children = (
-				8CB3D6042B8F0BFA0085F921 /* .gitignore */,
 				8C19B0A72B63556A007D8872 /* Aksiya Mix */,
 				8C19B0C22B63556C007D8872 /* Aksiya MixTests */,
 				8C19B0CC2B63556C007D8872 /* Aksiya MixUITests */,
 				8C19B0A62B63556A007D8872 /* Products */,
-				555DC44D396BEA4739F5512C /* Pods */,
 				9AA35139C631DEE62D9A702F /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -1040,7 +1017,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CB3D6052B8F0BFA0085F921 /* .gitignore in Resources */,
 				8CDDB8C12B8711D20095CB82 /* SFProText-RegularItalic.ttf in Resources */,
 				8CDDB8C62B8711D20095CB82 /* SFProText-LightItalic.ttf in Resources */,
 				8CDDB8BF2B8711D20095CB82 /* SFProText-Medium.ttf in Resources */,
@@ -1455,7 +1431,6 @@
 		};
 		8C19B0D42B63556C007D8872 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45DAE5886B0D0B1B0D2069F1 /* Pods-Aksiya Mix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1495,7 +1470,6 @@
 		};
 		8C19B0D52B63556C007D8872 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49F0BB8A5381807D90161D90 /* Pods-Aksiya Mix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1533,7 +1507,6 @@
 		};
 		8C19B0D72B63556C007D8872 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49405E0B971C80CE44EE4A07 /* Pods-Aksiya MixTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1554,7 +1527,6 @@
 		};
 		8C19B0D82B63556C007D8872 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 759A78BC561ECF2875FBD5B0 /* Pods-Aksiya MixTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1575,7 +1547,6 @@
 		};
 		8C19B0DA2B63556C007D8872 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 868BE9E3978232FF047FA39E /* Pods-Aksiya Mix-Aksiya MixUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1594,7 +1565,6 @@
 		};
 		8C19B0DB2B63556C007D8872 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2834C19E440286B3B7345C59 /* Pods-Aksiya Mix-Aksiya MixUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
