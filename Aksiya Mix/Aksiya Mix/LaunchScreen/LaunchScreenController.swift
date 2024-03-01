@@ -18,9 +18,13 @@ class LaunchScreenController: UIViewController, LaunchViewDelegate {
     }
     
     func animateDidFinish() {
-        let controller = ChooseLanguageViewController()
-        controller.modalPresentationStyle = .fullScreen
-        present(controller, animated: false)
+        if true {
+            let controller = ChooseLanguageViewController()
+            controller.modalPresentationStyle = .fullScreen
+            present(controller, animated: false)
+        } else {
+            
+        }
     }
     
 }

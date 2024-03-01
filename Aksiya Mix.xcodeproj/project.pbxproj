@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		121888621DC56468508ED6EA /* Pods_Aksiya_Mix_Aksiya_MixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABD462D8BFF7C7B8701299A /* Pods_Aksiya_Mix_Aksiya_MixUITests.framework */; };
 		8C06580C2B73248700F6C9C3 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C06580B2B73248700F6C9C3 /* RegisterView.swift */; };
 		8C06580E2B73249300F6C9C3 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C06580D2B73249300F6C9C3 /* RegisterModel.swift */; };
 		8C0658102B73249E00F6C9C3 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C06580F2B73249E00F6C9C3 /* RegisterViewModel.swift */; };
@@ -65,6 +64,9 @@
 		8CA197B52B7472170025E9F9 /* EnterPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA197B42B7472170025E9F9 /* EnterPhoneViewController.swift */; };
 		8CA197B72B74723D0025E9F9 /* EnterPhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA197B62B74723D0025E9F9 /* EnterPhoneViewModel.swift */; };
 		8CA197B92B7472440025E9F9 /* EnterPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA197B82B7472440025E9F9 /* EnterPhoneView.swift */; };
+		8CA3A08C2B90DBA900291D15 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A08B2B90DBA900291D15 /* IQKeyboardManagerSwift */; };
+		8CA3A08F2B90DBC800291D15 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A08E2B90DBC800291D15 /* Tabman */; };
+		8CA3A0972B90DE6C00291D15 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A0962B90DE6C00291D15 /* SnapKit */; };
 		8CA97E732B74F0B60020A80F /* InputNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA97E722B74F0B60020A80F /* InputNumberView.swift */; };
 		8CAB7CD02B7464AA0075C4DE /* Ex+UIFond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */; };
 		8CAD0BB12B6CE60A0001D02B /* UserCellViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */; };
@@ -130,8 +132,6 @@
 		8CF5A7F82B73D51600D65039 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A7F72B73D51600D65039 /* UserDefaultsManager.swift */; };
 		8CF5A7FA2B73D58600D65039 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A7F92B73D58600D65039 /* LanguageManager.swift */; };
 		8CF5A7FC2B73D89700D65039 /* LyricsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A7FB2B73D89700D65039 /* LyricsManager.swift */; };
-		CFC7308AEDE4B4E20D548EB6 /* Pods_Aksiya_Mix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D759E4A9F8DE6FD5B7FBBA4 /* Pods_Aksiya_Mix.framework */; };
-		F0E82CA279C4CF22B98257D3 /* Pods_Aksiya_MixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5BBE2E24E97C09A48DA69F /* Pods_Aksiya_MixTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,9 +152,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2ABD462D8BFF7C7B8701299A /* Pods_Aksiya_Mix_Aksiya_MixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aksiya_Mix_Aksiya_MixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F5BBE2E24E97C09A48DA69F /* Pods_Aksiya_MixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aksiya_MixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D759E4A9F8DE6FD5B7FBBA4 /* Pods_Aksiya_Mix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aksiya_Mix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C06580B2B73248700F6C9C3 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		8C06580D2B73249300F6C9C3 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		8C06580F2B73249E00F6C9C3 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -289,7 +286,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFC7308AEDE4B4E20D548EB6 /* Pods_Aksiya_Mix.framework in Frameworks */,
+				8CA3A0972B90DE6C00291D15 /* SnapKit in Frameworks */,
+				8CA3A08C2B90DBA900291D15 /* IQKeyboardManagerSwift in Frameworks */,
+				8CA3A08F2B90DBC800291D15 /* Tabman in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +296,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0E82CA279C4CF22B98257D3 /* Pods_Aksiya_MixTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +303,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				121888621DC56468508ED6EA /* Pods_Aksiya_Mix_Aksiya_MixUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +406,6 @@
 				8C19B0C22B63556C007D8872 /* Aksiya MixTests */,
 				8C19B0CC2B63556C007D8872 /* Aksiya MixUITests */,
 				8C19B0A62B63556A007D8872 /* Products */,
-				9AA35139C631DEE62D9A702F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -894,16 +890,6 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		9AA35139C631DEE62D9A702F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4D759E4A9F8DE6FD5B7FBBA4 /* Pods_Aksiya_Mix.framework */,
-				2ABD462D8BFF7C7B8701299A /* Pods_Aksiya_Mix_Aksiya_MixUITests.framework */,
-				2F5BBE2E24E97C09A48DA69F /* Pods_Aksiya_MixTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -911,11 +897,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C19B0D32B63556C007D8872 /* Build configuration list for PBXNativeTarget "Aksiya Mix" */;
 			buildPhases = (
-				EE3CF9B97D4553A86AE1C9C6 /* [CP] Check Pods Manifest.lock */,
 				8C19B0A12B63556A007D8872 /* Sources */,
 				8C19B0A22B63556A007D8872 /* Frameworks */,
 				8C19B0A32B63556A007D8872 /* Resources */,
-				97A61623B72BB241D68F55DC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -923,6 +907,9 @@
 			);
 			name = "Aksiya Mix";
 			packageProductDependencies = (
+				8CA3A08B2B90DBA900291D15 /* IQKeyboardManagerSwift */,
+				8CA3A08E2B90DBC800291D15 /* Tabman */,
+				8CA3A0962B90DE6C00291D15 /* SnapKit */,
 			);
 			productName = "Aksiya Mix";
 			productReference = 8C19B0A52B63556A007D8872 /* Aksiya Mix.app */;
@@ -932,7 +919,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C19B0D62B63556C007D8872 /* Build configuration list for PBXNativeTarget "Aksiya MixTests" */;
 			buildPhases = (
-				4D2D697835568A82312945A0 /* [CP] Check Pods Manifest.lock */,
 				8C19B0BB2B63556C007D8872 /* Sources */,
 				8C19B0BC2B63556C007D8872 /* Frameworks */,
 				8C19B0BD2B63556C007D8872 /* Resources */,
@@ -951,11 +937,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C19B0D92B63556C007D8872 /* Build configuration list for PBXNativeTarget "Aksiya MixUITests" */;
 			buildPhases = (
-				658D992DB91A88A8F4292302 /* [CP] Check Pods Manifest.lock */,
 				8C19B0C52B63556C007D8872 /* Sources */,
 				8C19B0C62B63556C007D8872 /* Frameworks */,
 				8C19B0C72B63556C007D8872 /* Resources */,
-				7A9F75536E5A5952EEF36E3A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1000,6 +984,9 @@
 			);
 			mainGroup = 8C19B09C2B63556A007D8872;
 			packageReferences = (
+				8CA3A08A2B90DBA900291D15 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				8CA3A08D2B90DBC800291D15 /* XCRemoteSwiftPackageReference "Tabman" */,
+				8CA3A0952B90DE6C00291D15 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 8C19B0A62B63556A007D8872 /* Products */;
 			projectDirPath = "";
@@ -1050,109 +1037,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4D2D697835568A82312945A0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Aksiya MixTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		658D992DB91A88A8F4292302 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Aksiya Mix-Aksiya MixUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A9F75536E5A5952EEF36E3A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Aksiya Mix-Aksiya MixUITests/Pods-Aksiya Mix-Aksiya MixUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Aksiya Mix-Aksiya MixUITests/Pods-Aksiya Mix-Aksiya MixUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aksiya Mix-Aksiya MixUITests/Pods-Aksiya Mix-Aksiya MixUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		97A61623B72BB241D68F55DC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Aksiya Mix/Pods-Aksiya Mix-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Aksiya Mix/Pods-Aksiya Mix-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aksiya Mix/Pods-Aksiya Mix-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EE3CF9B97D4553A86AE1C9C6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Aksiya Mix-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8C19B0A12B63556A007D8872 /* Sources */ = {
@@ -1621,6 +1505,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8CA3A08A2B90DBA900291D15 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.1;
+			};
+		};
+		8CA3A08D2B90DBC800291D15 /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman?tab=readme-ov-file";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.2;
+			};
+		};
+		8CA3A0952B90DE6C00291D15 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8CA3A08B2B90DBA900291D15 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CA3A08A2B90DBA900291D15 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		8CA3A08E2B90DBC800291D15 /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CA3A08D2B90DBC800291D15 /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
+		};
+		8CA3A0962B90DE6C00291D15 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CA3A0952B90DE6C00291D15 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8C19B0B12B63556A007D8872 /* Aksiya_Mix.xcdatamodeld */ = {
