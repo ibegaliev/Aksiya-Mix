@@ -29,12 +29,8 @@ class LanguageManager {
         }
     }
     
-    func getLanguage() -> String {
-        if let lang = udManager.getObject(key: keyForLanguage) as? String {
-            return lang
-        } else {
-            return "uz"
-        }
+    func getLanguage() -> String? {
+        return udManager.getObject(key: keyForLanguage) as? String
     }
         
 }

@@ -18,12 +18,14 @@ class LaunchScreenController: UIViewController, LaunchViewDelegate {
     }
     
     func animateDidFinish() {
-        if true {
-            let controller = ChooseLanguageViewController()
+        if let _ = LanguageManager().getLanguage() {
+            let controller = TabbarController()
             controller.modalPresentationStyle = .fullScreen
             present(controller, animated: false)
         } else {
-            
+            let controller = ChooseLanguageViewController()
+            controller.modalPresentationStyle = .fullScreen
+            present(controller, animated: false)
         }
     }
     

@@ -22,7 +22,7 @@ class ChooseLanguageViewController: UIViewController, ChooseLanguageViewDelegate
     }
     
     func confirmTapped() {
-        let controller = EnterPhoneViewController()
+        let controller = TabbarController()
         controller.modalPresentationStyle = .overFullScreen
         present(controller, animated: true)
     }
