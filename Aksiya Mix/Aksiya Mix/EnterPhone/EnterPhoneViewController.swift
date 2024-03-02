@@ -23,17 +23,15 @@ class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate {
         var telPhone = "+998 "
         
         for n in number.enumerated() {
-//            if n.element != " " {
-                telPhone.append(n.element)
-//            }
+            telPhone.append(n.element)
         }
         
-        print(telPhone, "Phonme")
-        viewModel.validateUzbekPhoneNumber(telPhone) { isNumber in
+        viewModel.validateUzbekPhoneNumber(telPhone) { [self] isNumber in
             if isNumber {
+                viewModel.sentCode(number: "")
                 let controller = EnterCodeViewController()
                 
-                self.navigationController?.pushViewController(controller, animated: true)
+                navigationController?.pushViewController(controller, animated: true)
             } else {
                 print("ERRORRRR")
             }

@@ -73,6 +73,7 @@
 		8CA97E732B74F0B60020A80F /* InputNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA97E722B74F0B60020A80F /* InputNumberView.swift */; };
 		8CAB7CD02B7464AA0075C4DE /* Ex+UIFond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */; };
 		8CAD0BB12B6CE60A0001D02B /* UserCellViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */; };
+		8CB1C0E62B939FF400F510BB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB1C0E52B939FF400F510BB /* SwiftyJSON */; };
 		8CBA40052B77933800F92F98 /* SingleCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40042B77933800F92F98 /* SingleCompanyViewModel.swift */; };
 		8CBA40072B77934300F92F98 /* SingleCompanyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40062B77934300F92F98 /* SingleCompanyView.swift */; };
 		8CBA40092B77935200F92F98 /* SingleCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40082B77935200F92F98 /* SingleCompanyController.swift */; };
@@ -294,6 +295,7 @@
 			files = (
 				8CA3A0972B90DE6C00291D15 /* SnapKit in Frameworks */,
 				8CA3A08C2B90DBA900291D15 /* IQKeyboardManagerSwift in Frameworks */,
+				8CB1C0E62B939FF400F510BB /* SwiftyJSON in Frameworks */,
 				8CA3A08F2B90DBC800291D15 /* Tabman in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -927,6 +929,7 @@
 				8CA3A08B2B90DBA900291D15 /* IQKeyboardManagerSwift */,
 				8CA3A08E2B90DBC800291D15 /* Tabman */,
 				8CA3A0962B90DE6C00291D15 /* SnapKit */,
+				8CB1C0E52B939FF400F510BB /* SwiftyJSON */,
 			);
 			productName = "Aksiya Mix";
 			productReference = 8C19B0A52B63556A007D8872 /* Aksiya Mix.app */;
@@ -1004,6 +1007,7 @@
 				8CA3A08A2B90DBA900291D15 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				8CA3A08D2B90DBC800291D15 /* XCRemoteSwiftPackageReference "Tabman" */,
 				8CA3A0952B90DE6C00291D15 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8CB1C0E42B939FF400F510BB /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 8C19B0A62B63556A007D8872 /* Products */;
 			projectDirPath = "";
@@ -1551,6 +1555,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		8CB1C0E42B939FF400F510BB /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1568,6 +1580,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8CA3A0952B90DE6C00291D15 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		8CB1C0E52B939FF400F510BB /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CB1C0E42B939FF400F510BB /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 

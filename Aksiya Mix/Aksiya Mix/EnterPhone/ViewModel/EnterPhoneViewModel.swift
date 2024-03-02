@@ -18,4 +18,9 @@ class EnterPhoneViewModel {
         completion(regex.firstMatch(in: phoneNumber, options: [], range: range) != nil)
     }
     
+    func sentCode(number: String?) {
+        guard let number else { return }
+        NetworkService.shared.mainRequest(urlPath: .authCode, method: .post, bodyData: nil)
+    }
+    
 }
