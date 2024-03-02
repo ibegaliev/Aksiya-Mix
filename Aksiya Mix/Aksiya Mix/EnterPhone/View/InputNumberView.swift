@@ -7,7 +7,13 @@
 
 import UIKit
 
-class InputNumberView: UIView {
+protocol InputNumberViewDelegate {
+    func phoneNumber(number: String?)
+}
+
+class InputNumberView: UIView, UITextFieldDelegate {
+    
+    var delegate: InputNumberViewDelegate?
     
     lazy var leftLabel: UILabel = {
         let lbl = UILabel()
@@ -19,6 +25,7 @@ class InputNumberView: UIView {
     
     lazy var field: UITextField = {
         let fl = UITextField()
+        fl.delegate = self
         fl.keyboardType = .numberPad
         fl.font = .appFont(ofSize: 14, weight: .regular)
         return fl
@@ -65,6 +72,45 @@ class InputNumberView: UIView {
         leftLabel.snp.makeConstraints { make in
             make.width.equalTo(40)
         }
+    }
+    
+    func formatPhoneNumber(_ textField: UITextField, range: NSRange, replacementString string: String) -> Bool {
+        // Get the current text in the text field
+        guard let text = textField.text else {
+            return true
+        }
+        if string.isEmpty {
+            return true
+        }
+        let newText = (text as NSString).replacingCharacters(in: range, with: string)
+        let numericText = newText.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        guard numericText.count <= 9 else {
+            return false
+        }
+        var formattedNumber = ""
+        let components = Array(numericText)
+        for (index, character) in components.enumerated() {
+            if index == 2 || index == 5 || index == 7 || index == 9 {
+                formattedNumber += " "
+            }
+            formattedNumber += String(character)
+        }
+        textField.text = formattedNumber
+        print(formattedNumber, "NUM")
+        delegate?.phoneNumber(number: formattedNumber)
+        return false
+    }
+
+    func textField(
+        _ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String
+    ) -> Bool {
+        if let text = textField.text, let textRange = Range(range, in: text) {
+            let updatedText = text.replacingCharacters(in: textRange, with: string)
+            if updatedText.count < 12 {
+                delegate?.phoneNumber(number: updatedText)
+            }
+        }
+        return formatPhoneNumber(textField, range: range, replacementString: string)
     }
     
 }

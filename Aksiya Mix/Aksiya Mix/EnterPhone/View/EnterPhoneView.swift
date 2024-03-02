@@ -11,9 +11,11 @@ protocol EnterPhoneViewDelegate {
     func saveTapped(number: String?)
 }
 
-class EnterPhoneView: UIView {
+class EnterPhoneView: UIView, InputNumberViewDelegate {
     
     var delegate: EnterPhoneViewDelegate?
+    
+    var number: String?
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -38,7 +40,7 @@ class EnterPhoneView: UIView {
     
     lazy var inputNumberView: InputNumberView = {
         let input = InputNumberView()
-        
+        input.delegate = self
         return input
     }()
     
@@ -122,9 +124,14 @@ class EnterPhoneView: UIView {
         }
     }
     
+    func phoneNumber(number: String?) {
+        self.number = number
+    }
+
+    
     @objc
     func saveTapped() {
-        delegate?.saveTapped(number: "number")
+        delegate?.saveTapped(number: number)
     }
     
 }

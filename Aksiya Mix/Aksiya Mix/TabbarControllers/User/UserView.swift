@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol UserViewDelegate {
+    func auth()
+}
+
 struct UserViewData {
     var icon: UIImage
     var title: String
 }
 
 class UserView: UIView {
+    
+    var delegate: UserViewDelegate?
     
     var data: [UserViewData] = [
         UserViewData(icon: .settingsUser, title: "Sozlamalar"),
@@ -90,13 +96,21 @@ extension UserView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserTopView", for: indexPath) as! UserTopView
-            
+            cell.delegate = self
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
         cell.cellData = data[indexPath.row]
         if indexPath.row == 0 { cell.cellType = .top } else if indexPath.row == 5 { cell.cellType = .bottom }
         return cell
+    }
+    
+}
+
+extension UserView: UserTopViewDelegate {
+    
+    func authTapped() {
+        delegate?.auth()
     }
     
 }

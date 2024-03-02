@@ -19,8 +19,8 @@ class EnterCodeViewController: UIViewController, EnterCodeViewDelegate {
     
     func sentTapped() {
         let controller = EnterNameController()
-        controller.modalPresentationStyle = .overFullScreen
-        present(controller, animated: true)
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }

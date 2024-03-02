@@ -23,9 +23,11 @@
 		8C19B0C42B63556C007D8872 /* Aksiya_MixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0C32B63556C007D8872 /* Aksiya_MixTests.swift */; };
 		8C19B0CE2B63556C007D8872 /* Aksiya_MixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0CD2B63556C007D8872 /* Aksiya_MixUITests.swift */; };
 		8C19B0D02B63556C007D8872 /* Aksiya_MixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0CF2B63556C007D8872 /* Aksiya_MixUITestsLaunchTests.swift */; };
+		8C1D4BA12B92D37200018A03 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D4BA02B92D37200018A03 /* URL.swift */; };
 		8C25CE082B6DEB7C00B345BA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25CE072B6DEB7C00B345BA /* MapView.swift */; };
 		8C289D4A2B693AF300B2FEAC /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C289D492B693AF300B2FEAC /* TypeCell.swift */; };
 		8C461EBF2B64CEF8004DC171 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C461EBE2B64CEF8004DC171 /* BannerCell.swift */; };
+		8C47E7182B91D12900B59A25 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C47E7172B91D12900B59A25 /* NetworkService.swift */; };
 		8C5684C82B7BC937005DC4B7 /* LikedSordsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5684C72B7BC937005DC4B7 /* LikedSordsItem.swift */; };
 		8C661F902B641D1C00437F0D /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F8F2B641D1C00437F0D /* BaseView.swift */; };
 		8C661F922B641E7500437F0D /* Ex+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F912B641E7500437F0D /* Ex+Int.swift */; };
@@ -61,6 +63,7 @@
 		8C9BA7962B6A1F88008C9420 /* SingleProductDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7952B6A1F88008C9420 /* SingleProductDM.swift */; };
 		8C9BA7982B6A1F93008C9420 /* SingleProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7972B6A1F93008C9420 /* SingleProductView.swift */; };
 		8C9BA79A2B6A1F9E008C9420 /* SingleProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7992B6A1F9E008C9420 /* SingleProductViewModel.swift */; };
+		8CA0EC562B92E6D0009DF9B7 /* HttpMethodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0EC552B92E6D0009DF9B7 /* HttpMethodType.swift */; };
 		8CA197B52B7472170025E9F9 /* EnterPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA197B42B7472170025E9F9 /* EnterPhoneViewController.swift */; };
 		8CA197B72B74723D0025E9F9 /* EnterPhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA197B62B74723D0025E9F9 /* EnterPhoneViewModel.swift */; };
 		8CA197B92B7472440025E9F9 /* EnterPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA197B82B7472440025E9F9 /* EnterPhoneView.swift */; };
@@ -173,9 +176,11 @@
 		8C19B0C92B63556C007D8872 /* Aksiya MixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aksiya MixUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C19B0CD2B63556C007D8872 /* Aksiya_MixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aksiya_MixUITests.swift; sourceTree = "<group>"; };
 		8C19B0CF2B63556C007D8872 /* Aksiya_MixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aksiya_MixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8C1D4BA02B92D37200018A03 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		8C25CE072B6DEB7C00B345BA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8C289D492B693AF300B2FEAC /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 		8C461EBE2B64CEF8004DC171 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		8C47E7172B91D12900B59A25 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8C5684C72B7BC937005DC4B7 /* LikedSordsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedSordsItem.swift; sourceTree = "<group>"; };
 		8C661F8F2B641D1C00437F0D /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		8C661F912B641E7500437F0D /* Ex+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+Int.swift"; sourceTree = "<group>"; };
@@ -211,6 +216,7 @@
 		8C9BA7952B6A1F88008C9420 /* SingleProductDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductDM.swift; sourceTree = "<group>"; };
 		8C9BA7972B6A1F93008C9420 /* SingleProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductView.swift; sourceTree = "<group>"; };
 		8C9BA7992B6A1F9E008C9420 /* SingleProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductViewModel.swift; sourceTree = "<group>"; };
+		8CA0EC552B92E6D0009DF9B7 /* HttpMethodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethodType.swift; sourceTree = "<group>"; };
 		8CA197B42B7472170025E9F9 /* EnterPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewController.swift; sourceTree = "<group>"; };
 		8CA197B62B74723D0025E9F9 /* EnterPhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewModel.swift; sourceTree = "<group>"; };
 		8CA197B82B7472440025E9F9 /* EnterPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneView.swift; sourceTree = "<group>"; };
@@ -424,6 +430,7 @@
 			children = (
 				8C19B0A82B63556A007D8872 /* AppDelegate.swift */,
 				8C19B0AA2B63556A007D8872 /* SceneDelegate.swift */,
+				8C1D4B9F2B92D35800018A03 /* Networking */,
 				8CF5A7F62B73D50200D65039 /* Managers */,
 				8C661F932B64230D00437F0D /* Customs */,
 				8CE832E52B637A59004B4E6D /* Helpers */,
@@ -453,6 +460,16 @@
 				8C19B0CF2B63556C007D8872 /* Aksiya_MixUITestsLaunchTests.swift */,
 			);
 			path = "Aksiya MixUITests";
+			sourceTree = "<group>";
+		};
+		8C1D4B9F2B92D35800018A03 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8C47E7172B91D12900B59A25 /* NetworkService.swift */,
+				8C1D4BA02B92D37200018A03 /* URL.swift */,
+				8CA0EC552B92E6D0009DF9B7 /* HttpMethodType.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		8C461EBD2B64CEE3004DC171 /* HomeCells */ = {
@@ -1053,6 +1070,7 @@
 				8CEA8A442B775E1D000071FC /* CompanyCell.swift in Sources */,
 				8C7FB0002B7738AB0062BF59 /* SearchController.swift in Sources */,
 				8CBE7BC92B78F101001559E9 /* SingleCategoryController.swift in Sources */,
+				8C1D4BA12B92D37200018A03 /* URL.swift in Sources */,
 				8C461EBF2B64CEF8004DC171 /* BannerCell.swift in Sources */,
 				8CA97E732B74F0B60020A80F /* InputNumberView.swift in Sources */,
 				8CBA40092B77935200F92F98 /* SingleCompanyController.swift in Sources */,
@@ -1071,6 +1089,7 @@
 				8C8275D52B7B7B1F004C445B /* LikedSordsView.swift in Sources */,
 				8CE832EE2B638400004B4E6D /* BaseViewController.swift in Sources */,
 				8C8EFF942B7871E0002DE31D /* CategoryController.swift in Sources */,
+				8C47E7182B91D12900B59A25 /* NetworkService.swift in Sources */,
 				8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */,
 				8C19B0A92B63556A007D8872 /* AppDelegate.swift in Sources */,
 				8CE67A302B6BA07100D6E428 /* SelectableView.swift in Sources */,
@@ -1093,6 +1112,7 @@
 				8C8275CE2B7B6A3D004C445B /* LikedView.swift in Sources */,
 				8C19B0B32B63556A007D8872 /* Aksiya_Mix.xcdatamodeld in Sources */,
 				8CA197B52B7472170025E9F9 /* EnterPhoneViewController.swift in Sources */,
+				8CA0EC562B92E6D0009DF9B7 /* HttpMethodType.swift in Sources */,
 				8C7B9DC62B836AD400372CB1 /* UserView.swift in Sources */,
 				8CE832E72B637A6D004B4E6D /* Ex+String.swift in Sources */,
 				8C77817D2B6A6DC500CA6D0A /* Ex+UILabel.swift in Sources */,

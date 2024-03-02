@@ -8,7 +8,13 @@
 import UIKit
 import SnapKit
 
+protocol UserTopViewDelegate {
+    func authTapped()
+}
+
 class UserTopView: UITableViewCell {
+    
+    var delegate: UserTopViewDelegate?
     
     lazy var topView: UserTopImageView = {
         let view = UserTopImageView()
@@ -37,6 +43,7 @@ class UserTopView: UITableViewCell {
         btn.backgroundColor = .selectBlue
         btn.setTitleColor(.white, for: .normal)
         btn.setTitle(LyricsManager.getLyrics(type: .log), for: .normal)
+        btn.addTarget(self, action: #selector(authTapped), for: .touchUpInside)
         return btn
     }()
     
@@ -73,7 +80,7 @@ class UserTopView: UITableViewCell {
         selectionStyle = .none
         backgroundColor = .backColor
         
-        addSubview(mainStack)
+        contentView.addSubview(mainStack)
         [topView, labelsStack, blueButton].forEach { item in
             mainStack.addArrangedSubview(item)
         }
@@ -84,9 +91,14 @@ class UserTopView: UITableViewCell {
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.top.bottom.equalTo(self).inset(12)
-            make.left.right.equalTo(self).inset(16)
+            make.top.bottom.equalTo(contentView).inset(12)
+            make.left.right.equalTo(contentView).inset(16)
         }
+    }
+    
+    @objc
+    private func authTapped() {
+        delegate?.authTapped()
     }
     
 }

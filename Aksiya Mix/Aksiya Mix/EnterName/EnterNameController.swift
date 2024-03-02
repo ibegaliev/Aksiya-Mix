@@ -18,9 +18,7 @@ class EnterNameController: UIViewController, EnterNameViewDelegate {
     }
     
     func nextTapped() {
-        let controller = TabbarController()
-        controller.modalPresentationStyle = .overFullScreen
-        present(controller, animated: true)
+        dismiss(animated: true)
     }
     
 }
