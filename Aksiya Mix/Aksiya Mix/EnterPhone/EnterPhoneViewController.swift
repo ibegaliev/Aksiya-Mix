@@ -28,10 +28,11 @@ class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate {
         
         viewModel.validateUzbekPhoneNumber(telPhone) { [self] isNumber in
             if isNumber {
-                viewModel.sentCode(number: "")
-                let controller = EnterCodeViewController()
-                
-                navigationController?.pushViewController(controller, animated: true)
+                viewModel.sentCode(number: telPhone) {
+                    let controller = EnterCodeViewController()
+                    
+                    navigationController?.pushViewController(controller, animated: true)
+                }
             } else {
                 print("ERRORRRR")
             }

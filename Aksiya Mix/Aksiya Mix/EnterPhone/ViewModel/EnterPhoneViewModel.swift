@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class EnterPhoneViewModel {
     
@@ -18,9 +19,17 @@ class EnterPhoneViewModel {
         completion(regex.firstMatch(in: phoneNumber, options: [], range: range) != nil)
     }
     
-    func sentCode(number: String?) {
+    func sentCode(number: String?, completion: @escaping ()->()) {
         guard let number else { return }
-        NetworkService.shared.mainRequest(urlPath: .authCode, method: .post, bodyData: nil)
+        
+        NetworkService.shared.mainRequest(urlPath: .authCode, method: .post, bodyData: nil) {
+            completion()
+        } errorData: { data in
+            var errorData: ErrorResponse?
+            errorData = Parser.shared.parse(json: data)
+            
+            print(errorData?.error?.detail?.phone_number?.first)
+        }
     }
     
 }

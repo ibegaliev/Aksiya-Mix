@@ -85,6 +85,8 @@
 		8CC185F82B751BCE00B13400 /* EnterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185F72B751BCE00B13400 /* EnterCodeView.swift */; };
 		8CC185FA2B751BDC00B13400 /* EnterCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185F92B751BDC00B13400 /* EnterCodeViewModel.swift */; };
 		8CC185FC2B75259900B13400 /* OtpFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC185FB2B75259900B13400 /* OtpFieldView.swift */; };
+		8CD14DD32B93ACF200D813D1 /* PhoneDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD14DD22B93ACF200D813D1 /* PhoneDM.swift */; };
+		8CD14DD52B93AD2900D813D1 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD14DD42B93AD2900D813D1 /* Parser.swift */; };
 		8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354542B6B8985004FFE0F /* FeedbackItemsView.swift */; };
 		8CD354572B6B89CB004FFE0F /* FeedbackPityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354562B6B89CB004FFE0F /* FeedbackPityView.swift */; };
 		8CD354592B6B8A2D004FFE0F /* FeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354582B6B8A2D004FFE0F /* FeedbackButton.swift */; };
@@ -235,6 +237,8 @@
 		8CC185F72B751BCE00B13400 /* EnterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeView.swift; sourceTree = "<group>"; };
 		8CC185F92B751BDC00B13400 /* EnterCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeViewModel.swift; sourceTree = "<group>"; };
 		8CC185FB2B75259900B13400 /* OtpFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpFieldView.swift; sourceTree = "<group>"; };
+		8CD14DD22B93ACF200D813D1 /* PhoneDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDM.swift; sourceTree = "<group>"; };
+		8CD14DD42B93AD2900D813D1 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		8CD354542B6B8985004FFE0F /* FeedbackItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackItemsView.swift; sourceTree = "<group>"; };
 		8CD354562B6B89CB004FFE0F /* FeedbackPityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPityView.swift; sourceTree = "<group>"; };
 		8CD354582B6B8A2D004FFE0F /* FeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackButton.swift; sourceTree = "<group>"; };
@@ -470,6 +474,7 @@
 				8C47E7172B91D12900B59A25 /* NetworkService.swift */,
 				8C1D4BA02B92D37200018A03 /* URL.swift */,
 				8CA0EC552B92E6D0009DF9B7 /* HttpMethodType.swift */,
+				8CD14DD42B93AD2900D813D1 /* Parser.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -667,6 +672,7 @@
 		8CA197B22B7471F70025E9F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8CD14DD22B93ACF200D813D1 /* PhoneDM.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1115,6 +1121,7 @@
 				8CBE7BCB2B78F3BE001559E9 /* SingleCategoryViewModel.swift in Sources */,
 				8C8275CE2B7B6A3D004C445B /* LikedView.swift in Sources */,
 				8C19B0B32B63556A007D8872 /* Aksiya_Mix.xcdatamodeld in Sources */,
+				8CD14DD32B93ACF200D813D1 /* PhoneDM.swift in Sources */,
 				8CA197B52B7472170025E9F9 /* EnterPhoneViewController.swift in Sources */,
 				8CA0EC562B92E6D0009DF9B7 /* HttpMethodType.swift in Sources */,
 				8C7B9DC62B836AD400372CB1 /* UserView.swift in Sources */,
@@ -1143,6 +1150,7 @@
 				8C661F922B641E7500437F0D /* Ex+Int.swift in Sources */,
 				8CD354572B6B89CB004FFE0F /* FeedbackPityView.swift in Sources */,
 				8C7B9DC42B83649100372CB1 /* ImageManager.swift in Sources */,
+				8CD14DD52B93AD2900D813D1 /* Parser.swift in Sources */,
 				8CE832DF2B637910004B4E6D /* HomeView.swift in Sources */,
 				8C9BA7962B6A1F88008C9420 /* SingleProductDM.swift in Sources */,
 				8C8275CC2B7B67E0004C445B /* LikedController.swift in Sources */,
