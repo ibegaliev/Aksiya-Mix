@@ -19,16 +19,19 @@ class EnterPhoneViewModel {
         completion(regex.firstMatch(in: phoneNumber, options: [], range: range) != nil)
     }
     
-    func sentCode(number: String?, completion: @escaping ()->()) {
+    func sentCode(number: String?, completion: @escaping (_ phoneNumber: String?)->(), error: @escaping (_ error: String?)->()) {
         guard let number else { return }
         
-        NetworkService.shared.mainRequest(urlPath: .authCode, method: .post, bodyData: nil) {
-            completion()
+        let dt = ["phone_number": number]
+        
+        let data: Data? = Parser.shared.data(data: dt)
+        
+        NetworkService.shared.mainRequest(urlPath: .authCode, method: .post, bodyData: data) {
+            completion(number)
         } errorData: { data in
             var errorData: ErrorResponse?
             errorData = Parser.shared.parse(json: data)
-            
-            print(errorData?.error?.detail?.phone_number?.first)
+            error(errorData?.error?.detail?.phone_number?.first)
         }
     }
     
