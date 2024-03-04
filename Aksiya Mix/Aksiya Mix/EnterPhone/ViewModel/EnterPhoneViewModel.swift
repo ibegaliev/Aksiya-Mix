@@ -21,11 +21,7 @@ class EnterPhoneViewModel {
     
     func sentCode(number: String?, completion: @escaping (_ phoneNumber: String?)->(), error: @escaping (_ error: String?)->()) {
         guard let number else { return }
-        
-        let dt = ["phone_number": number]
-        
-        let data: Data? = Parser.shared.data(data: dt)
-        
+        let data = ["phone_number": number]
         NetworkService.shared.mainRequest(urlPath: .authCode, method: .post, bodyData: data) {
             completion(number)
         } errorData: { data in

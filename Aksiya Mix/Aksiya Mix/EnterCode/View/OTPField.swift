@@ -8,7 +8,7 @@
 import UIKit
 
 protocol OTPFieldDelegate {
-    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
 }
 
 class OTPField: UITextField, UITextFieldDelegate {
@@ -33,7 +33,7 @@ class OTPField: UITextField, UITextFieldDelegate {
         keyboardType = .numberPad
         textContentType = .oneTimeCode
         self.delegate = self
-        font = .appFont(ofSize: 18, weight: .medium)
+        font = .appFont(ofSize: 18, weight: .semibold)
     }
     
     private func setConstraints() {

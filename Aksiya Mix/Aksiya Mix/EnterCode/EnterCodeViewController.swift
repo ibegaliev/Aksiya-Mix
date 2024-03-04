@@ -15,12 +15,24 @@ class EnterCodeViewController: UIViewController, EnterCodeViewDelegate {
         super.viewDidLoad()
         view = viewModel.view
         viewModel.view.delegate = self
+        viewModel.view.number = viewModel.phoneNumber
     }
     
     func sentTapped() {
-        let controller = EnterNameController()
         
-        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func otp(otp: String) {
+        viewModel.getToken(code: otp) { [self] in
+            let controller = EnterNameController()
+            
+            navigationController?.pushViewController(controller, animated: true)
+        } error: { [self] description in
+            let alert = UIAlertController(title: description, message: nil, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .cancel)
+            alert.addAction(okAction)
+            present(alert, animated: true)
+        }
     }
     
 }

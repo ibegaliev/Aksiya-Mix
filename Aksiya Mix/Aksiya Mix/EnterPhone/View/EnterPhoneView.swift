@@ -26,6 +26,7 @@ class EnterPhoneView: UIView, InputNumberViewDelegate {
     
     lazy var descriptionLabel: UILabel = {
         let lbl = UILabel()
+        lbl.textColor = .spacetext
         lbl.font = .appFont(ofSize: 16, weight: .regular)
         lbl.text = LyricsManager.getLyrics(type: .enterNumberDescription)
         return lbl

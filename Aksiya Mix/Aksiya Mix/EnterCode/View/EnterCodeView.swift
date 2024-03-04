@@ -9,11 +9,22 @@ import UIKit
 
 protocol EnterCodeViewDelegate {
     func sentTapped()
+    func otp(otp: String)
 }
 
-class EnterCodeView: UIView {
+class EnterCodeView: UIView, OtpFieldViewDelegate {
     
     var delegate: EnterCodeViewDelegate?
+    
+    var number: String? {
+        get {
+            return nil
+        }
+        set {
+            guard let newValue else { return }
+            descriptionLabel.text = "\(LyricsManager.getLyrics(type: .enterDescription)) \(newValue)"
+        }
+    }
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -34,7 +45,7 @@ class EnterCodeView: UIView {
     
     lazy var otpField: OtpFieldView = {
         let view = OtpFieldView()
-        
+        view.delegate = self
         return view
     }()
     
@@ -118,6 +129,10 @@ class EnterCodeView: UIView {
     @objc
     func sentTapped() {
         delegate?.sentTapped()
+    }
+    
+    func otp(otp: String) {
+        delegate?.otp(otp: otp)
     }
     
 }

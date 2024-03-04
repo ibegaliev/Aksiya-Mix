@@ -18,6 +18,7 @@ struct ErrorPhoneObject: Codable {
 
 struct ErrorDetail: Codable {
     let phone_number: [String]?
+    let auth_code: [String]?
 }
 
 

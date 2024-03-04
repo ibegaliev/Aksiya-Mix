@@ -36,13 +36,13 @@ class NetworkService: NSObject {
 extension NetworkService {
         
 //    MARK: request
-    func mainRequest(urlPath: UrlPath, method: HttpMethodType, bodyData: Data?, completion: @escaping ()->(), errorData: @escaping ( _ errorData: Data?)->()) {
+    func mainRequest(urlPath: UrlPath, method: HttpMethodType, bodyData: [String: String]?, completion: @escaping ()->(), errorData: @escaping ( _ errorData: Data?)->()) {
         
         defualtSession = URLSession(configuration: .default, delegate: self, delegateQueue: .main)
                 
         var request = URLRequest(url: URLManager.manager.url(path: urlPath))
         request.httpMethod = method.rawValue
-        request.httpBody = bodyData
+        request.httpBody = Parser.shared.data(data: bodyData)
         request.allHTTPHeaderFields = [
             "accept": "application/json",
             "Content-Type": "application/json",
