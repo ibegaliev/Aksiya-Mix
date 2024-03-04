@@ -56,6 +56,8 @@
 		8C8EFF902B7871CD002DE31D /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8EFF8F2B7871CD002DE31D /* CategoryViewModel.swift */; };
 		8C8EFF922B7871D4002DE31D /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8EFF912B7871D4002DE31D /* CategoryView.swift */; };
 		8C8EFF942B7871E0002DE31D /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8EFF932B7871E0002DE31D /* CategoryController.swift */; };
+		8C930B6F2B95D75E0048778B /* UserTokenDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C930B6E2B95D75E0048778B /* UserTokenDM.swift */; };
+		8C930B712B95D81B0048778B /* UserTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C930B702B95D81B0048778B /* UserTokenManager.swift */; };
 		8C958FDF2B73402300299AF8 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C958FDE2B73402300299AF8 /* LaunchScreenController.swift */; };
 		8C958FE12B73402C00299AF8 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C958FE02B73402C00299AF8 /* LaunchView.swift */; };
 		8C979E1E2B6C535D00C43155 /* SelectableColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C979E1D2B6C535D00C43155 /* SelectableColorView.swift */; };
@@ -214,6 +216,8 @@
 		8C8EFF8F2B7871CD002DE31D /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		8C8EFF912B7871D4002DE31D /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		8C8EFF932B7871E0002DE31D /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		8C930B6E2B95D75E0048778B /* UserTokenDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenDM.swift; sourceTree = "<group>"; };
+		8C930B702B95D81B0048778B /* UserTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenManager.swift; sourceTree = "<group>"; };
 		8C958FDE2B73402300299AF8 /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		8C958FE02B73402C00299AF8 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		8C979E1D2B6C535D00C43155 /* SelectableColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableColorView.swift; sourceTree = "<group>"; };
@@ -763,6 +767,7 @@
 		8CC185F12B7519FB00B13400 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8C930B6E2B95D75E0048778B /* UserTokenDM.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -917,6 +922,7 @@
 				8CF5A7FB2B73D89700D65039 /* LyricsManager.swift */,
 				8C7B9DC32B83649100372CB1 /* ImageManager.swift */,
 				8CE1A8102B941DD0007260D5 /* AlertManager.swift */,
+				8C930B702B95D81B0048778B /* UserTokenManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1092,6 +1098,7 @@
 				8CBA40092B77935200F92F98 /* SingleCompanyController.swift in Sources */,
 				8CF455972B64DFA700E3EAB4 /* ItemsCell.swift in Sources */,
 				8C8275D02B7B6A47004C445B /* LikedViewModel.swift in Sources */,
+				8C930B712B95D81B0048778B /* UserTokenManager.swift in Sources */,
 				8CEF41602B6D3603000D9A0E /* StoreCell.swift in Sources */,
 				8C9BA7942B6A1ED5008C9420 /* SingleProductViewController.swift in Sources */,
 				8C661F902B641D1C00437F0D /* BaseView.swift in Sources */,
@@ -1153,6 +1160,7 @@
 				8CC185F42B751A5400B13400 /* EnterCodeViewController.swift in Sources */,
 				8C0658122B73254200F6C9C3 /* RegisterViewController.swift in Sources */,
 				8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */,
+				8C930B6F2B95D75E0048778B /* UserTokenDM.swift in Sources */,
 				8C661F922B641E7500437F0D /* Ex+Int.swift in Sources */,
 				8CD354572B6B89CB004FFE0F /* FeedbackPityView.swift in Sources */,
 				8C7B9DC42B83649100372CB1 /* ImageManager.swift in Sources */,

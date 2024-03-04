@@ -30,20 +30,25 @@ class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate {
         
         viewModel.validateUzbekPhoneNumber(telPhone) { [self] isNumber in
             if isNumber {
-//                viewModel.sentCode(number: telPhone) { [self] phoneNumber in
+                viewModel.sentCode(number: telPhone) { [self] phoneNumber in
                     let controller = EnterCodeViewController()
                     controller.viewModel.phoneNumber = telPhone
                     navigationController?.pushViewController(controller, animated: true)
-//                } error: { error in
-//                    let alert = UIAlertController(title: error, message: nil, preferredStyle: .alert)
-//                    let okAction = UIAlertAction(title: "Ok", style: .cancel)
-//                    alert.addAction(okAction)
-//                    present(alert, animated: true)
-//                }
+                } error: { [self] error in
+                    alert(title: error)
+                }
             } else {
-                print("ERRORRRR")
+                alert(title: "Invalid phone Number")
             }
         }
     }
+    
+    func alert(title: String?) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .cancel)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+
 
 }

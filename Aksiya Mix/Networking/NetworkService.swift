@@ -36,7 +36,7 @@ class NetworkService: NSObject {
 extension NetworkService {
         
 //    MARK: request
-    func mainRequest(urlPath: UrlPath, method: HttpMethodType, bodyData: [String: String]?, completion: @escaping ()->(), errorData: @escaping ( _ errorData: Data?)->()) {
+    func mainRequest(urlPath: UrlPath, method: HttpMethodType, bodyData: [String: String]?, completion: @escaping (_ responseData: Data?)->(), errorData: @escaping (_ errorData: Data?)->()) {
         
         defualtSession = URLSession(configuration: .default, delegate: self, delegateQueue: .main)
                 
@@ -53,7 +53,7 @@ extension NetworkService {
             print(JSON(data))
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 201 {
-                    completion()
+                    completion(data)
                 } else {
                     errorData(data)
                 }
