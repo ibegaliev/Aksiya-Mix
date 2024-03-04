@@ -70,6 +70,7 @@
 		8CA3A08C2B90DBA900291D15 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A08B2B90DBA900291D15 /* IQKeyboardManagerSwift */; };
 		8CA3A08F2B90DBC800291D15 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A08E2B90DBC800291D15 /* Tabman */; };
 		8CA3A0972B90DE6C00291D15 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A0962B90DE6C00291D15 /* SnapKit */; };
+		8CA6F5A92B95610000F9FD42 /* OTPField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6F5A82B95610000F9FD42 /* OTPField.swift */; };
 		8CA97E732B74F0B60020A80F /* InputNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA97E722B74F0B60020A80F /* InputNumberView.swift */; };
 		8CAB7CD02B7464AA0075C4DE /* Ex+UIFond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */; };
 		8CAD0BB12B6CE60A0001D02B /* UserCellViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */; };
@@ -224,6 +225,7 @@
 		8CA197B42B7472170025E9F9 /* EnterPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewController.swift; sourceTree = "<group>"; };
 		8CA197B62B74723D0025E9F9 /* EnterPhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewModel.swift; sourceTree = "<group>"; };
 		8CA197B82B7472440025E9F9 /* EnterPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneView.swift; sourceTree = "<group>"; };
+		8CA6F5A82B95610000F9FD42 /* OTPField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPField.swift; sourceTree = "<group>"; };
 		8CA97E722B74F0B60020A80F /* InputNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNumberView.swift; sourceTree = "<group>"; };
 		8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIFond.swift"; sourceTree = "<group>"; };
 		8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViews.swift; sourceTree = "<group>"; };
@@ -754,7 +756,6 @@
 			isa = PBXGroup;
 			children = (
 				8CC185F92B751BDC00B13400 /* EnterCodeViewModel.swift */,
-				8CC185FB2B75259900B13400 /* OtpFieldView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -770,6 +771,8 @@
 			isa = PBXGroup;
 			children = (
 				8CC185F72B751BCE00B13400 /* EnterCodeView.swift */,
+				8CC185FB2B75259900B13400 /* OtpFieldView.swift */,
+				8CA6F5A82B95610000F9FD42 /* OTPField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1158,6 +1161,7 @@
 				8C9BA7962B6A1F88008C9420 /* SingleProductDM.swift in Sources */,
 				8C8275CC2B7B67E0004C445B /* LikedController.swift in Sources */,
 				8C17F2E12B73424400CD6506 /* LaunchViewModel.swift in Sources */,
+				8CA6F5A92B95610000F9FD42 /* OTPField.swift in Sources */,
 				8CF4559B2B64EB7900E3EAB4 /* BottomTypeCell.swift in Sources */,
 				8C73A90D2B6A272000AA80B5 /* SingleTopCell.swift in Sources */,
 				8CE1A8112B941DD0007260D5 /* AlertManager.swift in Sources */,

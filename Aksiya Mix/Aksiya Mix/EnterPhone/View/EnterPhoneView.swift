@@ -54,7 +54,7 @@ class EnterPhoneView: UIView, InputNumberViewDelegate {
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 110.toScreen
+        stack.spacing = 48.toScreen
         stack.distribution = .fill
         stack.alignment = .fill
         return stack

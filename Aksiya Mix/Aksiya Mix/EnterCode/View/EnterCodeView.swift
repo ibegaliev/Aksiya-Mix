@@ -56,7 +56,7 @@ class EnterCodeView: UIView {
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 86.toScreen
+        stack.spacing = 32.toScreen
         stack.distribution = .fill
         stack.alignment = .fill
         return stack
@@ -65,7 +65,7 @@ class EnterCodeView: UIView {
     lazy var topStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 8
+        stack.spacing = 14.toScreen
         stack.distribution = .fill
         stack.alignment = .center
         return stack
@@ -74,7 +74,7 @@ class EnterCodeView: UIView {
     lazy var bottomStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 32
+        stack.spacing = 12.toScreen
         return stack
     }()
     
@@ -98,11 +98,11 @@ class EnterCodeView: UIView {
             mainStack.addArrangedSubview(item)
         }
         
-        [titleLabel, descriptionLabel].forEach { item in
+        [titleLabel, descriptionLabel, otpField].forEach { item in
             topStack.addArrangedSubview(item)
         }
         
-        [otpField, returnButton, sentCode].forEach { item in
+        [returnButton, sentCode].forEach { item in
             bottomStack.addArrangedSubview(item)
         }
         

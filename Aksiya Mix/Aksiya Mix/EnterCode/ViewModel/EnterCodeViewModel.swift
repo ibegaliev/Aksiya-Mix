@@ -8,5 +8,10 @@
 import Foundation
 
 class EnterCodeViewModel {
+    
     let view = EnterCodeView()
+    var phoneNumber = ""
+
+    
+    
 }
