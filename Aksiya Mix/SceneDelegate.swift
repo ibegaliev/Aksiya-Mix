@@ -13,6 +13,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+        print("TOKEN:", UserTokenManager.manager.getData().token ?? "")
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         IQKeyboardManager.shared.enable = true
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)

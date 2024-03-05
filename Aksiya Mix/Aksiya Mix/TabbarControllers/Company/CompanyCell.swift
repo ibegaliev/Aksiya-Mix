@@ -64,7 +64,7 @@ class CompanyCell: UITableViewCell {
     lazy var mainButton: BlueButton = {
         let btn = BlueButton()
         btn.setTitle("Подписаться", for: .normal)
-        btn.titleLabel?.font = .appFont(ofSize: 12, weight: .semibold)
+        btn.titleLabel?.font = .appFont(ofSize: 14, weight: .semibold)
         return btn
     }()
     
@@ -156,8 +156,9 @@ class CompanyCell: UITableViewCell {
             make.width.height.equalTo(64.toScreen)
         }
         mainButton.snp.makeConstraints { make in
-            make.height.equalTo(32)
-            make.width.equalTo(104)
+            make.width.equalTo(
+                "Подписаться".widthOfString(usingFont: .appFont(ofSize: 14, weight: .semibold))+20
+            )
         }
         starsIcon.snp.makeConstraints { make in
             make.width.height.equalTo(14)

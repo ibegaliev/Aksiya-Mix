@@ -447,7 +447,7 @@
 				8C1D4B9F2B92D35800018A03 /* Networking */,
 				8CF5A7F62B73D50200D65039 /* Managers */,
 				8C661F932B64230D00437F0D /* Customs */,
-				8CE832E52B637A59004B4E6D /* Helpers */,
+				8CE832E52B637A59004B4E6D /* Extensions */,
 				8C0658132B73284D00F6C9C3 /* Aksiya Mix */,
 				8C19B0B42B63556C007D8872 /* Assets.xcassets */,
 				8CE832EF2B638480004B4E6D /* Colors.xcassets */,
@@ -879,7 +879,7 @@
 			path = TabbarControllers;
 			sourceTree = "<group>";
 		};
-		8CE832E52B637A59004B4E6D /* Helpers */ = {
+		8CE832E52B637A59004B4E6D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				8CAB7CA92B7460520075C4DE /* Fonds */,
@@ -891,7 +891,7 @@
 				8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */,
 				8CD904362B78E3B8005B975C /* Ex+UIView.swift */,
 			);
-			path = Helpers;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8CE832EC2B638286004B4E6D /* BaseController */ = {
