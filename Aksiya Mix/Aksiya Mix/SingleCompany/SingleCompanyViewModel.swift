@@ -11,4 +11,8 @@ class SingleCompanyViewModel {
     
     let view = SingleCompanyView()
     
+    func getAllDates() {
+        
+    }
+    
 }

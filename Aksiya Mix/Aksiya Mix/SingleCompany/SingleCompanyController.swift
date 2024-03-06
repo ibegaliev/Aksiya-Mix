@@ -14,9 +14,15 @@ class SingleCompanyController: AksiyaViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mode = BaseMode.none
-        backView.addSubview(viewModel.view)
-        viewModel.view.snp.makeConstraints { make in
-            make.edges.equalTo(view)
+        setUI()
+    }
+    
+    private func setUI() {
+        DispatchQueue.main.sync {
+            backView.addSubview(viewModel.view)
+            viewModel.view.snp.makeConstraints { make in
+                make.edges.equalTo(view)
+            }
         }
     }
     
