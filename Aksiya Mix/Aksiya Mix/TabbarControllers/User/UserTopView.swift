@@ -24,14 +24,15 @@ class UserTopView: UITableViewCell {
     
     lazy var titleView: UILabel = {
         let lbl = UILabel()
-        lbl.text = "AksiyaMixga xush kelibsiz!"
+        lbl.numberOfLines = 0
+        lbl.text = LyricsManager.getLyrics(type: .welcome)
         lbl.font = .appFont(ofSize: 24, weight: .bold)
         return lbl
     }()
     
     lazy var descripLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Xabar yuborish va qabul gilish, yangi e'lonlar joylash va o'zingiz yoqtirgan e'lonlar va saqlangan gidiruvlarni qayta ko rib chiqish uchun tizimga kiring. Bir necha daqiqada profil oching."
+        lbl.text = LyricsManager.getLyrics(type: .welcomeDescription)
         lbl.textColor = .spacetext
         lbl.font = .appFont(ofSize: 12, weight: .regular)
         lbl.numberOfLines = 0
@@ -128,12 +129,15 @@ class UserTopImageView: UIView {
     }
     
     private func setConstraints() {
+        
         imageView.snp.makeConstraints { make in
             make.top.bottom.left.equalTo(self)
         }
+        
         imageView.snp.makeConstraints { make in
             make.width.height.equalTo(75)
         }
+        
     }
 
 }
