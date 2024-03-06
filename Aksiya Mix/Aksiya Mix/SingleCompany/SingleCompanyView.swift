@@ -82,6 +82,8 @@ class SingleCompanyView: UIView, UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyMainCell", for: indexPath) as! CompanyMainCell
             cell.backgroundColor = .clear
             return cell
+        } else if indexPath.row == 1 {
+            
         }
         return UITableViewCell()
     }
