@@ -11,9 +11,11 @@ protocol EnterPhoneViewDelegate {
     func saveTapped(number: String?)
 }
 
-class EnterPhoneView: UIView {
+class EnterPhoneView: UIView, InputNumberViewDelegate {
     
     var delegate: EnterPhoneViewDelegate?
+    
+    var number: String?
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -24,6 +26,7 @@ class EnterPhoneView: UIView {
     
     lazy var descriptionLabel: UILabel = {
         let lbl = UILabel()
+        lbl.textColor = .spacetext
         lbl.font = .appFont(ofSize: 16, weight: .regular)
         lbl.text = LyricsManager.getLyrics(type: .enterNumberDescription)
         return lbl
@@ -38,7 +41,7 @@ class EnterPhoneView: UIView {
     
     lazy var inputNumberView: InputNumberView = {
         let input = InputNumberView()
-        
+        input.delegate = self
         return input
     }()
     
@@ -52,7 +55,7 @@ class EnterPhoneView: UIView {
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 110.toScreen
+        stack.spacing = 48.toScreen
         stack.distribution = .fill
         stack.alignment = .fill
         return stack
@@ -122,9 +125,14 @@ class EnterPhoneView: UIView {
         }
     }
     
+    func phoneNumber(number: String?) {
+        self.number = number
+    }
+
+    
     @objc
     func saveTapped() {
-        delegate?.saveTapped(number: "number")
+        delegate?.saveTapped(number: number)
     }
     
 }

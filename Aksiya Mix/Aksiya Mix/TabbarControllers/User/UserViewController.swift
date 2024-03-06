@@ -7,13 +7,14 @@
 
 import UIKit
 
-class UserViewController: AksiyaViewController {
+class UserViewController: AksiyaViewController, UserViewDelegate {
     
     var viewModel = UserViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setController()
+        viewModel.view.delegate = self
     }
     
     private func setController() {
@@ -21,6 +22,12 @@ class UserViewController: AksiyaViewController {
         viewModel.view.snp.makeConstraints { make in
             make.edges.equalTo(view)
         }
+    }
+    
+    func auth() {
+        let controller = UINavigationController(rootViewController: EnterPhoneViewController())
+        controller.modalPresentationStyle = .overFullScreen
+        present(controller, animated: true)
     }
     
 }

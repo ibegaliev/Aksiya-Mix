@@ -18,9 +18,37 @@ class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate {
     }
 
     func saveTapped(number: String?) {
-        let controller = EnterCodeViewController()
-        controller.modalPresentationStyle = .overFullScreen
-        present(controller, animated: true)
+        
+        guard let number else { return }
+        var telPhone = "+998"
+        
+        for n in number.enumerated() {
+            if n.element != " " {
+                telPhone.append(n.element)
+            }
+        }
+        
+        viewModel.validateUzbekPhoneNumber(telPhone) { [self] isNumber in
+            if isNumber {
+                viewModel.sentCode(number: telPhone) { [self] phoneNumber in
+                    let controller = EnterCodeViewController()
+                    controller.viewModel.phoneNumber = telPhone
+                    navigationController?.pushViewController(controller, animated: true)
+                } error: { [self] error in
+                    alert(title: error)
+                }
+            } else {
+                alert(title: "Invalid phone Number")
+            }
+        }
     }
+    
+    func alert(title: String?) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .cancel)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+
 
 }

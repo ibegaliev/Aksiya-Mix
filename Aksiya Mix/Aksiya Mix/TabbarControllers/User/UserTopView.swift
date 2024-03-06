@@ -8,7 +8,13 @@
 import UIKit
 import SnapKit
 
+protocol UserTopViewDelegate {
+    func authTapped()
+}
+
 class UserTopView: UITableViewCell {
+    
+    var delegate: UserTopViewDelegate?
     
     lazy var topView: UserTopImageView = {
         let view = UserTopImageView()
@@ -18,14 +24,15 @@ class UserTopView: UITableViewCell {
     
     lazy var titleView: UILabel = {
         let lbl = UILabel()
-        lbl.text = "AksiyaMixga xush kelibsiz!"
+        lbl.numberOfLines = 0
+        lbl.text = LyricsManager.getLyrics(type: .welcome)
         lbl.font = .appFont(ofSize: 24, weight: .bold)
         return lbl
     }()
     
     lazy var descripLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Xabar yuborish va qabul gilish, yangi e'lonlar joylash va o'zingiz yoqtirgan e'lonlar va saqlangan gidiruvlarni qayta ko rib chiqish uchun tizimga kiring. Bir necha daqiqada profil oching."
+        lbl.text = LyricsManager.getLyrics(type: .welcomeDescription)
         lbl.textColor = .spacetext
         lbl.font = .appFont(ofSize: 12, weight: .regular)
         lbl.numberOfLines = 0
@@ -37,6 +44,7 @@ class UserTopView: UITableViewCell {
         btn.backgroundColor = .selectBlue
         btn.setTitleColor(.white, for: .normal)
         btn.setTitle(LyricsManager.getLyrics(type: .log), for: .normal)
+        btn.addTarget(self, action: #selector(authTapped), for: .touchUpInside)
         return btn
     }()
     
@@ -73,7 +81,7 @@ class UserTopView: UITableViewCell {
         selectionStyle = .none
         backgroundColor = .backColor
         
-        addSubview(mainStack)
+        contentView.addSubview(mainStack)
         [topView, labelsStack, blueButton].forEach { item in
             mainStack.addArrangedSubview(item)
         }
@@ -84,9 +92,14 @@ class UserTopView: UITableViewCell {
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.top.bottom.equalTo(self).inset(12)
-            make.left.right.equalTo(self).inset(16)
+            make.top.bottom.equalTo(contentView).inset(12)
+            make.left.right.equalTo(contentView).inset(16)
         }
+    }
+    
+    @objc
+    private func authTapped() {
+        delegate?.authTapped()
     }
     
 }
@@ -116,12 +129,15 @@ class UserTopImageView: UIView {
     }
     
     private func setConstraints() {
+        
         imageView.snp.makeConstraints { make in
             make.top.bottom.left.equalTo(self)
         }
+        
         imageView.snp.makeConstraints { make in
             make.width.height.equalTo(75)
         }
+        
     }
 
 }

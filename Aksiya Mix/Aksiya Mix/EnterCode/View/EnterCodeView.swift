@@ -9,11 +9,22 @@ import UIKit
 
 protocol EnterCodeViewDelegate {
     func sentTapped()
+    func otp(otp: String)
 }
 
-class EnterCodeView: UIView {
+class EnterCodeView: UIView, OtpFieldViewDelegate {
     
     var delegate: EnterCodeViewDelegate?
+    
+    var number: String? {
+        get {
+            return nil
+        }
+        set {
+            guard let newValue else { return }
+            descriptionLabel.text = "\(LyricsManager.getLyrics(type: .enterDescription)) \(newValue)"
+        }
+    }
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -34,7 +45,7 @@ class EnterCodeView: UIView {
     
     lazy var otpField: OtpFieldView = {
         let view = OtpFieldView()
-        
+        view.delegate = self
         return view
     }()
     
@@ -56,7 +67,7 @@ class EnterCodeView: UIView {
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 86.toScreen
+        stack.spacing = 32.toScreen
         stack.distribution = .fill
         stack.alignment = .fill
         return stack
@@ -65,7 +76,7 @@ class EnterCodeView: UIView {
     lazy var topStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 8
+        stack.spacing = 14.toScreen
         stack.distribution = .fill
         stack.alignment = .center
         return stack
@@ -74,7 +85,7 @@ class EnterCodeView: UIView {
     lazy var bottomStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 32
+        stack.spacing = 12.toScreen
         return stack
     }()
     
@@ -98,11 +109,11 @@ class EnterCodeView: UIView {
             mainStack.addArrangedSubview(item)
         }
         
-        [titleLabel, descriptionLabel].forEach { item in
+        [titleLabel, descriptionLabel, otpField].forEach { item in
             topStack.addArrangedSubview(item)
         }
         
-        [otpField, returnButton, sentCode].forEach { item in
+        [returnButton, sentCode].forEach { item in
             bottomStack.addArrangedSubview(item)
         }
         
@@ -118,6 +129,10 @@ class EnterCodeView: UIView {
     @objc
     func sentTapped() {
         delegate?.sentTapped()
+    }
+    
+    func otp(otp: String) {
+        delegate?.otp(otp: otp)
     }
     
 }
