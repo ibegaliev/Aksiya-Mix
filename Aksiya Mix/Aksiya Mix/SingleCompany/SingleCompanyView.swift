@@ -47,6 +47,8 @@ class SingleCompanyView: UIView {
             right: 0
         )
         tv.register(CompanyHeaderCell.self, forCellReuseIdentifier: "CompanyHeaderCell")
+        tv.register(CompanyCountsCell.self, forCellReuseIdentifier: "CompanyCountsCell")
+        tv.register(CompanyLocationsCell.self, forCellReuseIdentifier: "CompanyLocationsCell")
         tv.register(CompanyMainCell.self, forCellReuseIdentifier: "CompanyMainCell")
         return tv
     }()
@@ -98,6 +100,14 @@ extension SingleCompanyView: UITableViewDelegate, UITableViewDataSource {
             cell.backgroundColor = .clear
             return cell
         } else if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyCountsCell", for: indexPath) as! CompanyCountsCell
+            cell.backgroundColor = .clear
+            return cell
+        } else if indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyLocationsCell", for: indexPath) as! CompanyLocationsCell
+            cell.backgroundColor = .clear
+            return cell
+        } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyMainCell", for: indexPath) as! CompanyMainCell
             cell.backgroundColor = .clear
             return cell

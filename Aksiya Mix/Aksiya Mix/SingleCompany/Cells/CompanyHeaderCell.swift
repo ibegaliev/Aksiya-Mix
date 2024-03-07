@@ -42,12 +42,12 @@ class CompanyHeaderCell: UITableViewCell {
     
     lazy var usernameLabel: UILabel = {
         let lbl = UILabel()
-        lbl.backgroundColor = .backColor
+        lbl.backgroundColor = .backBlue
         lbl.layer.cornerRadius = 4
         lbl.clipsToBounds = true
         lbl.text = "@korzinka_uz"
         lbl.textAlignment = .center
-        lbl.textColor = .spacetext
+        lbl.textColor = .selectBlue
         lbl.font = .appFont(ofSize: 12, weight: .regular)
         return lbl
     }()
@@ -117,7 +117,7 @@ class CompanyHeaderCell: UITableViewCell {
     private func setConstraints() {
         backView.snp.makeConstraints { make in
             make.top.leading.right.equalTo(contentView)
-            make.bottom.equalTo(contentView).inset(4)
+            make.bottom.equalTo(contentView)
         }
         mainStack.snp.makeConstraints { make in
             make.top.equalTo(backView).inset(-25)
