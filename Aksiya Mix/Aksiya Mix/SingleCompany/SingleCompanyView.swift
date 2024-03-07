@@ -41,7 +41,7 @@ class SingleCompanyView: UIView {
         tv.backgroundColor = .clear
         tv.separatorStyle = .none
         tv.contentInset = UIEdgeInsets(
-            top: 0.screenWight/1.6,
+            top: 0.screenWight/1.75,
             left: 0,
             bottom: 50,
             right: 0
@@ -75,7 +75,7 @@ class SingleCompanyView: UIView {
         mainImage.snp.makeConstraints { make in
             make.top.equalTo(topNavigation.snp_bottomMargin)
             make.left.right.equalTo(self)
-            make.height.equalTo(0.screenWight/1.6)
+            make.height.equalTo(0.screenWight/1.7)
         }
         tableView.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(self)

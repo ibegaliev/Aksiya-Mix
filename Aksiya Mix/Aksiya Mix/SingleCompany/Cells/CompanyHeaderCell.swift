@@ -30,7 +30,6 @@ class CompanyHeaderCell: UITableViewCell {
         let lbl = UILabel()
         lbl.text = "Korzinka MCHJ"
         lbl.font = .appFont(ofSize: 20, weight: .bold)
-        lbl.textColor = .spacetext
         return lbl
     }()
     
@@ -48,6 +47,7 @@ class CompanyHeaderCell: UITableViewCell {
         lbl.clipsToBounds = true
         lbl.text = "@korzinka_uz"
         lbl.textAlignment = .center
+        lbl.textColor = .spacetext
         lbl.font = .appFont(ofSize: 12, weight: .regular)
         return lbl
     }()
