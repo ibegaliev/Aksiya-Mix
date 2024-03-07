@@ -18,11 +18,9 @@ class SingleCompanyController: AksiyaViewController {
     }
     
     private func setUI() {
-        DispatchQueue.main.sync {
-            backView.addSubview(viewModel.view)
-            viewModel.view.snp.makeConstraints { make in
-                make.edges.equalTo(view)
-            }
+        backView.addSubview(viewModel.view)
+        viewModel.view.snp.makeConstraints { make in
+            make.edges.equalTo(view)
         }
     }
     

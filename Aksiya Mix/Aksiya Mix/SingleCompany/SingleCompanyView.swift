@@ -89,4 +89,5 @@ class SingleCompanyView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
 
     
+    
 }

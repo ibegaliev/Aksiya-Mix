@@ -19,7 +19,7 @@ class LaunchScreenController: UIViewController, LaunchViewDelegate {
     
     func animateDidFinish() {
         if let _ = LanguageManager().getLanguage() {
-            let controller = TabbarController()
+            let controller = UINavigationController(rootViewController: TabbarController())
             controller.modalPresentationStyle = .fullScreen
             present(controller, animated: false)
         } else {

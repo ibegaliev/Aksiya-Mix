@@ -22,7 +22,7 @@ class ChooseLanguageViewController: UIViewController, ChooseLanguageViewDelegate
     }
     
     func confirmTapped() {
-        let controller = TabbarController()
+        let controller = UINavigationController(rootViewController: TabbarController())
         controller.modalPresentationStyle = .overFullScreen
         present(controller, animated: true)
     }

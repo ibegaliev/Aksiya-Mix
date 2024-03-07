@@ -25,8 +25,7 @@ class AksiyaViewController: UIViewController, BaseViewDelegate {
             return nil
         }
         set {
-            guard let newValue else { return }
-
+            
         }
     }
     
