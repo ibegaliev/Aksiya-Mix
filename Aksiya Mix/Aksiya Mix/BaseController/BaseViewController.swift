@@ -20,15 +20,6 @@ class AksiyaViewController: UIViewController, BaseViewDelegate {
         }
     }
     
-    var showBackView: Bool? {
-        get {
-            return nil
-        }
-        set {
-            
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = backView

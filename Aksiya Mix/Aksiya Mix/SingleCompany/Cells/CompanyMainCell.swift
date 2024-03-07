@@ -12,8 +12,6 @@ class CompanyMainCell: UITableViewCell {
     lazy var backView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-        view.clipsToBounds = true
-        view.layer.cornerRadius = 8
         return view
     }()
     
@@ -76,5 +74,3 @@ class CompanyMainCell: UITableViewCell {
     }
     
 }
-
-//class 
