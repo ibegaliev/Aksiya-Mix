@@ -11,14 +11,14 @@ class CompanyDescriptionCell: UITableViewCell {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Karzinka MCHJ"
+        lbl.text = "Korzinka MCHJ"
         lbl.font = .appFont(ofSize: 20, weight: .bold)
         return lbl
     }()
 
     lazy var descriptionLabel: UILabel = {
         let lbl = UILabel()
-        lbl.numberOfLines = 4
+        lbl.numberOfLines = 6
         lbl.font = .appFont(ofSize: 14, weight: .regular)
         lbl.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum."
         return lbl
@@ -42,6 +42,7 @@ class CompanyDescriptionCell: UITableViewCell {
     lazy var titlesStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
+        stack.spacing = 6
         return stack
     }()
     

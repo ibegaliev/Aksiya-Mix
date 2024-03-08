@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "MacStore.jpg",
+      "filename" : "4c2ddafd2f9203c550e3ec11532fa087 1.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "4c2ddafd2f9203c550e3ec11532fa087.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "4c2ddafd2f9203c550e3ec11532fa087 2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
