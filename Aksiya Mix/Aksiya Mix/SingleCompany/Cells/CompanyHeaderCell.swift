@@ -42,12 +42,12 @@ class CompanyHeaderCell: UITableViewCell {
     
     lazy var usernameLabel: UILabel = {
         let lbl = UILabel()
-        lbl.backgroundColor = .backBlue
         lbl.layer.cornerRadius = 4
         lbl.clipsToBounds = true
         lbl.text = "@korzinka_uz"
         lbl.textAlignment = .center
         lbl.textColor = .selectBlue
+        lbl.backgroundColor = .backColor
         lbl.font = .appFont(ofSize: 12, weight: .regular)
         return lbl
     }()
