@@ -14,7 +14,7 @@ extension UIFont {
                 
         switch weight {
             case .black:
-                font = UIFont(name: "SFProText-Medium", size: ofSize)
+                font = UIFont(name: "SFProText-Black", size: ofSize)
             case .bold:
                 font = UIFont(name: "SFProText-Bold", size: ofSize)
             case .boldItalic:

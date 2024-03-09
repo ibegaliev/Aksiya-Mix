@@ -19,7 +19,7 @@ class CompanyDescriptionCell: UITableViewCell {
     lazy var descriptionLabel: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 6
-        lbl.font = .appFont(ofSize: 14, weight: .regular)
+        lbl.font = .appFont(ofSize: 12, weight: .regular)
         lbl.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum."
         return lbl
     }()
@@ -28,7 +28,7 @@ class CompanyDescriptionCell: UITableViewCell {
         let btn = UIButton()
         btn.setTitle("Batafsil", for: .normal)
         btn.addTarget(self, action: #selector(tappedShowAll), for: .touchUpInside)
-        btn.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
+        btn.titleLabel?.font = .appFont(ofSize: 12, weight: .medium)
         btn.setTitleColor(.selectBlue, for: .normal)
         return btn
     }()

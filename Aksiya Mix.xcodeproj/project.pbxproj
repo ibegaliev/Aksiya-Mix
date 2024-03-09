@@ -55,6 +55,9 @@
 		8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */; };
 		8C85AF6C2B77A6DD00B3A7FC /* CompanyMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C85AF6B2B77A6DD00B3A7FC /* CompanyMainCell.swift */; };
 		8C85BC2B2B8265220047F54C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C85BC2A2B8265220047F54C /* UserViewController.swift */; };
+		8C8B26382B9C0F900068A52C /* RatingTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B26372B9C0F900068A52C /* RatingTitlesView.swift */; };
+		8C8B263A2B9C0FB60068A52C /* RatingCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B26392B9C0FB60068A52C /* RatingCountView.swift */; };
+		8C8B263C2B9C24580068A52C /* RatingDiagrammView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B263B2B9C24580068A52C /* RatingDiagrammView.swift */; };
 		8C8D4AF62B68AD60007D1D77 /* BottomTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */; };
 		8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D4AF72B68AD76007D1D77 /* HeaderView.swift */; };
 		8C8EFF902B7871CD002DE31D /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8EFF8F2B7871CD002DE31D /* CategoryViewModel.swift */; };
@@ -220,6 +223,9 @@
 		8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		8C85AF6B2B77A6DD00B3A7FC /* CompanyMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyMainCell.swift; sourceTree = "<group>"; };
 		8C85BC2A2B8265220047F54C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		8C8B26372B9C0F900068A52C /* RatingTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTitlesView.swift; sourceTree = "<group>"; };
+		8C8B26392B9C0FB60068A52C /* RatingCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCountView.swift; sourceTree = "<group>"; };
+		8C8B263B2B9C24580068A52C /* RatingDiagrammView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingDiagrammView.swift; sourceTree = "<group>"; };
 		8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTitlesView.swift; sourceTree = "<group>"; };
 		8C8D4AF72B68AD76007D1D77 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8C8EFF8F2B7871CD002DE31D /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
@@ -566,6 +572,7 @@
 		8C85AF6A2B77A6C600B3A7FC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8C8B26362B9C0F770068A52C /* Views */,
 				8C3BA4282B997DCF00DA15E5 /* CompanyHeaderCell.swift */,
 				8C35BE9A2B9A01D0005459CE /* CompanyCountsCell.swift */,
 				8C35BE9C2B9A0D96005459CE /* CompanyLocationsCell.swift */,
@@ -586,6 +593,16 @@
 				8CE63E642B8488110033B999 /* UserCell.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		8C8B26362B9C0F770068A52C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C8B26372B9C0F900068A52C /* RatingTitlesView.swift */,
+				8C8B26392B9C0FB60068A52C /* RatingCountView.swift */,
+				8C8B263B2B9C24580068A52C /* RatingDiagrammView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8C8D4AF42B68AD53007D1D77 /* Files */ = {
@@ -1139,6 +1156,7 @@
 				8C958FDF2B73402300299AF8 /* LaunchScreenController.swift in Sources */,
 				8C9BA79A2B6A1F9E008C9420 /* SingleProductViewModel.swift in Sources */,
 				8CF5A7F82B73D51600D65039 /* UserDefaultsManager.swift in Sources */,
+				8C8B26382B9C0F900068A52C /* RatingTitlesView.swift in Sources */,
 				8C979E1E2B6C535D00C43155 /* SelectableColorView.swift in Sources */,
 				8CEA12FF2B6C6498009CADEB /* DescriptionView.swift in Sources */,
 				8CF455992B64E67600E3EAB4 /* TypesCell.swift in Sources */,
@@ -1148,6 +1166,7 @@
 				8CBA40072B77934300F92F98 /* SingleCompanyView.swift in Sources */,
 				8CF1340A2B8082EA00E1A913 /* ShowResultView.swift in Sources */,
 				8C289D4A2B693AF300B2FEAC /* TypeCell.swift in Sources */,
+				8C8B263C2B9C24580068A52C /* RatingDiagrammView.swift in Sources */,
 				8CBE7BCB2B78F3BE001559E9 /* SingleCategoryViewModel.swift in Sources */,
 				8C8275CE2B7B6A3D004C445B /* LikedView.swift in Sources */,
 				8C19B0B32B63556A007D8872 /* Aksiya_Mix.xcdatamodeld in Sources */,
@@ -1177,6 +1196,7 @@
 				8CC185F42B751A5400B13400 /* EnterCodeViewController.swift in Sources */,
 				8C0658122B73254200F6C9C3 /* RegisterViewController.swift in Sources */,
 				8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */,
+				8C8B263A2B9C0FB60068A52C /* RatingCountView.swift in Sources */,
 				8C930B6F2B95D75E0048778B /* UserTokenDM.swift in Sources */,
 				8C661F922B641E7500437F0D /* Ex+Int.swift in Sources */,
 				8CD354572B6B89CB004FFE0F /* FeedbackPityView.swift in Sources */,
