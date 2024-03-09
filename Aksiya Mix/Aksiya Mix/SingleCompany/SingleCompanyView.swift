@@ -52,6 +52,8 @@ class SingleCompanyView: UIView {
         tv.register(CompanyDescriptionCell.self, forCellReuseIdentifier: "CompanyDescriptionCell")
         tv.register(CompanyMainCell.self, forCellReuseIdentifier: "CompanyMainCell")
         tv.register(CompanyRatingCell.self, forCellReuseIdentifier: "CompanyRatingCell")
+        tv.register(BottomTypeTableCell.self, forCellReuseIdentifier: "BottomTypeTableCell")
+        tv.register(CompanyBottomItems.self, forCellReuseIdentifier: "CompanyBottomItems")
         return tv
     }()
     
@@ -66,6 +68,7 @@ class SingleCompanyView: UIView {
     }
     
     private func setUI() {
+        backgroundColor = .white
         addSubview(mainImage)
         addSubview(tableView)
         addSubview(topNavigation)
@@ -93,7 +96,7 @@ class SingleCompanyView: UIView {
 extension SingleCompanyView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        8
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -122,7 +125,11 @@ extension SingleCompanyView: UITableViewDelegate, UITableViewDataSource {
             cell.backgroundColor = .clear
             return cell
         } else if indexPath.row == 6 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "BottomTypeCell", for: indexPath) as! BottomTypeCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BottomTypeTableCell", for: indexPath) as! BottomTypeTableCell
+            
+            return cell
+        } else if indexPath.row == 7 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyBottomItems", for: indexPath) as! CompanyBottomItems
             
             return cell
         }

@@ -13,6 +13,7 @@
 		8C0658122B73254200F6C9C3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0658112B73254200F6C9C3 /* RegisterViewController.swift */; };
 		8C0658162B73287600F6C9C3 /* ChooseLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0658152B73287600F6C9C3 /* ChooseLanguageViewController.swift */; };
 		8C06581B2B7328E700F6C9C3 /* ChooseLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C06581A2B7328E700F6C9C3 /* ChooseLanguageView.swift */; };
+		8C084D512B9C469B006772B3 /* CompanyBottomItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C084D502B9C469B006772B3 /* CompanyBottomItems.swift */; };
 		8C10377C2B8ECA91007E6530 /* BannerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10377B2B8ECA91007E6530 /* BannerItemCell.swift */; };
 		8C17F2E12B73424400CD6506 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C17F2E02B73424400CD6506 /* LaunchViewModel.swift */; };
 		8C19B0A92B63556A007D8872 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0A82B63556A007D8872 /* AppDelegate.swift */; };
@@ -176,6 +177,7 @@
 		8C0658112B73254200F6C9C3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8C0658152B73287600F6C9C3 /* ChooseLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageViewController.swift; sourceTree = "<group>"; };
 		8C06581A2B7328E700F6C9C3 /* ChooseLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageView.swift; sourceTree = "<group>"; };
+		8C084D502B9C469B006772B3 /* CompanyBottomItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyBottomItems.swift; sourceTree = "<group>"; };
 		8C10377B2B8ECA91007E6530 /* BannerItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerItemCell.swift; sourceTree = "<group>"; };
 		8C17F2E02B73424400CD6506 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		8C19B0A52B63556A007D8872 /* Aksiya Mix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aksiya Mix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -601,6 +603,7 @@
 				8C8B26372B9C0F900068A52C /* RatingTitlesView.swift */,
 				8C8B26392B9C0FB60068A52C /* RatingCountView.swift */,
 				8C8B263B2B9C24580068A52C /* RatingDiagrammView.swift */,
+				8C084D502B9C469B006772B3 /* CompanyBottomItems.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1127,6 +1130,7 @@
 				8C1D4BA12B92D37200018A03 /* URL.swift in Sources */,
 				8C461EBF2B64CEF8004DC171 /* BannerCell.swift in Sources */,
 				8CA97E732B74F0B60020A80F /* InputNumberView.swift in Sources */,
+				8C084D512B9C469B006772B3 /* CompanyBottomItems.swift in Sources */,
 				8CBA40092B77935200F92F98 /* SingleCompanyController.swift in Sources */,
 				8CF455972B64DFA700E3EAB4 /* ItemsCell.swift in Sources */,
 				8C8275D02B7B6A47004C445B /* LikedViewModel.swift in Sources */,
