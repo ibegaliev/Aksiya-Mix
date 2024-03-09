@@ -21,8 +21,8 @@ class CompanyRatingCell: UITableViewCell {
         return view
     }()
     
-    lazy var ratingDiagrammView: UIView = {
-        let view = UIView()
+    lazy var ratingDiagrammView: RatingDiagrammView = {
+        let view = RatingDiagrammView()
         
         return view
     }()
@@ -37,7 +37,8 @@ class CompanyRatingCell: UITableViewCell {
     lazy var ratingStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
-        stack.spacing = 8
+        stack.spacing = 18
+        stack.alignment = .center
         return stack
     }()
     

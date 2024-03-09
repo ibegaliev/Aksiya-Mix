@@ -121,6 +121,10 @@ extension SingleCompanyView: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyRatingCell", for: indexPath) as! CompanyRatingCell
             cell.backgroundColor = .clear
             return cell
+        } else if indexPath.row == 6 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BottomTypeCell", for: indexPath) as! BottomTypeCell
+            
+            return cell
         }
         return UITableViewCell()
     }
