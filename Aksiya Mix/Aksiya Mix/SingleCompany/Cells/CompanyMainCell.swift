@@ -51,7 +51,6 @@ class CompanyMainCell: UITableViewCell {
     
     private func setUI() {
         
-        contentView.layer.cornerRadius = 8
         contentView.backgroundColor = .backColor
         
         contentView.addSubview(backView)
