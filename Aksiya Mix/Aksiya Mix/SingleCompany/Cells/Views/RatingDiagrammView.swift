@@ -31,7 +31,7 @@ class RatingDiagrammView: UIView {
         for i in (1...5).enumerated() {
             let view = DiagrammView()
             view.title = "\(i.offset + 1)"
-            view.percent = 85
+            view.percent = 60
             mainStack.insertArrangedSubview(view, at: 0)
         }
     }

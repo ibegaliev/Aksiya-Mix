@@ -9,6 +9,14 @@ import UIKit
 
 class RatingStarsView: UIView {
     
+    lazy var mainStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.distribution = .fillEqually
+        stack.alignment = .fill
+        return stack
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
@@ -20,11 +28,21 @@ class RatingStarsView: UIView {
     }
     
     private func setUI() {
-        backgroundColor = .yellow
+        for i in 1...5 {
+            let star = UIImageView()
+            star.image = .rating
+            mainStack.addArrangedSubview(star)
+            star.snp.makeConstraints { make in
+                make.width.height.equalTo(16)
+            }
+        }
+        addSubview(mainStack)
     }
     
     private func setConstraints() {
-        
+        mainStack.snp.makeConstraints { make in
+            make.edges.equalTo(self)
+        }
     }
     
 }

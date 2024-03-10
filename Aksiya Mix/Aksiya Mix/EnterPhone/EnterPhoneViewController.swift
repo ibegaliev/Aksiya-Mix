@@ -15,6 +15,7 @@ class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate {
         super.viewDidLoad()
         view = viewModel.view
         viewModel.view.delegate = self
+        setDismissButton()
     }
 
     func saveTapped(number: String?) {
@@ -50,5 +51,15 @@ class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate {
         present(alert, animated: true)
     }
 
+    func setDismissButton() {
+        let dismiss = UIBarButtonItem(title: "dismiss", style: .plain, target: self, action: #selector(dismissTapped))
+        
+        navigationItem.leftBarButtonItem = dismiss
+    }
+    
+    @objc
+    func dismissTapped() {
+        dismiss(animated: true)
+    }
 
 }

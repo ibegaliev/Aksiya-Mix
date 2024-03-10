@@ -48,9 +48,7 @@ extension NetworkService {
             "Content-Type": "application/json",
             "X-CSRFToken": "SgPH3KiDbKutK0cJAF0lj3uKmYSKeOv4e7Bfh9ytsWU4EHzaNSKmXddX7Iy7EkD2"
         ]
-        
         let task = defualtSession?.dataTask(with: request) { data, response, error in
-            print(JSON(data))
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 201 {
                     completion(data)
@@ -58,7 +56,6 @@ extension NetworkService {
                     errorData(data)
                 }
             }
-            
         }
         
         DispatchQueue.global(qos: .unspecified).async {

@@ -17,7 +17,7 @@ class URLManager {
     static var manager = URLManager()
     
     fileprivate var url: URL = URL(
-        string: "http://api.aksiyamix.uz/api/v1"
+        string: "https://api.aksiyamix.uz/api/v1"
     )!
     
     func url(path: UrlPath) -> URL {

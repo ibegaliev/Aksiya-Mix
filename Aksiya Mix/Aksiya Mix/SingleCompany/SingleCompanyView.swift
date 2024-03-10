@@ -88,7 +88,6 @@ class SingleCompanyView: UIView {
             make.left.right.bottom.equalTo(self)
             make.top.equalTo(topNavigation.snp_bottomMargin)
         }
-        
     }
     
 }

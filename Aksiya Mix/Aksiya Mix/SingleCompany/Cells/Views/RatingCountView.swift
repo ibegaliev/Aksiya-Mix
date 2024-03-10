@@ -11,7 +11,7 @@ class RatingCountView: UIView {
     
     lazy var mainCount: UILabel = {
         let lbl = UILabel()
-        lbl.text = "4.7"
+        lbl.text = "4.9"
         lbl.font = .appFont(ofSize: 44, weight: .bold)
         return lbl
     }()
@@ -59,9 +59,6 @@ class RatingCountView: UIView {
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
             make.edges.equalTo(self)
-        }
-        starsView.snp.makeConstraints { make in
-            make.height.equalTo(16)
         }
     }
     

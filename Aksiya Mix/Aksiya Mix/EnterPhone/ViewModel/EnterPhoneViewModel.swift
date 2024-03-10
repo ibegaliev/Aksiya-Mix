@@ -25,6 +25,7 @@ class EnterPhoneViewModel {
         NetworkService.shared.mainRequest(urlPath: .authCode, method: .post, bodyData: data) { responseData in 
             completion(number)
         } errorData: { data in
+            print(JSON(data))
             var errorData: ErrorResponse?
             errorData = Parser.shared.parse(json: data)
             error(errorData?.error?.detail?.phone_number?.first)
