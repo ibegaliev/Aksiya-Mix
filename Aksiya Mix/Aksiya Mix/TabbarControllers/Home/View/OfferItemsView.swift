@@ -83,7 +83,7 @@ class OfferItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (0.screenWight-36)/2, height: 288.toScreen)
+        return CGSize(width: (0.screenWight-36)/2, height: 250.toScreen)
     }
     
 }

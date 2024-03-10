@@ -86,6 +86,7 @@
 		8CAB7CD02B7464AA0075C4DE /* Ex+UIFond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */; };
 		8CAD0BB12B6CE60A0001D02B /* UserCellViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */; };
 		8CB1C0E62B939FF400F510BB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB1C0E52B939FF400F510BB /* SwiftyJSON */; };
+		8CBA16B22B9CB80B00C82911 /* RatingStarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA16B12B9CB80B00C82911 /* RatingStarsView.swift */; };
 		8CBA40052B77933800F92F98 /* SingleCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40042B77933800F92F98 /* SingleCompanyViewModel.swift */; };
 		8CBA40072B77934300F92F98 /* SingleCompanyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40062B77934300F92F98 /* SingleCompanyView.swift */; };
 		8CBA40092B77935200F92F98 /* SingleCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40082B77935200F92F98 /* SingleCompanyController.swift */; };
@@ -251,6 +252,7 @@
 		8CA97E722B74F0B60020A80F /* InputNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNumberView.swift; sourceTree = "<group>"; };
 		8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIFond.swift"; sourceTree = "<group>"; };
 		8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViews.swift; sourceTree = "<group>"; };
+		8CBA16B12B9CB80B00C82911 /* RatingStarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStarsView.swift; sourceTree = "<group>"; };
 		8CBA40042B77933800F92F98 /* SingleCompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCompanyViewModel.swift; sourceTree = "<group>"; };
 		8CBA40062B77934300F92F98 /* SingleCompanyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCompanyView.swift; sourceTree = "<group>"; };
 		8CBA40082B77935200F92F98 /* SingleCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCompanyController.swift; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 				8C8B26372B9C0F900068A52C /* RatingTitlesView.swift */,
 				8C8B26392B9C0FB60068A52C /* RatingCountView.swift */,
 				8C8B263B2B9C24580068A52C /* RatingDiagrammView.swift */,
+				8CBA16B12B9CB80B00C82911 /* RatingStarsView.swift */,
 				8C084D502B9C469B006772B3 /* CompanyBottomItems.swift */,
 			);
 			path = Views;
@@ -1155,6 +1158,7 @@
 				8C19B0A92B63556A007D8872 /* AppDelegate.swift in Sources */,
 				8CE67A302B6BA07100D6E428 /* SelectableView.swift in Sources */,
 				8C7B9DC82B836ADB00372CB1 /* UserViewModel.swift in Sources */,
+				8CBA16B22B9CB80B00C82911 /* RatingStarsView.swift in Sources */,
 				8C85AF6C2B77A6DD00B3A7FC /* CompanyMainCell.swift in Sources */,
 				8CD858282B7391C20077B2A8 /* ChooseLanguageViewModel.swift in Sources */,
 				8C958FDF2B73402300299AF8 /* LaunchScreenController.swift in Sources */,

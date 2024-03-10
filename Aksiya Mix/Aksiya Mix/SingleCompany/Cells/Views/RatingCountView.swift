@@ -16,9 +16,9 @@ class RatingCountView: UIView {
         return lbl
     }()
     
-    lazy var starsView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .yellow
+    lazy var starsView: RatingStarsView = {
+        let view = RatingStarsView()
+
         return view
     }()
     
