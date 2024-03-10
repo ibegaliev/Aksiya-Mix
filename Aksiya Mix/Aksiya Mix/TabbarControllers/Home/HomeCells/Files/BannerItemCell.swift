@@ -8,34 +8,13 @@
 import UIKit
 
 class BannerItemCell: UICollectionViewCell {
-    
-//    var data: BannerData? {
-//        get {
-//            return nil
-//        }
-//        set {
-//            guard let newValue else { return }
-//            imageView.image = newValue.image
-////            if newValue.isShow {
-////                UIView.animate(withDuration: 0.1) { [self] in
-////                    imageView.transform = .identity
-////                }
-////            } else {
-////                UIView.animate(withDuration: 0.1) { [self] in
-////                    imageView.transform = CGAffineTransform(
-////                        scaleX: 0.8,
-////                        y: 1
-////                    )
-////                }
-////            }
-//        }
-//    }
         
     lazy var imageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleToFill
         image.layer.cornerRadius = 8
         image.clipsToBounds = true
+        image.image = .marketAd
         return image
     }()
     
