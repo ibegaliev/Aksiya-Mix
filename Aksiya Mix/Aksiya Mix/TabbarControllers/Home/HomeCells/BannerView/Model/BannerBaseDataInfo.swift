@@ -9,24 +9,24 @@
 import UIKit
 
 enum BannerImageInfoType:String {
-    /// 本地图片
+
     case bannerImageInfoTypeLocality = "bannerImageInfoTypeLocality"
-    /// 网络图片
+
     case bannerImageInfoTypeNetIamge = "bannerImageInfoTypeNetIamge"
-    /// 网络GIF图片
+
     case bannerImageInfoTypeGIFImage = "bannerImageInfoTypeGIFImage"
-    /// 视频
+
     case bannerImageWithVideo = "bannerImageWithVideo"
 }
 
 class BannerBaseDataInfo: NSObject {
-    /// 图片类型
+    
     public var type:BannerImageInfoType?
-    /// 图片
+    
     public var image:UIImage?
-    ///bannerView图片的类型
+    
     public var bannerImageType:BannerViewImageType = .bannerViewImageTypeMix
-    /// 地址
+    
     public var imageUrl:String? {
         willSet {
             guard let imageName = newValue else {

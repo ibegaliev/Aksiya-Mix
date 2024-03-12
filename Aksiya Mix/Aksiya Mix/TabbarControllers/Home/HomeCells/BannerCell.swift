@@ -24,14 +24,7 @@ class BannerCell: UICollectionViewCell {
         bannerView.itemSpace = -36
         bannerView.imageDatas = [
             "https://aksiyamix.uz/assets/banner/banner.jpg",
-            "https://aksiyamix.uz/assets/banner/top.jpg",
-            "https://aksiyamix.uz/assets/banner/bottom.jpg",
-            "https://aksiyamix.uz/assets/banner/banner.jpg",
-            "https://aksiyamix.uz/assets/banner/top.jpg",
-            "https://aksiyamix.uz/assets/banner/bottom.jpg",
-            "https://aksiyamix.uz/assets/banner/banner.jpg",
-            "https://aksiyamix.uz/assets/banner/top.jpg",
-            "https://aksiyamix.uz/assets/banner/bottom.jpg"
+            "https://aksiyamix.uz/assets/banner/top.jpg"
         ]
         return bannerView
     }()
