@@ -9,6 +9,12 @@ import UIKit
 
 class CostView: UIView {
     
+    lazy var feedbackView: FeedbackView = {
+        let view = FeedbackView()
+        
+        return view
+    }()
+    
     lazy var oldPrince: UILabel = {
         let lbl = UILabel()
         let attributeString: NSMutableAttributedString = NSMutableAttributedString(
@@ -42,8 +48,16 @@ class CostView: UIView {
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.alignment = .leading
+        stack.alignment = .fill
         stack.distribution = .fill
+        return stack
+    }()
+    
+    lazy var stack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.alignment = .center
+        stack.distribution = .equalSpacing
         return stack
     }()
     
@@ -58,14 +72,17 @@ class CostView: UIView {
     }
     
     private func setUI() {
-        addSubview(mainStack)
+        addSubview(stack)
+        [mainStack, feedbackView].forEach { item in
+            stack.addArrangedSubview(item)
+        }
         [oldPrince, newPrince].forEach { item in
             mainStack.addArrangedSubview(item)
         }
     }
     
     private func setConstraints() {
-        mainStack.snp.makeConstraints { make in
+        stack.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }
     }

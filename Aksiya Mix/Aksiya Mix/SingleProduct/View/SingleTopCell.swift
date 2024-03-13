@@ -25,7 +25,7 @@ class SingleTopView: UITableViewCell {
         let stack = UIStackView()
         stack.spacing = 8
         stack.axis = .vertical
-        stack.alignment = .leading
+        stack.alignment = .fill
         stack.distribution = .equalSpacing
         return stack
     }()
@@ -39,9 +39,9 @@ class SingleTopView: UITableViewCell {
         return stack
     }()
     
-    lazy var countView: UIImageView = {
-        let view = UIImageView()
-        view.image = .marketAd
+    lazy var countView: SingleProductCountView = {
+        let view = SingleProductCountView()
+        
         return view
     }()
     
@@ -53,18 +53,12 @@ class SingleTopView: UITableViewCell {
         return lbl
     }()
             
-    lazy var costView: UIView = {
+    lazy var costView: CostView = {
         let view = CostView()
         
         return view
     }()
     
-    lazy var feedbackView: UIView = {
-        let view = FeedbackView()
-        
-        return view
-    }()
-
     lazy var selectIsNew: SelectableTextView = {
         let view = SelectableTextView()
         view.title = "Состояние товара"
@@ -112,7 +106,7 @@ class SingleTopView: UITableViewCell {
 
         backView.addSubview(mainStack)
         
-        [titlesStack, costView, feedbackView, selectIsNew, selectColors, selectRom].forEach { item in
+        [titlesStack, costView, selectIsNew, selectColors, selectRom].forEach { item in
             mainStack.addArrangedSubview(item)
         }
         

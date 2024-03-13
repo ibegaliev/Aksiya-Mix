@@ -40,7 +40,8 @@ class FeedbackView: UIView {
     private func setUI() {
         addSubview(mainStack)
         
-        [item, pityView].forEach { item in
+//        [item, pityView].forEach { item in
+        [item].forEach { item in
             mainStack.addArrangedSubview(item)
         }
     }
