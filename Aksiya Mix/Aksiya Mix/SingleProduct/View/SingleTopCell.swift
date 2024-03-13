@@ -9,19 +9,21 @@ import UIKit
 
 class SingleTopView: UITableViewCell {
     
-    lazy var mainStack: UIStackView = {
-        let stack = UIStackView()
-        stack.spacing = 16
-        stack.axis = .vertical
-        stack.alignment = .center
-        stack.distribution = .fill
-        stack.backgroundColor = .white
-        return stack
+    lazy var backView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
     }()
     
-    lazy var bottomStack: UIStackView = {
+    lazy var saleView: SaleTopView = {
+        let view = SaleTopView()
+
+        return view
+    }()
+    
+    lazy var mainStack: UIStackView = {
         let stack = UIStackView()
-        stack.spacing = 16
+        stack.spacing = 8
         stack.axis = .vertical
         stack.alignment = .leading
         stack.distribution = .equalSpacing
@@ -36,16 +38,10 @@ class SingleTopView: UITableViewCell {
         stack.distribution = .fill
         return stack
     }()
-        
-    lazy var topImage: UIImageView = {
-        let image = UIImageView()
-        image.image = .macIMge
-        return image
-    }()
     
     lazy var countView: UIImageView = {
         let view = UIImageView()
-        
+        view.image = .marketAd
         return view
     }()
     
@@ -100,44 +96,58 @@ class SingleTopView: UITableViewCell {
         setConstraints()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+    }
+    
     required init?(coder: NSCoder) {
         fatalError()
     }
     
     private func setUI (){
-        addSubview(mainStack)
-        
-        [topImage, bottomStack].forEach { item in
-            mainStack.addArrangedSubview(item)
-        }
+        selectionStyle = .none
+        contentView.addSubview(saleView)
+        contentView.addSubview(backView)
+
+        backView.addSubview(mainStack)
         
         [titlesStack, costView, feedbackView, selectIsNew, selectColors, selectRom].forEach { item in
-            bottomStack.addArrangedSubview(item)
+            mainStack.addArrangedSubview(item)
         }
         
         [countView, titleLabel].forEach { item in
             titlesStack.addArrangedSubview(item)
         }
         
-        backgroundColor = .backColor
-
+        [backView, saleView].forEach { item in
+            item.clipsToBounds = true
+            item.layer.cornerRadius = 10
+            item.layer.maskedCorners = [
+                .layerMinXMinYCorner,
+                .layerMaxXMinYCorner
+            ]
+        }
+        
+        backgroundColor = .clear
     }
     
     private func setConstraints() {
+        backView.snp.makeConstraints { make in
+            make.top.equalTo(contentView).inset(0.screenWight/1.85)
+            make.left.right.bottom.equalTo(contentView)
+        }
         mainStack.snp.makeConstraints { make in
-            make.edges.equalTo(self)
-        }
-        topImage.snp.makeConstraints { make in
-            make.width.equalTo(0.screenWight)
-            make.height.equalTo(0.screenWight)
-        }
-        bottomStack.snp.makeConstraints { make in
-            make.width.equalTo(0.screenWight - 32)
-            make.bottom.equalTo(self).inset(12)
+            make.top.bottom.equalTo(backView).inset(12)
+            make.left.right.equalTo(backView).inset(16)
         }
         costView.snp.makeConstraints { make in
-            make.width.equalTo(200)
-            make.height.equalTo(50)
+            make.width.equalTo(200.toScreen)
+            make.height.equalTo(50.toScreen)
+        }
+        saleView.snp.makeConstraints { make in
+            make.left.right.equalTo(contentView)
+            make.bottom.equalTo(backView.snp_topMargin).inset(15)
         }
     }
     

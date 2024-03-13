@@ -77,7 +77,7 @@ class SingleCompanyView: UIView {
     private func setConstraints() {
         topNavigation.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(self)
-            make.height.equalTo(90)
+            make.height.equalTo(85.toScreen)
         }
         mainImage.snp.makeConstraints { make in
             make.top.equalTo(topNavigation.snp_bottomMargin)

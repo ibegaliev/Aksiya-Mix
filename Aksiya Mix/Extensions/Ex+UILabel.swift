@@ -8,10 +8,6 @@
 import UIKit
 
 extension UILabel {
-    
-    func setFond(size: Int) {
-        
-    }
 
     func applyGradientWith(startColor: UIColor, endColor: UIColor) -> Bool {
 
@@ -51,25 +47,20 @@ extension UILabel {
         let glossGradient:CGGradient?
         let rgbColorspace:CGColorSpace?
         let num_locations:size_t = 2
-        let locations:[CGFloat] = [ 0.0, 1.0 ]
+        let locations:[CGFloat] = [ 0.0, 1.0]
         let components:[CGFloat] = [startColorRed, startColorGreen, startColorBlue, startAlpha, endColorRed, endColorGreen, endColorBlue, endAlpha]
         rgbColorspace = CGColorSpaceCreateDeviceRGB()
         glossGradient = CGGradient(colorSpace: rgbColorspace!, colorComponents: components, locations: locations, count: num_locations)
         let topCenter = CGPoint.zero
         let bottomCenter = CGPoint(x: 0, y: textSize.height)
         context.drawLinearGradient(glossGradient!, start: topCenter, end: bottomCenter, options: CGGradientDrawingOptions.drawsBeforeStartLocation)
-
         UIGraphicsPopContext()
-
         guard let gradientImage = UIGraphicsGetImageFromCurrentImageContext() else {
             UIGraphicsEndImageContext()
             return false
         }
-
         UIGraphicsEndImageContext()
-
         self.textColor = UIColor(patternImage: gradientImage)
-
         return true
 
     }

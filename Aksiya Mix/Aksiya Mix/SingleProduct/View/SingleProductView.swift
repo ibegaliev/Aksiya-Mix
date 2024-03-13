@@ -14,7 +14,9 @@ protocol SingleProductViewDelegate: SingleNavigationViewDelegate {
 class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, SingleNavigationViewDelegate {
     
     var delegate: SingleProductViewDelegate?
-    
+
+    var contentY: CGFloat?
+
     lazy var tableView: UITableView = {
         let view = UITableView()
         view.delegate = self
@@ -28,8 +30,13 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
         view.register(UserDatesCell.self, forCellReuseIdentifier: "UserDatesCell")
         view.register(LineCell.self, forCellReuseIdentifier: "LineCell")
         view.register(StoreCell.self, forCellReuseIdentifier: "StoreCell")
-        view.contentInset = .init(top: -47, left: 0, bottom: 100, right: 0)
-        view.backgroundColor = .backColor
+        view.contentInset = UIEdgeInsets(
+            top: 0,
+            left: 0,
+            bottom: 50,
+            right: 0
+        )
+        view.backgroundColor = .clear
         return view
     }()
     
@@ -41,11 +48,13 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
         return view
     }()
     
-//    lazy var navigationView: UIView = {
-//        let view = SingleNavigationVIew()
-//        view.delegate = self
-//        return view
-//    }()
+    lazy var mainImage: UIImageView = {
+        let image = UIImageView()
+        image.image = .macStore
+        image.contentMode = .scaleToFill
+        image.clipsToBounds = true
+        return image
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,27 +68,26 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
     }
     
     private func setUI() {
+        backgroundColor = .white
+        addSubview(mainImage)
         addSubview(tableView)
-//        addSubview(navigationView)
         addSubview(topNavigation)
     }
     
     private func setConstraints() {
-        
         topNavigation.snp.makeConstraints { make in
             make.top.left.right.equalTo(self)
-            make.height.equalTo(50)
+            make.height.equalTo(85.toScreen)
         }
-        
+        mainImage.snp.makeConstraints { make in
+            make.top.equalTo(topNavigation.snp_bottomMargin)
+            make.left.right.equalTo(self)
+            make.height.equalTo(0.screenWight/1.7)
+        }
         tableView.snp.makeConstraints { make in
-            make.edges.equalTo(self)
+            make.left.right.bottom.equalTo(self)
+            make.top.equalTo(topNavigation.snp_bottomMargin)
         }
-        
-//        navigationView.snp.makeConstraints { make in
-//            make.top.equalTo(self).inset(44)
-//            make.left.right.equalTo(self)
-//        }
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -88,7 +96,7 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            8
+            7
         } else {
             10
         }
@@ -138,6 +146,25 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let float = contentY {
+            if scrollView.contentOffset.y < float  {
+                UIView.animate(withDuration: 0.1) { [self] in
+                    mainImage.transform = CGAffineTransform(
+                        scaleX: (float - scrollView.contentOffset.y)/100 + 1,
+                        y: (float - scrollView.contentOffset.y)/100 + 1
+                    )
+                }
+            } else {
+                UIView.animate(withDuration: 0.1) { [self] in
+                    mainImage.transform = .identity
+                }
+            }
+        } else {
+            contentY = scrollView.contentOffset.y
+        }
     }
     
 }
