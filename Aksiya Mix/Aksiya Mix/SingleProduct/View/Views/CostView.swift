@@ -30,14 +30,14 @@ class CostView: UIView {
         )
         lbl.attributedText = attributeString
         lbl.textColor = .spacetext
-        lbl.font = .systemFont(ofSize: 10)
+        lbl.font = .appFont(ofSize: 12, weight: .medium)
         return lbl
     }()
     
     lazy var newPrince: UILabel = {
         let lbl = UILabel()
         lbl.text = "13 499 000 сум"
-        lbl.font = .boldSystemFont(ofSize: 18)
+        lbl.font = .appFont(ofSize: 22, weight: .bold)
         lbl.applyGradientWith(
             startColor: .garnierPink,
             endColor: .garnierOrgane
