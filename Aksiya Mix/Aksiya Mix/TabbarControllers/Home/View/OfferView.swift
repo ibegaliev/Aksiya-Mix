@@ -22,13 +22,13 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
         return stack
     }()
     
-    lazy var titleLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.font = .appFont(ofSize: 18, weight: .bold)
-        lbl.textColor = .spacetext
-        lbl.text = "MAXSUS TAKLIFLAR"
-        return lbl
-    }()
+//    lazy var titleLabel: UILabel = {
+//        let lbl = UILabel()
+//        lbl.font = .appFont(ofSize: 18, weight: .bold)
+//        lbl.textColor = .spacetext
+//        lbl.text = "MAXSUS TAKLIFLAR"
+//        return lbl
+//    }()
     
     lazy var tableView: UITableView = {
         let tv = UITableView()
@@ -51,10 +51,9 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     private func setUI() {
-        backgroundColor = .white
-        
         addSubview(mainStack)
-        [titleLabel, tableView].forEach { item in
+//        [titleLabel, tableView].forEach { item in
+        [tableView].forEach { item in
             mainStack.addArrangedSubview(item)
         }
     }
@@ -64,12 +63,16 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
             make.top.equalTo(self).inset(8)
             make.left.right.bottom.equalTo(self)
         }
-        titleLabel.snp.makeConstraints { make in
-            make.width.equalTo(0.screenWight - 32)
-        }
+//        titleLabel.snp.makeConstraints { make in
+//            make.width.equalTo(0.screenWight - 32)
+//        }
         tableView.snp.makeConstraints { make in
             make.width.equalTo(0.screenWight)
         }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,6 +87,21 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.didSelect(indexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label : UILabel = UILabel()
+        label.font = .appFont(ofSize: 18, weight: .bold)
+        label.textColor = .spacetext
+        label.backgroundColor = .white
+        
+        if section == 0 {
+            label.text = "   Yaqinda ko'rilganlar"
+        } else {
+            label.text = "   Maxsus takliflar"
+        }
+        
+        return label
     }
     
 }
