@@ -28,6 +28,7 @@ enum LyricsManagerType {
     case log
     case welcome
     case welcomeDescription
+    case enterComment
 }
 
 class LyricsManager {
@@ -75,6 +76,8 @@ class LyricsManager {
                     return "AksiyaMixga xush kelibsiz!"
                 case .welcomeDescription:
                     return "Xabar yuborish va qabul gilish, yangi e'lonlar joylash va o'zingiz yoqtirgan e'lonlar va saqlangan gidiruvlarni qayta ko rib chiqish uchun tizimga kiring. Bir necha daqiqada profil oching."
+                case .enterComment:
+                    return "Введите комментарий..."
             }
         } else {
             switch type {
@@ -118,6 +121,8 @@ class LyricsManager {
                     return "Добро пожаловать в Aksiyamix!"
                 case .welcomeDescription:
                     return "Войдите в систему, чтобы отправлять и получать сообщения, публиковать новые объявления и пересматривать понравившиеся объявления и сохраненные поисковые запросы. Откройте Профиль каждые несколько минут."
+                case .enterComment:
+                    return "Fikr bildiring..."
             }
         }
     }

@@ -14,32 +14,7 @@ class UserDatesCell: UITableViewCell {
         
         return view
     }()
-    
-    lazy var textStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.spacing = 10
-        stack.alignment = .trailing
-        return stack
-    }()
-    
-    lazy var textView: UILabel = {
-        let lbl = UILabel()
-        lbl.text = "Это отличный телефон. Я рекомендую это всем. Дешево и качественно. Доставили быстро ко мне домой. Я рад"
-        lbl.numberOfLines = 0
-        lbl.textColor = .spacetext
-        lbl.font = .systemFont(ofSize: 12)
-        return lbl
-    }()
-    
-    lazy var showText: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("Все", for: .normal)
-        btn.titleLabel?.font = .systemFont(ofSize: 12)
-        btn.setTitleColor(.selectBlue, for: .normal)
-        return btn
-    }()
-    
+        
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -47,7 +22,7 @@ class UserDatesCell: UITableViewCell {
         return stack
     }()
     
-    lazy var commentView: UIView = {
+    lazy var commentView: UserCommentView = {
         let view = UserCommentView()
         
         return view
@@ -68,12 +43,8 @@ class UserDatesCell: UITableViewCell {
         
         contentView.addSubview(mainStack)
         
-        [personView, textStack, commentView].forEach { item in
+        [personView, commentView].forEach { item in
             mainStack.addArrangedSubview(item)
-        }
-        
-        [textView, showText].forEach { item in
-            textStack.addArrangedSubview(item)
         }
         
     }

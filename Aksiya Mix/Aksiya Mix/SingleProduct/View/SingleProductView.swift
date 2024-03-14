@@ -113,7 +113,7 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
                 cell.backgroundColor = .backColor
                 return cell
             } else if indexPath.row == 2 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionView", for: indexPath) as! DescriptionView
+                let cell = tableView.dequeueReusableCell(withIdentifier: "UserDatesCell", for: indexPath) as! UserDatesCell
                 
                 return cell
             } else if indexPath.row == 3 {
@@ -122,7 +122,7 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
                 cell.selectionStyle = .none
                 return cell
             } else if indexPath.row == 4 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "UserDatesCell", for: indexPath) as! UserDatesCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionView", for: indexPath) as! DescriptionView
                 
                 return cell
             } else if indexPath.row == 5 {

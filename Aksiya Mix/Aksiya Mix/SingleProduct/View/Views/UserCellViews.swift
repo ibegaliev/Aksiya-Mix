@@ -30,6 +30,24 @@ class UserHeaderView: UIView {
         return lbl
     }()
     
+    lazy var textView: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "Это отличный телефон. Я рекомендую это всем. Дешево и качественно. Доставили быстро ко мне домой. Я рад."
+        lbl.numberOfLines = 0
+        lbl.textColor = .spacetext
+        lbl.font = .systemFont(ofSize: 12)
+        return lbl
+    }()
+    
+    lazy var stack: UIStackView = {
+        let stack = UIStackView()
+        stack.spacing = 4
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        return stack
+    }()
+    
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.spacing = 8
@@ -59,8 +77,14 @@ class UserHeaderView: UIView {
     }
     
     private func setUI() {
-        addSubview(mainStack)
-                
+        backgroundColor = .white
+        
+        addSubview(stack)
+        
+        [mainStack, textView].forEach { item in
+            stack.addArrangedSubview(item)
+        }
+        
         [mainImage, labelsStack].forEach { item in
             mainStack.addArrangedSubview(item)
         }
@@ -73,7 +97,7 @@ class UserHeaderView: UIView {
     }
     
     private func setConstraints() {
-        mainStack.snp.makeConstraints { make in
+        stack.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }
         mainImage.snp.makeConstraints { make in
@@ -102,15 +126,15 @@ class UserCommentView: UIView {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .boldSystemFont(ofSize: 12)
+        lbl.font = .appFont(ofSize: 14, weight: .semibold)
         lbl.text = "Комментарии"
         return lbl
     }()
     
     lazy var countLabel: UIView = {
         let lbl = UILabel()
-        lbl.font = .systemFont(ofSize: 12)
-        lbl.text = "(26)"
+        lbl.font = .appFont(ofSize: 10, weight: .medium)
+        lbl.text = "26 тыс."
         return lbl
     }()
     
@@ -124,7 +148,12 @@ class UserCommentView: UIView {
     
     lazy var icon: UIImageView = {
         let img = UIImageView()
-        img.backgroundColor = .commentImageBack
+        img.image = .user02
+        img.contentMode = .center
+        img.tintColor = .spaceField
+        img.backgroundColor = .white
+        img.layer.borderColor = UIColor.spaceField.cgColor
+        img.layer.borderWidth = 1
         return img
     }()
     
@@ -132,15 +161,16 @@ class UserCommentView: UIView {
         let view = UIView()
         view.layer.cornerRadius = 8
         view.clipsToBounds = true
-        view.backgroundColor = .spaceField
+        view.backgroundColor = .white
+        view.layer.borderColor = UIColor.spaceField.cgColor
+        view.layer.borderWidth = 1
         return view
     }()
     
     lazy var textField: UITextField = {
         let textField = UITextField()
-        textField.font = .systemFont(ofSize: 10)
-        textField.placeholder = "Введите комментарий"
-        textField.tintColor = .spacetext
+        textField.font = .appFont(ofSize: 12, weight: .medium)
+        textField.placeholder = LyricsManager.getLyrics(type: .enterComment)
         return textField
     }()
     
@@ -172,9 +202,10 @@ class UserCommentView: UIView {
             textFieldStack.addArrangedSubview(item)
         }
         
-        backgroundColor = .spaceBack
+        icon.layer.cornerRadius = 16
+        
+        backgroundColor = .backColor
         layer.cornerRadius = 8
-        icon.layer.cornerRadius = 12
         clipsToBounds = true
         
     }
@@ -184,13 +215,13 @@ class UserCommentView: UIView {
             make.edges.equalTo(self).inset(16)
         }
         textFieldView.snp.makeConstraints { make in
-            make.height.equalTo(32)
+            make.height.equalTo(36.toScreen)
         }
         textField.snp.makeConstraints { make in
             make.edges.equalTo(textFieldView).inset(7)
         }
         icon.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
+            make.width.height.equalTo(32.toScreen)
         }
     }
     

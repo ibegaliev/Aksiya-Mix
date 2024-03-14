@@ -10,29 +10,16 @@ import UIKit
 extension UIView {
     func addShadow() {
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 1
+        layer.shadowOpacity = 0.1
         layer.shadowOffset = .zero
-        layer.shadowRadius = 10
+        layer.shadowRadius = 8
+        layer.shadowPath = CGPath(
+            roundedRect: .infinite,
+            cornerWidth: .pi,
+            cornerHeight: .pi,
+            transform: .none
+        )
     }
-    
-//    func applyGradient(isVertical: Bool, colorArray: [UIColor]) {
-//        layer.sublayers?.filter({ $0 is CAGradientLayer }).forEach({ $0.removeFromSuperlayer() })
-//        
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.colors = colorArray.map({ $0.cgColor })
-//        if isVertical {
-//            //top to bottom
-//            gradientLayer.locations = [0.0, 1.0]
-//        } else {
-//            //left to right
-//            gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
-//            gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
-//        }
-//        
-////        backgroundColor = .clear
-//        gradientLayer.frame = bounds
-//        layer.insertSublayer(gradientLayer, at: 0)
-//    }
     
     func applyGradient(colors: [UIColor], startPoint: CGPoint, endPoint: CGPoint) {
         // Remove existing gradient layer if any
