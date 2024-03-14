@@ -108,7 +108,7 @@ class UserHeaderView: UIView {
 }
 
 class UserCommentView: UIView {
-    
+        
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -120,6 +120,15 @@ class UserCommentView: UIView {
     lazy var titleStack: UIStackView = {
         let stack = UIStackView()
         stack.spacing = 2
+        stack.axis = .horizontal
+        stack.alignment = .leading
+        return stack
+    }()
+    
+    lazy var headerStack: UIStackView = {
+        let stack = UIStackView()
+        stack.spacing = 2
+        stack.axis = .vertical
         stack.alignment = .leading
         return stack
     }()
@@ -174,6 +183,14 @@ class UserCommentView: UIView {
         return textField
     }()
     
+    lazy var showAllButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Hammasi", for: .normal)
+        button.setTitleColor(.selectBlue, for: .normal)
+        button.titleLabel?.font = .appFont(ofSize: 12, weight: .semibold)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
@@ -194,8 +211,12 @@ class UserCommentView: UIView {
             mainStack.addArrangedSubview(item)
         }
         
-        [titleLabel, countLabel].forEach { item in
+        [headerStack, showAllButton].forEach { item in
             titleStack.addArrangedSubview(item)
+        }
+        
+        [titleLabel, countLabel].forEach { item in
+            headerStack.addArrangedSubview(item)
         }
         
         [icon, textFieldView].forEach { item in
