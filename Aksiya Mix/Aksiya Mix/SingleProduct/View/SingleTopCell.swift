@@ -90,17 +90,13 @@ class SingleTopView: UITableViewCell {
         setConstraints()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-    }
-    
     required init?(coder: NSCoder) {
         fatalError()
     }
     
     private func setUI (){
         selectionStyle = .none
+        
         contentView.addSubview(saleView)
         contentView.addSubview(backView)
 
@@ -116,11 +112,11 @@ class SingleTopView: UITableViewCell {
         
         [backView, saleView].forEach { item in
             item.clipsToBounds = true
-            item.layer.cornerRadius = 10
-            item.layer.maskedCorners = [
-                .layerMinXMinYCorner,
-                .layerMaxXMinYCorner
-            ]
+            item.layer.cornerRadius = 8
+//            item.layer.maskedCorners = [
+//                .layerMinXMinYCorner,
+//                .layerMaxXMinYCorner
+//            ]
         }
         
         backgroundColor = .clear

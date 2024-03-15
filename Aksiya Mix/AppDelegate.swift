@@ -7,15 +7,16 @@
 
 import UIKit
 import CoreData
+import GoogleMaps
 
 @main
-
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        GMSServices.provideAPIKey("AIzaSyBUlkZTMd3cee60vaoP7NGbZNnWA0bJZiU")
+        _ = GMSMapView()
         return true
     }
 

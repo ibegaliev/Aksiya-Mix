@@ -96,7 +96,7 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            7
+            8
         } else {
             10
         }
@@ -135,6 +135,11 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
                 
                 return cell
             } else if indexPath.row == 7 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "LineCell", for: indexPath) as! LineCell
+                cell.backgroundColor = .backColor
+                cell.selectionStyle = .none
+                return cell
+            } else if indexPath.row == 8 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LineCell", for: indexPath) as! LineCell
                 cell.backgroundColor = .backColor
                 cell.selectionStyle = .none

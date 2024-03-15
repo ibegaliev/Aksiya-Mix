@@ -51,9 +51,7 @@ class DescriptionView: UITableViewCell {
     }
     
     private func setUI() {
-        
         contentView.addSubview(stack)
-        
         [segmentControl, label, showAllView].forEach { item in
             stack.addArrangedSubview(item)
         }

@@ -40,7 +40,11 @@ class UserDatesCell: UITableViewCell {
     }
     
     private func setUI() {
-        
+
+        contentView.layer.cornerRadius = 8
+        contentView.clipsToBounds = true
+        backgroundColor = .backColor
+        contentView.backgroundColor = .white
         contentView.addSubview(mainStack)
         
         [personView, commentView].forEach { item in

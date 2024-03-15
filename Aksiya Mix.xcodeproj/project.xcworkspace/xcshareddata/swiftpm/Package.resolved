@@ -1,6 +1,15 @@
 {
-  "originHash" : "dafecf2092e8b1f44407cf21f45aad7a044d96c7b81ae4abc42e96426382e64a",
+  "originHash" : "6c28928375d4ad400078354c9eefb24a1ce5135aff5b9806a563d378fbf2ef9e",
   "pins" : [
+    {
+      "identity" : "ios-maps-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/googlemaps/ios-maps-sdk",
+      "state" : {
+        "revision" : "bd392d7d844b49ec6795871a3c25edd01ab839f2",
+        "version" : "8.4.0"
+      }
+    },
     {
       "identity" : "iqkeyboardmanager",
       "kind" : "remoteSourceControl",
