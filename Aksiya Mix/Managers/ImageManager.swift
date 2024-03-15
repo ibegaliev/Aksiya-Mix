@@ -13,8 +13,8 @@ class ImageManager {
  
     func getImage(url: String?) -> UIImageView {
         guard let url else { return UIImageView() }
-        var imageURL: URL = URL(string: url) ?? URL(fileURLWithPath: "")
-        imageURL
+//        var imageURL: URL = URL(string: url) ?? URL(fileURLWithPath: "")
+//        imageURL
         return UIImageView()
     }
     

@@ -6,28 +6,30 @@
 //
 
 import UIKit
-import MapKit
+import GoogleMaps
 
 class MapView: UIView {
     
-    lazy var mapView: MKMapView = {
-        let map = MKMapView()
-        
-        return map
+    lazy var mapView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .green
+        view.layer.cornerRadius = 8
+        view.clipsToBounds = true
+        return view
     }()
-    
+
     lazy var title: UILabel = {
         let lbl = UILabel()
-        lbl.font = .systemFont(ofSize: 12)
-        lbl.text = "(Ташкент)"
+        lbl.font = .appFont(ofSize: 14, weight: .semibold)
+        lbl.text = "Joylashuv"
         return lbl
     }()
     
     lazy var filtrButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("фильтр", for: .normal)
-        btn.titleLabel?.font = .systemFont(ofSize: 12)
         btn.setTitleColor(.selectBlue, for: .normal)
+        btn.setTitle("Barcha filiallar", for: .normal)
+        btn.titleLabel?.font = .appFont(ofSize: 12, weight: .medium)
         return btn
     }()
     
@@ -48,8 +50,8 @@ class MapView: UIView {
     
     lazy var idLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "ID: 4287434 3 дня назад"
-        lbl.font = .systemFont(ofSize: 10)
+        lbl.text = "ID: 4287434"
+        lbl.font = .appFont(ofSize: 10, weight: .semibold)
         lbl.textColor = .spacetext
         return lbl
     }()
@@ -58,6 +60,11 @@ class MapView: UIView {
         super.init(frame: frame)
         setUI()
         setConstraints()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setMap()
     }
     
     required init?(coder: NSCoder) {
@@ -85,6 +92,30 @@ class MapView: UIView {
         mapView.snp.makeConstraints { make in
             make.height.equalTo(172)
         }
+        filtrButton.snp.makeConstraints { make in
+            make.height.equalTo(32)
+        }
     }
+    
+    private func setMap() {
+        DispatchQueue.global(qos: .utility).async { [self] in
+            let options = GMSMapViewOptions()
+            options.camera = GMSCameraPosition.camera(
+                withLatitude: 41.311081,
+                longitude: 69.240562,
+                zoom: 10.0
+            )
+            DispatchQueue.main.async { [self] in
+                options.frame = bounds
+                let map = GMSMapView(options: options)
+                map.isExclusiveTouch = false
+                mapView.addSubview(map)
+                map.snp.makeConstraints { make in
+                    make.edges.equalTo(mapView)
+                }
+            }
+        }
+    }
+
     
 }
