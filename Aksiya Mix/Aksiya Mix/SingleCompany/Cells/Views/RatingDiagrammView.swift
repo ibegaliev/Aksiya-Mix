@@ -62,11 +62,23 @@ class DiagrammView: UIView {
         set {
             guard let newValue else { return }
             if newValue > 100 || newValue <= 0 { return }
-            DispatchQueue.global(qos: .unspecified).async { [self] in
-                DispatchQueue.main.async { [self] in
-                    indicatorView.snp.makeConstraints { make in
-                        make.width.equalTo(Int(backView.frame.width) * newValue / 100)
-                    }
+            DispatchQueue.main.async { [self] in
+                indicatorView.snp.makeConstraints { make in
+                    make.width.equalTo(Int(backView.frame.width) * newValue / 100)
+                }
+                DispatchQueue.global(qos: .userInitiated).sync {
+                    indicatorView.backgroundColor = .selectBlue
+                    indicatorView.applyGradient(
+                        colors: [.garnierPink, .garnierOrgane],
+                        startPoint: CGPoint(
+                            x: 0,
+                            y: 0
+                        ),
+                        endPoint: CGPoint(
+                            x: 0.8,
+                            y: 0.5
+                        )
+                    )
                 }
             }
         }
@@ -88,7 +100,7 @@ class DiagrammView: UIView {
     
     lazy var indicatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = .selectBlue
+        view.clipsToBounds = true
         view.layer.cornerRadius = 4
         return view
     }()
@@ -109,6 +121,21 @@ class DiagrammView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        indicatorView.applyGradient(
+            colors: [.garnierPink, .garnierOrgane],
+            startPoint: CGPoint(
+                x: 0,
+                y: 0
+            ),
+            endPoint: CGPoint(
+                x: 0.8,
+                y: 0.5
+            )
+        )
     }
     
     private func setUI() {

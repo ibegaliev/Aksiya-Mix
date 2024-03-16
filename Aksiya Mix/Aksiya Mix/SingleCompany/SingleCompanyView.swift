@@ -41,7 +41,7 @@ class SingleCompanyView: UIView {
         tv.backgroundColor = .clear
         tv.separatorStyle = .none
         tv.contentInset = UIEdgeInsets(
-            top: 0.screenWight/1.75,
+            top: 0,
             left: 0,
             bottom: 50,
             right: 0

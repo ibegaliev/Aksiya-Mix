@@ -90,11 +90,13 @@ class CompanyHeaderCell: UITableViewCell {
     }
     
     private func setUI() {
+        
         selectionStyle = .none
-        contentView.backgroundColor = .backColor
-        contentView.clipsToBounds = false
-        contentView.layer.cornerRadius = 8
-        contentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        contentView.backgroundColor = .clear
+        
+        backView.clipsToBounds = false
+        backView.layer.cornerRadius = 8
+        backView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
 
         contentView.addSubview(backView)
         
@@ -116,7 +118,8 @@ class CompanyHeaderCell: UITableViewCell {
     
     private func setConstraints() {
         backView.snp.makeConstraints { make in
-            make.top.leading.right.equalTo(contentView)
+            make.top.equalTo(contentView).inset(0.screenWight/1.7 - 20)
+            make.leading.right.equalTo(contentView)
             make.bottom.equalTo(contentView)
         }
         mainStack.snp.makeConstraints { make in

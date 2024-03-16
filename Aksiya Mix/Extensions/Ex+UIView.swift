@@ -22,17 +22,12 @@ extension UIView {
     }
     
     func applyGradient(colors: [UIColor], startPoint: CGPoint, endPoint: CGPoint) {
-        // Remove existing gradient layer if any
         layer.sublayers?.filter({ $0 is CAGradientLayer }).forEach({ $0.removeFromSuperlayer() })
-        
-        // Create gradient layer
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = colors.map { $0.cgColor }
         gradientLayer.startPoint = startPoint
         gradientLayer.endPoint = endPoint
         gradientLayer.frame = bounds
-        
-        // Add gradient layer to view
         layer.insertSublayer(gradientLayer, at: 0)
     }
 
