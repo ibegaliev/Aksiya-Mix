@@ -36,7 +36,7 @@ class SingleCompanyController: AksiyaViewController {
     
     @objc
     private func sharedCompany() {
-        DispatchQueue.global(qos: .userInitiated).sync {
+        DispatchQueue.main.async {
             let item : URL = URL(string: "https://aksiyamix.uz/product-details")!
             let acController = UIActivityViewController(
                 activityItems: [item],

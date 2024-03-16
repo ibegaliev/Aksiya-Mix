@@ -71,6 +71,7 @@
 		8C958FDF2B73402300299AF8 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C958FDE2B73402300299AF8 /* LaunchScreenController.swift */; };
 		8C958FE12B73402C00299AF8 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C958FE02B73402C00299AF8 /* LaunchView.swift */; };
 		8C979E1E2B6C535D00C43155 /* SelectableColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C979E1D2B6C535D00C43155 /* SelectableColorView.swift */; };
+		8C97CEAB2BA4CC4600310C21 /* ShareLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C97CEAA2BA4CC4600310C21 /* ShareLink.swift */; };
 		8C9966032B9ADE8F009886BA /* CompanyDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9966022B9ADE8F009886BA /* CompanyDescriptionCell.swift */; };
 		8C9BA7942B6A1ED5008C9420 /* SingleProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7932B6A1ED5008C9420 /* SingleProductViewController.swift */; };
 		8C9BA7962B6A1F88008C9420 /* SingleProductDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BA7952B6A1F88008C9420 /* SingleProductDM.swift */; };
@@ -262,6 +263,7 @@
 		8C958FDE2B73402300299AF8 /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		8C958FE02B73402C00299AF8 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		8C979E1D2B6C535D00C43155 /* SelectableColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableColorView.swift; sourceTree = "<group>"; };
+		8C97CEAA2BA4CC4600310C21 /* ShareLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLink.swift; sourceTree = "<group>"; };
 		8C9966022B9ADE8F009886BA /* CompanyDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDescriptionCell.swift; sourceTree = "<group>"; };
 		8C9BA7932B6A1ED5008C9420 /* SingleProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductViewController.swift; sourceTree = "<group>"; };
 		8C9BA7952B6A1F88008C9420 /* SingleProductDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductDM.swift; sourceTree = "<group>"; };
@@ -1060,6 +1062,7 @@
 				8C7B9DC32B83649100372CB1 /* ImageManager.swift */,
 				8CE1A8102B941DD0007260D5 /* AlertManager.swift */,
 				8C930B702B95D81B0048778B /* UserTokenManager.swift */,
+				8C97CEAA2BA4CC4600310C21 /* ShareLink.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1263,6 +1266,7 @@
 				8C8275D52B7B7B1F004C445B /* LikedSordsView.swift in Sources */,
 				8CE832EE2B638400004B4E6D /* BaseViewController.swift in Sources */,
 				8C8EFF942B7871E0002DE31D /* CategoryController.swift in Sources */,
+				8C97CEAB2BA4CC4600310C21 /* ShareLink.swift in Sources */,
 				8C47E7182B91D12900B59A25 /* NetworkService.swift in Sources */,
 				8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */,
 				8C19B0A92B63556A007D8872 /* AppDelegate.swift in Sources */,

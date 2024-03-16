@@ -33,6 +33,22 @@ class MapView: UIView {
         return btn
     }()
     
+    lazy var idLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "ID: 4287434"
+        lbl.font = .appFont(ofSize: 10, weight: .semibold)
+        lbl.textColor = .spacetext
+        return lbl
+    }()
+    
+    lazy var feedBackButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Shikoyat qilish", for: .normal)
+        btn.setTitleColor(.red, for: .normal)
+        btn.titleLabel?.font = .appFont(ofSize: 10, weight: .semibold)
+        return btn
+    }()
+    
     lazy var topStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
@@ -44,18 +60,18 @@ class MapView: UIView {
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 10
+        stack.spacing = 0
         return stack
     }()
     
-    lazy var idLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.text = "ID: 4287434"
-        lbl.font = .appFont(ofSize: 10, weight: .semibold)
-        lbl.textColor = .spacetext
-        return lbl
+    lazy var bottomStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 8
+        stack.distribution = .equalSpacing
+        return stack
     }()
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
@@ -75,12 +91,16 @@ class MapView: UIView {
         
         addSubview(mainStack)
         
-        [topStack, mapView, idLabel].forEach { item in
+        [topStack, mapView, bottomStack].forEach { item in
             mainStack.addArrangedSubview(item)
         }
         
         [title, filtrButton].forEach { item in
             topStack.addArrangedSubview(item)
+        }
+        
+        [idLabel, feedBackButton].forEach { item in
+            bottomStack.addArrangedSubview(item)
         }
         
     }
@@ -98,12 +118,12 @@ class MapView: UIView {
     }
     
     private func setMap() {
-        DispatchQueue.global(qos: .utility).async { [self] in
+        DispatchQueue.global(qos: .background).async { [self] in
             let options = GMSMapViewOptions()
             options.camera = GMSCameraPosition.camera(
                 withLatitude: 41.311081,
                 longitude: 69.240562,
-                zoom: 10.0
+                zoom: 12
             )
             DispatchQueue.main.async { [self] in
                 options.frame = bounds
