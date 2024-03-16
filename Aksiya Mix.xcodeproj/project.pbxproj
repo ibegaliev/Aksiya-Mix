@@ -115,6 +115,8 @@
 		8CC9BD292B9DCBDF00180758 /* BannerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9BD1A2B9DCBDF00180758 /* BannerViewCell.swift */; };
 		8CC9BD2A2B9DCBDF00180758 /* BannerViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9BD1B2B9DCBDF00180758 /* BannerViewFlowLayout.swift */; };
 		8CC9BD2B2B9DCBDF00180758 /* LoadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9BD1C2B9DCBDF00180758 /* LoadImageView.swift */; };
+		8CCE208B2BA567180084AB53 /* StoreHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE208A2BA567180084AB53 /* StoreHeaderView.swift */; };
+		8CCE208D2BA5673D0084AB53 /* CompanyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE208C2BA5673D0084AB53 /* CompanyInfo.swift */; };
 		8CD14DD32B93ACF200D813D1 /* PhoneDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD14DD22B93ACF200D813D1 /* PhoneDM.swift */; };
 		8CD14DD52B93AD2900D813D1 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD14DD42B93AD2900D813D1 /* Parser.swift */; };
 		8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354542B6B8985004FFE0F /* FeedbackItemsView.swift */; };
@@ -303,6 +305,8 @@
 		8CC9BD1A2B9DCBDF00180758 /* BannerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewCell.swift; sourceTree = "<group>"; };
 		8CC9BD1B2B9DCBDF00180758 /* BannerViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewFlowLayout.swift; sourceTree = "<group>"; };
 		8CC9BD1C2B9DCBDF00180758 /* LoadImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadImageView.swift; sourceTree = "<group>"; };
+		8CCE208A2BA567180084AB53 /* StoreHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHeaderView.swift; sourceTree = "<group>"; };
+		8CCE208C2BA5673D0084AB53 /* CompanyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfo.swift; sourceTree = "<group>"; };
 		8CD14DD22B93ACF200D813D1 /* PhoneDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDM.swift; sourceTree = "<group>"; };
 		8CD14DD42B93AD2900D813D1 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		8CD354542B6B8985004FFE0F /* FeedbackItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackItemsView.swift; sourceTree = "<group>"; };
@@ -959,6 +963,8 @@
 				8C979E1D2B6C535D00C43155 /* SelectableColorView.swift */,
 				8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */,
 				8C25CE072B6DEB7C00B345BA /* MapView.swift */,
+				8CCE208A2BA567180084AB53 /* StoreHeaderView.swift */,
+				8CCE208C2BA5673D0084AB53 /* CompanyInfo.swift */,
 				8CD354532B6B8971004FFE0F /* FeedbackViews */,
 			);
 			path = Views;
@@ -1248,6 +1254,7 @@
 				8CBA40092B77935200F92F98 /* SingleCompanyController.swift in Sources */,
 				8CC9BD262B9DCBDF00180758 /* BannerVideoViewCell.swift in Sources */,
 				8CF455972B64DFA700E3EAB4 /* ItemsCell.swift in Sources */,
+				8CCE208D2BA5673D0084AB53 /* CompanyInfo.swift in Sources */,
 				8CC9BD292B9DCBDF00180758 /* BannerViewCell.swift in Sources */,
 				8C8275D02B7B6A47004C445B /* LikedViewModel.swift in Sources */,
 				8C35BE9D2B9A0D96005459CE /* CompanyLocationsCell.swift in Sources */,
@@ -1326,6 +1333,7 @@
 				8CC185F42B751A5400B13400 /* EnterCodeViewController.swift in Sources */,
 				8C0658122B73254200F6C9C3 /* RegisterViewController.swift in Sources */,
 				8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */,
+				8CCE208B2BA567180084AB53 /* StoreHeaderView.swift in Sources */,
 				8C8B263A2B9C0FB60068A52C /* RatingCountView.swift in Sources */,
 				8C930B6F2B95D75E0048778B /* UserTokenDM.swift in Sources */,
 				8C661F922B641E7500437F0D /* Ex+Int.swift in Sources */,
