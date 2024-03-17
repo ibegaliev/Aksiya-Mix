@@ -188,7 +188,7 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 return CGSize(width: (0.screenWight-36)/2, height: 290.toScreen)
             }
         } else {
-            return CGSize(width: (0.screenWight-36)/2, height: 290.toScreen)
+            return CGSize(width: (0.screenWight-36)/2, height: 255.toScreen)
         }
     }
     
