@@ -20,13 +20,20 @@ class UserView: UIView {
     
     var delegate: UserViewDelegate?
     
-    var data: [UserViewData] = [
-        UserViewData(icon: .settingsUser, title: "Sozlamalar"),
-        UserViewData(icon: .messageDotsCircle, title: "Fikir-mulohazalar"),
-        UserViewData(icon: .shieldTick, title: "Shartlar va qoidalar"),
-        UserViewData(icon: .messageDotsCircle, title: "Ishtimoiy tarmoqlarda"),
-        UserViewData(icon: .infoCircle, title: "Ilova haqida"),
-        UserViewData(icon: .logOut, title: "Chiqish")
+    var data: [[UserViewData]] = [
+        [
+            UserViewData(icon: .settingsUser, title: "Sozlamalar"),
+            UserViewData(icon: .messageDotsCircle, title: "Fikir-mulohazalar"),
+            UserViewData(icon: .shieldTick, title: "Shartlar va qoidalar"),
+        ],
+        [
+            UserViewData(icon: .settingsUser, title: "Sozlamalar"),
+            UserViewData(icon: .messageDotsCircle, title: "Fikir-mulohazalar"),
+            UserViewData(icon: .shieldTick, title: "Shartlar va qoidalar"),
+            UserViewData(icon: .messageDotsCircle, title: "Ishtimoiy tarmoqlarda"),
+            UserViewData(icon: .infoCircle, title: "Ilova haqida"),
+            UserViewData(icon: .logOut, title: "Chiqish")
+        ]
     ]
     
     lazy var mainStack: UIStackView = {
@@ -43,7 +50,7 @@ class UserView: UIView {
         table.delegate = self
         table.dataSource = self
         table.backgroundColor = .backColor
-        table.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 50, right: 0)
+        table.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 50, right: 0)
         table.showsHorizontalScrollIndicator = false
         table.showsVerticalScrollIndicator = false
         table.separatorStyle = .none
@@ -83,14 +90,14 @@ class UserView: UIView {
 extension UserView: UITableViewDelegate, UITableViewDataSource {
         
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        data.count + 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         }
-        return data.count
+        return data[section - 1].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,9 +107,26 @@ extension UserView: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
-        cell.cellData = data[indexPath.row]
-        if indexPath.row == 0 { cell.cellType = .top } else if indexPath.row == 5 { cell.cellType = .bottom }
+        cell.cellData = data[indexPath.section - 1][indexPath.row]
+        if indexPath.row == 0 {
+            cell.cellType = .top
+            cell.lineView.isHidden = false
+        } else if indexPath.row == data[indexPath.section - 1].count - 1 {
+            cell.cellType = .bottom
+            cell.lineView.isHidden = true
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .red
+        headerView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 0)
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
     }
     
 }

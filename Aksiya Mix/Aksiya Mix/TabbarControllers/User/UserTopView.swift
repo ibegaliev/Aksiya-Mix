@@ -92,7 +92,7 @@ class UserTopView: UITableViewCell {
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.top.bottom.equalTo(contentView).inset(12)
+            make.top.bottom.equalTo(contentView).inset(-8)
             make.left.right.equalTo(contentView).inset(16)
         }
     }
