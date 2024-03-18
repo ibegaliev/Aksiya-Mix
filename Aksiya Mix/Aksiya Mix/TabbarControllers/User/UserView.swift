@@ -20,11 +20,13 @@ class UserView: UIView {
     
     var delegate: UserViewDelegate?
     
+    var isUserRegister: Bool = UserTokenManager.manager.getData().token?.isEmpty ?? false
+    
     var data: [[UserViewData]] = [
         [
-            UserViewData(icon: .settingsUser, title: "Sozlamalar"),
-            UserViewData(icon: .messageDotsCircle, title: "Fikir-mulohazalar"),
-            UserViewData(icon: .shieldTick, title: "Shartlar va qoidalar"),
+            UserViewData(icon: .userUnselected, title: "Profilni tahrirlash"),
+            UserViewData(icon: .notificationShop, title: "Bildirishnoma"),
+            UserViewData(icon: .shopHeard, title: "Sevimli do'konlar"),
         ],
         [
             UserViewData(icon: .settingsUser, title: "Sozlamalar"),
@@ -50,11 +52,12 @@ class UserView: UIView {
         table.delegate = self
         table.dataSource = self
         table.backgroundColor = .backColor
-        table.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 50, right: 0)
+        table.contentInset = UIEdgeInsets(top: -16, left: 0, bottom: 50, right: 0)
         table.showsHorizontalScrollIndicator = false
         table.showsVerticalScrollIndicator = false
         table.separatorStyle = .none
         table.register(UserTopView.self, forCellReuseIdentifier: "UserTopView")
+        table.register(UserNamesCell.self, forCellReuseIdentifier: "UserNamesCell")
         table.register(UserCell.self, forCellReuseIdentifier: "UserCell")
         return table
     }()
@@ -102,9 +105,15 @@ extension UserView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "UserTopView", for: indexPath) as! UserTopView
-            cell.delegate = self
-            return cell
+            if !isUserRegister {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "UserNamesCell", for: indexPath) as! UserNamesCell
+                
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "UserTopView", for: indexPath) as! UserTopView
+                cell.delegate = self
+                return cell
+            }
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
         cell.cellData = data[indexPath.section - 1][indexPath.row]

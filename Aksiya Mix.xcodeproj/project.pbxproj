@@ -84,6 +84,7 @@
 		8CA3A08C2B90DBA900291D15 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A08B2B90DBA900291D15 /* IQKeyboardManagerSwift */; };
 		8CA3A08F2B90DBC800291D15 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A08E2B90DBC800291D15 /* Tabman */; };
 		8CA3A0972B90DE6C00291D15 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A0962B90DE6C00291D15 /* SnapKit */; };
+		8CA512F42BA7F90D0010624C /* UserNamesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA512F32BA7F90D0010624C /* UserNamesCell.swift */; };
 		8CA6F5A92B95610000F9FD42 /* OTPField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6F5A82B95610000F9FD42 /* OTPField.swift */; };
 		8CA97E732B74F0B60020A80F /* InputNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA97E722B74F0B60020A80F /* InputNumberView.swift */; };
 		8CAB7CD02B7464AA0075C4DE /* Ex+UIFond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */; };
@@ -275,6 +276,7 @@
 		8CA197B42B7472170025E9F9 /* EnterPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewController.swift; sourceTree = "<group>"; };
 		8CA197B62B74723D0025E9F9 /* EnterPhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewModel.swift; sourceTree = "<group>"; };
 		8CA197B82B7472440025E9F9 /* EnterPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneView.swift; sourceTree = "<group>"; };
+		8CA512F32BA7F90D0010624C /* UserNamesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNamesCell.swift; sourceTree = "<group>"; };
 		8CA6F5A82B95610000F9FD42 /* OTPField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPField.swift; sourceTree = "<group>"; };
 		8CA97E722B74F0B60020A80F /* InputNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNumberView.swift; sourceTree = "<group>"; };
 		8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIFond.swift"; sourceTree = "<group>"; };
@@ -643,6 +645,7 @@
 				8C7B9DC52B836AD400372CB1 /* UserView.swift */,
 				8C7B9DC72B836ADB00372CB1 /* UserViewModel.swift */,
 				8C7B9DC92B83747700372CB1 /* UserTopView.swift */,
+				8CA512F32BA7F90D0010624C /* UserNamesCell.swift */,
 				8CE63E642B8488110033B999 /* UserCell.swift */,
 			);
 			path = User;
@@ -1356,6 +1359,7 @@
 				8C0658102B73249E00F6C9C3 /* RegisterViewModel.swift in Sources */,
 				8CC185FC2B75259900B13400 /* OtpFieldView.swift in Sources */,
 				8CE260F62B6CA98E00B4E2C9 /* UserDatesView.swift in Sources */,
+				8CA512F42BA7F90D0010624C /* UserNamesCell.swift in Sources */,
 				8CBA40052B77933800F92F98 /* SingleCompanyViewModel.swift in Sources */,
 				8CF5A7FC2B73D89700D65039 /* LyricsManager.swift in Sources */,
 				8C3BA4292B997DCF00DA15E5 /* CompanyHeaderCell.swift in Sources */,

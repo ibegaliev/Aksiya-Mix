@@ -31,10 +31,10 @@ class UserCell: UITableViewCell {
         set {
             switch newValue {
                 case .top:
-                    backView.layer.cornerRadius = 6
+                    backView.layer.cornerRadius = 10
                     backView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
                 case .bottom:
-                    backView.layer.cornerRadius = 6
+                    backView.layer.cornerRadius = 10
                     backView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
                 case .center:
                     backView.layer.cornerRadius = 0
