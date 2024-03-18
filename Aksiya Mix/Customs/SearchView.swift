@@ -9,14 +9,11 @@ import UIKit
 import SnapKit
 
 protocol SearchViewDelegate {
-    
     func backButtonTapped()
     func notificationTapped()
     func optionsTapped()
     
-    func textFieldDidBeginEditing(textField: UITextField)
-    func textFieldDidEndEditing(_ textField: UITextField)
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)
+    func searchTapped()
 }
 
 class SearchView: UIView, SearchTextFieldDelegate {
@@ -35,7 +32,7 @@ class SearchView: UIView, SearchTextFieldDelegate {
             switch newValue {
                 case .home:
                     textField.tf.text = ""
-                    textField.tf.resignFirstResponder()
+
                     mainStack.spacing = 8
                     UIView.animate(withDuration: 0.1) { [self] in
                         rightButton.isHidden = false
@@ -44,7 +41,6 @@ class SearchView: UIView, SearchTextFieldDelegate {
                         }
                     }
                 case .search:
-                    textField.tf.text = ""
                     clipsToBounds = true
                     layer.cornerRadius = 8
                     layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
@@ -57,7 +53,6 @@ class SearchView: UIView, SearchTextFieldDelegate {
                             item.isHidden = false
                         }
                     }
-                    textField.tf.becomeFirstResponder()
                 case .option:
                     clipsToBounds = true
                     layer.cornerRadius = 8
@@ -85,6 +80,7 @@ class SearchView: UIView, SearchTextFieldDelegate {
     lazy private var textField: SearchTextField = {
         let tf = SearchTextField()
         tf.delegate = self
+        tf.isButton = true
         return tf
     }()
     
@@ -142,6 +138,10 @@ class SearchView: UIView, SearchTextFieldDelegate {
         }
     }
     
+    func tappedView() {
+        delegate?.searchTapped()
+    }
+    
     @objc
     func backTapped() {
         delegate?.backButtonTapped()
@@ -157,30 +157,31 @@ class SearchView: UIView, SearchTextFieldDelegate {
         delegate?.backButtonTapped()
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-        delegate?.textFieldDidBeginEditing(textField: textField)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-//        delegate?.textFieldDidEndEditing(textField)
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) {
-        delegate?.textField(textField, shouldChangeCharactersIn: range, replacementString: string)
-    }
-
-    
 }
 
 protocol SearchTextFieldDelegate {
-    func textFieldDidBeginEditing(textField: UITextField)
-    func textFieldDidEndEditing(_ textField: UITextField)
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)
+    func tappedView()
 }
 
 class SearchTextField: UIView, UITextFieldDelegate {
     
     var delegate: SearchTextFieldDelegate?
+    
+    var isButton: Bool? {
+        get {
+            return nil
+        }
+        set {
+            guard let newValue else { return }
+            mainButton.isHidden = !newValue
+        }
+    }
+    
+    lazy var mainButton: UIButton = {
+        let btn = UIButton()
+        btn.addTarget(self, action: #selector(tappedMain), for: .touchUpInside)
+        return btn
+    }()
     
     lazy var stack: UIStackView = {
         let stack = UIStackView()
@@ -220,6 +221,8 @@ class SearchTextField: UIView, UITextFieldDelegate {
         
         addSubview(stack)
         
+        addSubview(mainButton)
+        
         [icon, tf].forEach { item in
             stack.addArrangedSubview(item)
         }
@@ -234,23 +237,14 @@ class SearchTextField: UIView, UITextFieldDelegate {
         icon.snp.makeConstraints { make in
             make.width.height.equalTo(20.toScreen)
         }
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        icon.isHidden = true
-        delegate?.textFieldDidBeginEditing(textField: textField)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.35) { [self] in
-            icon.isHidden = false
+        mainButton.snp.makeConstraints { make in
+            make.edges.equalTo(self)
         }
-        delegate?.textFieldDidEndEditing(textField)
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        delegate?.textField(textField, shouldChangeCharactersIn: range, replacementString: string)
-        return true
+    @objc
+    private func tappedMain() {
+        delegate?.tappedView()
     }
-    
+        
 }

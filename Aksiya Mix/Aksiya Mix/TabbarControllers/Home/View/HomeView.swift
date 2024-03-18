@@ -20,38 +20,6 @@ class HomeView: UIView, OfferViewDelegate {
     
     var delegate: HomeViewDelegate?
     
-    var viewType: HomeViewType? {
-        get {
-            return nil
-        }
-        set {
-            guard let newValue else { return }
-            print("WWWW", newValue)
-            switch newValue {
-                case .home:
-                    UIView.animate(withDuration: 0.25) { [self] in
-                        collectionView.isHidden = false
-                        offerView.isHidden = true
-                        searchItemsView.isHidden = true
-                    }
-                case .search:
-                    UIView.animate(withDuration: 0.25) { [self] in
-                        offerView.isHidden = false
-                    }
-                    collectionView.isHidden = true
-                    searchItemsView.isHidden = true
-                case .results:
-                    UIView.animate(withDuration: 0.25) { [self] in
-                        searchItemsView.isHidden = false
-                    }
-                    collectionView.isHidden = true
-                    offerView.isHidden = true
-            }
-            layoutSubviews()
-            reloadInputViews()
-        }
-    }
-    
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -81,18 +49,18 @@ class HomeView: UIView, OfferViewDelegate {
         return cv
     }()
     
-    lazy var offerView: OfferView = {
-        let view = OfferView()
-        view.isHidden = true
-        view.delegate = self
-        return view
-    }()
+//    lazy var offerView: OfferView = {
+//        let view = OfferView()
+//        view.isHidden = true
+//        view.delegate = self
+//        return view
+//    }()
     
-    lazy var searchItemsView: OfferItemsView = {
-        let view = OfferItemsView()
-        view.isHidden = true
-        return view
-    }()
+//    lazy var searchItemsView: OfferItemsView = {
+//        let view = OfferItemsView()
+//        view.isHidden = true
+//        return view
+//    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -106,7 +74,7 @@ class HomeView: UIView, OfferViewDelegate {
     
     private func setUI() {
         addSubview(mainStack)
-        [searchItemsView, offerView, collectionView].forEach { item in
+        [collectionView].forEach { item in
             mainStack.addArrangedSubview(item)
         }
     }

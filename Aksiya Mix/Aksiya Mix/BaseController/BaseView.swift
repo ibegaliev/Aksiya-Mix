@@ -12,9 +12,7 @@ protocol BaseViewDelegate {
     func notificationTapped()
     func optionsTapped()
     
-    func textFieldDidBeginEditing(textField: UITextField)
-    func textFieldDidEndEditing(_ textField: UITextField)
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)
+    func searchTapped()
 }
 
 enum BaseMode {
@@ -81,6 +79,10 @@ class BaseView: UIView, SearchViewDelegate {
         }
     }
     
+    func searchTapped() {
+        delegate?.searchTapped()
+    }
+    
     func backButtonTapped() {
         delegate?.backButtonTapped()
     }
@@ -92,19 +94,5 @@ class BaseView: UIView, SearchViewDelegate {
     func optionsTapped() {
         delegate?.optionsTapped()
     }
-
-    
-    func textFieldDidBeginEditing(textField: UITextField) {
-        delegate?.textFieldDidBeginEditing(textField: textField)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        delegate?.textFieldDidEndEditing(textField)
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) {
-        delegate?.textField(textField, shouldChangeCharactersIn: range, replacementString: string)
-    }
-
     
 }

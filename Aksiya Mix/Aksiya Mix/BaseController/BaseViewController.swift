@@ -43,6 +43,13 @@ class AksiyaViewController: UIViewController, BaseViewDelegate {
     private func setNavigation() {
         navigationItem.backButtonTitle = " "
     }
+    
+    func searchTapped() {
+        let controller = SearchController()
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
+
         
     func backButtonTapped() {
         
@@ -53,18 +60,6 @@ class AksiyaViewController: UIViewController, BaseViewDelegate {
     }
     
     func optionsTapped() {
-        
-    }
-
-    func textFieldDidBeginEditing(textField: UITextField) {
-        
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) {
         
     }
     

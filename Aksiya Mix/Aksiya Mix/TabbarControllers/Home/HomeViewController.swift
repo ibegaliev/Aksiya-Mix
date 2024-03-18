@@ -27,23 +27,13 @@ class HomeViewController: AksiyaViewController, HomeViewDelegate {
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    override func textFieldDidBeginEditing(textField: UITextField) {
-        mode = .search
-        homeView.viewType = .search
-    }
-    
-    override func textFieldDidEndEditing(_ textField: UITextField) {
-        mode = .home
-        homeView.viewType = .home
-    }
-    
-    override func backButtonTapped() {
-        mode = .home
-        homeView.viewType = .home
-    }
-    
     func offerViewSelected(index: Int?) {
-        homeView.viewType = .results
+        
     }
     
+    override func searchTapped() {
+        super.searchTapped()
+    }
+    
+
 }

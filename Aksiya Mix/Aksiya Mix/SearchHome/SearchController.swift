@@ -7,19 +7,20 @@
 
 import UIKit
 
-class SearchController: AksiyaViewController {
+class SearchController: UIViewController {
+    
+    var viewModel = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mode = .search
+        setUI()
     }
     
-    override func backButtonTapped() {
-        dismiss(animated: true)
+    private func setUI() {
+        view.addSubview(viewModel)
+        viewModel.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
     }
-    
-    override func optionsTapped() {
         
-    }
-    
 }
