@@ -11,7 +11,7 @@ class OfferItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     lazy var topSelectableView: TopSelectableView = {
         let view = TopSelectableView()
-        view.backgroundColor = .systemTeal
+
         return view
     }()
     
@@ -34,7 +34,7 @@ class OfferItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         cv.dataSource = self
         cv.showsVerticalScrollIndicator = false
         cv.showsHorizontalScrollIndicator = false
-        cv.contentInset = UIEdgeInsets(top: 12, left: 12, bottom: 50.toScreen, right: 12)
+        cv.contentInset = UIEdgeInsets(top: 4, left: 12, bottom: 50.toScreen, right: 12)
         cv.register(SingleProductCell.self, forCellWithReuseIdentifier: "SingleProductCell")
         return cv
     }()
@@ -60,6 +60,7 @@ class OfferItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     private func setUI() {
+        backgroundColor = .backColor
         addSubview(mainStack)
         [topSelectableView, showResultView, collectionView].forEach { item in
             mainStack.addArrangedSubview(item)
@@ -68,7 +69,8 @@ class OfferItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.edges.equalTo(self)
+            make.top.equalTo(self).inset(95.toScreen)
+            make.left.right.bottom.equalTo(self)
         }
     }
     

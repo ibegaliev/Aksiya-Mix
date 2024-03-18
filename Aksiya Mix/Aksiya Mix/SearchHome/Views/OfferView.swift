@@ -22,21 +22,15 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
         return stack
     }()
     
-//    lazy var titleLabel: UILabel = {
-//        let lbl = UILabel()
-//        lbl.font = .appFont(ofSize: 18, weight: .bold)
-//        lbl.textColor = .spacetext
-//        lbl.text = "MAXSUS TAKLIFLAR"
-//        return lbl
-//    }()
-    
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.delegate = self
         tv.dataSource = self
         tv.separatorStyle = .none
-        tv.register(OfferItemsCell.self, forCellReuseIdentifier: "OfferItemsCell")
+        tv.register(CategoryCell.self, forCellReuseIdentifier: "CategoryCell")
         tv.showsVerticalScrollIndicator = false
+        tv.backgroundColor = .backColor
+        tv.contentInset = .init(top: 4, left: 0, bottom: 50, right: 0)
         return tv
     }()
         
@@ -52,7 +46,6 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     private func setUI() {
         addSubview(mainStack)
-//        [titleLabel, tableView].forEach { item in
         [tableView].forEach { item in
             mainStack.addArrangedSubview(item)
         }
@@ -60,12 +53,9 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.top.equalTo(self).inset(8)
+            make.top.equalTo(self).inset(4)
             make.left.right.bottom.equalTo(self)
         }
-//        titleLabel.snp.makeConstraints { make in
-//            make.width.equalTo(0.screenWight - 32)
-//        }
         tableView.snp.makeConstraints { make in
             make.width.equalTo(0.screenWight)
         }
@@ -76,32 +66,40 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "OfferItemsCell", for: indexPath) as! OfferItemsCell
-        
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+            cell.mainImage.isHidden = true
+            cell.chevronImage.isHidden = true
+            cell.titleLabel.font = .appFont(ofSize: 18, weight: .semibold)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+            cell.mainImage.isHidden = true
+            cell.titleLabel.font = .appFont(ofSize: 14, weight: .regular)
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didSelect(indexPath: indexPath)
+        if indexPath.row != 0 {
+            delegate?.didSelect(indexPath: indexPath)
+        }
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label : UILabel = UILabel()
-        label.font = .appFont(ofSize: 18, weight: .bold)
-        label.textColor = .spacetext
-        label.backgroundColor = .white
-        
-        if section == 0 {
-            label.text = "   Yaqinda ko'rilganlar"
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if indexPath.section == 0 && indexPath.row != 0 {
+            let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
+                
+            }
+            let action = UISwipeActionsConfiguration(actions: [deleteAction])
+            return action
         } else {
-            label.text = "   Maxsus takliflar"
+            return nil
         }
-        
-        return label
     }
     
 }

@@ -12,26 +12,26 @@ class ShowResultView: UIView {
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "137 ta natija topildi"
-        lbl.font = .appFont(ofSize: 12, weight: .regular)
+        lbl.font = .appFont(ofSize: 14, weight: .semibold)
         return lbl
     }()
     
     lazy var changeButton: UIButton = {
         let lbl = UIButton()
-        lbl.setImage(.gridSelect, for: .normal)
+        lbl.setImage(.switchVertical, for: .normal)
         return lbl
     }()
     
     lazy var rightButton: UIButton = {
         let lbl = UIButton()
-        lbl.setImage(.gridSelect, for: .normal)
+        lbl.setImage(.layoutGrid, for: .normal)
         return lbl
     }()
     
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.spacing = 8
-        stack.alignment = .fill
+        stack.alignment = .center
         stack.distribution = .equalSpacing
         stack.axis = .horizontal
         return stack
@@ -68,7 +68,8 @@ class ShowResultView: UIView {
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.top.bottom.equalTo(self)
+            make.top.equalTo(self)
+            make.bottom.equalTo(self).inset(2)
             make.left.right.equalTo(self).inset(16)
         }
         changeButton.snp.makeConstraints { make in

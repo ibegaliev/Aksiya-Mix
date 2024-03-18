@@ -614,6 +614,7 @@
 				8C7FAFFF2B7738AB0062BF59 /* SearchController.swift */,
 				8C8FE9962BA832CF00F77474 /* SearchItemsView.swift */,
 				8C8FE9982BA832DB00F77474 /* SearchViewModel.swift */,
+				8CE969762BA846090005C334 /* Views */,
 			);
 			path = SearchHome;
 			sourceTree = "<group>";
@@ -1003,8 +1004,6 @@
 			isa = PBXGroup;
 			children = (
 				8CE832DE2B637910004B4E6D /* HomeView.swift */,
-				8CE0A4552B7E298500F384AB /* OfferView.swift */,
-				8CD7E0F42B7F0A0400900220 /* OfferItemsView.swift */,
 				8CF134072B8082DA00E1A913 /* TopSelectableView.swift */,
 				8CF134092B8082E900E1A913 /* ShowResultView.swift */,
 			);
@@ -1055,6 +1054,15 @@
 				8C661F8F2B641D1C00437F0D /* BaseView.swift */,
 			);
 			path = BaseController;
+			sourceTree = "<group>";
+		};
+		8CE969762BA846090005C334 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CD7E0F42B7F0A0400900220 /* OfferItemsView.swift */,
+				8CE0A4552B7E298500F384AB /* OfferView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8CEA8A3B2B775958000071FC /* Company */ = {

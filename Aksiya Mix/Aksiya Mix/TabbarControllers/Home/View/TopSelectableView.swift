@@ -7,7 +7,19 @@
 
 import UIKit
 
+struct TopSelectableDM {
+    var name: String
+    var image: UIImage
+}
+
 class TopSelectableView: UIView {
+    
+    let data: [TopSelectableDM] = [
+        TopSelectableDM(name: "Filtr", image: .filterLines),
+        TopSelectableDM(name: "Barcha toifalar", image: .closeX),
+        TopSelectableDM(name: "Ташкент", image: .closeX),
+        TopSelectableDM(name: "Valyuta: UZS", image: .closeX)
+    ]
     
     lazy var layout: UICollectionViewFlowLayout = {
         let lay = UICollectionViewFlowLayout()
@@ -22,7 +34,7 @@ class TopSelectableView: UIView {
         cv.dataSource = self
         cv.showsVerticalScrollIndicator = false
         cv.showsHorizontalScrollIndicator = false
-        cv.contentInset = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
+        cv.contentInset = UIEdgeInsets(top: 4, left: 16, bottom: 0, right: 16)
         cv.register(TopSelectableCell.self, forCellWithReuseIdentifier: "TopSelectableCell")
         return cv
     }()
@@ -44,7 +56,7 @@ class TopSelectableView: UIView {
     private func setConstraints() {
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(self)
-            make.height.equalTo(48)
+            make.height.equalTo(40)
         }
     }
     
@@ -53,17 +65,21 @@ class TopSelectableView: UIView {
 extension TopSelectableView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopSelectableCell", for: indexPath) as! TopSelectableCell
-        
+        cell.titleLabel.text = data[indexPath.row].name
+        cell.icon.setImage(data[indexPath.row].image, for: .normal)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 100, height: collectionView.frame.height-20)
+        CGSize(
+            width: data[indexPath.row].name.widthOfString(usingFont: .appFont(ofSize: 14, weight: .medium)) + 36,
+            height: collectionView.frame.height-10
+        )
     }
     
 }
@@ -72,14 +88,14 @@ class TopSelectableCell: UICollectionViewCell {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "value here!"
-        lbl.font = .appFont(ofSize: 12, weight: .medium)
+        lbl.textAlignment = .center
+        lbl.font = .appFont(ofSize: 14, weight: .medium)
         return lbl
     }()
     
     lazy var icon: UIButton = {
         let btn = UIButton()
-        btn.setImage(.closeX, for: .normal)
+        btn.setImage(.filterLines, for: .normal)
         return btn
     }()
     
@@ -104,7 +120,8 @@ class TopSelectableCell: UICollectionViewCell {
     
     private func setUI() {
         contentView.backgroundColor = .white
-        contentView.layer.cornerRadius = 4
+        contentView.layer.cornerRadius = 6
+        contentView.clipsToBounds = true
         
         contentView.addSubview(mainStack)
         [titleLabel, icon].forEach { item in
