@@ -36,6 +36,8 @@ class BaseView: UIView, SearchViewDelegate {
         let search = SearchView()
         search.delegate = self
         search.translatesAutoresizingMaskIntoConstraints = false
+        search.layer.cornerRadius = 8
+        search.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         return search
     }()
     
