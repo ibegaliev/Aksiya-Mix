@@ -23,7 +23,6 @@ class SingleProductViewController: AksiyaViewController {
     }
     
     private func setNavigation() {
-//        DispatchQueue.main.async { [self] in
             navigationItem.rightBarButtonItems = [
                 UIBarButtonItem(
                     image: .shareRight,
@@ -38,7 +37,6 @@ class SingleProductViewController: AksiyaViewController {
                     action: #selector(likeTapped)
                 )
             ]
-//        }
     }
     
     @objc

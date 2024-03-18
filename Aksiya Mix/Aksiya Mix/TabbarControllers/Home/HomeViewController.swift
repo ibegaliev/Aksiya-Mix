@@ -21,6 +21,12 @@ class HomeViewController: AksiyaViewController, HomeViewDelegate {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.isUserInteractionEnabled = true
+    }
+    
     func tapped() {
         let controller = SingleProductViewController()
         

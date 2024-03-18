@@ -22,12 +22,9 @@ class AksiyaViewController: UIViewController, BaseViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = backView
-        backView.delegate = self
-        setNavigation()
-        navigationItem.backButtonTitle = ""
+        setUI()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
@@ -38,6 +35,16 @@ class AksiyaViewController: UIViewController, BaseViewDelegate {
         super.viewWillDisappear(animated)
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.isUserInteractionEnabled = false
+    }
+    
+    private func setUI() {
+        view.addSubview(backView)
+        backView.delegate = self
+        setNavigation()
+        navigationItem.backButtonTitle = ""
+        backView.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
     }
     
     private func setNavigation() {
