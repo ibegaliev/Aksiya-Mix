@@ -81,7 +81,7 @@ class CategoryCell: UITableViewCell {
             make.top.bottom.equalTo(contentView).inset(4)
             make.left.right.equalTo(contentView).inset(16)
         }
-
+        
         mainStack.snp.makeConstraints { make in
             make.edges.equalTo(backView).inset(12)
         }
@@ -93,6 +93,7 @@ class CategoryCell: UITableViewCell {
         mainImage.snp.makeConstraints { make in
             make.height.width.equalTo(48)
         }
+        
     }
     
 }
