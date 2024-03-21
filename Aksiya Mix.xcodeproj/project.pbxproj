@@ -26,6 +26,8 @@
 		8C19B0D02B63556C007D8872 /* Aksiya_MixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C19B0CF2B63556C007D8872 /* Aksiya_MixUITestsLaunchTests.swift */; };
 		8C1D4BA12B92D37200018A03 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D4BA02B92D37200018A03 /* URL.swift */; };
 		8C1EB31B2B9B45B3007061CD /* CompanyRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1EB31A2B9B45B3007061CD /* CompanyRatingCell.swift */; };
+		8C1F42882BAC074E00013479 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F42872BAC074E00013479 /* AlertView.swift */; };
+		8C1F428A2BAC076C00013479 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F42892BAC076C00013479 /* AlertViewModel.swift */; };
 		8C25CE082B6DEB7C00B345BA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25CE072B6DEB7C00B345BA /* MapView.swift */; };
 		8C289D4A2B693AF300B2FEAC /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C289D492B693AF300B2FEAC /* TypeCell.swift */; };
 		8C35BE9B2B9A01D0005459CE /* CompanyCountsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C35BE9A2B9A01D0005459CE /* CompanyCountsCell.swift */; };
@@ -179,6 +181,7 @@
 		8CF5A7FA2B73D58600D65039 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A7F92B73D58600D65039 /* LanguageManager.swift */; };
 		8CF5A7FC2B73D89700D65039 /* LyricsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A7FB2B73D89700D65039 /* LyricsManager.swift */; };
 		8CF7F3BF2BA1860300C36DC5 /* SaleTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7F3BE2BA1860300C36DC5 /* SaleTopView.swift */; };
+		8CFF7A5F2BAAB58F0059BF4D /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFF7A5E2BAAB58F0059BF4D /* AlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +226,8 @@
 		8C19B0CF2B63556C007D8872 /* Aksiya_MixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aksiya_MixUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8C1D4BA02B92D37200018A03 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		8C1EB31A2B9B45B3007061CD /* CompanyRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRatingCell.swift; sourceTree = "<group>"; };
+		8C1F42872BAC074E00013479 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		8C1F42892BAC076C00013479 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		8C25CE072B6DEB7C00B345BA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8C289D492B693AF300B2FEAC /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 		8C35BE9A2B9A01D0005459CE /* CompanyCountsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCountsCell.swift; sourceTree = "<group>"; };
@@ -368,6 +373,7 @@
 		8CF5A7F92B73D58600D65039 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		8CF5A7FB2B73D89700D65039 /* LyricsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsManager.swift; sourceTree = "<group>"; };
 		8CF7F3BE2BA1860300C36DC5 /* SaleTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleTopView.swift; sourceTree = "<group>"; };
+		8CFF7A5E2BAAB58F0059BF4D /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -453,6 +459,7 @@
 				8C926F952B69F1700049A1B7 /* SingleProduct */,
 				8CBA40032B77905100F92F98 /* SingleCompany */,
 				8CBE7BC72B78F0E0001559E9 /* SingleCategory */,
+				8CFF7A602BAAB69E0059BF4D /* Alert */,
 			);
 			path = "Aksiya Mix";
 			sourceTree = "<group>";
@@ -1090,6 +1097,16 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		8CFF7A602BAAB69E0059BF4D /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				8CFF7A5E2BAAB58F0059BF4D /* AlertController.swift */,
+				8C1F42872BAC074E00013479 /* AlertView.swift */,
+				8C1F42892BAC076C00013479 /* AlertViewModel.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1255,6 +1272,7 @@
 				8CF134082B8082DA00E1A913 /* TopSelectableView.swift in Sources */,
 				8C77817B2B6A6ADE00CA6D0A /* CostView.swift in Sources */,
 				8CEA8A3E2B77597D000071FC /* CompanyController.swift in Sources */,
+				8C1F428A2BAC076C00013479 /* AlertViewModel.swift in Sources */,
 				8CF5A7FA2B73D58600D65039 /* LanguageManager.swift in Sources */,
 				8C7507A42B753C9F00DFB69A /* EnterNameView.swift in Sources */,
 				8C5684C82B7BC937005DC4B7 /* LikedSordsItem.swift in Sources */,
@@ -1276,8 +1294,10 @@
 				8C8FE9972BA832CF00F77474 /* SearchItemsView.swift in Sources */,
 				8C8275D02B7B6A47004C445B /* LikedViewModel.swift in Sources */,
 				8C35BE9D2B9A0D96005459CE /* CompanyLocationsCell.swift in Sources */,
+				8CFF7A5F2BAAB58F0059BF4D /* AlertController.swift in Sources */,
 				8C930B712B95D81B0048778B /* UserTokenManager.swift in Sources */,
 				8CEF41602B6D3603000D9A0E /* StoreCell.swift in Sources */,
+				8C1F42882BAC074E00013479 /* AlertView.swift in Sources */,
 				8C9BA7942B6A1ED5008C9420 /* SingleProductViewController.swift in Sources */,
 				8C661F902B641D1C00437F0D /* BaseView.swift in Sources */,
 				8CD8582C2B73A2650077B2A8 /* BlueButton.swift in Sources */,
