@@ -94,6 +94,8 @@
 		8CAB7CD02B7464AA0075C4DE /* Ex+UIFond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */; };
 		8CAD0BB12B6CE60A0001D02B /* UserCellViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */; };
 		8CB1C0E62B939FF400F510BB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB1C0E52B939FF400F510BB /* SwiftyJSON */; };
+		8CB7EC682BAD9B290031DB6E /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7EC662BAD9B290031DB6E /* regions.json */; };
+		8CB7EC692BAD9B290031DB6E /* districts.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7EC672BAD9B290031DB6E /* districts.json */; };
 		8CBA16B22B9CB80B00C82911 /* RatingStarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA16B12B9CB80B00C82911 /* RatingStarsView.swift */; };
 		8CBA40052B77933800F92F98 /* SingleCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40042B77933800F92F98 /* SingleCompanyViewModel.swift */; };
 		8CBA40072B77934300F92F98 /* SingleCompanyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40062B77934300F92F98 /* SingleCompanyView.swift */; };
@@ -290,6 +292,8 @@
 		8CA97E722B74F0B60020A80F /* InputNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNumberView.swift; sourceTree = "<group>"; };
 		8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIFond.swift"; sourceTree = "<group>"; };
 		8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViews.swift; sourceTree = "<group>"; };
+		8CB7EC662BAD9B290031DB6E /* regions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = regions.json; sourceTree = "<group>"; };
+		8CB7EC672BAD9B290031DB6E /* districts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = districts.json; sourceTree = "<group>"; };
 		8CBA16B12B9CB80B00C82911 /* RatingStarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStarsView.swift; sourceTree = "<group>"; };
 		8CBA40042B77933800F92F98 /* SingleCompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCompanyViewModel.swift; sourceTree = "<group>"; };
 		8CBA40062B77934300F92F98 /* SingleCompanyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCompanyView.swift; sourceTree = "<group>"; };
@@ -525,6 +529,7 @@
 			children = (
 				8C19B0A82B63556A007D8872 /* AppDelegate.swift */,
 				8C19B0AA2B63556A007D8872 /* SceneDelegate.swift */,
+				8CB7EC652BAD9B180031DB6E /* JSON Files */,
 				8C1D4B9F2B92D35800018A03 /* Networking */,
 				8CF5A7F62B73D50200D65039 /* Managers */,
 				8C661F932B64230D00437F0D /* Customs */,
@@ -817,6 +822,15 @@
 				8CA197B12B7471EF0025E9F9 /* ViewModel */,
 			);
 			path = EnterPhone;
+			sourceTree = "<group>";
+		};
+		8CB7EC652BAD9B180031DB6E /* JSON Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CB7EC672BAD9B290031DB6E /* districts.json */,
+				8CB7EC662BAD9B290031DB6E /* regions.json */,
+			);
+			path = "JSON Files";
 			sourceTree = "<group>";
 		};
 		8CBA40032B77905100F92F98 /* SingleCompany */ = {
@@ -1233,6 +1247,7 @@
 				8CC9BD232B9DCBDF00180758 /* PlayerView.bundle in Resources */,
 				8CDDB8C62B8711D20095CB82 /* SFProText-LightItalic.ttf in Resources */,
 				8CDDB8BF2B8711D20095CB82 /* SFProText-Medium.ttf in Resources */,
+				8CB7EC682BAD9B290031DB6E /* regions.json in Resources */,
 				8CDDB8C32B8711D20095CB82 /* SFProText-Regular.ttf in Resources */,
 				8CDDB8C52B8711D20095CB82 /* SFProText-MediumItalic.ttf in Resources */,
 				8CE832F02B638480004B4E6D /* Colors.xcassets in Resources */,
@@ -1243,6 +1258,7 @@
 				8CDDB8CA2B8711D20095CB82 /* SFProText-Bold.ttf in Resources */,
 				8CDDB8C82B8711D20095CB82 /* SFProText-HeavyItalic.ttf in Resources */,
 				8CDDB8C22B8711D20095CB82 /* SFProText-Semibold.ttf in Resources */,
+				8CB7EC692BAD9B290031DB6E /* districts.json in Resources */,
 				8CDDB8C92B8711D20095CB82 /* SFProText-SemiboldItalic.ttf in Resources */,
 				8C19B0B52B63556C007D8872 /* Assets.xcassets in Resources */,
 			);
