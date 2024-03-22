@@ -30,4 +30,10 @@ class UserViewController: AksiyaViewController, UserViewDelegate {
         present(controller, animated: true)
     }
     
+    func loguotTapped() {
+        let alert = AlertController()
+        alert.modalPresentationStyle = .overFullScreen
+        present(alert, animated: true)
+    }
+    
 }

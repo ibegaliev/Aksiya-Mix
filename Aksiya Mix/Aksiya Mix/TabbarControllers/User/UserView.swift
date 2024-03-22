@@ -9,6 +9,8 @@ import UIKit
 
 protocol UserViewDelegate {
     func auth()
+    
+    func loguotTapped()
 }
 
 struct UserViewData {
@@ -125,6 +127,29 @@ extension UserView: UITableViewDelegate, UITableViewDataSource {
             cell.lineView.isHidden = true
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        if indexPath.section == 0 {
+            
+        } else if indexPath.section == 2 {
+            if indexPath.row == 0 {
+                
+            } else if indexPath.row == 1 {
+                
+            }  else if indexPath.row == 2 {
+                
+            }  else if indexPath.row == 3 {
+                
+            }  else if indexPath.row == 4 {
+                
+            }  else if indexPath.row == 5 {
+                delegate?.loguotTapped()
+            }
+        } else {
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

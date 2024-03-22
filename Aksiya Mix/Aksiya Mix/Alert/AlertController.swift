@@ -18,6 +18,7 @@ class AlertController: UIViewController {
     
     private func setUI() {
         view = viewModel.view
+        view.backgroundColor = .clear
     }
     
 }
