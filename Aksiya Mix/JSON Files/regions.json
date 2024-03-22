@@ -1,86 +1,338 @@
 [
-  {
-    "id": 14,
-    "name_uz": "Toshkent shahri",
-    "name_oz": "Тошкент шаҳри",
-    "name_ru": "Город Ташкент"
-  },
-  {
-    "id": 2,
-    "name_uz": "Andijon viloyati",
-    "name_oz": "Андижон вилояти",
-    "name_ru": "Андижанская область"
-  },
-  {
-    "id": 3,
-    "name_uz": "Buxoro viloyati",
-    "name_oz": "Бухоро вилояти",
-    "name_ru": "Бухарская область"
-  },
-  {
-    "id": 4,
-    "name_uz": "Jizzax viloyati",
-    "name_oz": "Жиззах вилояти",
-    "name_ru": "Джизакская область"
-  },
-  {
-    "id": 5,
-    "name_uz": "Qashqadaryo viloyati",
-    "name_oz": "Қашқадарё вилояти",
-    "name_ru": "Кашкадарьинская область"
-  },
-  {
-    "id": 6,
-    "name_uz": "Navoiy viloyati",
-    "name_oz": "Навоий вилояти",
-    "name_ru": "Навоийская область"
-  },
-  {
-    "id": 7,
-    "name_uz": "Namangan viloyati",
-    "name_oz": "Наманган вилояти",
-    "name_ru": "Наманганская область"
-  },
-  {
-    "id": 8,
-    "name_uz": "Samarqand viloyati",
-    "name_oz": "Самарқанд вилояти",
-    "name_ru": "Самаркандская область"
-  },
-  {
-    "id": 9,
-    "name_uz": "Surxandaryo viloyati",
-    "name_oz": "Сурхандарё вилояти",
-    "name_ru": "Сурхандарьинская область"
-  },
-  {
-    "id": 10,
-    "name_uz": "Sirdaryo viloyati",
-    "name_oz": "Сирдарё вилояти",
-    "name_ru": "Сырдарьинская область"
-  },
-  {
-    "id": 11,
-    "name_uz": "Toshkent viloyati",
-    "name_oz": "Тошкент вилояти",
-    "name_ru": "Ташкентская область"
-  },
-  {
-    "id": 12,
-    "name_uz": "Farg‘ona viloyati",
-    "name_oz": "Фарғона вилояти",
-    "name_ru": "Ферганская область"
-  },
-  {
-    "id": 13,
-    "name_uz": "Xorazm viloyati",
-    "name_oz": "Хоразм вилояти",
-    "name_ru": "Хорезмская область"
-  },
-  {
-    "id": 1,
-    "name_uz": "Qoraqalpog‘iston Respublikasi",
-    "name_oz": "Қорақалпоғистон Республикаси",
-    "name_ru": "Республика Каракалпакстан"
-  }
+    {
+        "id": "00s0eed0000region000009",
+        "db_id": null,
+        "created_at": "2017-05-02T17:21:22.304Z",
+        "created_by": "5c065547b72236f89775579f",
+        "is_deleted": false,
+        "parent_id": null,
+        "hierarchy_key": null,
+        "type": "province",
+        "name_ru": "Сурхандарьинская область",
+        "name_uz": "Сурхондарё вилояти",
+        "country_id": "5d91e0abbc4c7dade230f681",
+        "order_index": 10,
+        "names": {
+            "qq": "Сурхондарё вилояти",
+            "ru": "Сурхондарё вилояти",
+            "uz": "Сурхондарё вилояти",
+            "uz_cyr": "Сурхондарё вилояти"
+        },
+        "postal_id": 10,
+        "name_uz_latn": "Surxondaryo viloyati",
+        "soato": "1722",
+        "hidden": false
+    },
+    {
+        "id": "00s0eed0000region000010",
+        "db_id": null,
+        "created_at": "2017-05-02T17:21:22.304Z",
+        "created_by": "5c065547b72236f89775579f",
+        "is_deleted": false,
+        "parent_id": null,
+        "hierarchy_key": null,
+        "type": "province",
+        "name_ru": "Сырдарьинская область",
+        "name_uz": "Сирдарё вилояти",
+        "country_id": "5d91e0abbc4c7dade230f681",
+        "order_index": 9,
+        "names": {
+            "qq": "Сирдарё вилояти",
+            "ru": "Сирдарё вилояти",
+            "uz": "Сирдарё вилояти",
+            "uz_cyr": "Сирдарё вилояти"
+        },
+        "postal_id": 5,
+        "name_uz_latn": "Sirdaryo viloyati",
+        "soato": "1724",
+        "hidden": false
+    },
+    {
+        "id": "00s0eed0000region000007",
+        "db_id": null,
+        "created_at": "2017-05-02T17:21:22.304Z",
+        "created_by": "5c065547b72236f89775579f",
+        "is_deleted": false,
+        "parent_id": null,
+        "hierarchy_key": null,
+        "type": "province",
+        "name_ru": "Наманганская область",
+        "name_uz": "Наманган вилояти",
+        "country_id": "5d91e0abbc4c7dade230f681",
+        "order_index": 7,
+        "names": {
+            "qq": "Наманган вилояти",
+            "ru": "Наманган вилояти",
+            "uz": "Наманган вилояти",
+            "uz_cyr": "Наманган вилояти"
+        },
+        "postal_id": 8,
+        "name_uz_latn": "Namangan viloyati",
+        "soato": "1714",
+        "hidden": false
+    },
+    {
+        "id": "00s0eed0000region000008",
+        "db_id": null,
+        "created_at": "2017-05-02T17:21:22.304Z",
+        "created_by": "5c065547b72236f89775579f",
+        "is_deleted": false,
+        "parent_id": null,
+        "hierarchy_key": null,
+        "type": "province",
+        "name_ru": "Самаркандская область",
+        "name_uz": "Самарқанд вилояти",
+        "country_id": "5d91e0abbc4c7dade230f681",
+        "order_index": 8,
+        "names": {
+            "qq": "Самарқанд вилояти",
+            "ru": "Самарқанд вилояти",
+            "uz": "Самарқанд вилояти",
+            "uz_cyr": "Самарқанд вилояти"
+        },
+        "postal_id": 3,
+        "name_uz_latn": "Samarqand viloyati",
+        "soato": "1718",
+        "hidden": false
+    },
+    {
+        "id": "00s0eed0000region000014",
+        "db_id": null,
+        "created_at": "2017-05-02T17:21:22.304Z",
+        "created_by": "5c065547b72236f89775579f",
+        "is_deleted": false,
+        "parent_id": null,
+        "hierarchy_key": null,
+        "type": null,
+        "name_ru": "Город Ташкент",
+        "name_uz": "Тошкент шаҳри",
+        "country_id": "5d91e0abbc4c7dade230f681",
+        "order_index": 14,
+        "names": {
+            "qq": "Тошкент шаҳар",
+            "ru": "Тошкент шаҳар",
+            "uz": "Тошкент шаҳар",
+            "uz_cyr": "Тошкент шаҳар"
+        },
+        "postal_id": 1,
+        "name_uz_latn": "Toshkent shahri",
+        "soato": "1726",
+        "hidden": false
+    },
+    {
+        "id": "00s0eed0000region000006",
+        "db_id": null,
+        "created_at": "2017-05-02T17:21:22.304Z",
+        "created_by": "5c065547b72236f89775579f",
+        "is_deleted": false,
+        "parent_id": null,
+        "hierarchy_key": null,
+        "type": "province",
+        "name_ru": "Навоийская область",
+        "name_uz": "Навоий вилояти",
+        "country_id": "5d91e0abbc4c7dade230f681",
+        "order_index": 6,
+        "names": {
+            "qq": "Навоий вилояти",
+            "ru": "Навоий вилояти",
+            "uz": "Навоий вилояти",
+            "uz_cyr": "Навоий вилояти"
+        },
+        "postal_id": 12,
+        "name_uz_latn": "Navoiy viloyati",
+        "soato": "1712",
+        "hidden": false
+    },
+    {
+        "id": "00s0eed0000region000005",
+        "db_id": null,
+        "created_at": "2017-05-02T17:21:22.304Z",
+        "created_by": "5c065547b72236f89775579f",
+        "is_deleted": false,
+        "parent_id": null,
+        "hierarchy_key": null,
+        "type": "province",
+        "name_ru": "Кашкадарьинская область",
+        "name_uz": "Қашқадарё вилояти",
+        "country_id": "5d91e0abbc4c7dade230f681",
+        "order_index": 5,
+        "names": {
+            "qq": "Қашқадарё вилояти",
+            "ru": "Қашқадарё вилояти",
+            "uz": "Қашқадарё вилояти",
+            "uz_cyr": "Қашқадарё вилояти"
+        },
+        "postal_id": 9,
+        "name_uz_latn": "Qashqadaryo viloyati",
+        "soato": "1710",
+        "hidden": false
+    },
+    {
+        "id": "00s0eed0000region000001",
+        "db_id": null,
+        "created_at": "2017-05-02T17:21:22.304Z",
+        "created_by": "5c065547b72236f89775579f",
+        "is_deleted": false,
+        "parent_id": null,
+        "hierarchy_key": null,
+        "type": "province",
+        "name_ru": "Республика Каракалпакстан",
+        "name_uz": "Қорақалпоғистон Республикаси",
+        "country_id": "5d91e0abbc4c7dade230f681",
+        "order_index": 1,
+        "names": {
+            "qq": "Қорақалпоғистон Республикаси",
+            "ru": "Қорақалпоғистон Республикаси",
+            "uz": "Қорақалпоғистон Республикаси",
+            "uz_cyr": "Қорақалпоғистон Республикаси"
+        },
+        "postal_id": 13,
+        "name_uz_latn": "Qoraqalpogʻiston Respublikasi",
+        "soato": "1735",
+        "hidden": false
+    },
+    {
+        "id": "00s0eed0000region000003",
+        "db_id": null,
+        "created_at": "2017-05-02T17:21:22.304Z",
+        "created_by": "5c065547b72236f89775579f",
+        "is_deleted": false,
+        "parent_id": null,
+        "hierarchy_key": null,
+        "type": "province",
+        "name_ru": "Бухарская область",
+        "name_uz": "Бухоро вилояти",
+        "country_id": "5d91e0abbc4c7dade230f681",
+        "order_index": 3,
+        "names": {
+            "qq": "Бухоро вилояти",
+            "ru": "Бухоро вилояти",
+            "uz": "Бухоро вилояти",
+            "uz_cyr": "Бухоро вилояти"
+        },
+        "postal_id": 11,
+        "name_uz_latn": "Buxoro viloyati",
+        "soato": "1706",
+        "hidden": false
+    },
+    {
+        "id": "00s0eed0000region000002",
+        "db_id": null,
+        "created_at": "2017-05-02T17:21:22.304Z",
+        "created_by": "5d2465c3066bff036a8aed4c",
+        "is_deleted": false,
+        "parent_id": null,
+        "hierarchy_key": null,
+        "type": "province",
+        "name_ru": "Андижанская область",
+        "name_uz": "Андижон вилояти",
+        "country_id": "5d91e0abbc4c7dade230f681",
+        "order_index": 2,
+        "names": {
+            "qq": "Андижон вилояти",
+            "ru": "Андижон вилояти",
+            "uz": "Андижон вилояти",
+            "uz_cyr": "Андижон вилояти"
+        },
+        "postal_id": 7,
+        "name_uz_latn": "Andijon viloyati",
+        "soato": "1703",
+        "hidden": false
+    },
+    {
+        "id": "00s0eed0000region000012",
+        "db_id": null,
+        "created_at": "2017-05-02T17:21:22.304Z",
+        "created_by": "5c065547b72236f89775579f",
+        "is_deleted": false,
+        "parent_id": null,
+        "hierarchy_key": null,
+        "type": "province",
+        "name_ru": "Ферганская область",
+        "name_uz": "Фарғона вилояти",
+        "country_id": "5d91e0abbc4c7dade230f681",
+        "order_index": 11,
+        "names": {
+            "qq": "Фарғона вилояти",
+            "ru": "Фарғона вилояти",
+            "uz": "Фарғона вилояти",
+            "uz_cyr": "Фарғона вилояти"
+        },
+        "postal_id": 6,
+        "name_uz_latn": "Fargʻona viloyati",
+        "soato": "1730",
+        "hidden": false
+    },
+    {
+        "id": "00s0eed0000region000004",
+        "db_id": null,
+        "created_at": "2017-05-02T17:21:22.304Z",
+        "created_by": "5c065547b72236f89775579f",
+        "is_deleted": false,
+        "parent_id": null,
+        "hierarchy_key": null,
+        "type": "province",
+        "name_ru": "Джизакская область",
+        "name_uz": "Жиззах вилояти",
+        "country_id": "5d91e0abbc4c7dade230f681",
+        "order_index": 4,
+        "names": {
+            "qq": "Жиззах вилояти",
+            "ru": "Жиззах вилояти",
+            "uz": "Жиззах вилояти",
+            "uz_cyr": "Жиззах вилояти"
+        },
+        "postal_id": 4,
+        "name_uz_latn": "Jizzax viloyati",
+        "soato": "1708",
+        "hidden": false
+    },
+    {
+        "id": "00s0eed0000region000011",
+        "db_id": null,
+        "created_at": "2017-05-02T17:21:22.304Z",
+        "created_by": "5c065547b72236f89775579f",
+        "is_deleted": false,
+        "parent_id": null,
+        "hierarchy_key": null,
+        "type": "province",
+        "name_ru": "Ташкентская область",
+        "name_uz": "Тошкент вилояти",
+        "country_id": "5d91e0abbc4c7dade230f681",
+        "order_index": 13,
+        "names": {
+            "qq": "Тошкент вилояти",
+            "ru": "Тошкент вилояти",
+            "uz": "Тошкент вилояти",
+            "uz_cyr": "Тошкент вилояти"
+        },
+        "postal_id": 2,
+        "name_uz_latn": "Toshkent viloyati",
+        "soato": "1727",
+        "hidden": false
+    },
+    {
+        "id": "00s0eed0000region000013",
+        "db_id": null,
+        "created_at": "2017-05-02T17:21:22.304Z",
+        "created_by": "5c065547b72236f89775579f",
+        "is_deleted": false,
+        "parent_id": null,
+        "hierarchy_key": null,
+        "type": "province",
+        "name_ru": "Хорезмская область",
+        "name_uz": "Хоразм вилояти",
+        "country_id": "5d91e0abbc4c7dade230f681",
+        "order_index": 12,
+        "names": {
+            "qq": "Хоразм вилояти",
+            "ru": "Хоразм вилояти",
+            "uz": "Хоразм вилояти",
+            "uz_cyr": "Хоразм вилояти"
+        },
+        "postal_id": 14,
+        "name_uz_latn": "Xorazm viloyati",
+        "soato": "1733",
+        "hidden": false
+    }
 ]
