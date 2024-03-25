@@ -82,7 +82,6 @@ class SearchItemTopView: UIView, SearchTextFieldDelegate {
         backgroundColor = .white
         layer.cornerRadius = 8
         layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        
         addSubview(textField)
         
     }

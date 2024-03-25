@@ -8,5 +8,6 @@
 import Foundation
 
 class SearchViewModel {
-    var view = SearchItemsView()
+    var resultView = SearchItemsView()
+    var itemsView = SearchItemsView()
 }

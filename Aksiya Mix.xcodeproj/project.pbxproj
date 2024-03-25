@@ -1025,8 +1025,6 @@
 			isa = PBXGroup;
 			children = (
 				8CE832DE2B637910004B4E6D /* HomeView.swift */,
-				8CF134072B8082DA00E1A913 /* TopSelectableView.swift */,
-				8CF134092B8082E900E1A913 /* ShowResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1080,8 +1078,10 @@
 		8CE969762BA846090005C334 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8CF134072B8082DA00E1A913 /* TopSelectableView.swift */,
 				8CD7E0F42B7F0A0400900220 /* OfferItemsView.swift */,
 				8CE0A4552B7E298500F384AB /* OfferView.swift */,
+				8CF134092B8082E900E1A913 /* ShowResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

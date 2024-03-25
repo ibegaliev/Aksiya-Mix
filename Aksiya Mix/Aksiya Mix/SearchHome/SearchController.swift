@@ -17,10 +17,10 @@ class SearchController: AksiyaViewController {
     }
     
     private func setUI() {
-        backView.addSubview(viewModel.view)
-        viewModel.view.snp.makeConstraints { make in
+        backView.addSubview(viewModel.resultView)
+        viewModel.resultView.snp.makeConstraints { make in
             make.edges.equalTo(backView)
         }
-    }
+    }    
         
 }

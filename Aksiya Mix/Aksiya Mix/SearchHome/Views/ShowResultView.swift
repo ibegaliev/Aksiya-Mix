@@ -12,7 +12,7 @@ class ShowResultView: UIView {
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "137 ta natija topildi"
-        lbl.font = .appFont(ofSize: 14, weight: .semibold)
+        lbl.font = .appFont(ofSize: 16, weight: .semibold)
         return lbl
     }()
     
