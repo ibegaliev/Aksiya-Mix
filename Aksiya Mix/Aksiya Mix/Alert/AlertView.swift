@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol AlertViewDelegate {
+    func okTapped()
+    func cancelTapped()
+}
+
 class AlertView: UIView {
+    
+    var delegate: AlertViewDelegate?
     
     lazy var backView: UIView = {
         let view = UIView()
@@ -19,34 +26,48 @@ class AlertView: UIView {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
+        lbl.textAlignment = .center
         lbl.text = "Siz haqiqatan ham tizimdan chiqmoqchimisiz?"
-        lbl.font = .appFont(ofSize: 20, weight: .bold)
+        lbl.numberOfLines = 0
+        lbl.font = .appFont(ofSize: 16, weight: .bold)
         return lbl
     }()
     
     lazy var okButton: UIButton = {
         let btn = UIButton()
+        btn.layer.cornerRadius = 8
+        btn.clipsToBounds = true
         btn.backgroundColor = .red
+        btn.setTitle("Ha", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         return btn
     }()
     
     lazy var cancelButton: UIButton = {
         let btn = UIButton()
-        btn.backgroundColor = .spaceBack
-        btn.setTitleColor(.black, for: .normal)
+        btn.layer.cornerRadius = 8
+        btn.clipsToBounds = true
+        btn.backgroundColor = .spacetext
+        btn.setTitle("Yo'q", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
         return btn
     }()
     
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
-        
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        stack.spacing = 12
         return stack
     }()
     
     lazy var buttonStack: UIStackView = {
         let stack = UIStackView()
-        
+        stack.axis = .horizontal
+        stack.distribution = .fillEqually
+        stack.alignment = .fill
+        stack.spacing = 12
         return stack
     }()
     
@@ -73,17 +94,30 @@ class AlertView: UIView {
         [cancelButton, okButton].forEach { item in
             buttonStack.addArrangedSubview(item)
         }
+        
     }
     
     private func setConstraints() {
         backView.snp.makeConstraints { make in
             make.left.right.equalTo(self).inset(16)
-            make.height.equalTo(0.screenWight/2)
             make.center.equalTo(self)
         }
         mainStack.snp.makeConstraints { make in
             make.edges.equalTo(backView).inset(12)
         }
+        okButton.snp.makeConstraints { make in
+            make.height.equalTo(38.toScreen)
+        }
+    }
+    
+    @objc
+    func okTapped() {
+        delegate?.okTapped()
+    }
+    
+    @objc
+    func cancelTapped() {
+        delegate?.cancelTapped()
     }
     
 }
