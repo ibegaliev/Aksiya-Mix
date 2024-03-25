@@ -40,6 +40,7 @@ class AlertView: UIView {
         btn.backgroundColor = .red
         btn.setTitle("Ha", for: .normal)
         btn.setTitleColor(.white, for: .normal)
+        btn.addTarget(self, action: #selector(okTapped), for: .touchUpInside)
         return btn
     }()
     
@@ -50,6 +51,7 @@ class AlertView: UIView {
         btn.backgroundColor = .spacetext
         btn.setTitle("Yo'q", for: .normal)
         btn.setTitleColor(.white, for: .normal)
+        btn.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
         return btn
     }()
     

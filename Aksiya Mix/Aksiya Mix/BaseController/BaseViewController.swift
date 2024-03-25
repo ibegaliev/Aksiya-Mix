@@ -52,9 +52,7 @@ class AksiyaViewController: UIViewController, BaseViewDelegate {
     }
     
     func searchTapped() {
-        let controller = SearchController()
         
-        navigationController?.pushViewController(controller, animated: true)
     }
 
         

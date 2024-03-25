@@ -38,7 +38,9 @@ class HomeViewController: AksiyaViewController, HomeViewDelegate {
     }
     
     override func searchTapped() {
-        super.searchTapped()
+        let controller = SearchController()
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 
