@@ -8,5 +8,5 @@
 import UIKit
 
 class RecentlySearchViewModel {
-    let view = RecentlySearchView()
+    let view = OfferView()
 }

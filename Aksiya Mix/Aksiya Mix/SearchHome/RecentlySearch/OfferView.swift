@@ -18,8 +18,14 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.alignment = .center
+        stack.alignment = .fill
         return stack
+    }()
+    
+    lazy var topNavigation: SearchItemTopView = {
+        let view = SearchItemTopView()
+        
+        return view
     }()
     
     lazy var tableView: UITableView = {
@@ -33,7 +39,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
         tv.contentInset = .init(top: 4, left: 0, bottom: 50, right: 0)
         return tv
     }()
-        
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
@@ -46,7 +52,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     private func setUI() {
         addSubview(mainStack)
-        [tableView].forEach { item in
+        [topNavigation, tableView].forEach { item in
             mainStack.addArrangedSubview(item)
         }
     }
@@ -58,6 +64,9 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
         }
         tableView.snp.makeConstraints { make in
             make.width.equalTo(0.screenWight)
+        }
+        topNavigation.snp.makeConstraints { make in
+            make.height.equalTo(90.toScreen)
         }
     }
     
@@ -75,6 +84,11 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
             cell.mainImage.isHidden = true
             cell.chevronImage.isHidden = true
             cell.titleLabel.font = .appFont(ofSize: 18, weight: .semibold)
+            if indexPath.section == 0 {
+                cell.titleLabel.text = "Oxirgi qidirilganlar"
+            } else {
+                cell.titleLabel.text = "Ko'p qidirilganlar"
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
