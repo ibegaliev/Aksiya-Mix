@@ -7,7 +7,12 @@
 
 import UIKit
 
-class AlertController: UIViewController {
+protocol AlertControllerDelegate {
+    func okTapped()
+    func cancelTapped()
+}
+
+class AlertController: UIViewController, AlertViewDelegate {
     
     let viewModel = AlertViewModel()
     
@@ -18,6 +23,17 @@ class AlertController: UIViewController {
     
     private func setUI() {
         view = viewModel.view
+        viewModel.view.delegate = self
+    }
+    
+    func okTapped() {
+        viewModel.delegate?.okTapped()
+        dismiss(animated: false)
+    }
+    
+    func cancelTapped() {
+        viewModel.delegate?.cancelTapped()
+        dismiss(animated: false)
     }
     
 }

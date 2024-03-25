@@ -10,5 +10,6 @@ import Foundation
 class AlertViewModel {
     
     let view = AlertView()
+    var delegate: AlertViewDelegate?
     
 }
