@@ -199,6 +199,7 @@ class SearchTextField: UIView, UITextFieldDelegate {
         let tf = UITextField()
         tf.placeholder = "Поиск"
         tf.delegate = self
+        tf.font = .appFont(ofSize: 16, weight: .medium)
         return tf
     }()
     

@@ -18,13 +18,15 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.alignment = .fill
+        stack.alignment = .center
         return stack
     }()
     
-    lazy var topNavigation: SearchItemTopView = {
-        let view = SearchItemTopView()
-        
+    lazy var topNavigation: SearchTextField = {
+        let view = SearchTextField()
+        view.isButton = false
+        view.backgroundColor = .white
+        view.clipsToBounds = true
         return view
     }()
     
@@ -51,6 +53,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     private func setUI() {
+        backgroundColor = .backColor
         addSubview(mainStack)
         [topNavigation, tableView].forEach { item in
             mainStack.addArrangedSubview(item)
@@ -59,14 +62,14 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.top.equalTo(self).inset(4)
+            make.top.equalTo(self).inset(12)
             make.left.right.bottom.equalTo(self)
         }
         tableView.snp.makeConstraints { make in
             make.width.equalTo(0.screenWight)
         }
         topNavigation.snp.makeConstraints { make in
-            make.height.equalTo(90.toScreen)
+            make.width.equalTo(0.screenWight - 32)
         }
     }
     

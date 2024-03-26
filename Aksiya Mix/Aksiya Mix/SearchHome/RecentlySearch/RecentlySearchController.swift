@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecentlySearchController: AksiyaViewController {
+class RecentlySearchController: AksiyaViewController, OfferViewDelegate {
     
     var viewModel = RecentlySearchViewModel()
     
@@ -17,10 +17,17 @@ class RecentlySearchController: AksiyaViewController {
     }
     
     private func setUI() {
-        backView.addSubview(viewModel.view)
+        viewModel.view.delegate = self
+        backView.insertSubview(viewModel.view, at: .max)
         viewModel.view.snp.makeConstraints { make in
             make.edges.equalTo(backView)
         }
+    }
+    
+    func didSelect(indexPath: IndexPath) {
+        let controller = SearchController()
+        
+        present(controller, animated: true)
     }
     
 }

@@ -61,7 +61,7 @@ class SearchItemsView: UIView {
 
 class SearchItemTopView: UIView, SearchTextFieldDelegate {
 
-    lazy private var textField: SearchTextField = {
+    lazy var textField: SearchTextField = {
         let tf = SearchTextField()
         tf.delegate = self
         tf.isButton = false
