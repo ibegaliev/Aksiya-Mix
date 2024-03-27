@@ -43,5 +43,8 @@ class HomeViewController: AksiyaViewController, HomeViewDelegate {
         present(controller, animated: true)
     }
     
-
+    func showAllCategorys() {
+        tabBarController?.selectedIndex = 1
+    }
+    
 }

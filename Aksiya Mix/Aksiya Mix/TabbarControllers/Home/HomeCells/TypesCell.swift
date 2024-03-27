@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol TypesCellDelegate {
+    func showAllTapped()
+    func selectItem(index: Int)
+}
+
 class TypesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    var delegate: TypesCellDelegate?
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -19,8 +26,9 @@ class TypesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
     lazy var rightButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("Все", for: .normal)
-        btn.titleLabel?.font = .appFont(ofSize: 12, weight: .regular)
+        btn.titleLabel?.font = .appFont(ofSize: 12, weight: .medium)
         btn.setTitleColor(.selectBlue, for: .normal)
+        btn.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
         return btn
     }()
     
@@ -120,6 +128,11 @@ class TypesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
         collectionView.snp.makeConstraints { make in
             make.left.right.equalTo(self)
         }
+    }
+    
+    @objc
+    private func rightButtonTapped() {
+        delegate?.showAllTapped()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

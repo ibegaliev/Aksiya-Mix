@@ -10,6 +10,7 @@ import UIKit
 protocol HomeViewDelegate {
     func tapped()
     func offerViewSelected(index: Int?)
+    func showAllCategorys()
 }
 
 enum HomeViewType {
@@ -48,19 +49,6 @@ class HomeView: UIView, OfferViewDelegate {
         cv.register(SingleProductCell.self, forCellWithReuseIdentifier: "SingleProductCell")
         return cv
     }()
-    
-//    lazy var offerView: OfferView = {
-//        let view = OfferView()
-//        view.isHidden = true
-//        view.delegate = self
-//        return view
-//    }()
-    
-//    lazy var searchItemsView: OfferItemsView = {
-//        let view = OfferItemsView()
-//        view.isHidden = true
-//        return view
-//    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -114,7 +102,7 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 return cell
             } else if indexPath.row == 1 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypesCell", for: indexPath) as! TypesCell
-                
+                cell.delegate = self
                 return cell
             } else if indexPath.row == 2 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsCell", for: indexPath) as! ItemsCell
@@ -185,5 +173,18 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     func didSelectItematIndex(index: Int?) {
         delegate?.tapped()
     }
+    
+}
+
+extension HomeView: TypesCellDelegate {
+    
+    func showAllTapped() {
+        delegate?.showAllCategorys()
+    }
+    
+    func selectItem(index: Int) {
+        
+    }
+    
     
 }
