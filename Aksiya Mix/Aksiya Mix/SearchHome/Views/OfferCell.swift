@@ -78,16 +78,16 @@ class OfferCell: UITableViewCell {
     private func setConstraints() {
         
         backView.snp.makeConstraints { make in
-            make.top.bottom.equalTo(contentView).inset(4)
+            make.top.bottom.equalTo(contentView).inset(2)
             make.left.right.equalTo(contentView).inset(16)
         }
         
         mainStack.snp.makeConstraints { make in
-            make.edges.equalTo(backView).inset(12)
+            make.edges.equalTo(backView).inset(6)
         }
         
         chevronImage.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
+            make.width.height.equalTo(18)
         }
         
         mainImage.snp.makeConstraints { make in

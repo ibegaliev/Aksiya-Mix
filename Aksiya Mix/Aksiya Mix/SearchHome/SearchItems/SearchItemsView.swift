@@ -9,18 +9,6 @@ import UIKit
 
 class SearchItemsView: UIView {
     
-    lazy var topNavigation: SearchItemTopView = {
-        let view = SearchItemTopView()
-        
-        return view
-    }()
-    
-    lazy var tableView: OfferView = {
-        let view = OfferView()
-        
-        return view
-    }()
-    
     lazy var itemsView: OfferItemsView = {
         let view = OfferItemsView()
         
@@ -39,19 +27,10 @@ class SearchItemsView: UIView {
     
     private func setUI() {
         backgroundColor = .backColor
-        addSubview(tableView)
         addSubview(itemsView)
-        addSubview(topNavigation)
     }
     
     private func setConstraints() {
-        topNavigation.snp.makeConstraints { make in
-            make.top.leading.trailing.equalTo(self)
-            make.height.equalTo(90.toScreen)
-        }
-        tableView.snp.makeConstraints { make in
-            make.edges.equalTo(self)
-        }
         itemsView.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }

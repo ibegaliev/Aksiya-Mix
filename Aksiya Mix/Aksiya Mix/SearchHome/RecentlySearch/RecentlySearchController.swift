@@ -27,7 +27,7 @@ class RecentlySearchController: AksiyaViewController, OfferViewDelegate {
     func didSelect(indexPath: IndexPath) {
         let controller = SearchController()
         
-        present(controller, animated: true)
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }

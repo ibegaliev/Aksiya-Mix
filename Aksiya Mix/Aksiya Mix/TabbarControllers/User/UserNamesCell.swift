@@ -32,6 +32,7 @@ class UserNamesCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUI()
         setConstraints()
+        selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {

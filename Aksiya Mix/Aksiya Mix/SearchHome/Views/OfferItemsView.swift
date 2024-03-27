@@ -69,7 +69,7 @@ class OfferItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.top.equalTo(self).inset(95.toScreen)
+            make.top.equalTo(self).inset(50.toScreen)
             make.left.right.bottom.equalTo(self)
         }
     }

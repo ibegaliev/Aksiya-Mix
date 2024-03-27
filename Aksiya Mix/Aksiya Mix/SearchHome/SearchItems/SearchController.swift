@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchController: AksiyaViewController {
+class SearchController: UIViewController {
     
     var viewModel = SearchViewModel()
     
@@ -17,9 +17,9 @@ class SearchController: AksiyaViewController {
     }
     
     private func setUI() {
-        backView.addSubview(viewModel.resultView)
+        view.addSubview(viewModel.resultView)
         viewModel.resultView.snp.makeConstraints { make in
-            make.edges.equalTo(backView)
+            make.edges.equalTo(view)
         }
     }    
         
