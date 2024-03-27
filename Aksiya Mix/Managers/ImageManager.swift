@@ -12,7 +12,7 @@ class ImageManager {
     static var shared: ImageManager = ImageManager()
  
     func getImage(url: String?) -> UIImageView {
-        guard let url else { return UIImageView() }
+//        guard let url else { return UIImageView() }
 //        var imageURL: URL = URL(string: url) ?? URL(fileURLWithPath: "")
 //        imageURL
         return UIImageView()

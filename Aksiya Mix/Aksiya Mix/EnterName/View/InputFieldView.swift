@@ -44,46 +44,4 @@ class InputFieldView: UIView, UITextFieldDelegate {
         }
     }
     
-    func formatPhoneNumber(_ textField: UITextField, range: NSRange, replacementString string: String) -> Bool {
-        // Get the current text in the text field
-        guard let text = textField.text else {
-            return true
-        }
-        
-        // Check if the user is deleting characters
-        if string.isEmpty {
-            return true
-        }
-        
-        // Append the new character to the existing text
-        let newText = (text as NSString).replacingCharacters(in: range, with: string)
-        
-        // Remove any non-numeric characters from the text
-        let numericText = newText.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-        
-        // Check if the text has a valid length
-        guard numericText.count <= 11 else {
-            return false
-        }
-        
-        // Format the phone number as per the specified pattern
-        var formattedNumber = "+998 "
-        let components = Array(numericText)
-        for (index, character) in components.enumerated() {
-            if index == 2 || index == 5 || index == 7 || index == 9 {
-                formattedNumber += " "
-            }
-            formattedNumber += String(character)
-        }
-        
-        // Update the text field with the formatted number
-        textField.text = formattedNumber
-        
-        return false
-    }
-
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return formatPhoneNumber(textField, range: range, replacementString: string)
-    }
-
 }

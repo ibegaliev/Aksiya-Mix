@@ -31,7 +31,7 @@ class ZYPlayerTool: NSObject {
            let imageRef = try assetG.copyCGImage(at: time, actualTime: &actualTime)
           videoImage = UIImage(cgImage: imageRef)
        }catch {
-           print("获取第一帧图片失败，可以设置一张默认的")
+
        }
        return videoImage
     }

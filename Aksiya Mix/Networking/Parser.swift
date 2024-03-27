@@ -16,7 +16,6 @@ class Parser {
     
     func parse<T>(json: Data?) -> T? where T: Codable {
         guard let json = json else { return T.self as? T}
-        print(JSON(json))
         do {
             let model = try decoder.decode(T.self, from: json)
             return model

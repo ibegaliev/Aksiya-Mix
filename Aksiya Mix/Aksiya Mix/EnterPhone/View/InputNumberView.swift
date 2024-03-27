@@ -96,7 +96,6 @@ class InputNumberView: UIView, UITextFieldDelegate {
             formattedNumber += String(character)
         }
         textField.text = formattedNumber
-        print(formattedNumber, "NUM")
         delegate?.phoneNumber(number: formattedNumber)
         return false
     }

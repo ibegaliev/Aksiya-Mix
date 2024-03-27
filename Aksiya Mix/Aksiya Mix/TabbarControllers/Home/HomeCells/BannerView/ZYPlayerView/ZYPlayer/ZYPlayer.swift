@@ -197,7 +197,6 @@ extension ZYPlayer {
         self.timeObs =  self.videoPlayer?.addPeriodicTimeObserver(forInterval:
             CMTimeMake(value: 1, timescale: 1), queue: nil, using: { (time) in
                 let current =  Float(playerItem!.currentTime().value) / Float(playerItem!.currentTime().timescale)
-                 print("currentTime1233444 == \(current),  timescale =\(Float(playerItem!.currentTime().timescale))")
                 if !self.isPause {
                     self.playState = .playing
                 }

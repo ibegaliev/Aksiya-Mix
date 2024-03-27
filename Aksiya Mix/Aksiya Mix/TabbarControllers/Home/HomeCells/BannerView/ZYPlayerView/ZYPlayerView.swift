@@ -196,7 +196,7 @@ extension ZYPlayerView {
         self.player?.playProgressCallBack = { ( player:ZYPlayer , progress:Float , currentTime:Float , durationTime:Float ) in
             self.leftTimeLabel?.text = ZYPlayerTool.playerConvertTime(currentTime)
             self.playScheduleSlider?.value = currentTime
-            print("currentTime == \(currentTime)")
+
         }
         
     }
