@@ -89,6 +89,7 @@
 		8CA197B72B74723D0025E9F9 /* EnterPhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA197B62B74723D0025E9F9 /* EnterPhoneViewModel.swift */; };
 		8CA197B92B7472440025E9F9 /* EnterPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA197B82B7472440025E9F9 /* EnterPhoneView.swift */; };
 		8CA228592BB3EFD80010E713 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA228582BB3EFD80010E713 /* OfferCell.swift */; };
+		8CA2285B2BB3FAF90010E713 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2285A2BB3FAF90010E713 /* EmptyCell.swift */; };
 		8CA3A08C2B90DBA900291D15 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A08B2B90DBA900291D15 /* IQKeyboardManagerSwift */; };
 		8CA3A08F2B90DBC800291D15 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A08E2B90DBC800291D15 /* Tabman */; };
 		8CA3A0972B90DE6C00291D15 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A0962B90DE6C00291D15 /* SnapKit */; };
@@ -293,6 +294,7 @@
 		8CA197B62B74723D0025E9F9 /* EnterPhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewModel.swift; sourceTree = "<group>"; };
 		8CA197B82B7472440025E9F9 /* EnterPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneView.swift; sourceTree = "<group>"; };
 		8CA228582BB3EFD80010E713 /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
+		8CA2285A2BB3FAF90010E713 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
 		8CA512F32BA7F90D0010624C /* UserNamesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNamesCell.swift; sourceTree = "<group>"; };
 		8CA6F5A82B95610000F9FD42 /* OTPField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPField.swift; sourceTree = "<group>"; };
 		8CA97E722B74F0B60020A80F /* InputNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNumberView.swift; sourceTree = "<group>"; };
@@ -1104,6 +1106,7 @@
 				8CF134072B8082DA00E1A913 /* TopSelectableView.swift */,
 				8CF134092B8082E900E1A913 /* ShowResultView.swift */,
 				8CA228582BB3EFD80010E713 /* OfferCell.swift */,
+				8CA2285A2BB3FAF90010E713 /* EmptyCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1396,6 +1399,7 @@
 				8CD354592B6B8A2D004FFE0F /* FeedbackButton.swift in Sources */,
 				8C10377C2B8ECA91007E6530 /* BannerItemCell.swift in Sources */,
 				8C25CE082B6DEB7C00B345BA /* MapView.swift in Sources */,
+				8CA2285B2BB3FAF90010E713 /* EmptyCell.swift in Sources */,
 				8C958FE12B73402C00299AF8 /* LaunchView.swift in Sources */,
 				8CEA8A402B775B23000071FC /* CompanyView.swift in Sources */,
 				8CC185FA2B751BDC00B13400 /* EnterCodeViewModel.swift in Sources */,

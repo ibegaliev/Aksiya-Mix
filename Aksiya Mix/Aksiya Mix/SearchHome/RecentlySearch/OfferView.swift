@@ -39,6 +39,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
         tv.showsVerticalScrollIndicator = false
         tv.contentInset = .init(top: 4, left: 0, bottom: 50, right: 0)
         tv.register(OfferCell.self, forCellReuseIdentifier: "OfferCell")
+        tv.register(EmptyCell.self, forCellReuseIdentifier: "EmptyCell")
         tv.register(CategoryCell.self, forCellReuseIdentifier: "CategoryCell")
         return tv
     }()
@@ -79,27 +80,52 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        6
+        if true {
+            if section == 0 {
+                return 1
+            }
+        }
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
-            cell.mainImage.isHidden = true
-            cell.chevronImage.isHidden = true
-            cell.titleLabel.font = .appFont(ofSize: 18, weight: .bold)
-            if indexPath.section == 0 {
-                cell.titleLabel.text = "Oxirgi qidirilganlar"
+        if indexPath.section == 0 {
+            if false {
+                if indexPath.row == 0 {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+                    cell.mainImage.isHidden = true
+                    cell.chevronImage.isHidden = true
+                    cell.titleLabel.font = .appFont(ofSize: 18, weight: .bold)
+                    cell.titleLabel.text = "Oxirgi qidirilganlar"
+                    return cell
+                } else {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "OfferCell", for: indexPath) as! OfferCell
+                    cell.mainImage.isHidden = true
+                    cell.titleLabel.font = .appFont(ofSize: 14, weight: .medium)
+                    return cell
+                }
             } else {
-                cell.titleLabel.text = "Ko'p qidirilganlar"
+                let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyCell", for: indexPath) as! EmptyCell
+                
+                return cell
             }
-            return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "OfferCell", for: indexPath) as! OfferCell
-            cell.mainImage.isHidden = true
-            cell.titleLabel.font = .appFont(ofSize: 14, weight: .medium)
-            return cell
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+                cell.mainImage.isHidden = true
+                cell.chevronImage.isHidden = true
+                cell.titleLabel.text = "Ko'p qidirilganlar"
+                cell.titleLabel.font = .appFont(ofSize: 18, weight: .bold)
+                return cell
+                
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "OfferCell", for: indexPath) as! OfferCell
+                cell.mainImage.isHidden = true
+                cell.titleLabel.font = .appFont(ofSize: 14, weight: .medium)
+                return cell
+            }
         }
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

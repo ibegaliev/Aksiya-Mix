@@ -28,12 +28,12 @@ class AlertController: UIViewController, AlertViewDelegate {
     
     func okTapped() {
         viewModel.delegate?.okTapped()
-        dismiss(animated: false)
+        dismiss(animated: true)
     }
     
     func cancelTapped() {
         viewModel.delegate?.cancelTapped()
-        dismiss(animated: false)
+        dismiss(animated: true)
     }
     
 }
