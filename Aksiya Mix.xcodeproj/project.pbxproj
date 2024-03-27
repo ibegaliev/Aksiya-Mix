@@ -88,6 +88,7 @@
 		8CA197B52B7472170025E9F9 /* EnterPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA197B42B7472170025E9F9 /* EnterPhoneViewController.swift */; };
 		8CA197B72B74723D0025E9F9 /* EnterPhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA197B62B74723D0025E9F9 /* EnterPhoneViewModel.swift */; };
 		8CA197B92B7472440025E9F9 /* EnterPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA197B82B7472440025E9F9 /* EnterPhoneView.swift */; };
+		8CA228592BB3EFD80010E713 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA228582BB3EFD80010E713 /* OfferCell.swift */; };
 		8CA3A08C2B90DBA900291D15 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A08B2B90DBA900291D15 /* IQKeyboardManagerSwift */; };
 		8CA3A08F2B90DBC800291D15 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A08E2B90DBC800291D15 /* Tabman */; };
 		8CA3A0972B90DE6C00291D15 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA3A0962B90DE6C00291D15 /* SnapKit */; };
@@ -292,6 +293,7 @@
 		8CA197B42B7472170025E9F9 /* EnterPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewController.swift; sourceTree = "<group>"; };
 		8CA197B62B74723D0025E9F9 /* EnterPhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneViewModel.swift; sourceTree = "<group>"; };
 		8CA197B82B7472440025E9F9 /* EnterPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneView.swift; sourceTree = "<group>"; };
+		8CA228582BB3EFD80010E713 /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
 		8CA512F32BA7F90D0010624C /* UserNamesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNamesCell.swift; sourceTree = "<group>"; };
 		8CA6F5A82B95610000F9FD42 /* OTPField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPField.swift; sourceTree = "<group>"; };
 		8CA97E722B74F0B60020A80F /* InputNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNumberView.swift; sourceTree = "<group>"; };
@@ -616,7 +618,6 @@
 				8C7FAFFF2B7738AB0062BF59 /* SearchController.swift */,
 				8C8FE9962BA832CF00F77474 /* SearchItemsView.swift */,
 				8C8FE9982BA832DB00F77474 /* SearchViewModel.swift */,
-				8CE969762BA846090005C334 /* Views */,
 			);
 			path = SearchItems;
 			sourceTree = "<group>";
@@ -650,6 +651,7 @@
 			children = (
 				8C733BB12BB167B0000879A4 /* RecentlySearch */,
 				8C733BB22BB167C0000879A4 /* SearchItems */,
+				8CE969762BA846090005C334 /* Views */,
 			);
 			path = SearchHome;
 			sourceTree = "<group>";
@@ -1104,6 +1106,7 @@
 				8CF134072B8082DA00E1A913 /* TopSelectableView.swift */,
 				8CD7E0F42B7F0A0400900220 /* OfferItemsView.swift */,
 				8CF134092B8082E900E1A913 /* ShowResultView.swift */,
+				8CA228582BB3EFD80010E713 /* OfferCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1429,6 +1432,7 @@
 				8CF4559B2B64EB7900E3EAB4 /* BottomTypeCell.swift in Sources */,
 				8C73A90D2B6A272000AA80B5 /* SingleTopCell.swift in Sources */,
 				8CE1A8112B941DD0007260D5 /* AlertManager.swift in Sources */,
+				8CA228592BB3EFD80010E713 /* OfferCell.swift in Sources */,
 				8CC185F82B751BCE00B13400 /* EnterCodeView.swift in Sources */,
 				8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */,
 				8C0658102B73249E00F6C9C3 /* RegisterViewModel.swift in Sources */,

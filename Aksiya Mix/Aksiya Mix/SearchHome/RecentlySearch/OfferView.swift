@@ -35,10 +35,11 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
         tv.delegate = self
         tv.dataSource = self
         tv.separatorStyle = .none
-        tv.register(CategoryCell.self, forCellReuseIdentifier: "CategoryCell")
-        tv.showsVerticalScrollIndicator = false
         tv.backgroundColor = .backColor
+        tv.showsVerticalScrollIndicator = false
         tv.contentInset = .init(top: 4, left: 0, bottom: 50, right: 0)
+        tv.register(OfferCell.self, forCellReuseIdentifier: "OfferCell")
+        tv.register(CategoryCell.self, forCellReuseIdentifier: "CategoryCell")
         return tv
     }()
     
@@ -94,7 +95,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "OfferCell", for: indexPath) as! OfferCell
             cell.mainImage.isHidden = true
             cell.titleLabel.font = .appFont(ofSize: 14, weight: .regular)
             return cell
