@@ -17,6 +17,7 @@ class SearchController: UIViewController {
     }
     
     private func setUI() {
+        title = "Natijalar"
         view.addSubview(viewModel.resultView)
         viewModel.resultView.snp.makeConstraints { make in
             make.edges.equalTo(view)

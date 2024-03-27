@@ -18,7 +18,7 @@ class RecentlySearchController: AksiyaViewController, OfferViewDelegate {
     
     private func setUI() {
         viewModel.view.delegate = self
-        backView.insertSubview(viewModel.view, at: .max)
+        backView.addSubview(viewModel.view)
         viewModel.view.snp.makeConstraints { make in
             make.edges.equalTo(backView)
         }

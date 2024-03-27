@@ -87,7 +87,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
             cell.mainImage.isHidden = true
             cell.chevronImage.isHidden = true
-            cell.titleLabel.font = .appFont(ofSize: 18, weight: .semibold)
+            cell.titleLabel.font = .appFont(ofSize: 18, weight: .bold)
             if indexPath.section == 0 {
                 cell.titleLabel.text = "Oxirgi qidirilganlar"
             } else {
@@ -97,7 +97,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "OfferCell", for: indexPath) as! OfferCell
             cell.mainImage.isHidden = true
-            cell.titleLabel.font = .appFont(ofSize: 14, weight: .regular)
+            cell.titleLabel.font = .appFont(ofSize: 14, weight: .medium)
             return cell
         }
     }

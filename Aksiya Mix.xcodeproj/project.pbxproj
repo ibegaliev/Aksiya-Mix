@@ -133,7 +133,6 @@
 		8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354542B6B8985004FFE0F /* FeedbackItemsView.swift */; };
 		8CD354572B6B89CB004FFE0F /* FeedbackPityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354562B6B89CB004FFE0F /* FeedbackPityView.swift */; };
 		8CD354592B6B8A2D004FFE0F /* FeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD354582B6B8A2D004FFE0F /* FeedbackButton.swift */; };
-		8CD7E0F52B7F0A0400900220 /* OfferItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7E0F42B7F0A0400900220 /* OfferItemsView.swift */; };
 		8CD858282B7391C20077B2A8 /* ChooseLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD858272B7391C20077B2A8 /* ChooseLanguageViewModel.swift */; };
 		8CD8582A2B739C9E0077B2A8 /* LanguageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD858292B739C9E0077B2A8 /* LanguageButton.swift */; };
 		8CD8582C2B73A2650077B2A8 /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8582B2B73A2650077B2A8 /* BlueButton.swift */; };
@@ -334,7 +333,6 @@
 		8CD354542B6B8985004FFE0F /* FeedbackItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackItemsView.swift; sourceTree = "<group>"; };
 		8CD354562B6B89CB004FFE0F /* FeedbackPityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPityView.swift; sourceTree = "<group>"; };
 		8CD354582B6B8A2D004FFE0F /* FeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackButton.swift; sourceTree = "<group>"; };
-		8CD7E0F42B7F0A0400900220 /* OfferItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferItemsView.swift; sourceTree = "<group>"; };
 		8CD858272B7391C20077B2A8 /* ChooseLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageViewModel.swift; sourceTree = "<group>"; };
 		8CD858292B739C9E0077B2A8 /* LanguageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageButton.swift; sourceTree = "<group>"; };
 		8CD8582B2B73A2650077B2A8 /* BlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
@@ -1104,7 +1102,6 @@
 			isa = PBXGroup;
 			children = (
 				8CF134072B8082DA00E1A913 /* TopSelectableView.swift */,
-				8CD7E0F42B7F0A0400900220 /* OfferItemsView.swift */,
 				8CF134092B8082E900E1A913 /* ShowResultView.swift */,
 				8CA228582BB3EFD80010E713 /* OfferCell.swift */,
 			);
@@ -1406,7 +1403,6 @@
 				8C8EFF922B7871D4002DE31D /* CategoryView.swift in Sources */,
 				8C8357882BA423D4007A68D8 /* Ex+UIButton.swift in Sources */,
 				8CA197B92B7472440025E9F9 /* EnterPhoneView.swift in Sources */,
-				8CD7E0F52B7F0A0400900220 /* OfferItemsView.swift in Sources */,
 				8CC9BD252B9DCBDF00180758 /* BannerTool.swift in Sources */,
 				8CAB7CD02B7464AA0075C4DE /* Ex+UIFond.swift in Sources */,
 				8CC185F42B751A5400B13400 /* EnterCodeViewController.swift in Sources */,

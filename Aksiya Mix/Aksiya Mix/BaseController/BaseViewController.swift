@@ -33,8 +33,8 @@ class AksiyaViewController: UIViewController, BaseViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.isUserInteractionEnabled = false
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.isUserInteractionEnabled = true
     }
     
     private func setUI() {
