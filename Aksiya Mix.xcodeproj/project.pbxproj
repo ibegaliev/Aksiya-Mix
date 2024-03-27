@@ -956,6 +956,7 @@
 		8CC9BD152B9DCBDF00180758 /* ZYPlayerView */ = {
 			isa = PBXGroup;
 			children = (
+				8CC9BD182B9DCBDF00180758 /* BannerView.bundle */,
 				8CC9BD122B9DCBDF00180758 /* ZYPlayer */,
 				8CC9BD132B9DCBDF00180758 /* PlayerView.bundle */,
 				8CC9BD142B9DCBDF00180758 /* ZYPlayerView.swift */,
@@ -971,7 +972,6 @@
 				8CC9BD152B9DCBDF00180758 /* ZYPlayerView */,
 				8CC9BD162B9DCBDF00180758 /* BannerTool.swift */,
 				8CC9BD172B9DCBDF00180758 /* BannerVideoViewCell.swift */,
-				8CC9BD182B9DCBDF00180758 /* BannerView.bundle */,
 				8CC9BD192B9DCBDF00180758 /* BannerView.swift */,
 				8CC9BD1A2B9DCBDF00180758 /* BannerViewCell.swift */,
 				8CC9BD1B2B9DCBDF00180758 /* BannerViewFlowLayout.swift */,

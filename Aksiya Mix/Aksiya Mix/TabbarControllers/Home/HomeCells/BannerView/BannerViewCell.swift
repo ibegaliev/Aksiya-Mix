@@ -21,7 +21,7 @@ class BannerViewCell: UICollectionViewCell {
                 break
             case .bannerImageInfoTypeGIFImage:
                 self.loadImageView?.image = self.placeholderImage
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+                    DispatchQueue.main.async {
                      self.loadImageView?.image = dataInfo.image ?? self.placeholderImage
                 }
                 break
@@ -30,13 +30,13 @@ class BannerViewCell: UICollectionViewCell {
             }
         }
     }
-    /// 图片显示方式
+
     public var imageContentMode:UIView.ContentMode = .scaleToFill {
         willSet {
             self.loadImageView?.contentMode = newValue
         }
     }
-    /// 圆角
+    
     public var imgCornerRadius:CGFloat = 0.0 {
         willSet {
             if newValue > 0.0 {
@@ -48,9 +48,9 @@ class BannerViewCell: UICollectionViewCell {
             }
         }
     }
-    /// 占位图
+    
     public var placeholderImage:UIImage?
-    /// 是否裁剪，默认false
+    
     public var isClips = false {
         willSet {
              self.loadImageView?.isClips = newValue

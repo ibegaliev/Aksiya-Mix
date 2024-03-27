@@ -110,6 +110,7 @@ extension LoadImageView {
     func setImageWithURL(_ url:String? ,_ placeholderImage:UIImage?) -> Void {
        setImageWithURL(url, placeholderImage, nil)
     }
+    
     func setImageWithURL(_ url:String? ,_ placeholderImage:UIImage?,_ completion: DownLoadImageResult?) -> Void {
         guard let imageUrl = url else {
             return
@@ -123,7 +124,7 @@ extension LoadImageView {
             return
         }
         let request = URLRequest(url: URL(string: imageUrl)!)
-        DispatchQueue.global().async {
+        DispatchQueue.main.async {
             self.downloadWithReqeust(request, holder: placeholderImage)
         }
         
@@ -186,11 +187,11 @@ extension LoadImageView {
         
     }
     
-    ///清理掉请求
+    
     func cancelRequest() {
         self.imageDownloader?.task?.cancel()
     }
-    ///获取图片缓存的占用的总大小/bytes
+    
     func imagesCacheSize() -> UInt64 {
         let dicPath = BannerTool.default.kCachePath
         var isDic = ObjCBool.init(false)
@@ -214,17 +215,11 @@ extension LoadImageView {
         return total
         
     }
-    ///清理图片缓存
+    
     func clearImagesCache() {
         CacheImage.default.clearDiskCaches()
     }
     
-
-    /// 等比例剪裁图片大小到指定的size
-    /// - Parameters:
-    ///   - image: 剪裁前的图片
-    ///   - size: 图片大小
-    ///   - isScaleToMax: 是否是最大比例，YES表示取最大比例
     func clipImage(_ image:UIImage? , _ size:CGSize? , _ isScaleToMax:Bool) -> UIImage? {
         if  image == nil || size == nil {
             return image
@@ -248,8 +243,8 @@ extension LoadImageView {
 
     
 }
-//MARK: 图片缓存
-class CacheImage:NSObject {
+
+class CacheImage: NSObject {
     
     static let `default` = CacheImage()
     var cacheFaileDictionary:[String:String] = Dictionary()
