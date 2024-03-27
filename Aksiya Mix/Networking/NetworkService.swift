@@ -50,6 +50,7 @@ extension NetworkService {
         ]
         let task = defualtSession?.dataTask(with: request) { data, response, error in
             if let httpResponse = response as? HTTPURLResponse {
+                print(JSON(data ?? ""))
                 if httpResponse.statusCode == 201 {
                     completion(data)
                 } else {

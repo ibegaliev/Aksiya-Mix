@@ -22,7 +22,7 @@ class UserView: UIView {
     
     var delegate: UserViewDelegate?
     
-    var isUserRegister: Bool = UserTokenManager.manager.getData().token?.isEmpty ?? false
+    var isUserRegister: Bool = !(UserTokenManager.manager.getData().token?.isEmpty ?? false)
     
     var data: [[UserViewData]] = [
         [
@@ -53,14 +53,14 @@ class UserView: UIView {
         let table = UITableView()
         table.delegate = self
         table.dataSource = self
-        table.backgroundColor = .backColor
-        table.contentInset = UIEdgeInsets(top: -16, left: 0, bottom: 50, right: 0)
-        table.showsHorizontalScrollIndicator = false
-        table.showsVerticalScrollIndicator = false
         table.separatorStyle = .none
+        table.backgroundColor = .backColor
+        table.showsVerticalScrollIndicator = false
+        table.showsHorizontalScrollIndicator = false
+        table.register(UserCell.self, forCellReuseIdentifier: "UserCell")
         table.register(UserTopView.self, forCellReuseIdentifier: "UserTopView")
         table.register(UserNamesCell.self, forCellReuseIdentifier: "UserNamesCell")
-        table.register(UserCell.self, forCellReuseIdentifier: "UserCell")
+        table.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 50, right: 0)
         return table
     }()
     
@@ -107,7 +107,8 @@ extension UserView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            if !isUserRegister {
+            print(isUserRegister)
+            if isUserRegister {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "UserNamesCell", for: indexPath) as! UserNamesCell
                 
                 return cell

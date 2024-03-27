@@ -10,13 +10,13 @@ import SnapKit
 import Tabman
 import Pageboy
 
-class LikedController: AksiyaViewController {
+class LikedController: UIViewController {
     
     let viewModel = LikedViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .backColor
     }
     
 }
