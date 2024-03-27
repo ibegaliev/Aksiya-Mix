@@ -17,6 +17,11 @@ class UserViewController: AksiyaViewController, UserViewDelegate {
         viewModel.view.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.view.tableView.reloadData()
+    }
+    
     private func setController() {
         view.addSubview(viewModel.view)
         viewModel.view.snp.makeConstraints { make in

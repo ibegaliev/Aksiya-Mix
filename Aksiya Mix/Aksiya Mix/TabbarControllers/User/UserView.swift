@@ -21,9 +21,7 @@ struct UserViewData {
 class UserView: UIView {
     
     var delegate: UserViewDelegate?
-    
-    var isUserRegister: Bool = !(UserTokenManager.manager.getData().token?.isEmpty ?? false)
-    
+        
     var data: [[UserViewData]] = [
         [
             UserViewData(icon: .userUnselected, title: "Profilni tahrirlash"),
@@ -107,8 +105,8 @@ extension UserView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            print(isUserRegister)
-            if isUserRegister {
+            print(UserTokenManager.manager.isHaveToken())
+            if UserTokenManager.manager.isHaveToken() {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "UserNamesCell", for: indexPath) as! UserNamesCell
                 
                 return cell
