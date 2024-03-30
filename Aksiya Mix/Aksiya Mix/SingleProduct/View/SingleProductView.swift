@@ -75,7 +75,7 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
         super.init(frame: frame)
         setUI()
         setConstraints()
-        backgroundColor = .backColor
+        backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
