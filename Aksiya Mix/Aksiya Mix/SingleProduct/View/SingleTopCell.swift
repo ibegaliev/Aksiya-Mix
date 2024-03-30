@@ -124,7 +124,7 @@ class SingleTopView: UITableViewCell {
     
     private func setConstraints() {
         backView.snp.makeConstraints { make in
-            make.top.equalTo(contentView).inset(0.screenWight/1.85)
+            make.top.equalTo(contentView).inset(0.screenWight/1.85 + 50)
             make.left.right.bottom.equalTo(contentView)
         }
         mainStack.snp.makeConstraints { make in

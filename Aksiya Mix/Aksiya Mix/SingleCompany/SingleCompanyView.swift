@@ -25,12 +25,27 @@ class SingleCompanyView: UIView {
         return view
     }()
     
-    lazy var mainImage: UIImageView = {
-        let image = UIImageView()
-        image.image = .macStore
-        image.contentMode = .scaleToFill
-        image.clipsToBounds = true
-        return image
+    lazy var mainImage: BannerView = {
+        let bannerView = BannerView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: frame.width,
+                height: 0.screenWight/1.7 + 50
+            )
+        )
+        bannerView.isZoom = true
+        bannerView.imgCornerRadius = 0
+        bannerView.itemWidth = 0.screenWight
+        bannerView.itemSpace = -40
+        bannerView.imageViewContentMode = .scaleAspectFill
+        bannerView.imageDatas = [
+            "https://picsum.photos/id/1/1000/1000",
+            "https://picsum.photos/id/2/1000/1000",
+            "https://picsum.photos/id/3/1000/1000",
+            "https://picsum.photos/id/4/1000/1000"
+        ]
+        return bannerView
     }()
     
     lazy var tableView: UITableView = {

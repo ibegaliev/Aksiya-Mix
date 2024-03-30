@@ -11,14 +11,14 @@ class EmptyCell: UITableViewCell {
     
     lazy var mainImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "searchImageFill")
-        image.contentMode = .scaleAspectFill
+        image.image = .searchMd
+        
         return image
     }()
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Some text."
+        lbl.text = "Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text"
         lbl.font = .appFont(ofSize: 14, weight: .medium)
         lbl.numberOfLines = 0
         lbl.textAlignment = .center

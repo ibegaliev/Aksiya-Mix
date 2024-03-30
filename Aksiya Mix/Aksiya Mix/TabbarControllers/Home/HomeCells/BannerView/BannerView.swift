@@ -93,13 +93,13 @@ class BannerView: UIView {
     
     public  var pageControl:PageControl?
     
-    var collectionView: UICollectionView?
     private var layout:BannerViewFlowLayout?
+    private var collectionView:UICollectionView?
     private var nums  = 0
     private var dragIndex = 0
-    private var lastX: CGFloat = 0.0
-    private var timer: Timer?
-    private var bannerDatas: [BannerBaseDataInfo] = Array()
+    private var lastX:CGFloat = 0.0
+    private var timer:Timer?
+    private var bannerDatas:[BannerBaseDataInfo] = Array()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

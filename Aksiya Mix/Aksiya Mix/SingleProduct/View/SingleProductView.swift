@@ -54,15 +54,14 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
                 x: 0,
                 y: 0,
                 width: frame.width,
-                height: 0.screenWight/1.7 - 10
+                height: 0.screenWight/1.7 + 50
             )
         )
         bannerView.isZoom = true
         bannerView.imgCornerRadius = 0
         bannerView.itemWidth = 0.screenWight
-        bannerView.itemSpace = 0
+        bannerView.itemSpace = -32
         bannerView.imageViewContentMode = .scaleAspectFill
-        bannerView.autoScrollTimeInterval = 2
         bannerView.imageDatas = [
             "https://picsum.photos/id/1/1000/1000",
             "https://picsum.photos/id/2/1000/1000",
@@ -98,11 +97,11 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
         mainImage.snp.makeConstraints { make in
             make.top.equalTo(topNavigation.snp_bottomMargin)
             make.left.right.equalTo(self)
-            make.height.equalTo(0.screenWight/1.7)
+            make.height.equalTo(0.screenWight/1.7 + 50)
         }
         tableView.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(self)
-            make.top.equalTo(topNavigation.snp_bottomMargin).inset(0.screenWight/1.7)
+            make.top.equalTo(topNavigation.snp_bottomMargin)
         }
     }
     
