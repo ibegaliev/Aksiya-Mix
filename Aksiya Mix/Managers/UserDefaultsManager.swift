@@ -18,5 +18,9 @@ class UserDefaultsManager {
     func getObject(key: String) -> Any {
         standart.object(forKey: key) ?? 0
     }
+    
+    func removeObject(key: String) {
+        standart.removeObject(forKey: key)
+    }
         
 }

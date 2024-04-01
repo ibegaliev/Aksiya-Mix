@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserViewController: AksiyaViewController, UserViewDelegate {
+class UserViewController: AksiyaViewController, UserViewDelegate, AlertViewDelegate {
     
     var viewModel = UserViewModel()
     
@@ -31,14 +31,24 @@ class UserViewController: AksiyaViewController, UserViewDelegate {
     
     func auth() {
         let controller = UINavigationController(rootViewController: EnterPhoneViewController())
-        controller.modalPresentationStyle = .overFullScreen
+        controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
     }
     
     func loguotTapped() {
         let alert = AlertController()
+        alert.viewModel.delegate = self
         alert.modalPresentationStyle = .overFullScreen
         present(alert, animated: true)
+    }
+    
+    func okTapped() {
+        UserTokenManager.manager.removeDates()
+        viewModel.view.setData()
+    }
+    
+    func cancelTapped() {
+        viewModel.view.setData()
     }
     
 }

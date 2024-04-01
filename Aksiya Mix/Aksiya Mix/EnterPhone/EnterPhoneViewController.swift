@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol EnterPhoneViewControllerDelegate {
+    func isRegistered()
+    func noRegistered()
+}
+
 class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate {
     
     let viewModel = EnterPhoneViewModel()

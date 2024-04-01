@@ -22,21 +22,7 @@ class UserView: UIView {
     
     var delegate: UserViewDelegate?
         
-    var data: [[UserViewData]] = [
-        [
-            UserViewData(icon: .userUnselected, title: "Profilni tahrirlash"),
-            UserViewData(icon: .notificationShop, title: "Bildirishnoma"),
-            UserViewData(icon: .shopHeard, title: "Sevimli do'konlar"),
-        ],
-        [
-            UserViewData(icon: .settingsUser, title: "Sozlamalar"),
-            UserViewData(icon: .messageDotsCircle, title: "Fikir-mulohazalar"),
-            UserViewData(icon: .shieldTick, title: "Shartlar va qoidalar"),
-            UserViewData(icon: .messageDotsCircle, title: "Ishtimoiy tarmoqlarda"),
-            UserViewData(icon: .infoCircle, title: "Ilova haqida"),
-            UserViewData(icon: .logOut, title: "Chiqish")
-        ]
-    ]
+    var data: [[UserViewData]] = []
     
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
@@ -58,7 +44,7 @@ class UserView: UIView {
         table.register(UserCell.self, forCellReuseIdentifier: "UserCell")
         table.register(UserTopView.self, forCellReuseIdentifier: "UserTopView")
         table.register(UserNamesCell.self, forCellReuseIdentifier: "UserNamesCell")
-        table.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 50, right: 0)
+        table.contentInset = UIEdgeInsets(top: -10, left: 0, bottom: 50, right: 0)
         return table
     }()
     
@@ -72,6 +58,7 @@ class UserView: UIView {
         super.init(frame: frame)
         setUI()
         setConstraints()
+        setData()
     }
     
     required init?(coder: NSCoder) {
@@ -86,6 +73,36 @@ class UserView: UIView {
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }
+    }
+    
+    func setData() {
+        if UserTokenManager.manager.isHaveToken() {
+            data = [
+                [
+                    UserViewData(icon: .userUnselected, title: "Profilni tahrirlash"),
+                    UserViewData(icon: .notificationShop, title: "Bildirishnoma"),
+                    UserViewData(icon: .shopHeard, title: "Sevimli do'konlar"),
+                ],
+                [
+                    UserViewData(icon: .settingsUser, title: "Sozlamalar"),
+                    UserViewData(icon: .messageDotsCircle, title: "Fikir-mulohazalar"),
+                    UserViewData(icon: .shieldTick, title: "Shartlar va qoidalar"),
+                    UserViewData(icon: .messageDotsCircle, title: "Ishtimoiy tarmoqlarda"),
+                    UserViewData(icon: .infoCircle, title: "Ilova haqida"),
+                    UserViewData(icon: .logOut, title: "Chiqish")
+                ]
+            ]
+        } else {
+            data = [
+                [
+                    UserViewData(icon: .messageDotsCircle, title: "Fikir-mulohazalar"),
+                    UserViewData(icon: .shieldTick, title: "Shartlar va qoidalar"),
+                    UserViewData(icon: .messageDotsCircle, title: "Ishtimoiy tarmoqlarda"),
+                    UserViewData(icon: .infoCircle, title: "Ilova haqida")
+                ]
+            ]
+        }
+        tableView.reloadData()
     }
     
 }

@@ -33,4 +33,10 @@ class UserTokenManager {
         return !(getData().token?.isEmpty ?? true)
     }
     
+    func removeDates() {
+        [code, token, isSavedToken].forEach { key in
+            UserDefaultsManager().removeObject(key: key)
+        }
+    }
+    
 }

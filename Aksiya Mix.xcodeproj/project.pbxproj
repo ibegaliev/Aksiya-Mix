@@ -470,6 +470,7 @@
 				8CBA40032B77905100F92F98 /* SingleCompany */,
 				8CBE7BC72B78F0E0001559E9 /* SingleCategory */,
 				8CFF7A602BAAB69E0059BF4D /* Alert */,
+				8C4D83502BB7FA1E000AC37F /* AddNewMarket */,
 			);
 			path = "Aksiya Mix";
 			sourceTree = "<group>";
@@ -592,6 +593,13 @@
 				8C289D492B693AF300B2FEAC /* TypeCell.swift */,
 			);
 			path = HomeCells;
+			sourceTree = "<group>";
+		};
+		8C4D83502BB7FA1E000AC37F /* AddNewMarket */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddNewMarket;
 			sourceTree = "<group>";
 		};
 		8C661F932B64230D00437F0D /* Customs */ = {
