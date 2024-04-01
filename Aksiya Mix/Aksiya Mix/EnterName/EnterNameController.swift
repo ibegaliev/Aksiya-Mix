@@ -7,14 +7,18 @@
 
 import UIKit
 
+protocol EnterNameDelegate {
+    func saved()
+}
+
 class EnterNameController: UIViewController, EnterNameViewDelegate {
     
     let viewModel = EnterNameViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = viewModel.view
         viewModel.view.delegate = self
+        view = viewModel.view
         setDismissButton()
     }
     
@@ -24,15 +28,16 @@ class EnterNameController: UIViewController, EnterNameViewDelegate {
         navigationItem.leftBarButtonItem = dismiss
     }
     
+    func nextTapped(name: String?) {
+        viewModel.data?.name = name
+        print(viewModel.data)
+        UserTokenManager.manager.saveData(data: viewModel.data)
+        dismissTapped()
+    }
+    
     @objc
     func dismissTapped() {
         dismiss(animated: true)
     }
     
-    func nextTapped(name: String?) {
-        viewModel.data?.name = name
-        print(viewModel.data)
-        UserTokenManager.manager.saveData(data: viewModel.data)
-    }
-
 }

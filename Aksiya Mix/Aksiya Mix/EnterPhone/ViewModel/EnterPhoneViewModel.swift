@@ -11,6 +11,7 @@ import SwiftyJSON
 class EnterPhoneViewModel {
     
     var view = EnterPhoneView()
+    var delegate: EnterPhoneViewControllerDelegate?
     
     func validateUzbekPhoneNumber(_ phoneNumber: String, completion: @escaping (_ isNumber: Bool) -> () ) {
         let phoneNumberRegex = #"^\+998\s?\d{2}\s?\d{3}\s?\d{2}\s?\d{2}$"#

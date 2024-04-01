@@ -12,5 +12,6 @@ class EnterNameViewModel {
     let view = EnterNameView()
     
     var data: UserTokenDM?
+    var delegate: EnterNameDelegate?
     
 }

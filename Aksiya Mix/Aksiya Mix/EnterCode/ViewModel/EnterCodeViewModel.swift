@@ -13,6 +13,7 @@ class EnterCodeViewModel {
     
     var phoneNumber: String?
     var data: UserTokenDM?
+    var delegate: EnterCodeDelegate?
     
     func getToken(code: String?, completion: @escaping ()->(), error: @escaping (_ description: String?)->()) {
         guard let phoneNumber else { return }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserViewController: AksiyaViewController, UserViewDelegate, AlertViewDelegate {
+class UserViewController: AksiyaViewController, UserViewDelegate, AlertViewDelegate, EnterPhoneViewControllerDelegate {
     
     var viewModel = UserViewModel()
     
@@ -30,9 +30,11 @@ class UserViewController: AksiyaViewController, UserViewDelegate, AlertViewDeleg
     }
     
     func auth() {
-        let controller = UINavigationController(rootViewController: EnterPhoneViewController())
-        controller.modalPresentationStyle = .fullScreen
-        present(controller, animated: true)
+        let controller = EnterPhoneViewController()
+        controller.viewModel.delegate = self
+        let navController = UINavigationController(rootViewController: controller)
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
     }
     
     func loguotTapped() {
@@ -48,6 +50,10 @@ class UserViewController: AksiyaViewController, UserViewDelegate, AlertViewDeleg
     }
     
     func cancelTapped() {
+        viewModel.view.setData()
+    }
+    
+    func saved() {
         viewModel.view.setData()
     }
     

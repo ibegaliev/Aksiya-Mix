@@ -7,7 +7,11 @@
 
 import UIKit
 
-class EnterCodeViewController: UIViewController, EnterCodeViewDelegate {
+protocol EnterCodeDelegate {
+    func saved()
+}
+
+class EnterCodeViewController: UIViewController, EnterCodeViewDelegate, EnterNameDelegate {
     
     let viewModel = EnterCodeViewModel()
     
@@ -26,6 +30,7 @@ class EnterCodeViewController: UIViewController, EnterCodeViewDelegate {
     func otp(otp: String) {
         viewModel.getToken(code: otp) { [self] in
             let controller = EnterNameController()
+            controller.viewModel.delegate = self
             controller.viewModel.data = viewModel.data
             navigationController?.pushViewController(controller, animated: true)
         } error: { [self] description in
@@ -47,5 +52,8 @@ class EnterCodeViewController: UIViewController, EnterCodeViewDelegate {
         dismiss(animated: true)
     }
 
+    func saved() {
+        viewModel.delegate?.saved()
+    }
     
 }

@@ -8,11 +8,10 @@
 import UIKit
 
 protocol EnterPhoneViewControllerDelegate {
-    func isRegistered()
-    func noRegistered()
+    func saved()
 }
 
-class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate {
+class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate, EnterCodeDelegate {
     
     let viewModel = EnterPhoneViewModel()
     
@@ -39,6 +38,7 @@ class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate {
                 viewModel.sentCode(number: telPhone) { [self] phoneNumber in
                     let controller = EnterCodeViewController()
                     controller.viewModel.phoneNumber = telPhone
+                    controller.viewModel.delegate = self
                     navigationController?.pushViewController(controller, animated: true)
                 } error: { [self] error in
                     alert(title: error)
@@ -65,6 +65,10 @@ class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate {
     @objc
     func dismissTapped() {
         dismiss(animated: true)
+    }
+    
+    func saved() {
+        viewModel.delegate?.saved()
     }
 
 }
