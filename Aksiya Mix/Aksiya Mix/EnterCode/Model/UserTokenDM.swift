@@ -10,5 +10,6 @@ import Foundation
 struct UserTokenDM: Codable {
     var code: Int?
     var token: String?
+    var name: String?
     var isSavedToken: Bool?
 }

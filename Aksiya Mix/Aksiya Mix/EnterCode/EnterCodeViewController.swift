@@ -26,7 +26,7 @@ class EnterCodeViewController: UIViewController, EnterCodeViewDelegate {
     func otp(otp: String) {
         viewModel.getToken(code: otp) { [self] in
             let controller = EnterNameController()
-            
+            controller.viewModel.data = viewModel.data
             navigationController?.pushViewController(controller, animated: true)
         } error: { [self] description in
             let alert = UIAlertController(title: description, message: nil, preferredStyle: .alert)
@@ -37,7 +37,7 @@ class EnterCodeViewController: UIViewController, EnterCodeViewDelegate {
     }
     
     func setDismissButton() {
-        let dismiss = UIBarButtonItem(title: "dismiss", style: .plain, target: self, action: #selector(dismissTapped))
+        let dismiss = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(dismissTapped))
         
         navigationItem.leftBarButtonItem = dismiss
     }

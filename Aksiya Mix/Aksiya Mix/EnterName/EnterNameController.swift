@@ -18,12 +18,8 @@ class EnterNameController: UIViewController, EnterNameViewDelegate {
         setDismissButton()
     }
     
-    func nextTapped() {
-        dismiss(animated: true)
-    }
-    
     func setDismissButton() {
-        let dismiss = UIBarButtonItem(title: "dismiss", style: .plain, target: self, action: #selector(dismissTapped))
+        let dismiss = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(dismissTapped))
         
         navigationItem.leftBarButtonItem = dismiss
     }
@@ -33,4 +29,10 @@ class EnterNameController: UIViewController, EnterNameViewDelegate {
         dismiss(animated: true)
     }
     
+    func nextTapped(name: String?) {
+        viewModel.data?.name = name
+        print(viewModel.data)
+        UserTokenManager.manager.saveData(data: viewModel.data)
+    }
+
 }

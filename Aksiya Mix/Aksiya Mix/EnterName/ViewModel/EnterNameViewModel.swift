@@ -11,8 +11,6 @@ class EnterNameViewModel {
     
     let view = EnterNameView()
     
-    func sendCode() {
-        
-    }
+    var data: UserTokenDM?
     
 }

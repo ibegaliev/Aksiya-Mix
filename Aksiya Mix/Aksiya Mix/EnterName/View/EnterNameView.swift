@@ -8,7 +8,7 @@
 import UIKit
 
 protocol EnterNameViewDelegate {
-    func nextTapped()
+    func nextTapped(name: String?)
 }
 
 class EnterNameView: UIView {
@@ -110,7 +110,7 @@ class EnterNameView: UIView {
     
     @objc
     func sentTapped() {
-        delegate?.nextTapped()
+        delegate?.nextTapped(name: inputFieldView.inputField.text)
     }
     
 }

@@ -57,7 +57,7 @@ class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate {
     }
 
     func setDismissButton() {
-        let dismiss = UIBarButtonItem(title: "dismiss", style: .plain, target: self, action: #selector(dismissTapped))
+        let dismiss = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(dismissTapped))
         
         navigationItem.leftBarButtonItem = dismiss
     }
