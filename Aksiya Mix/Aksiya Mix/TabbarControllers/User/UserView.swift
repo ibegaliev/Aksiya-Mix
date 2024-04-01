@@ -76,33 +76,37 @@ class UserView: UIView {
     }
     
     func setData() {
-        if UserTokenManager.manager.isHaveToken() {
-            data = [
-                [
-                    UserViewData(icon: .userUnselected, title: "Profilni tahrirlash"),
-                    UserViewData(icon: .notificationShop, title: "Bildirishnoma"),
-                    UserViewData(icon: .shopHeard, title: "Sevimli do'konlar"),
-                ],
-                [
-                    UserViewData(icon: .settingsUser, title: "Sozlamalar"),
-                    UserViewData(icon: .messageDotsCircle, title: "Fikir-mulohazalar"),
-                    UserViewData(icon: .shieldTick, title: "Shartlar va qoidalar"),
-                    UserViewData(icon: .messageDotsCircle, title: "Ishtimoiy tarmoqlarda"),
-                    UserViewData(icon: .infoCircle, title: "Ilova haqida"),
-                    UserViewData(icon: .logOut, title: "Chiqish")
+        DispatchQueue.global(qos: .background).async { [self] in
+            if UserTokenManager.manager.isHaveToken() {
+                data = [
+                    [
+                        UserViewData(icon: .userUnselected, title: "Profilni tahrirlash"),
+                        UserViewData(icon: .notificationShop, title: "Bildirishnoma"),
+                        UserViewData(icon: .shopHeard, title: "Sevimli do'konlar"),
+                    ],
+                    [
+                        UserViewData(icon: .settingsUser, title: "Sozlamalar"),
+                        UserViewData(icon: .messageDotsCircle, title: "Fikir-mulohazalar"),
+                        UserViewData(icon: .shieldTick, title: "Shartlar va qoidalar"),
+                        UserViewData(icon: .messageDotsCircle, title: "Ishtimoiy tarmoqlarda"),
+                        UserViewData(icon: .infoCircle, title: "Ilova haqida"),
+                        UserViewData(icon: .logOut, title: "Chiqish")
+                    ]
                 ]
-            ]
-        } else {
-            data = [
-                [
-                    UserViewData(icon: .messageDotsCircle, title: "Fikir-mulohazalar"),
-                    UserViewData(icon: .shieldTick, title: "Shartlar va qoidalar"),
-                    UserViewData(icon: .messageDotsCircle, title: "Ishtimoiy tarmoqlarda"),
-                    UserViewData(icon: .infoCircle, title: "Ilova haqida")
+            } else {
+                data = [
+                    [
+                        UserViewData(icon: .messageDotsCircle, title: "Fikir-mulohazalar"),
+                        UserViewData(icon: .shieldTick, title: "Shartlar va qoidalar"),
+                        UserViewData(icon: .messageDotsCircle, title: "Ishtimoiy tarmoqlarda"),
+                        UserViewData(icon: .infoCircle, title: "Ilova haqida")
+                    ]
                 ]
-            ]
+            }
+            DispatchQueue.main.async { [self] in
+                tableView.reloadData()
+            }
         }
-        tableView.reloadData()
     }
     
 }
@@ -122,7 +126,6 @@ extension UserView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            print(UserTokenManager.manager.isHaveToken())
             if UserTokenManager.manager.isHaveToken() {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "UserNamesCell", for: indexPath) as! UserNamesCell
                 

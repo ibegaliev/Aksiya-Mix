@@ -147,7 +147,7 @@ class UserNamesTopView: UIView {
 
     lazy var nameLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Ismingiz nima?"
+        lbl.text = UserTokenManager.manager.getData().name
         lbl.font = .appFont(ofSize: 22, weight: .bold)
         return lbl
     }()
