@@ -32,6 +32,7 @@ class EnterCodeViewController: UIViewController, EnterCodeViewDelegate, EnterNam
             let controller = EnterNameController()
             controller.viewModel.delegate = self
             controller.viewModel.data = viewModel.data
+            controller.viewModel.data?.number = viewModel.phoneNumber
             navigationController?.pushViewController(controller, animated: true)
         } error: { [self] description in
             let alert = UIAlertController(title: description, message: nil, preferredStyle: .alert)

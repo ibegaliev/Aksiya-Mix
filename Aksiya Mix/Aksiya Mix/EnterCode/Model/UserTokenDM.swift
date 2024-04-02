@@ -11,5 +11,6 @@ struct UserTokenDM: Codable {
     var code: Int?
     var token: String?
     var name: String?
+    var number: String?
     var isSavedToken: Bool?
 }

@@ -11,7 +11,11 @@ class EnterCodeViewModel {
     
     let view = EnterCodeView()
     
-    var phoneNumber: String?
+    var phoneNumber: String? {
+        didSet {
+            data?.number = phoneNumber
+        }
+    }
     var data: UserTokenDM?
     var delegate: EnterCodeDelegate?
     

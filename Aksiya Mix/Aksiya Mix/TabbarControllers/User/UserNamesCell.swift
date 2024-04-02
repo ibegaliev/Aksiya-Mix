@@ -70,8 +70,8 @@ class UserMarketView: UIView {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .appFont(ofSize: 14)
-        lbl.numberOfLines = 2
+        lbl.font = .appFont(ofSize: 12, weight: .medium)
+        lbl.numberOfLines = 0
         lbl.text = "AksiyaMixda do'koningizni ro'yatdan o'tkazib chegirmalarni joylab koproq xaridor toping."
         return lbl
     }()
@@ -154,8 +154,8 @@ class UserNamesTopView: UIView {
     
     lazy var numberLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "+998 95 905 15 75"
-        lbl.font = .appFont(ofSize: 12)
+        lbl.text = UserTokenManager.manager.getData().number
+        lbl.font = .appFont(ofSize: 12, weight: .medium)
         lbl.textColor = .spacetext
         return lbl
     }()

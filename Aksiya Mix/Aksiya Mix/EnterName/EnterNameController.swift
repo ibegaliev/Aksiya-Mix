@@ -29,9 +29,10 @@ class EnterNameController: UIViewController, EnterNameViewDelegate {
     }
     
     func nextTapped(name: String?) {
-        viewModel.data?.name = name
-        UserTokenManager.manager.saveData(data: viewModel.data)
         dismissTapped()
+        viewModel.data?.name = name
+        print(viewModel.data)
+        UserTokenManager.manager.saveData(data: viewModel.data)
         viewModel.delegate?.saved()
     }
     
