@@ -15,6 +15,8 @@ class CategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     var delegate: CategoryViewDelegate?
     
+    var data: [CategoryModel] = []
+    
     lazy var navigationView: UIView = {
         let view = UIView()
         view.addShadow()
@@ -45,6 +47,7 @@ class CategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         super.init(frame: frame)
         setUI()
         setConstraints()
+        setData()
     }
     
     required init?(coder: NSCoder) {
@@ -73,13 +76,21 @@ class CategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    private func setData() {
+        data = JSONManager.shared.loadAndDecodeJSON(fromFileNamed: "categories", into: [CategoryModel].self) ?? []
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
+        data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
-        
+        if LanguageManager().getLanguage() == "uz" {
+            cell.title = data[indexPath.row].name_uz
+        } else {
+            cell.title = data[indexPath.row].name_ru
+        }
         return cell
     }
 

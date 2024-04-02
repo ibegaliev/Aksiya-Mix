@@ -66,6 +66,9 @@
 		8C8B26382B9C0F900068A52C /* RatingTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B26372B9C0F900068A52C /* RatingTitlesView.swift */; };
 		8C8B263A2B9C0FB60068A52C /* RatingCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B26392B9C0FB60068A52C /* RatingCountView.swift */; };
 		8C8B263C2B9C24580068A52C /* RatingDiagrammView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B263B2B9C24580068A52C /* RatingDiagrammView.swift */; };
+		8C8B510A2BBBDBE900C5E097 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C8B51092BBBDBE900C5E097 /* categories.json */; };
+		8C8B510C2BBBDC2C00C5E097 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B510B2BBBDC2C00C5E097 /* JSONManager.swift */; };
+		8C8B510E2BBBDD0B00C5E097 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B510D2BBBDD0B00C5E097 /* CategoryModel.swift */; };
 		8C8D4AF62B68AD60007D1D77 /* BottomTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */; };
 		8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8D4AF72B68AD76007D1D77 /* HeaderView.swift */; };
 		8C8EFF902B7871CD002DE31D /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8EFF8F2B7871CD002DE31D /* CategoryViewModel.swift */; };
@@ -271,6 +274,9 @@
 		8C8B26372B9C0F900068A52C /* RatingTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTitlesView.swift; sourceTree = "<group>"; };
 		8C8B26392B9C0FB60068A52C /* RatingCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCountView.swift; sourceTree = "<group>"; };
 		8C8B263B2B9C24580068A52C /* RatingDiagrammView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingDiagrammView.swift; sourceTree = "<group>"; };
+		8C8B51092BBBDBE900C5E097 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		8C8B510B2BBBDC2C00C5E097 /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
+		8C8B510D2BBBDD0B00C5E097 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		8C8D4AF52B68AD60007D1D77 /* BottomTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTitlesView.swift; sourceTree = "<group>"; };
 		8C8D4AF72B68AD76007D1D77 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8C8EFF8F2B7871CD002DE31D /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
@@ -860,8 +866,11 @@
 		8CB7EC652BAD9B180031DB6E /* JSON Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C8B51092BBBDBE900C5E097 /* categories.json */,
 				8CB7EC672BAD9B290031DB6E /* districts.json */,
 				8CB7EC662BAD9B290031DB6E /* regions.json */,
+				8C8B510B2BBBDC2C00C5E097 /* JSONManager.swift */,
+				8C8B510D2BBBDD0B00C5E097 /* CategoryModel.swift */,
 			);
 			path = "JSON Files";
 			sourceTree = "<group>";
@@ -1288,6 +1297,7 @@
 				8CDDB8C02B8711D20095CB82 /* SFProText-Heavy.ttf in Resources */,
 				8CDDB8C72B8711D20095CB82 /* SFProText-Light.ttf in Resources */,
 				8CDDB8C42B8711D20095CB82 /* SFProText-BoldItalic.ttf in Resources */,
+				8C8B510A2BBBDBE900C5E097 /* categories.json in Resources */,
 				8CDDB8CA2B8711D20095CB82 /* SFProText-Bold.ttf in Resources */,
 				8CDDB8C82B8711D20095CB82 /* SFProText-HeavyItalic.ttf in Resources */,
 				8CDDB8C22B8711D20095CB82 /* SFProText-Semibold.ttf in Resources */,
@@ -1409,6 +1419,7 @@
 				8C25CE082B6DEB7C00B345BA /* MapView.swift in Sources */,
 				8CA2285B2BB3FAF90010E713 /* EmptyCell.swift in Sources */,
 				8C958FE12B73402C00299AF8 /* LaunchView.swift in Sources */,
+				8C8B510E2BBBDD0B00C5E097 /* CategoryModel.swift in Sources */,
 				8CEA8A402B775B23000071FC /* CompanyView.swift in Sources */,
 				8CC185FA2B751BDC00B13400 /* EnterCodeViewModel.swift in Sources */,
 				8CC9BD242B9DCBDF00180758 /* ZYPlayerView.swift in Sources */,
@@ -1440,6 +1451,7 @@
 				8CF4559B2B64EB7900E3EAB4 /* BottomTypeCell.swift in Sources */,
 				8C73A90D2B6A272000AA80B5 /* SingleTopCell.swift in Sources */,
 				8CE1A8112B941DD0007260D5 /* AlertManager.swift in Sources */,
+				8C8B510C2BBBDC2C00C5E097 /* JSONManager.swift in Sources */,
 				8CA228592BB3EFD80010E713 /* OfferCell.swift in Sources */,
 				8CC185F82B751BCE00B13400 /* EnterCodeView.swift in Sources */,
 				8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */,

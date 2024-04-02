@@ -9,6 +9,15 @@ import UIKit
 
 class CategoryCell: UITableViewCell {
     
+    var title: String? {
+        get {
+            return nil
+        }
+        set {
+            titleLabel.text = newValue
+        }
+    }
+    
     lazy var backView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -26,8 +35,7 @@ class CategoryCell: UITableViewCell {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .appFont(ofSize: 16, weight: .medium)
-        lbl.text = "Barcha toifalar"
+        lbl.font = .appFont(ofSize: 16, weight: .semibold)
         lbl.textColor = .black
         return lbl
     }()
@@ -42,13 +50,13 @@ class CategoryCell: UITableViewCell {
         let stack = UIStackView()
         stack.distribution = .equalSpacing
         stack.alignment = .center
-        stack.spacing = 8
+        stack.spacing = 4
         return stack
     }()
 
     lazy var leftStack: UIStackView = {
         let stack = UIStackView()
-        stack.spacing = 8
+        stack.spacing = 4
         stack.alignment = .center
         return stack
     }()

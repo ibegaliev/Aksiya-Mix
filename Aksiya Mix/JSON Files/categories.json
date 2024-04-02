@@ -1,0 +1,73 @@
+[
+  {
+    "id": 0,
+    "name_uz": "Elektronika",
+    "name_ru": "Электроника"
+  },
+  {
+    "id": 1,
+    "name_uz": "Erkaklar kiyimlari",
+    "name_ru": "Мужская одежда"
+  },
+ {
+    "id": 2,
+    "name_uz": "Ayollar kiyimlari",
+    "name_ru": "Женская одежда"
+  },
+
+  {
+    "id": 3,
+    "name_uz": "Xizmatlar",
+    "name_ru": "Услуги"
+  },
+  {
+    "id": 4,
+    "name_uz": "Ta'lim",
+    "name_ru": "Образование"
+  },
+  {
+    "id": 5,
+    "name_uz": "Transport",
+    "name_ru": "Транспорт"
+  },
+  {
+    "id": 6,
+    "name_uz": "Mebellar",
+    "name_ru": "Мебель"
+  },
+  {
+    "id": 7,
+    "name_uz": "Ko'chmas mulk",
+    "name_ru": "Недвижимость"
+  },
+  {
+    "id": 8,
+    "name_uz": "Maishiy texnika",
+    "name_ru": "Бытовая техника"
+  },
+  {
+    "id": 9,
+    "name_uz": "Bolalar uchun",
+    "name_ru": "Для детей"
+  },
+  {
+    "id": 10,
+    "name_uz": "Kitoblar",
+    "name_ru": "Книги"
+  },
+  {
+    "id": 11,
+    "name_uz": "Taomlar",
+    "name_ru": "Еда"
+  },
+  {
+    "id": 12,
+    "name_uz": "Qurilish va taʼmirlash",
+    "name_ru": "Строительство и ремонт"
+  },
+  {
+    "id": 13,
+    "name_uz": "Oziq-ovqat mahsulotlari",
+    "name_ru": "Продукты питания"
+  }
+]
