@@ -86,7 +86,7 @@ class CompanyDescriptionCell: UITableViewCell {
     
     @objc
     func tappedShowAll() {
-        print("BATAFSIL")
+        
     }
     
 }

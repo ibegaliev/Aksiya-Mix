@@ -80,17 +80,17 @@ class UserView: UIView {
             if UserTokenManager.manager.isHaveToken() {
                 data = [
                     [
-                        UserViewData(icon: .userUnselected, title: "Profilni tahrirlash"),
-                        UserViewData(icon: .notificationShop, title: "Bildirishnoma"),
-                        UserViewData(icon: .shopHeard, title: "Sevimli do'konlar"),
+                        UserViewData(icon: .userUnselected, title: LyricsManager.getLyrics(type: .editProfile)),
+                        UserViewData(icon: .notificationShop, title: LyricsManager.getLyrics(type: .notification)),
+                        UserViewData(icon: .shopHeard, title: LyricsManager.getLyrics(type: .likedStores)),
                     ],
                     [
-                        UserViewData(icon: .settingsUser, title: "Sozlamalar"),
-                        UserViewData(icon: .messageDotsCircle, title: "Fikir-mulohazalar"),
-                        UserViewData(icon: .shieldTick, title: "Shartlar va qoidalar"),
-                        UserViewData(icon: .messageDotsCircle, title: "Ishtimoiy tarmoqlarda"),
-                        UserViewData(icon: .infoCircle, title: "Ilova haqida"),
-                        UserViewData(icon: .logOut, title: "Chiqish")
+                        UserViewData(icon: .settingsUser, title: LyricsManager.getLyrics(type: .settings)),
+                        UserViewData(icon: .messageDotsCircle, title: LyricsManager.getLyrics(type: .conditions)),
+                        UserViewData(icon: .shieldTick, title: LyricsManager.getLyrics(type: .thoughts)),
+                        UserViewData(icon: .messageDotsCircle, title: LyricsManager.getLyrics(type: .messangers)),
+                        UserViewData(icon: .infoCircle, title: LyricsManager.getLyrics(type: .aboutThis)),
+                        UserViewData(icon: .logOut, title: LyricsManager.getLyrics(type: .exit))
                     ]
                 ]
             } else {

@@ -29,6 +29,20 @@ enum LyricsManagerType {
     case welcome
     case welcomeDescription
     case enterComment
+    
+    //user
+    case editProfile
+    case notification
+    case likedStores
+    case settings
+    case conditions
+    case thoughts
+    case messangers
+    case aboutThis
+    case exit
+    
+    case addStore
+    case descriptionAddStore
 }
 
 class LyricsManager {
@@ -77,7 +91,30 @@ class LyricsManager {
                 case .welcomeDescription:
                     return "Xabar yuborish va qabul gilish, yangi e'lonlar joylash va o'zingiz yoqtirgan e'lonlar va saqlangan gidiruvlarni qayta ko rib chiqish uchun tizimga kiring. Bir necha daqiqada profil oching."
                 case .enterComment:
-                    return "Введите комментарий..."
+                    return "Fikr kiriting..."
+                case .editProfile:
+                    return "Profilni tahrirlash"
+                case .notification:
+                    return "Bildirishnoma"
+                case .likedStores:
+                    return "Sevimli do'konlar"
+                case .settings:
+                    return "Sozlamalar"
+                case .conditions:
+                    return "Fikir-mulohazalar"
+                case .thoughts:
+                    return "Shartlar va qoidalar"
+                case .messangers:
+                    return "Ishtimoiy tarmoqlarda"
+                case .aboutThis:
+                    return "Ilova haqida"
+                case .exit:
+                    return "Chiqish"
+                    
+                case .addStore:
+                    return "Do'kon qo'shish"
+                case .descriptionAddStore:
+                    return "AksiyaMixda do'koningizni ro'yatdan o'tkazib chegirmalarni joylab koproq xaridor toping."
             }
         } else {
             switch type {
@@ -122,7 +159,30 @@ class LyricsManager {
                 case .welcomeDescription:
                     return "Войдите в систему, чтобы отправлять и получать сообщения, публиковать новые объявления и пересматривать понравившиеся объявления и сохраненные поисковые запросы. Откройте Профиль каждые несколько минут."
                 case .enterComment:
-                    return "Fikr bildiring..."
+                    return "Введите комментарий..."
+                case .editProfile:
+                    return "Редактировать профиль"
+                case .notification:
+                    return "Уведомление"
+                case .likedStores:
+                    return "Любимые магазины"
+                case .settings:
+                    return "Настройки"
+                case .conditions:
+                    return "Мнения"
+                case .thoughts:
+                    return "Условия и положения"
+                case .messangers:
+                    return "В социальных сетях"
+                case .aboutThis:
+                    return "О приложении"
+                case .exit:
+                    return "Выход"
+
+                case .addStore:
+                    return "Добавить магазин"
+                case .descriptionAddStore:
+                    return "Зарегистрируйте свой магазин в AksiyaMix и находите больше клиентов, размещая скидки."
             }
         }
     }

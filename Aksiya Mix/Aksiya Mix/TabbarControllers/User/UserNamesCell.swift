@@ -72,13 +72,13 @@ class UserMarketView: UIView {
         let lbl = UILabel()
         lbl.font = .appFont(ofSize: 12, weight: .medium)
         lbl.numberOfLines = 0
-        lbl.text = "AksiyaMixda do'koningizni ro'yatdan o'tkazib chegirmalarni joylab koproq xaridor toping."
+        lbl.text = LyricsManager.getLyrics(type: .descriptionAddStore)
         return lbl
     }()
     
     lazy var button: BlueButton = {
         let btn = BlueButton()
-        btn.setTitle("Do'kon qo'shish", for: .normal)
+        btn.setTitle(LyricsManager.getLyrics(type: .addStore), for: .normal)
         return btn
     }()
     
