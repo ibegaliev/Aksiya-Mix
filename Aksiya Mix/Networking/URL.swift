@@ -8,8 +8,19 @@
 import Foundation
 
 enum UrlPath: String {
+    
+    //auth
     case authCode = "/auth/code/"
     case authToken = "/auth/token/"
+    
+    //complaints
+    case complaintsComment = "/complaints/comment/"
+    case complaintsDiscount = "/complaints/discount/"
+    case complaintsShortname = "/complaints/shortname/"
+    
+    //discounts
+    
+    
 }
 
 class URLManager {
