@@ -21,6 +21,9 @@ enum UrlPath: String {
     //discounts
     
     
+    //user
+    case usersProfile = "/users/profile/"
+    
 }
 
 class URLManager {

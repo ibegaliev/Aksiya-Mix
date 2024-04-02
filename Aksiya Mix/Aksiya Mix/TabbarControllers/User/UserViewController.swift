@@ -15,11 +15,12 @@ class UserViewController: AksiyaViewController, UserViewDelegate, AlertViewDeleg
         super.viewDidLoad()
         setController()
         viewModel.view.delegate = self
+        viewModel.getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.view.tableView.reloadData()
+        
     }
     
     private func setController() {

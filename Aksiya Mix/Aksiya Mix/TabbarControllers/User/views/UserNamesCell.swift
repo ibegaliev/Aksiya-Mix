@@ -9,6 +9,13 @@ import UIKit
 
 class UserNamesCell: UITableViewCell {
     
+    var userdata: UserData? {
+        didSet {
+            topView.nameLabel.text = userdata?.fullname
+            topView.numberLabel.text = userdata?.phone_number
+        }
+    }
+    
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -18,7 +25,8 @@ class UserNamesCell: UITableViewCell {
     
     lazy var topView: UserNamesTopView = {
         let view = UserNamesTopView()
-        
+        view.nameLabel.text = userdata?.fullname
+        view.numberLabel.text = userdata?.phone_number
         return view
     }()
     
@@ -147,14 +155,12 @@ class UserNamesTopView: UIView {
 
     lazy var nameLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = UserTokenManager.manager.getData().name
         lbl.font = .appFont(ofSize: 22, weight: .bold)
         return lbl
     }()
     
     lazy var numberLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = UserTokenManager.manager.getData().number
         lbl.font = .appFont(ofSize: 12, weight: .medium)
         lbl.textColor = .spacetext
         return lbl

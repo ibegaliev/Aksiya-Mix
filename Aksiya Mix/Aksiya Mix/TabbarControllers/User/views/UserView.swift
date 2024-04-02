@@ -9,7 +9,6 @@ import UIKit
 
 protocol UserViewDelegate {
     func auth()
-    
     func loguotTapped()
 }
 
@@ -21,7 +20,12 @@ struct UserViewData {
 class UserView: UIView {
     
     var delegate: UserViewDelegate?
-        
+    
+    var userdata: UserData? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     var data: [[UserViewData]] = []
     
     lazy var mainStack: UIStackView = {
@@ -128,7 +132,7 @@ extension UserView: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             if UserTokenManager.manager.isHaveToken() {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "UserNamesCell", for: indexPath) as! UserNamesCell
-                
+                cell.userdata = userdata
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "UserTopView", for: indexPath) as! UserTopView
