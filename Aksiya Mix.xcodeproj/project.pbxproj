@@ -63,6 +63,9 @@
 		8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */; };
 		8C85AF6C2B77A6DD00B3A7FC /* CompanyMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C85AF6B2B77A6DD00B3A7FC /* CompanyMainCell.swift */; };
 		8C85BC2B2B8265220047F54C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C85BC2A2B8265220047F54C /* UserViewController.swift */; };
+		8C8742C32BBD239B00F897BB /* ProfileEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8742C22BBD239B00F897BB /* ProfileEditController.swift */; };
+		8C8742C52BBD25B400F897BB /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8742C42BBD25B400F897BB /* ProfileEditView.swift */; };
+		8C8742C72BBD25DC00F897BB /* ProfileEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8742C62BBD25DC00F897BB /* ProfileEditViewModel.swift */; };
 		8C8B26382B9C0F900068A52C /* RatingTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B26372B9C0F900068A52C /* RatingTitlesView.swift */; };
 		8C8B263A2B9C0FB60068A52C /* RatingCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B26392B9C0FB60068A52C /* RatingCountView.swift */; };
 		8C8B263C2B9C24580068A52C /* RatingDiagrammView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B263B2B9C24580068A52C /* RatingDiagrammView.swift */; };
@@ -272,6 +275,9 @@
 		8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		8C85AF6B2B77A6DD00B3A7FC /* CompanyMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyMainCell.swift; sourceTree = "<group>"; };
 		8C85BC2A2B8265220047F54C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		8C8742C22BBD239B00F897BB /* ProfileEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditController.swift; sourceTree = "<group>"; };
+		8C8742C42BBD25B400F897BB /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
+		8C8742C62BBD25DC00F897BB /* ProfileEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewModel.swift; sourceTree = "<group>"; };
 		8C8B26372B9C0F900068A52C /* RatingTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTitlesView.swift; sourceTree = "<group>"; };
 		8C8B26392B9C0FB60068A52C /* RatingCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCountView.swift; sourceTree = "<group>"; };
 		8C8B263B2B9C24580068A52C /* RatingDiagrammView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingDiagrammView.swift; sourceTree = "<group>"; };
@@ -705,8 +711,27 @@
 				8C7B9DC72B836ADB00372CB1 /* UserViewModel.swift */,
 				8CCF8E922BBC936900280C53 /* models */,
 				8CCF8E912BBC935300280C53 /* views */,
+				8C8742C02BBD237000F897BB /* Controllers */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		8C8742C02BBD237000F897BB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8C8742C12BBD238C00F897BB /* ProfileEdit */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8C8742C12BBD238C00F897BB /* ProfileEdit */ = {
+			isa = PBXGroup;
+			children = (
+				8C8742C22BBD239B00F897BB /* ProfileEditController.swift */,
+				8C8742C42BBD25B400F897BB /* ProfileEditView.swift */,
+				8C8742C62BBD25DC00F897BB /* ProfileEditViewModel.swift */,
+			);
+			path = ProfileEdit;
 			sourceTree = "<group>";
 		};
 		8C8B26362B9C0F770068A52C /* Views */ = {
@@ -1391,6 +1416,7 @@
 				8CE832EE2B638400004B4E6D /* BaseViewController.swift in Sources */,
 				8C8EFF942B7871E0002DE31D /* CategoryController.swift in Sources */,
 				8C97CEAB2BA4CC4600310C21 /* ShareLink.swift in Sources */,
+				8C8742C72BBD25DC00F897BB /* ProfileEditViewModel.swift in Sources */,
 				8C47E7182B91D12900B59A25 /* NetworkService.swift in Sources */,
 				8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */,
 				8C19B0A92B63556A007D8872 /* AppDelegate.swift in Sources */,
@@ -1430,6 +1456,7 @@
 				8C77817D2B6A6DC500CA6D0A /* Ex+UILabel.swift in Sources */,
 				8CE832E92B637B6D004B4E6D /* HomeViewController.swift in Sources */,
 				8CA197B72B74723D0025E9F9 /* EnterPhoneViewModel.swift in Sources */,
+				8C8742C32BBD239B00F897BB /* ProfileEditController.swift in Sources */,
 				8CD904372B78E3B8005B975C /* Ex+UIView.swift in Sources */,
 				8C8D4AF62B68AD60007D1D77 /* BottomTitlesView.swift in Sources */,
 				8C06580E2B73249300F6C9C3 /* RegisterModel.swift in Sources */,
@@ -1443,6 +1470,7 @@
 				8CEA8A402B775B23000071FC /* CompanyView.swift in Sources */,
 				8CC185FA2B751BDC00B13400 /* EnterCodeViewModel.swift in Sources */,
 				8CC9BD242B9DCBDF00180758 /* ZYPlayerView.swift in Sources */,
+				8C8742C52BBD25B400F897BB /* ProfileEditView.swift in Sources */,
 				8C8EFF922B7871D4002DE31D /* CategoryView.swift in Sources */,
 				8C8357882BA423D4007A68D8 /* Ex+UIButton.swift in Sources */,
 				8CA197B92B7472440025E9F9 /* EnterPhoneView.swift in Sources */,

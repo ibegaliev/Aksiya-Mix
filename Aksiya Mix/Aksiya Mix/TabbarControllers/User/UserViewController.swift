@@ -37,14 +37,7 @@ class UserViewController: AksiyaViewController, UserViewDelegate, AlertViewDeleg
         navController.modalPresentationStyle = .fullScreen
         present(navController, animated: true)
     }
-    
-    func loguotTapped() {
-        let alert = AlertController()
-        alert.viewModel.delegate = self
-        alert.modalPresentationStyle = .overFullScreen
-        present(alert, animated: true)
-    }
-    
+        
     func okTapped() {
         UserTokenManager.manager.removeDates()
         viewModel.view.setData()
@@ -62,5 +55,21 @@ class UserViewController: AksiyaViewController, UserViewDelegate, AlertViewDeleg
         )
     }
 
+}
+
+extension UserViewController {
+    
+    func editProfileTapped() {
+        let controller = ProfileEditController()
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
+
+    func loguotTapped() {
+        let alert = AlertController()
+        alert.viewModel.delegate = self
+        alert.modalPresentationStyle = .overFullScreen
+        present(alert, animated: true)
+    }
     
 }
