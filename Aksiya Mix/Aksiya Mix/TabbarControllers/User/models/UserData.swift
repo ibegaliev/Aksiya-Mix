@@ -19,5 +19,5 @@ struct UserData: Codable {
     var gender: Int?
     var district: Int?
     var region: Int?
-    var birthday: Int?
+    var birthday: String?
 }

@@ -17,6 +17,12 @@ class ProfileEditView: UIView {
         return view
     }()
     
+    lazy var tableView: UITableView = {
+        let table = UITableView()
+        table.backgroundColor = .cyan
+        return table
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
@@ -29,6 +35,7 @@ class ProfileEditView: UIView {
     
     private func setUI() {
         
+        addSubview(tableView)
         addSubview(topNavigation)
         backgroundColor = .backColor
     }
@@ -38,7 +45,10 @@ class ProfileEditView: UIView {
             make.top.leading.trailing.equalTo(self)
             make.height.equalTo(85.toScreen)
         }
-        
+        tableView.snp.makeConstraints { make in
+            make.left.right.bottom.equalTo(self)
+            make.top.equalTo(topNavigation.snp_bottomMargin)
+        }
     }
     
 }

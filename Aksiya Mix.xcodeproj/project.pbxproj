@@ -107,6 +107,7 @@
 		8CB1C0E62B939FF400F510BB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB1C0E52B939FF400F510BB /* SwiftyJSON */; };
 		8CB7EC682BAD9B290031DB6E /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7EC662BAD9B290031DB6E /* regions.json */; };
 		8CB7EC692BAD9B290031DB6E /* districts.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7EC672BAD9B290031DB6E /* districts.json */; };
+		8CB9707D2BBD300800E54815 /* ProfileEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9707C2BBD300800E54815 /* ProfileEditCell.swift */; };
 		8CBA16B22B9CB80B00C82911 /* RatingStarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA16B12B9CB80B00C82911 /* RatingStarsView.swift */; };
 		8CBA40052B77933800F92F98 /* SingleCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40042B77933800F92F98 /* SingleCompanyViewModel.swift */; };
 		8CBA40072B77934300F92F98 /* SingleCompanyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBA40062B77934300F92F98 /* SingleCompanyView.swift */; };
@@ -315,6 +316,7 @@
 		8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViews.swift; sourceTree = "<group>"; };
 		8CB7EC662BAD9B290031DB6E /* regions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = regions.json; sourceTree = "<group>"; };
 		8CB7EC672BAD9B290031DB6E /* districts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = districts.json; sourceTree = "<group>"; };
+		8CB9707C2BBD300800E54815 /* ProfileEditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditCell.swift; sourceTree = "<group>"; };
 		8CBA16B12B9CB80B00C82911 /* RatingStarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStarsView.swift; sourceTree = "<group>"; };
 		8CBA40042B77933800F92F98 /* SingleCompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCompanyViewModel.swift; sourceTree = "<group>"; };
 		8CBA40062B77934300F92F98 /* SingleCompanyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCompanyView.swift; sourceTree = "<group>"; };
@@ -730,6 +732,7 @@
 				8C8742C22BBD239B00F897BB /* ProfileEditController.swift */,
 				8C8742C42BBD25B400F897BB /* ProfileEditView.swift */,
 				8C8742C62BBD25DC00F897BB /* ProfileEditViewModel.swift */,
+				8CB9707C2BBD300800E54815 /* ProfileEditCell.swift */,
 			);
 			path = ProfileEdit;
 			sourceTree = "<group>";
@@ -1449,6 +1452,7 @@
 				8C8275CE2B7B6A3D004C445B /* LikedView.swift in Sources */,
 				8C19B0B32B63556A007D8872 /* Aksiya_Mix.xcdatamodeld in Sources */,
 				8CD14DD32B93ACF200D813D1 /* PhoneDM.swift in Sources */,
+				8CB9707D2BBD300800E54815 /* ProfileEditCell.swift in Sources */,
 				8CA197B52B7472170025E9F9 /* EnterPhoneViewController.swift in Sources */,
 				8CA0EC562B92E6D0009DF9B7 /* HttpMethodType.swift in Sources */,
 				8C7B9DC62B836AD400372CB1 /* UserView.swift in Sources */,

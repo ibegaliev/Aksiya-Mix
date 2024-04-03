@@ -14,10 +14,10 @@ class ProfileEditController: AksiyaViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setController()
-        title = "SOMEEEEEEEEEE"
     }
     
     private func setController() {
+        title = LyricsManager.getLyrics(type: .editProfile)
         view.addSubview(viewModel.view)
         viewModel.view.snp.makeConstraints { make in
             make.edges.equalTo(view)
