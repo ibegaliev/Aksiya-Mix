@@ -8,7 +8,7 @@
 import UIKit
 
 protocol EnterPhoneViewControllerDelegate {
-    func saved()
+    func saved(data: UserTokenDM?)
 }
 
 class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate, EnterCodeDelegate {
@@ -67,8 +67,8 @@ class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate, EnterC
         dismiss(animated: true)
     }
     
-    func saved() {
-        viewModel.delegate?.saved()
+    func saved(data: UserTokenDM?) {
+        viewModel.delegate?.saved(data: data)
     }
 
 }

@@ -100,10 +100,11 @@ class UserView: UIView {
             } else {
                 data = [
                     [
-                        UserViewData(icon: .messageDotsCircle, title: "Fikir-mulohazalar"),
-                        UserViewData(icon: .shieldTick, title: "Shartlar va qoidalar"),
-                        UserViewData(icon: .messageDotsCircle, title: "Ishtimoiy tarmoqlarda"),
-                        UserViewData(icon: .infoCircle, title: "Ilova haqida")
+                        UserViewData(icon: .settingsUser, title: LyricsManager.getLyrics(type: .settings)),
+                        UserViewData(icon: .messageDotsCircle, title: LyricsManager.getLyrics(type: .conditions)),
+                        UserViewData(icon: .shieldTick, title: LyricsManager.getLyrics(type: .thoughts)),
+                        UserViewData(icon: .messageDotsCircle, title: LyricsManager.getLyrics(type: .messangers)),
+                        UserViewData(icon: .infoCircle, title: LyricsManager.getLyrics(type: .aboutThis))
                     ]
                 ]
             }

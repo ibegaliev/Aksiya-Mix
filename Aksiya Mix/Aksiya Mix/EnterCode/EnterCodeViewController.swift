@@ -8,7 +8,7 @@
 import UIKit
 
 protocol EnterCodeDelegate {
-    func saved()
+    func saved(data: UserTokenDM?)
 }
 
 class EnterCodeViewController: UIViewController, EnterCodeViewDelegate, EnterNameDelegate {
@@ -52,9 +52,9 @@ class EnterCodeViewController: UIViewController, EnterCodeViewDelegate, EnterNam
     func dismissTapped() {
         dismiss(animated: true)
     }
-
-    func saved() {
-        viewModel.delegate?.saved()
+    
+    func saved(data: UserTokenDM?) {
+        viewModel.delegate?.saved(data: data)
     }
     
 }

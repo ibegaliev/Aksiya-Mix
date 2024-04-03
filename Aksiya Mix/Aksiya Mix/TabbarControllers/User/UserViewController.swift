@@ -54,8 +54,13 @@ class UserViewController: AksiyaViewController, UserViewDelegate, AlertViewDeleg
         viewModel.view.setData()
     }
     
-    func saved() {
+    func saved(data: UserTokenDM?) {
         viewModel.view.setData()
+        viewModel.getData()
+        viewModel.uploadData(
+            data: UserData(fullname: data?.name)
+        )
     }
+
     
 }

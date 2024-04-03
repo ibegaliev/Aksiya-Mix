@@ -8,7 +8,7 @@
 import UIKit
 
 protocol EnterNameDelegate {
-    func saved()
+    func saved(data: UserTokenDM?)
 }
 
 class EnterNameController: UIViewController, EnterNameViewDelegate {
@@ -31,9 +31,8 @@ class EnterNameController: UIViewController, EnterNameViewDelegate {
     func nextTapped(name: String?) {
         dismissTapped()
         viewModel.data?.name = name
-        print(viewModel.data)
         UserTokenManager.manager.saveData(data: viewModel.data)
-        viewModel.delegate?.saved()
+        viewModel.delegate?.saved(data: viewModel.data)
     }
     
     @objc
