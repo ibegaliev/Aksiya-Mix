@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C0143912BBE98F30095722F /* AboutAppConstroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0143902BBE98F30095722F /* AboutAppConstroller.swift */; };
+		8C0143932BBE9B5A0095722F /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0143922BBE9B5A0095722F /* AboutViewModel.swift */; };
+		8C0143952BBE9B710095722F /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0143942BBE9B710095722F /* AboutView.swift */; };
 		8C06580C2B73248700F6C9C3 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C06580B2B73248700F6C9C3 /* RegisterView.swift */; };
 		8C06580E2B73249300F6C9C3 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C06580D2B73249300F6C9C3 /* RegisterModel.swift */; };
 		8C0658102B73249E00F6C9C3 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C06580F2B73249E00F6C9C3 /* RegisterViewModel.swift */; };
@@ -215,6 +218,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C0143902BBE98F30095722F /* AboutAppConstroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppConstroller.swift; sourceTree = "<group>"; };
+		8C0143922BBE9B5A0095722F /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
+		8C0143942BBE9B710095722F /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		8C06580B2B73248700F6C9C3 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		8C06580D2B73249300F6C9C3 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		8C06580F2B73249E00F6C9C3 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -435,6 +441,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C01438F2BBE98030095722F /* AboutApp */ = {
+			isa = PBXGroup;
+			children = (
+				8C0143902BBE98F30095722F /* AboutAppConstroller.swift */,
+				8C0143922BBE9B5A0095722F /* AboutViewModel.swift */,
+				8C0143942BBE9B710095722F /* AboutView.swift */,
+			);
+			path = AboutApp;
+			sourceTree = "<group>";
+		};
 		8C0658072B73234600F6C9C3 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,7 +501,6 @@
 				8C926F952B69F1700049A1B7 /* SingleProduct */,
 				8CBA40032B77905100F92F98 /* SingleCompany */,
 				8CBE7BC72B78F0E0001559E9 /* SingleCategory */,
-				8CFF7A602BAAB69E0059BF4D /* Alert */,
 				8C4D83502BB7FA1E000AC37F /* AddNewMarket */,
 			);
 			path = "Aksiya Mix";
@@ -711,6 +726,7 @@
 			children = (
 				8C85BC2A2B8265220047F54C /* UserViewController.swift */,
 				8C7B9DC72B836ADB00372CB1 /* UserViewModel.swift */,
+				8C7B9DC52B836AD400372CB1 /* UserView.swift */,
 				8CCF8E922BBC936900280C53 /* models */,
 				8CCF8E912BBC935300280C53 /* views */,
 				8C8742C02BBD237000F897BB /* Controllers */,
@@ -722,6 +738,8 @@
 			isa = PBXGroup;
 			children = (
 				8C8742C12BBD238C00F897BB /* ProfileEdit */,
+				8CFF7A602BAAB69E0059BF4D /* Alert */,
+				8C01438F2BBE98030095722F /* AboutApp */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1028,7 +1046,6 @@
 		8CCF8E912BBC935300280C53 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				8C7B9DC52B836AD400372CB1 /* UserView.swift */,
 				8C7B9DC92B83747700372CB1 /* UserTopView.swift */,
 				8CA512F32BA7F90D0010624C /* UserNamesCell.swift */,
 				8CE63E642B8488110033B999 /* UserCell.swift */,
@@ -1419,6 +1436,7 @@
 				8CE832EE2B638400004B4E6D /* BaseViewController.swift in Sources */,
 				8C8EFF942B7871E0002DE31D /* CategoryController.swift in Sources */,
 				8C97CEAB2BA4CC4600310C21 /* ShareLink.swift in Sources */,
+				8C0143932BBE9B5A0095722F /* AboutViewModel.swift in Sources */,
 				8C8742C72BBD25DC00F897BB /* ProfileEditViewModel.swift in Sources */,
 				8C47E7182B91D12900B59A25 /* NetworkService.swift in Sources */,
 				8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */,
@@ -1438,6 +1456,7 @@
 				8CEA12FF2B6C6498009CADEB /* DescriptionView.swift in Sources */,
 				8CF455992B64E67600E3EAB4 /* TypesCell.swift in Sources */,
 				8CC9BD2A2B9DCBDF00180758 /* BannerViewFlowLayout.swift in Sources */,
+				8C0143952BBE9B710095722F /* AboutView.swift in Sources */,
 				8CE63E652B8488110033B999 /* UserCell.swift in Sources */,
 				8CF7F3BF2BA1860300C36DC5 /* SaleTopView.swift in Sources */,
 				8CC9BD212B9DCBDF00180758 /* ZYPlayer.swift in Sources */,
@@ -1522,6 +1541,7 @@
 				8C1EB31B2B9B45B3007061CD /* CompanyRatingCell.swift in Sources */,
 				8C9BA7982B6A1F93008C9420 /* SingleProductView.swift in Sources */,
 				8CE832F22B6384A8004B4E6D /* Ex+UIColor.swift in Sources */,
+				8C0143912BBE98F30095722F /* AboutAppConstroller.swift in Sources */,
 				8C8EFF902B7871CD002DE31D /* CategoryViewModel.swift in Sources */,
 				8CEA8A422B775CA7000071FC /* CompanyViewModel.swift in Sources */,
 				8C85BC2B2B8265220047F54C /* UserViewController.swift in Sources */,

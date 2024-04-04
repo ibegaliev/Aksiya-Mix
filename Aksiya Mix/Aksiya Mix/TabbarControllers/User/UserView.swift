@@ -11,6 +11,8 @@ protocol UserViewDelegate {
     func auth()
 
     func editProfileTapped()
+    
+    func aboutTapped()
     func loguotTapped()
 }
 
@@ -180,7 +182,7 @@ extension UserView: UITableViewDelegate, UITableViewDataSource {
             }  else if indexPath.row == 3 {
                 
             }  else if indexPath.row == 4 {
-                
+                delegate?.aboutTapped()
             }  else if indexPath.row == 5 {
                 delegate?.loguotTapped()
             }

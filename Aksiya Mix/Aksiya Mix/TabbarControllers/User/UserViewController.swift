@@ -64,6 +64,13 @@ extension UserViewController {
         
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    func aboutTapped() {
+        let controller = AboutAppConstroller()
+        
+        controller.modalPresentationStyle = .overFullScreen
+        present(controller, animated: true)
+    }
 
     func loguotTapped() {
         let alert = AlertController()
