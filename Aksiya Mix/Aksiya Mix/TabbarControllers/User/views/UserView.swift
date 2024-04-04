@@ -151,6 +151,9 @@ extension UserView: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.row == data[indexPath.section - 1].count - 1 {
             cell.cellType = .bottom
             cell.lineView.isHidden = true
+        } else {
+            cell.cellType = .center
+            cell.lineView.isHidden = false
         }
         return cell
     }
