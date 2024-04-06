@@ -69,6 +69,8 @@
 		8C8275CE2B7B6A3D004C445B /* LikedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8275CD2B7B6A3D004C445B /* LikedView.swift */; };
 		8C8275D02B7B6A47004C445B /* LikedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8275CF2B7B6A47004C445B /* LikedViewModel.swift */; };
 		8C8275D52B7B7B1F004C445B /* LikedSordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8275D42B7B7B1F004C445B /* LikedSordsView.swift */; };
+		8C8282D12BC1FD230010D0E9 /* SelectableValuteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8282D02BC1FD220010D0E9 /* SelectableValuteCell.swift */; };
+		8C8282D32BC202350010D0E9 /* SelectablePrinceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8282D22BC202350010D0E9 /* SelectablePrinceCell.swift */; };
 		8C8357882BA423D4007A68D8 /* Ex+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8357872BA423D4007A68D8 /* Ex+UIButton.swift */; };
 		8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */; };
 		8C85AF6C2B77A6DD00B3A7FC /* CompanyMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C85AF6B2B77A6DD00B3A7FC /* CompanyMainCell.swift */; };
@@ -292,6 +294,8 @@
 		8C8275CD2B7B6A3D004C445B /* LikedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedView.swift; sourceTree = "<group>"; };
 		8C8275CF2B7B6A47004C445B /* LikedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedViewModel.swift; sourceTree = "<group>"; };
 		8C8275D42B7B7B1F004C445B /* LikedSordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedSordsView.swift; sourceTree = "<group>"; };
+		8C8282D02BC1FD220010D0E9 /* SelectableValuteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableValuteCell.swift; sourceTree = "<group>"; };
+		8C8282D22BC202350010D0E9 /* SelectablePrinceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectablePrinceCell.swift; sourceTree = "<group>"; };
 		8C8357872BA423D4007A68D8 /* Ex+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIButton.swift"; sourceTree = "<group>"; };
 		8C8377FE2B6AA10B001D3C6F /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		8C85AF6B2B77A6DD00B3A7FC /* CompanyMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyMainCell.swift; sourceTree = "<group>"; };
@@ -672,6 +676,8 @@
 				8C69C4BC2BC1E36A006D9E82 /* SelectableFilterCell.swift */,
 				8C69C4BE2BC1ECAD006D9E82 /* SelectableCategoryCell.swift */,
 				8C69C4C02BC1F52F006D9E82 /* SelectableCityCell.swift */,
+				8C8282D02BC1FD220010D0E9 /* SelectableValuteCell.swift */,
+				8C8282D22BC202350010D0E9 /* SelectablePrinceCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1478,6 +1484,7 @@
 				8C0143932BBE9B5A0095722F /* AboutViewModel.swift in Sources */,
 				8C8742C72BBD25DC00F897BB /* ProfileEditViewModel.swift in Sources */,
 				8C47E7182B91D12900B59A25 /* NetworkService.swift in Sources */,
+				8C8282D32BC202350010D0E9 /* SelectablePrinceCell.swift in Sources */,
 				8C8D4AF82B68AD76007D1D77 /* HeaderView.swift in Sources */,
 				8C19B0A92B63556A007D8872 /* AppDelegate.swift in Sources */,
 				8CE67A302B6BA07100D6E428 /* SelectableView.swift in Sources */,
@@ -1543,6 +1550,7 @@
 				8CC185F42B751A5400B13400 /* EnterCodeViewController.swift in Sources */,
 				8C0658122B73254200F6C9C3 /* RegisterViewController.swift in Sources */,
 				8C8377FF2B6AA10B001D3C6F /* FeedbackView.swift in Sources */,
+				8C8282D12BC1FD230010D0E9 /* SelectableValuteCell.swift in Sources */,
 				8CCE208B2BA567180084AB53 /* StoreHeaderView.swift in Sources */,
 				8C8B263A2B9C0FB60068A52C /* RatingCountView.swift in Sources */,
 				8C930B6F2B95D75E0048778B /* UserTokenDM.swift in Sources */,
