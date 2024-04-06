@@ -21,6 +21,7 @@ class SearchFilterView: UIView {
         collection.dataSource = self
         collection.backgroundColor = .backColor
         collection.showsVerticalScrollIndicator = false
+        collection.register(SelectableCityCell.self, forCellWithReuseIdentifier: "SelectableCityCell")
         collection.register(SelectableFilterCell.self, forCellWithReuseIdentifier: "SelectableFilterCell")
         collection.register(SelectableCategoryCell.self, forCellWithReuseIdentifier: "SelectableCategoryCell")
         return collection
@@ -67,8 +68,11 @@ extension SearchFilterView: UICollectionViewDelegate, UICollectionViewDataSource
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectableCategoryCell", for: indexPath) as! SelectableCategoryCell
             
             return cell
-        } else {
+        } else if indexPath.row == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectableCityCell", for: indexPath) as! SelectableCityCell
             
+            return cell
+
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectableFilterCell", for: indexPath) as! SelectableFilterCell
         
@@ -80,6 +84,8 @@ extension SearchFilterView: UICollectionViewDelegate, UICollectionViewDataSource
             return CGSize(width: 0.screenWight, height: 70)
         } else if indexPath.row == 1 {
             return CGSize(width: 0.screenWight, height: 110)
+        } else if indexPath.row == 2 {
+            return CGSize(width: 0.screenWight, height: 90)
         }
         return CGSize(width: 0.screenWight, height: 70)
     }
