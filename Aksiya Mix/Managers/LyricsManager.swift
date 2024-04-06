@@ -41,6 +41,11 @@ enum LyricsManagerType {
     case aboutThis
     case exit
     
+    //search
+    case searchWithMe
+    case popularOffers
+    case lastSearchs
+    
     case addStore
     case descriptionAddStore
 }
@@ -115,6 +120,13 @@ class LyricsManager {
                     return "Do'kon qo'shish"
                 case .descriptionAddStore:
                     return "AksiyaMixda do'koningizni ro'yatdan o'tkazib chegirmalarni joylab koproq xaridor toping."
+                    
+                case .searchWithMe:
+                    return "Nimadir qidirib ko'ring, \n biz albatta topamiz. \n"
+                case .popularOffers:
+                    return "Mashxur takliflar"
+                case .lastSearchs:
+                    return "Oxirgi qidirilganlar"
             }
         } else {
             switch type {
@@ -183,6 +195,13 @@ class LyricsManager {
                     return "Добавить магазин"
                 case .descriptionAddStore:
                     return "Зарегистрируйте свой магазин в AksiyaMix и находите больше клиентов, размещая скидки."
+                    
+                case .searchWithMe:
+                    return "Ищите что-нибудь, \n мы обязательно найдём. \n"
+                case .popularOffers:
+                    return "Популярные предложения"
+                case .lastSearchs:
+                    return "Недавно искали"
             }
         }
     }

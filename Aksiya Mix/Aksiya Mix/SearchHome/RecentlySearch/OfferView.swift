@@ -24,6 +24,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     lazy var topNavigation: SearchTextField = {
         let view = SearchTextField()
+        view.tf.keyboardType = .webSearch
         view.isButton = false
         view.backgroundColor = .white
         view.clipsToBounds = true
@@ -37,7 +38,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
         tv.separatorStyle = .none
         tv.backgroundColor = .backColor
         tv.showsVerticalScrollIndicator = false
-        tv.contentInset = .init(top: 4, left: 0, bottom: 50, right: 0)
+        tv.contentInset = .init(top: 20, left: 0, bottom: 50, right: 0)
         tv.register(OfferCell.self, forCellReuseIdentifier: "OfferCell")
         tv.register(EmptyCell.self, forCellReuseIdentifier: "EmptyCell")
         tv.register(CategoryCell.self, forCellReuseIdentifier: "CategoryCell")
@@ -64,7 +65,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.top.equalTo(self).inset(12)
+            make.top.equalTo(self).inset(48.toScreen)
             make.left.right.bottom.equalTo(self)
         }
         tableView.snp.makeConstraints { make in
@@ -72,6 +73,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
         }
         topNavigation.snp.makeConstraints { make in
             make.width.equalTo(0.screenWight - 32)
+            make.left.equalTo(self).inset(32)
         }
     }
     
@@ -80,7 +82,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if true {
+        if false {
             if section == 0 {
                 return 1
             }
@@ -90,13 +92,14 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            if false {
+            if true {
                 if indexPath.row == 0 {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
                     cell.mainImage.isHidden = true
                     cell.chevronImage.isHidden = true
+                    cell.backView.backgroundColor = .backColor
                     cell.titleLabel.font = .appFont(ofSize: 18, weight: .bold)
-                    cell.titleLabel.text = "Oxirgi qidirilganlar"
+                    cell.titleLabel.text = LyricsManager.getLyrics(type: .lastSearchs)
                     return cell
                 } else {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OfferCell", for: indexPath) as! OfferCell
@@ -104,17 +107,17 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
                     cell.titleLabel.font = .appFont(ofSize: 14, weight: .medium)
                     return cell
                 }
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyCell", for: indexPath) as! EmptyCell
-                
-                return cell
             }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyCell", for: indexPath) as! EmptyCell
+                
+            return cell
         } else {
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
                 cell.mainImage.isHidden = true
                 cell.chevronImage.isHidden = true
-                cell.titleLabel.text = "Ko'p qidirilganlar"
+                cell.backView.backgroundColor = .backColor
+                cell.titleLabel.text = LyricsManager.getLyrics(type: .popularOffers)
                 cell.titleLabel.font = .appFont(ofSize: 18, weight: .bold)
                 return cell
                 

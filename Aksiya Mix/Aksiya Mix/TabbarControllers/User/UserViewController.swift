@@ -67,16 +67,15 @@ extension UserViewController {
     
     func aboutTapped() {
         let controller = AboutAppConstroller()
-        
         controller.modalPresentationStyle = .overFullScreen
-        present(controller, animated: true)
+        present(controller, animated: false)
     }
 
     func loguotTapped() {
         let alert = AlertController()
         alert.viewModel.delegate = self
         alert.modalPresentationStyle = .overFullScreen
-        present(alert, animated: true)
+        present(alert, animated: false)
     }
     
 }

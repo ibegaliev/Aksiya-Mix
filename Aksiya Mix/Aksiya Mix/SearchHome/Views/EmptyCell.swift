@@ -11,15 +11,15 @@ class EmptyCell: UITableViewCell {
     
     lazy var mainImage: UIImageView = {
         let image = UIImageView()
-        image.image = .searchMd
-        
+        image.image = .icSearchShop
+        image.contentMode = .scaleAspectFill
         return image
     }()
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text, Some text"
-        lbl.font = .appFont(ofSize: 14, weight: .medium)
+        lbl.text = "Nimadir qidirib ko'ring, \n biz albatta topamiz. \n"
+        lbl.font = .appFont(ofSize: 18, weight: .medium)
         lbl.numberOfLines = 0
         lbl.textAlignment = .center
         return lbl
@@ -57,7 +57,7 @@ class EmptyCell: UITableViewCell {
             make.edges.equalTo(self)
         }
         mainImage.snp.makeConstraints { make in
-            make.width.height.equalTo(75.toScreen)
+            make.width.height.equalTo(85.toScreen)
         }
     }
     
