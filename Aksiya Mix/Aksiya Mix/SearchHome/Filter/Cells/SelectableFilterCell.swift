@@ -18,6 +18,8 @@ class SelectableFilterCell: UICollectionViewCell {
     
     lazy var allButton: BlueButton = {
         let btn = BlueButton()
+        btn.setTitleColor(.white, for: .normal)
+        btn.backgroundColor = .selectBlue
         btn.setTitle("Hammasi", for: .normal)
         btn.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
         return btn
@@ -25,6 +27,7 @@ class SelectableFilterCell: UICollectionViewCell {
     
     lazy var lowButton: BlueButton = {
         let btn = BlueButton()
+        btn.backgroundColor = .white
         btn.setTitle("Eng arzon", for: .normal)
         btn.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
         return btn
@@ -32,6 +35,7 @@ class SelectableFilterCell: UICollectionViewCell {
     
     lazy var hegButton: BlueButton = {
         let btn = BlueButton()
+        btn.backgroundColor = .white
         btn.setTitle("Eng qimmat", for: .normal)
         btn.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
         return btn
@@ -64,6 +68,7 @@ class SelectableFilterCell: UICollectionViewCell {
     }
     
     private func setUI() {
+        contentView.backgroundColor = .backColor
         contentView.addSubview(mainStack)
         [titleLabel, buttonsStack].forEach { item in
             mainStack.addArrangedSubview(item)

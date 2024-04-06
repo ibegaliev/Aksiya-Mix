@@ -17,7 +17,10 @@ class SearchFilterController: AksiyaViewController {
     }
     
     private func setController() {
-        view = viewModel.view
+        view.addSubview(viewModel.view)
+        viewModel.view.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
     }
     
 }
