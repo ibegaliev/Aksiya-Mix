@@ -26,8 +26,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     lazy var topNavigation: SearchTextField = {
         let view = SearchTextField()
-        view.tf.keyboardType = .webSearch
-//        view.tf.becomeFirstResponder()
+        view.tf.becomeFirstResponder()
         view.isButton = false
         view.backgroundColor = .white
         view.clipsToBounds = true
@@ -60,6 +59,9 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
         super.init(frame: frame)
         setUI()
         setConstraints()
+        DispatchQueue.main.async { [self] in
+            topNavigation.tf.becomeFirstResponder()
+        }
     }
     
     required init?(coder: NSCoder) {

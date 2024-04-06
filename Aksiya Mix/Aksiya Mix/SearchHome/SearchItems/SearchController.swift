@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchController: UIViewController {
+class SearchController: AksiyaViewController, SearchItemsDelegate {
     
     var viewModel = SearchViewModel()
     
@@ -16,12 +16,29 @@ class SearchController: UIViewController {
         setUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.isUserInteractionEnabled = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.isUserInteractionEnabled = true
+    }
+    
     private func setUI() {
         title = "Natijalar"
+        viewModel.resultView.delegate = self
         view.addSubview(viewModel.resultView)
         viewModel.resultView.snp.makeConstraints { make in
             make.edges.equalTo(view)
         }
     }    
-        
+    
+    override func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }

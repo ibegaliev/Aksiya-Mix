@@ -7,7 +7,29 @@
 
 import UIKit
 
+protocol SearchItemsDelegate {
+    func backButtonTapped()
+}
+
 class SearchItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    var delegate: SearchItemsDelegate?
+    
+    lazy var topNavigation: SearchTextField = {
+        let view = SearchTextField()
+        view.isButton = false
+        view.clipsToBounds = true
+        view.backgroundColor = .white
+        return view
+    }()
+    
+    lazy var backButton: UIButton = {
+        let btn = UIButton()
+        btn.setImage(.chevronLeft, for: .normal)
+        btn.imageView?.contentMode = .scaleToFill
+        btn.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        return btn
+    }()
     
     lazy var topSelectableView: TopSelectableView = {
         let view = TopSelectableView()
@@ -38,12 +60,18 @@ class SearchItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         cv.register(SingleProductCell.self, forCellWithReuseIdentifier: "SingleProductCell")
         return cv
     }()
-
+    
+    lazy var navigationStack: UIStackView = {
+        let stack = UIStackView()
+        stack.spacing = 4
+        stack.axis = .horizontal
+        return stack
+    }()
     
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.alignment = .fill
+        stack.alignment = .center
         stack.distribution = .fill
         stack.spacing = 4
         return stack
@@ -62,16 +90,41 @@ class SearchItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     private func setUI() {
         backgroundColor = .backColor
         addSubview(mainStack)
-        [topSelectableView, showResultView, collectionView].forEach { item in
+        
+        [navigationStack, topSelectableView, showResultView, collectionView].forEach { item in
             mainStack.addArrangedSubview(item)
+        }
+        
+        [backButton, topNavigation].forEach { item in
+            navigationStack.addArrangedSubview(item)
         }
     }
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.top.equalTo(self).inset(16.toScreen)
+            make.top.equalTo(self).inset(48.toScreen)
             make.left.right.bottom.equalTo(self)
         }
+        navigationStack.snp.makeConstraints { make in
+            make.width.equalTo(0.screenWight - 24)
+        }
+        topSelectableView.snp.makeConstraints { make in
+            make.width.equalTo(0.screenWight)
+        }
+        showResultView.snp.makeConstraints { make in
+            make.width.equalTo(0.screenWight)
+        }
+        collectionView.snp.makeConstraints { make in
+            make.width.equalTo(0.screenWight)
+        }
+        backButton.snp.makeConstraints { make in
+            make.width.equalTo(24)
+        }
+    }
+    
+    @objc
+    func backButtonTapped() {
+        delegate?.backButtonTapped()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
