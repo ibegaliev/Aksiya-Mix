@@ -16,6 +16,18 @@ class RecentlySearchController: AksiyaViewController, OfferViewDelegate {
         setUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.isUserInteractionEnabled = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.isUserInteractionEnabled = false
+    }
+    
     private func setUI() {
         viewModel.view.delegate = self
         backView.addSubview(viewModel.view)
@@ -28,6 +40,10 @@ class RecentlySearchController: AksiyaViewController, OfferViewDelegate {
         let controller = SearchController()
         
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    override func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
     }
     
 }

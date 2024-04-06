@@ -9,6 +9,8 @@ import UIKit
 
 protocol OfferViewDelegate {
     func didSelect(indexPath: IndexPath)
+    
+    func backButtonTapped()
 }
 
 class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
@@ -25,10 +27,19 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     lazy var topNavigation: SearchTextField = {
         let view = SearchTextField()
         view.tf.keyboardType = .webSearch
+//        view.tf.becomeFirstResponder()
         view.isButton = false
         view.backgroundColor = .white
         view.clipsToBounds = true
         return view
+    }()
+    
+    lazy var backButton: UIButton = {
+        let btn = UIButton()
+        btn.setImage(.chevronLeft, for: .normal)
+        btn.imageView?.contentMode = .scaleToFill
+        btn.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        return btn
     }()
     
     lazy var tableView: UITableView = {
@@ -58,6 +69,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     private func setUI() {
         backgroundColor = .backColor
         addSubview(mainStack)
+        addSubview(backButton)
         [topNavigation, tableView].forEach { item in
             mainStack.addArrangedSubview(item)
         }
@@ -75,6 +87,16 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
             make.width.equalTo(0.screenWight - 32)
             make.left.equalTo(self).inset(32)
         }
+        backButton.snp.makeConstraints { make in
+            make.top.bottom.equalTo(topNavigation).inset(-24)
+            make.left.equalTo(self).inset(6)
+            make.width.equalTo(24)
+        }
+    }
+    
+    @objc
+    func backButtonTapped() {
+        delegate?.backButtonTapped()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

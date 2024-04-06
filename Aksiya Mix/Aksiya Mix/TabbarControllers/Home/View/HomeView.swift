@@ -78,6 +78,10 @@ class HomeView: UIView, OfferViewDelegate {
         delegate?.offerViewSelected(index: indexPath.row)
     }
     
+    func backButtonTapped() {
+        
+    }
+    
 }
 
 extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ItemsCellDelegate {
