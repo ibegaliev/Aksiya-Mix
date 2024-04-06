@@ -12,7 +12,13 @@ struct TopSelectableDM {
     var image: UIImage
 }
 
+protocol TopSelectableDelegate {
+    func filterTapped()
+}
+
 class TopSelectableView: UICollectionViewCell {
+    
+    var delegate: TopSelectableDelegate?
     
     let data: [TopSelectableDM] = [
         TopSelectableDM(name: "Filtr", image: .filterLines),
@@ -34,7 +40,7 @@ class TopSelectableView: UICollectionViewCell {
         cv.dataSource = self
         cv.showsVerticalScrollIndicator = false
         cv.showsHorizontalScrollIndicator = false
-        cv.contentInset = UIEdgeInsets(top: 4, left: 16, bottom: 0, right: 16)
+        cv.contentInset = UIEdgeInsets(top: 4, left: 16, bottom: 0, right: 50)
         cv.register(TopSelectableCell.self, forCellWithReuseIdentifier: "TopSelectableCell")
         return cv
     }()
@@ -81,6 +87,12 @@ extension TopSelectableView: UICollectionViewDelegate, UICollectionViewDataSourc
             ) + 44,
             height: collectionView.frame.height-6
         )
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            delegate?.filterTapped()
+        }
     }
     
 }

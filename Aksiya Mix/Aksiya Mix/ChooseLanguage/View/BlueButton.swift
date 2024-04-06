@@ -30,4 +30,9 @@ class BlueButton: UIButton {
         }
     }
     
+    func setBorder() {
+        layer.borderColor = UIColor.selectBlue.cgColor
+        layer.borderWidth = 1
+    }
+    
 }

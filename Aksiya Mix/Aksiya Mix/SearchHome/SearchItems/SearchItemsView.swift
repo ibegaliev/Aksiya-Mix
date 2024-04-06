@@ -9,9 +9,10 @@ import UIKit
 
 protocol SearchItemsDelegate {
     func backButtonTapped()
+    func filterTapped()
 }
 
-class SearchItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class SearchItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, TopSelectableDelegate {
     
     var delegate: SearchItemsDelegate?
     
@@ -107,6 +108,10 @@ class SearchItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         }
     }
     
+    func filterTapped() {
+        delegate?.filterTapped()
+    }
+    
     @objc
     func backButtonTapped() {
         delegate?.backButtonTapped()
@@ -119,7 +124,7 @@ class SearchItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopSelectableView", for: indexPath) as! TopSelectableView
-            
+            cell.delegate = self
             return cell
         } else if indexPath.row == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowResultView", for: indexPath) as! ShowResultView

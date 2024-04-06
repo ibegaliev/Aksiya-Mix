@@ -40,4 +40,10 @@ class SearchController: AksiyaViewController, SearchItemsDelegate {
         navigationController?.popViewController(animated: true)
     }
     
+    func filterTapped() {
+        let controller = SearchFilterController()
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
 }
