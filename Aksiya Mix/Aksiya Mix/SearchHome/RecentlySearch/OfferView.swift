@@ -51,8 +51,8 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
         tv.showsVerticalScrollIndicator = false
         tv.contentInset = .init(top: 20, left: 0, bottom: 50, right: 0)
         tv.register(OfferCell.self, forCellReuseIdentifier: "OfferCell")
+        tv.register(OfferItemCell.self, forCellReuseIdentifier: "OfferItemCell")
         tv.register(EmptyCell.self, forCellReuseIdentifier: "EmptyCell")
-        tv.register(CategoryCell.self, forCellReuseIdentifier: "CategoryCell")
         return tv
     }()
     
@@ -105,28 +105,29 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if false {
-            if section == 0 {
-                return 1
-            }
+            return 6
+        }
+        if section == 0 {
+            return 1
         }
         return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            if true {
+            if false {
                 if indexPath.row == 0 {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
-                    cell.mainImage.isHidden = true
-                    cell.chevronImage.isHidden = true
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "OfferItemCell", for: indexPath) as! OfferItemCell
                     cell.backView.backgroundColor = .backColor
-                    cell.titleLabel.font = .appFont(ofSize: 18, weight: .bold)
-                    cell.titleLabel.text = LyricsManager.getLyrics(type: .lastSearchs)
+                    cell.rightIcon.isHidden = true
+                    cell.titleLabel.font = .appFont(ofSize: 18, weight: .semibold)
+                    cell.titleLabel.text = LyricsManager.getLyrics(type: .popularOffers)
                     return cell
                 } else {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "OfferCell", for: indexPath) as! OfferCell
-                    cell.mainImage.isHidden = true
-                    cell.titleLabel.font = .appFont(ofSize: 14, weight: .medium)
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "OfferItemCell", for: indexPath) as! OfferItemCell
+                    if indexPath.row == 1 { cell.cellType = .top }
+                    if indexPath.row == 5 { cell.cellType = .bottom }
+                    cell.titleLabel.text = "some text"
                     return cell
                 }
             }
@@ -135,18 +136,17 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
-                cell.mainImage.isHidden = true
-                cell.chevronImage.isHidden = true
+                let cell = tableView.dequeueReusableCell(withIdentifier: "OfferItemCell", for: indexPath) as! OfferItemCell
                 cell.backView.backgroundColor = .backColor
+                cell.rightIcon.isHidden = true
+                cell.titleLabel.font = .appFont(ofSize: 18, weight: .semibold)
                 cell.titleLabel.text = LyricsManager.getLyrics(type: .popularOffers)
-                cell.titleLabel.font = .appFont(ofSize: 18, weight: .bold)
                 return cell
-                
             } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "OfferCell", for: indexPath) as! OfferCell
-                cell.mainImage.isHidden = true
-                cell.titleLabel.font = .appFont(ofSize: 14, weight: .medium)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "OfferItemCell", for: indexPath) as! OfferItemCell
+                if indexPath.row == 1 { cell.cellType = .top }
+                if indexPath.row == 5 { cell.cellType = .bottom }
+                cell.titleLabel.text = "some text"
                 return cell
             }
         }
@@ -173,52 +173,4 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     
 }
 
-class OfferItemsCell: UITableViewCell {
-    
-    lazy var titleLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.text = "Barcha toifalar"
-        lbl.font = .appFont(ofSize: 14, weight: .regular)
-        return lbl
-    }()
-    
-    lazy var rightIcon: UIImageView = {
-        let img = UIImageView()
-        img.image = .chevronRight
-        return img
-    }()
-    
-    lazy var mainStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.spacing = 12
-        stack.distribution = .equalSpacing
-        stack.alignment = .fill
-        return stack
-    }()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setUI()
-        setConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
-    
-    private func setUI() {
-        selectionStyle = .none
-        contentView.addSubview(mainStack)
-        [titleLabel, rightIcon].forEach { item in
-            mainStack.addArrangedSubview(item)
-        }
-    }
-    
-    private func setConstraints() {
-        mainStack.snp.makeConstraints { make in
-            make.edges.equalTo(contentView).inset(12)
-        }
-    }
-    
-}
+
