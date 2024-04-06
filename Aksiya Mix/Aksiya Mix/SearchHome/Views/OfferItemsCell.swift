@@ -60,7 +60,7 @@ class OfferItemCell: UITableViewCell {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .appFont(ofSize: 14, weight: .medium)
+        lbl.font = .appFont(ofSize: 16, weight: .medium)
         return lbl
     }()
     
@@ -106,8 +106,7 @@ class OfferItemCell: UITableViewCell {
             make.left.right.equalTo(contentView).inset(16)
         }
         mainStack.snp.makeConstraints { make in
-            make.top.bottom.equalTo(backView).inset(10)
-            make.left.right.equalTo(backView).inset(12)
+            make.edges.equalTo(backView).inset(12)
         }
         rightIcon.snp.makeConstraints { make in
             make.width.height.equalTo(18)

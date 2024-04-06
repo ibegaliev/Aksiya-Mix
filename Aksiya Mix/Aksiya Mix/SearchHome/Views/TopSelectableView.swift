@@ -12,7 +12,7 @@ struct TopSelectableDM {
     var image: UIImage
 }
 
-class TopSelectableView: UIView {
+class TopSelectableView: UICollectionViewCell {
     
     let data: [TopSelectableDM] = [
         TopSelectableDM(name: "Filtr", image: .filterLines),
@@ -50,13 +50,12 @@ class TopSelectableView: UIView {
     }
     
     private func setUI() {
-        addSubview(collectionView)
+        contentView.addSubview(collectionView)
     }
     
     private func setConstraints() {
         collectionView.snp.makeConstraints { make in
-            make.edges.equalTo(self)
-            make.height.equalTo(40)
+            make.edges.equalTo(contentView).inset(-12)
         }
     }
     
@@ -77,8 +76,10 @@ extension TopSelectableView: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(
-            width: data[indexPath.row].name.widthOfString(usingFont: .appFont(ofSize: 14, weight: .medium)) + 36,
-            height: collectionView.frame.height-10
+            width: data[indexPath.row].name.widthOfString(
+                usingFont: .appFont(ofSize: 14, weight: .medium)
+            ) + 44,
+            height: collectionView.frame.height-6
         )
     }
     
@@ -103,7 +104,7 @@ class TopSelectableCell: UICollectionViewCell {
         let stack = UIStackView()
         stack.spacing = 2
         stack.alignment = .center
-        stack.distribution = .equalSpacing
+        stack.distribution = .fill
         stack.axis = .horizontal
         return stack
     }()

@@ -7,12 +7,12 @@
 
 import UIKit
 
-class ShowResultView: UIView {
+class ShowResultView: UICollectionViewCell {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "137 ta natija topildi"
-        lbl.font = .appFont(ofSize: 16, weight: .semibold)
+        lbl.text = "23ta na'tija topildi"
+        lbl.font = .appFont(ofSize: 14, weight: .semibold)
         return lbl
     }()
     
@@ -39,7 +39,7 @@ class ShowResultView: UIView {
     
     lazy var rightStack: UIStackView = {
         let stack = UIStackView()
-        stack.spacing = 8
+        stack.spacing = 24
         stack.alignment = .fill
         stack.distribution = .fillEqually
         stack.axis = .horizontal
@@ -57,7 +57,7 @@ class ShowResultView: UIView {
     }
     
     private func setUI() {
-        addSubview(mainStack)
+        contentView.addSubview(mainStack)
         [titleLabel, rightStack].forEach { item in
             mainStack.addArrangedSubview(item)
         }
@@ -68,9 +68,8 @@ class ShowResultView: UIView {
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.top.equalTo(self)
-            make.bottom.equalTo(self).inset(2)
-            make.left.right.equalTo(self).inset(16)
+            make.top.bottom.equalTo(contentView)
+            make.left.right.equalTo(contentView)
         }
         changeButton.snp.makeConstraints { make in
             make.width.height.equalTo(24)

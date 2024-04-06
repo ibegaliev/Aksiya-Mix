@@ -20,6 +20,7 @@ class SearchItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         view.isButton = false
         view.clipsToBounds = true
         view.backgroundColor = .white
+        view.tf.placeholder = "Chegirmalarni qidiring!"
         return view
     }()
     
@@ -29,18 +30,6 @@ class SearchItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         btn.imageView?.contentMode = .scaleToFill
         btn.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         return btn
-    }()
-    
-    lazy var topSelectableView: TopSelectableView = {
-        let view = TopSelectableView()
-
-        return view
-    }()
-    
-    lazy var showResultView: ShowResultView = {
-        let view = ShowResultView()
-        
-        return view
     }()
     
     lazy var layout: UICollectionViewFlowLayout = {
@@ -58,6 +47,8 @@ class SearchItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         cv.showsHorizontalScrollIndicator = false
         cv.contentInset = UIEdgeInsets(top: 4, left: 12, bottom: 50.toScreen, right: 12)
         cv.register(SingleProductCell.self, forCellWithReuseIdentifier: "SingleProductCell")
+        cv.register(TopSelectableView.self, forCellWithReuseIdentifier: "TopSelectableView")
+        cv.register(ShowResultView.self, forCellWithReuseIdentifier: "ShowResultView")
         return cv
     }()
     
@@ -91,7 +82,7 @@ class SearchItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         backgroundColor = .backColor
         addSubview(mainStack)
         
-        [navigationStack, topSelectableView, showResultView, collectionView].forEach { item in
+        [navigationStack, collectionView].forEach { item in
             mainStack.addArrangedSubview(item)
         }
         
@@ -107,12 +98,6 @@ class SearchItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         }
         navigationStack.snp.makeConstraints { make in
             make.width.equalTo(0.screenWight - 24)
-        }
-        topSelectableView.snp.makeConstraints { make in
-            make.width.equalTo(0.screenWight)
-        }
-        showResultView.snp.makeConstraints { make in
-            make.width.equalTo(0.screenWight)
         }
         collectionView.snp.makeConstraints { make in
             make.width.equalTo(0.screenWight)
@@ -132,12 +117,26 @@ class SearchItemsView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopSelectableView", for: indexPath) as! TopSelectableView
+            
+            return cell
+        } else if indexPath.row == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowResultView", for: indexPath) as! ShowResultView
+            
+            return cell
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SingleProductCell", for: indexPath) as! SingleProductCell
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.row == 0 {
+            return CGSize(width: 0.screenWight, height: 14)
+        } else if indexPath.row == 1 {
+            return CGSize(width: 0.screenWight - 32, height: 40)
+        }
         return CGSize(width: (0.screenWight-36)/2, height: 250.toScreen)
     }
     

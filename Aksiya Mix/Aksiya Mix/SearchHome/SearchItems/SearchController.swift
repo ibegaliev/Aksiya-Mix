@@ -29,7 +29,6 @@ class SearchController: AksiyaViewController, SearchItemsDelegate {
     }
     
     private func setUI() {
-        title = "Natijalar"
         viewModel.resultView.delegate = self
         view.addSubview(viewModel.resultView)
         viewModel.resultView.snp.makeConstraints { make in
