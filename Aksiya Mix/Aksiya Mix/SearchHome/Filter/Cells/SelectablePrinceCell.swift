@@ -16,28 +16,23 @@ class SelectablePrinceCell: UICollectionViewCell {
         return lbl
     }()
     
-    lazy var uzsButton: BlueButton = {
-        let btn = BlueButton()
-        btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = .selectBlue
-        btn.setTitle("🇺🇸 USD", for: .normal)
-        btn.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
-        return btn
+    lazy var fromField: SelectablePrinceItem = {
+        let field = SelectablePrinceItem()
+        field.field.placeholder = "...dan"
+        return field
     }()
     
-    lazy var usdButton: BlueButton = {
-        let btn = BlueButton()
-        btn.backgroundColor = .white
-        btn.setTitle("🇺🇿 UZS", for: .normal)
-        btn.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
-        return btn
+    lazy var toField: SelectablePrinceItem = {
+        let field = SelectablePrinceItem()
+        field.field.placeholder = "...gacha"
+        return field
     }()
 
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.spacing = 12
         stack.axis = .vertical
-        stack.alignment = .leading
+        stack.alignment = .fill
         return stack
     }()
     
@@ -66,7 +61,7 @@ class SelectablePrinceCell: UICollectionViewCell {
         [titleLabel, buttonsStack].forEach { item in
             mainStack.addArrangedSubview(item)
         }
-        [uzsButton, usdButton].forEach { item in
+        [fromField, toField].forEach { item in
             buttonsStack.addArrangedSubview(item)
         }
         
@@ -75,11 +70,47 @@ class SelectablePrinceCell: UICollectionViewCell {
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
             make.top.bottom.equalTo(contentView).inset(4)
-            make.left.right.equalTo(contentView).inset(16)
+            make.left.right.equalTo(contentView)
         }
-        usdButton.snp.makeConstraints { make in
-            make.height.equalTo(40)
+        fromField.snp.makeConstraints { make in
+            make.height.equalTo(44)
             make.width.equalTo(100)
+        }
+    }
+    
+}
+
+class SelectablePrinceItem: UIView {
+    
+    lazy var field: UITextField = {
+        let tf = UITextField()
+        tf.keyboardType = .numberPad
+        tf.font = .appFont(ofSize: 14, weight: .medium)
+        return tf
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUI()
+        setConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+    
+    private func setUI() {
+        layer.cornerRadius = 8
+        clipsToBounds = true
+        backgroundColor = .white
+        
+        addSubview(field)
+    }
+    
+    private func setConstraints() {
+        field.snp.makeConstraints { make in
+            make.top.bottom.equalTo(self).inset(4)
+            make.left.right.equalTo(self).inset(12)
         }
     }
     

@@ -82,7 +82,7 @@ class SelectableFilterCell: UICollectionViewCell {
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
             make.top.bottom.equalTo(contentView).inset(4)
-            make.left.right.equalTo(contentView).inset(16)
+            make.left.right.equalTo(contentView)
         }
         allButton.snp.makeConstraints { make in
             make.height.equalTo(35)

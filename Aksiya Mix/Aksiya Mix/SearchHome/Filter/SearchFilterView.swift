@@ -21,7 +21,9 @@ class SearchFilterView: UIView {
         collection.dataSource = self
         collection.backgroundColor = .backColor
         collection.showsVerticalScrollIndicator = false
+        collection.contentInset = .init(top: 0, left: 16, bottom: 50, right: 16)
         collection.register(SelectableCityCell.self, forCellWithReuseIdentifier: "SelectableCityCell")
+        collection.register(SelectableBrandCell.self, forCellWithReuseIdentifier: "SelectableBrandCell")
         collection.register(SelectableFilterCell.self, forCellWithReuseIdentifier: "SelectableFilterCell")
         collection.register(SelectableValuteCell.self, forCellWithReuseIdentifier: "SelectableValuteCell")
         collection.register(SelectablePrinceCell.self, forCellWithReuseIdentifier: "SelectablePrinceCell")
@@ -59,7 +61,7 @@ extension SearchFilterView: UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return 5
+            return 6
         } else {
             return 25
         }
@@ -90,29 +92,40 @@ extension SearchFilterView: UICollectionViewDelegate, UICollectionViewDataSource
                 
                 return cell
                 
+            } else if indexPath.row == 5 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectableFilterCell", for: indexPath) as! SelectableFilterCell
+                cell.buttonsStack.isHidden = true
+                cell.titleLabel.text = "Brendlar"
+                return cell
             }
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectableFilterCell", for: indexPath) as! SelectableFilterCell
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectableBrandCell", for: indexPath) as! SelectableBrandCell
+        cell.titleLabel.text = "\(indexPath.row)-macBro"
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                return CGSize(width: 0.screenWight, height: 70)
+                return CGSize(width: 0.screenWight-32, height: 70)
             } else if indexPath.row == 1 {
-                return CGSize(width: 0.screenWight, height: 110)
+                return CGSize(width: 0.screenWight-32, height: 110)
             } else if indexPath.row == 2 {
-                return CGSize(width: 0.screenWight, height: 90)
+                return CGSize(width: 0.screenWight-32, height: 90)
             } else if indexPath.row == 3 {
-                return CGSize(width: 0.screenWight, height: 80)
+                return CGSize(width: 0.screenWight-32, height: 80)
             } else if indexPath.row == 4 {
-                return CGSize(width: 0.screenWight, height: 90)
+                return CGSize(width: 0.screenWight-32, height: 100)
+            } else if indexPath.row == 5 {
+                return CGSize(width: 0.screenWight-32, height: 30)
             }
         }
-        return CGSize(width: 0.screenWight, height: 70)
-        
+        return CGSize(
+            width: "\(indexPath.row)-macBro".widthOfString(
+                usingFont: .appFont(ofSize: 14, weight: .medium)
+            ) + 24,
+            height: 40
+        )
     }
     
 }
