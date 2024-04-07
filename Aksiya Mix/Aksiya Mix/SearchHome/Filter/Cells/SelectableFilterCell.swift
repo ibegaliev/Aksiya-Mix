@@ -22,6 +22,7 @@ class SelectableFilterCell: UICollectionViewCell {
         btn.backgroundColor = .selectBlue
         btn.setTitle("Hammasi", for: .normal)
         btn.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
+        btn.addTarget(self, action: #selector(allButtonTapped), for: .touchUpInside)
         return btn
     }()
     
@@ -30,6 +31,7 @@ class SelectableFilterCell: UICollectionViewCell {
         btn.backgroundColor = .white
         btn.setTitle("Eng arzon", for: .normal)
         btn.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
+        btn.addTarget(self, action: #selector(lowButtonTapped), for: .touchUpInside)
         return btn
     }()
     
@@ -38,6 +40,7 @@ class SelectableFilterCell: UICollectionViewCell {
         btn.backgroundColor = .white
         btn.setTitle("Eng qimmat", for: .normal)
         btn.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
+        btn.addTarget(self, action: #selector(hegButtonTapped), for: .touchUpInside)
         return btn
     }()
 
@@ -87,6 +90,42 @@ class SelectableFilterCell: UICollectionViewCell {
         allButton.snp.makeConstraints { make in
             make.height.equalTo(35)
         }
+    }
+    
+    @objc
+    private func allButtonTapped() {
+        allButton.setTitleColor(.white, for: .normal)
+        allButton.backgroundColor = .selectBlue
+        
+        lowButton.setTitleColor(UIColor.selectBlue, for: .normal)
+        lowButton.backgroundColor = .white
+
+        hegButton.setTitleColor(UIColor.selectBlue, for: .normal)
+        hegButton.backgroundColor = .white
+    }
+    
+    @objc
+    private func lowButtonTapped() {
+        lowButton.setTitleColor(.white, for: .normal)
+        lowButton.backgroundColor = .selectBlue
+        
+        allButton.setTitleColor(UIColor.selectBlue, for: .normal)
+        allButton.backgroundColor = .white
+
+        hegButton.setTitleColor(UIColor.selectBlue, for: .normal)
+        hegButton.backgroundColor = .white
+    }
+    
+    @objc
+    private func hegButtonTapped() {
+        hegButton.setTitleColor(.white, for: .normal)
+        hegButton.backgroundColor = .selectBlue
+        
+        allButton.setTitleColor(UIColor.selectBlue, for: .normal)
+        allButton.backgroundColor = .white
+
+        lowButton.setTitleColor(UIColor.selectBlue, for: .normal)
+        lowButton.backgroundColor = .white
     }
     
 }

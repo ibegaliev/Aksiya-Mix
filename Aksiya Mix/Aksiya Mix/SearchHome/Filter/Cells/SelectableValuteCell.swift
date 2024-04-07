@@ -20,16 +20,18 @@ class SelectableValuteCell: UICollectionViewCell {
         let btn = BlueButton()
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .selectBlue
-        btn.setTitle("🇺🇸 USD", for: .normal)
+        btn.setTitle("🇺🇿 UZS", for: .normal)
         btn.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
+        btn.addTarget(self, action: #selector(uzsTapped), for: .touchUpInside)
         return btn
     }()
     
     lazy var usdButton: BlueButton = {
         let btn = BlueButton()
         btn.backgroundColor = .white
-        btn.setTitle("🇺🇿 UZS", for: .normal)
+        btn.setTitle("🇺🇸 USD", for: .normal)
         btn.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
+        btn.addTarget(self, action: #selector(usdTapped), for: .touchUpInside)
         return btn
     }()
 
@@ -81,6 +83,24 @@ class SelectableValuteCell: UICollectionViewCell {
             make.height.equalTo(40)
             make.width.equalTo(100)
         }
+    }
+    
+    @objc
+    private func uzsTapped() {
+        uzsButton.backgroundColor = .selectBlue
+        uzsButton.setTitleColor(.white, for: .normal)
+        
+        usdButton.backgroundColor = .white
+        usdButton.setTitleColor(.selectBlue, for: .normal)
+    }
+    
+    @objc
+    private func usdTapped() {
+        uzsButton.backgroundColor = .white
+        uzsButton.setTitleColor(.selectBlue, for: .normal)
+        
+        usdButton.backgroundColor = .selectBlue
+        usdButton.setTitleColor(.white, for: .normal)
     }
     
 }

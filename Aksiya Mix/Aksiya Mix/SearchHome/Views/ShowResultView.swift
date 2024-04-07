@@ -24,6 +24,7 @@ class ShowResultView: UICollectionViewCell {
     
     lazy var rightButton: UIButton = {
         let lbl = UIButton()
+        lbl.tintColor = .black
         lbl.setImage(.layoutGrid, for: .normal)
         return lbl
     }()

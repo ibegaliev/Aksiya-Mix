@@ -104,7 +104,7 @@ class SelectableCategoryItem: UIView {
 
     lazy var leftStack: UIStackView = {
         let stack = UIStackView()
-        stack.spacing = 4
+        stack.spacing = 12
         stack.alignment = .center
         return stack
     }()

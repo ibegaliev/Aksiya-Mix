@@ -108,6 +108,7 @@ class TopSelectableCell: UICollectionViewCell {
     
     lazy var icon: UIButton = {
         let btn = UIButton()
+        btn.tintColor = .black
         btn.setImage(.filterLines, for: .normal)
         return btn
     }()

@@ -17,6 +17,7 @@ class SearchFilterController: AksiyaViewController {
     }
     
     private func setController() {
+        title = "Filtrlar"
         view.addSubview(viewModel.view)
         viewModel.view.snp.makeConstraints { make in
             make.edges.equalTo(view)

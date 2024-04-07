@@ -9,6 +9,14 @@ import UIKit
 
 class SearchFilterView: UIView {
     
+    lazy var topNavigation: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 8
+        view.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        return view
+    }()
+    
     lazy var layout: UICollectionViewFlowLayout = {
         let l = UICollectionViewFlowLayout()
         
@@ -21,7 +29,7 @@ class SearchFilterView: UIView {
         collection.dataSource = self
         collection.backgroundColor = .backColor
         collection.showsVerticalScrollIndicator = false
-        collection.contentInset = .init(top: 0, left: 16, bottom: 50, right: 16)
+        collection.contentInset = .init(top: 8, left: 16, bottom: 50, right: 16)
         collection.register(SelectableCityCell.self, forCellWithReuseIdentifier: "SelectableCityCell")
         collection.register(SelectableBrandCell.self, forCellWithReuseIdentifier: "SelectableBrandCell")
         collection.register(SelectableFilterCell.self, forCellWithReuseIdentifier: "SelectableFilterCell")
@@ -43,11 +51,16 @@ class SearchFilterView: UIView {
     
     private func setUI() {
         addSubview(collectionView)
+        addSubview(topNavigation)
     }
     
     private func setConstraints() {
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(self)
+        }
+        topNavigation.snp.makeConstraints { make in
+            make.top.left.right.equalTo(self)
+            make.height.equalTo(85.toScreen)
         }
     }
     
