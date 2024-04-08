@@ -9,13 +9,13 @@ import UIKit
 
 class OfferItemCell: UITableViewCell {
     
-//    var cellData: ? {
+//    var cellData: String? {
 //        get {
 //            return nil
 //        }
 //        set {
 //            guard let newValue else { return }
-//            titleLabel.text = newValue.title
+//            titleLabel.text = newValue
 //        }
 //    }
     

@@ -17,9 +17,10 @@ class ShowResultView: UICollectionViewCell {
     }()
     
     lazy var changeButton: UIButton = {
-        let lbl = UIButton()
-        lbl.setImage(.switchVertical, for: .normal)
-        return lbl
+        let button = UIButton()
+        button.setImage(.switchVertical, for: .normal)
+        button.addTarget(self, action: #selector(changeButtonTapped(_:)), for: .touchUpInside)
+        return button
     }()
     
     lazy var rightButton: UIButton = {
@@ -76,5 +77,18 @@ class ShowResultView: UICollectionViewCell {
             make.width.height.equalTo(24)
         }
     }
+    
+    @objc func changeButtonTapped(_ sender: UIButton) {
+        let menu = UIMenu(title: "Options", children: [
+            UIAction(title: "Option 1", handler: { _ in
+                // Option 1 selected
+            }),
+            UIAction(title: "Option 2", handler: { _ in
+                // Option 2 selected
+            }),
+            // Add more options as needed
+        ])
 
+        
+    }
 }

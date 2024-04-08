@@ -17,6 +17,14 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     var delegate: OfferViewDelegate?
     
+    var searchDates: [String] = [
+        LyricsManager.getLyrics(type: .discountSale),
+        LyricsManager.getLyrics(type: .lastSearchs),
+        LyricsManager.getLyrics(type: .MansSale),
+        LyricsManager.getLyrics(type: .womansSale),
+        LyricsManager.getLyrics(type: .shoesSale)
+    ]
+    
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -26,11 +34,21 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     lazy var topNavigation: SearchTextField = {
         let view = SearchTextField()
+        view.icon.isHidden = true
         view.tf.becomeFirstResponder()
         view.isButton = false
         view.backgroundColor = .white
         view.clipsToBounds = true
         return view
+    }()
+    
+    lazy var searchButton: UIButton = {
+        let btn = UIButton()
+        btn.layer.cornerRadius = 4
+        btn.clipsToBounds = true
+        btn.backgroundColor = .backColor
+        btn.setImage(.searchMd, for: .normal)
+        return btn
     }()
     
     lazy var backButton: UIButton = {
@@ -75,6 +93,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
         [topNavigation, tableView].forEach { item in
             mainStack.addArrangedSubview(item)
         }
+        topNavigation.addSubview(searchButton)
     }
     
     private func setConstraints() {
@@ -94,6 +113,11 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
             make.left.equalTo(self).inset(6)
             make.width.equalTo(24)
         }
+        searchButton.snp.makeConstraints { make in
+            make.top.bottom.equalTo(topNavigation).inset(4)
+            make.right.equalTo(topNavigation).inset(8)
+            make.width.equalTo(38)
+        }
     }
     
     @objc
@@ -107,12 +131,12 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if false {
-            return 6
+            return searchDates.count + 1
         }
         if section == 0 {
             return 1
         }
-        return 6
+        return searchDates.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -129,7 +153,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OfferItemCell", for: indexPath) as! OfferItemCell
                     if indexPath.row == 1 { cell.cellType = .top }
                     if indexPath.row == 5 { cell.cellType = .bottom }
-                    cell.titleLabel.text = "some text"
+                    cell.titleLabel.text = searchDates[indexPath.row - 1].capitalized
                     return cell
                 }
             }
@@ -148,7 +172,7 @@ class OfferView: UIView, UITableViewDelegate, UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "OfferItemCell", for: indexPath) as! OfferItemCell
                 if indexPath.row == 1 { cell.cellType = .top }
                 if indexPath.row == 5 { cell.cellType = .bottom }
-                cell.titleLabel.text = "some text"
+                cell.titleLabel.text = searchDates[indexPath.row - 1].capitalized
                 return cell
             }
         }

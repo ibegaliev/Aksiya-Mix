@@ -189,7 +189,7 @@ class SearchTextField: UIView, UITextFieldDelegate {
         return stack
     }()
     
-    lazy private var icon: UIImageView = {
+    lazy var icon: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .navigation_search
         return imageView

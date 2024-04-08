@@ -46,6 +46,12 @@ enum LyricsManagerType {
     case popularOffers
     case lastSearchs
     
+    case discountSale
+    case lastLaseProducts
+    case MansSale
+    case womansSale
+    case shoesSale
+    
     case addStore
     case descriptionAddStore
 }
@@ -127,6 +133,17 @@ class LyricsManager {
                     return "Mashxur takliflar"
                 case .lastSearchs:
                     return "Oxirgi qidirilganlar"
+                    
+                case .discountSale:
+                    return "50% gacha bo'lgan chegirmalar"
+                case .lastLaseProducts:
+                    return "Eng songi chegirmalar"
+                case .MansSale:
+                    return "Erkaklar kiyimlari"
+                case .womansSale:
+                    return "Ayollar kiyimlari"
+                case .shoesSale:
+                    return "Oyoq kiyimlar"
             }
         } else {
             switch type {
@@ -202,6 +219,18 @@ class LyricsManager {
                     return "Популярные предложения"
                 case .lastSearchs:
                     return "Недавно искали"
+                    
+                case .discountSale:
+                    return "Скидки до 50%"
+                case .lastLaseProducts:
+                    return "Последние скидки"
+                case .MansSale:
+                    return "Мужская одежда"
+                case .womansSale:
+                    return "Женская одежда"
+                case .shoesSale:
+                    return "Обувь"
+
             }
         }
     }
