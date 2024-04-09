@@ -92,7 +92,7 @@ extension SearchFilterView: UICollectionViewDelegate, UICollectionViewDataSource
                 return cell
             } else if indexPath.row == 2 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectableCityCell", for: indexPath) as! SelectableCityCell
-                
+                cell.delegate = self
                 return cell
                 
             } else if indexPath.row == 3 {
@@ -139,6 +139,14 @@ extension SearchFilterView: UICollectionViewDelegate, UICollectionViewDataSource
             ) + 24,
             height: 40
         )
+    }
+    
+}
+
+extension SearchFilterView: SelectableCityCellDelegate {
+    
+    func selectCityTapped() {
+        
     }
     
 }

@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol SelectableCityCellDelegate {
+    func selectCityTapped()
+}
+
 class SelectableCityCell: UICollectionViewCell {
+    
+    var delegate: SelectableCityCellDelegate?
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -20,6 +26,7 @@ class SelectableCityCell: UICollectionViewCell {
         let cell = SelectableCityItem()
         cell.title = "Toshkent"
         cell.backView.backgroundColor = .white
+        cell.addTarget(self, action: #selector(selectTapped), for: .touchUpInside)
         return cell
     }()
     
@@ -53,6 +60,11 @@ class SelectableCityCell: UICollectionViewCell {
             make.top.bottom.equalTo(contentView).inset(4)
             make.left.right.equalTo(contentView)
         }
+    }
+    
+    @objc
+    func selectTapped() {
+        delegate?.selectCityTapped()
     }
     
 }

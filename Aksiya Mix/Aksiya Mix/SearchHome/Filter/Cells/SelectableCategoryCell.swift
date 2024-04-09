@@ -57,14 +57,14 @@ class SelectableCategoryCell: UICollectionViewCell {
     
 }
 
-class SelectableCategoryItem: UIView {
+class SelectableCategoryItem: UIButton {
     
     var title: String? {
         get {
             return nil
         }
         set {
-            titleLabel.text = newValue
+            titlesLabel.text = newValue
         }
     }
     
@@ -81,7 +81,7 @@ class SelectableCategoryItem: UIView {
         return view
     }()
     
-    lazy var titleLabel: UILabel = {
+    lazy var titlesLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = .appFont(ofSize: 16, weight: .semibold)
         lbl.textColor = .black
@@ -129,7 +129,7 @@ class SelectableCategoryItem: UIView {
         [leftStack, chevronImage].forEach { item in
             mainStack.addArrangedSubview(item)
         }
-        [mainImage, titleLabel].forEach { item in
+        [mainImage, titlesLabel].forEach { item in
             leftStack.addArrangedSubview(item)
         }
     }
