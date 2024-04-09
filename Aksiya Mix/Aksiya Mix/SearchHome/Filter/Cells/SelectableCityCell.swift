@@ -57,14 +57,14 @@ class SelectableCityCell: UICollectionViewCell {
     
 }
 
-class SelectableCityItem: UIView {
+class SelectableCityItem: UIButton {
     
     var title: String? {
         get {
             return nil
         }
         set {
-            titleLabel.text = newValue
+            titlesLabel.text = newValue
         }
     }
     
@@ -74,7 +74,7 @@ class SelectableCityItem: UIView {
         return view
     }()
         
-    lazy var titleLabel: UILabel = {
+    lazy var titlesLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = .appFont(ofSize: 16, weight: .semibold)
         lbl.textColor = .black
@@ -122,7 +122,7 @@ class SelectableCityItem: UIView {
         [leftStack, chevronImage].forEach { item in
             mainStack.addArrangedSubview(item)
         }
-        [titleLabel].forEach { item in
+        [titlesLabel].forEach { item in
             leftStack.addArrangedSubview(item)
         }
     }
@@ -143,4 +143,58 @@ class SelectableCityItem: UIView {
         
     }
     
+}
+
+struct Province: Codable {
+    let id: String
+    let dbId: String?
+    let createdAt: String
+    let createdBy: String
+    let isDeleted: Bool
+    let parentId: String?
+    let hierarchyKey: String?
+    let type: String
+    let nameRu: String
+    let nameUz: String
+    let countryId: String
+    let orderIndex: Int
+    let names: Names
+    let postalId: Int
+    let nameUzLatn: String
+    let soato: String
+    let hidden: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case dbId = "db_id"
+        case createdAt = "created_at"
+        case createdBy = "created_by"
+        case isDeleted = "is_deleted"
+        case parentId = "parent_id"
+        case hierarchyKey = "hierarchy_key"
+        case type
+        case nameRu = "name_ru"
+        case nameUz = "name_uz"
+        case countryId = "country_id"
+        case orderIndex = "order_index"
+        case names
+        case postalId = "postal_id"
+        case nameUzLatn = "name_uz_latn"
+        case soato
+        case hidden
+    }
+}
+
+struct Names: Codable {
+    let qq: String
+    let ru: String
+    let uz: String
+    let uzCyr: String
+    
+    enum CodingKeys: String, CodingKey {
+        case qq
+        case ru
+        case uz
+        case uzCyr = "uz_cyr"
+    }
 }
