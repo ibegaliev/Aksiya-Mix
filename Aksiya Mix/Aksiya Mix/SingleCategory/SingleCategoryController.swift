@@ -33,7 +33,9 @@ class SingleCategoryController: AksiyaViewController, SingleCategoryViewDelegate
     }
 
     func chilCategorySelected(selectedChild: SubCategoryDM?) {
-        print(selectedChild)
+        let controller = CategoryController()
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
 
     

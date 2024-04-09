@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchFilterController: AksiyaViewController, SearchFilterViewDelegate {
+class SearchFilterController: AksiyaViewController, SearchFilterViewDelegate, CategoryViewDelegate {
     
     let viewModel = SearchFilterViewModel()
     
@@ -26,11 +26,11 @@ class SearchFilterController: AksiyaViewController, SearchFilterViewDelegate {
     }
     
     func selectedCategoryTapped() {
-        let controller = SelectCategoryController()
+        let controller = CategoryController()
         
         navigationController?.pushViewController(controller, animated: true)
     }
-    
+        
     func selectedCityTapped() {
         
     }
