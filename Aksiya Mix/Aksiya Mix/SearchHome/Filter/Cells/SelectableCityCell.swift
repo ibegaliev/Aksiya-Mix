@@ -26,7 +26,9 @@ class SelectableCityCell: UICollectionViewCell {
         let cell = SelectableCityItem()
         cell.title = "Toshkent"
         cell.backView.backgroundColor = .white
-        cell.addTarget(self, action: #selector(selectTapped), for: .touchUpInside)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(selectTapped))
+        cell.addGestureRecognizer(gesture)
+        cell.isUserInteractionEnabled = true
         return cell
     }()
     

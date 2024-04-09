@@ -10,6 +10,7 @@ import Foundation
 
 struct CategoryModel: Codable {
     var id: Int?
+    var image: String?
     var name_uz: String?
     var name_ru: String?
 }

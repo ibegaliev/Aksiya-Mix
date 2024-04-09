@@ -9,12 +9,17 @@ import UIKit
 
 class CategoryCell: UITableViewCell {
     
-    var title: String? {
+    var data: CategoryModel? {
         get {
             return nil
         }
         set {
-            titleLabel.text = newValue
+            if LanguageManager().getLanguage() == "uz" {
+                titleLabel.text = newValue?.name_uz
+            } else {
+                titleLabel.text = newValue?.name_ru
+            }
+            mainImage.image = UIImage(named: newValue?.image ?? "")
         }
     }
     
@@ -28,8 +33,7 @@ class CategoryCell: UITableViewCell {
     
     lazy var mainImage: UIImageView = {
         let view = UIImageView()
-        view.image = .typeAll
-        view.layer.cornerRadius = 30
+        view.contentMode = .scaleAspectFit
         return view
     }()
     

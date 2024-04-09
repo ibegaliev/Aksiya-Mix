@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol SearchFilterViewDelegate {
+    func selectedCategoryTapped()
+    func selectedCityTapped()
+}
+
 class SearchFilterView: UIView {
+    
+    var delegate: SearchFilterViewDelegate?
     
     lazy var topNavigation: UIView = {
         let view = UIView()
@@ -88,7 +95,7 @@ extension SearchFilterView: UICollectionViewDelegate, UICollectionViewDataSource
                 return cell
             } else if indexPath.row == 1 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectableCategoryCell", for: indexPath) as! SelectableCategoryCell
-                
+                cell.delegate = self
                 return cell
             } else if indexPath.row == 2 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectableCityCell", for: indexPath) as! SelectableCityCell
@@ -143,10 +150,14 @@ extension SearchFilterView: UICollectionViewDelegate, UICollectionViewDataSource
     
 }
 
-extension SearchFilterView: SelectableCityCellDelegate {
+extension SearchFilterView: SelectableCityCellDelegate, SelectableCategoryCellDelegate {
+    
+    func selectCategory() {
+        delegate?.selectedCategoryTapped()
+    }
     
     func selectCityTapped() {
-        
+        delegate?.selectedCityTapped()
     }
     
 }

@@ -42,6 +42,8 @@
 		8C345DBB2BC4FB87007E0EC5 /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8C345DBA2BC4FB87007E0EC5 /* GoogleMapsCore */; };
 		8C345DBD2BC4FB87007E0EC5 /* GoogleMapsM4B in Frameworks */ = {isa = PBXBuildFile; productRef = 8C345DBC2BC4FB87007E0EC5 /* GoogleMapsM4B */; };
 		8C345DBF2BC4FBCF007E0EC5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C345DBE2BC4FBCF007E0EC5 /* SnapKit */; };
+		8C345DC22BC50DE7007E0EC5 /* SelectCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C345DC12BC50DE7007E0EC5 /* SelectCategoryController.swift */; };
+		8C345DC62BC50E6F007E0EC5 /* SelectCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C345DC52BC50E6F007E0EC5 /* SelectCategoryViewModel.swift */; };
 		8C35BE9B2B9A01D0005459CE /* CompanyCountsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C35BE9A2B9A01D0005459CE /* CompanyCountsCell.swift */; };
 		8C35BE9D2B9A0D96005459CE /* CompanyLocationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C35BE9C2B9A0D96005459CE /* CompanyLocationsCell.swift */; };
 		8C3BA4292B997DCF00DA15E5 /* CompanyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3BA4282B997DCF00DA15E5 /* CompanyHeaderCell.swift */; };
@@ -273,6 +275,8 @@
 		8C1F42892BAC076C00013479 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		8C25CE072B6DEB7C00B345BA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8C289D492B693AF300B2FEAC /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
+		8C345DC12BC50DE7007E0EC5 /* SelectCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryController.swift; sourceTree = "<group>"; };
+		8C345DC52BC50E6F007E0EC5 /* SelectCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewModel.swift; sourceTree = "<group>"; };
 		8C35BE9A2B9A01D0005459CE /* CompanyCountsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCountsCell.swift; sourceTree = "<group>"; };
 		8C35BE9C2B9A0D96005459CE /* CompanyLocationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLocationsCell.swift; sourceTree = "<group>"; };
 		8C3BA4282B997DCF00DA15E5 /* CompanyHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyHeaderCell.swift; sourceTree = "<group>"; };
@@ -663,6 +667,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8C345DC02BC50C7B007E0EC5 /* SelectCategory */ = {
+			isa = PBXGroup;
+			children = (
+				8C345DC12BC50DE7007E0EC5 /* SelectCategoryController.swift */,
+				8C345DC52BC50E6F007E0EC5 /* SelectCategoryViewModel.swift */,
+			);
+			path = SelectCategory;
+			sourceTree = "<group>";
+		};
 		8C461EBD2B64CEE3004DC171 /* HomeCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -756,6 +769,7 @@
 				8C733BB12BB167B0000879A4 /* RecentlySearch */,
 				8C733BB22BB167C0000879A4 /* SearchItems */,
 				8C1E1C9A2BC1D6E5001143C2 /* Filter */,
+				8C345DC02BC50C7B007E0EC5 /* SelectCategory */,
 				8CE969762BA846090005C334 /* Views */,
 			);
 			path = SearchHome;
@@ -1553,6 +1567,7 @@
 				8CE832E92B637B6D004B4E6D /* HomeViewController.swift in Sources */,
 				8CA197B72B74723D0025E9F9 /* EnterPhoneViewModel.swift in Sources */,
 				8C8742C32BBD239B00F897BB /* ProfileEditController.swift in Sources */,
+				8C345DC22BC50DE7007E0EC5 /* SelectCategoryController.swift in Sources */,
 				8CD904372B78E3B8005B975C /* Ex+UIView.swift in Sources */,
 				8C8D4AF62B68AD60007D1D77 /* BottomTitlesView.swift in Sources */,
 				8C06580E2B73249300F6C9C3 /* RegisterModel.swift in Sources */,
@@ -1608,6 +1623,7 @@
 				8CE260F62B6CA98E00B4E2C9 /* UserDatesView.swift in Sources */,
 				8CA512F42BA7F90D0010624C /* UserNamesCell.swift in Sources */,
 				8CBA40052B77933800F92F98 /* SingleCompanyViewModel.swift in Sources */,
+				8C345DC62BC50E6F007E0EC5 /* SelectCategoryViewModel.swift in Sources */,
 				8CF5A7FC2B73D89700D65039 /* LyricsManager.swift in Sources */,
 				8C3BA4292B997DCF00DA15E5 /* CompanyHeaderCell.swift in Sources */,
 				8C7B9DCA2B83747700372CB1 /* UserTopView.swift in Sources */,

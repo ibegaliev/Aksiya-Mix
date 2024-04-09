@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol SelectableCategoryCellDelegate {
+    func selectCategory()
+}
+
 class SelectableCategoryCell: UICollectionViewCell {
+    
+    var delegate: SelectableCategoryCellDelegate?
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -20,6 +26,10 @@ class SelectableCategoryCell: UICollectionViewCell {
         let cell = SelectableCategoryItem()
         cell.title = "Barcha toifalar"
         cell.backView.backgroundColor = .white
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(selectTapped))
+        cell.addGestureRecognizer(gesture)
+        cell.isUserInteractionEnabled = true
+        
         return cell
     }()
     
@@ -55,9 +65,14 @@ class SelectableCategoryCell: UICollectionViewCell {
         }
     }
     
+    @objc
+    private func selectTapped() {
+        delegate?.selectCategory()
+    }
+    
 }
 
-class SelectableCategoryItem: UIButton {
+class SelectableCategoryItem: UIView {
     
     var title: String? {
         get {

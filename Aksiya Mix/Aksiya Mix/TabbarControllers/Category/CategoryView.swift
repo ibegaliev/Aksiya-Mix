@@ -68,7 +68,8 @@ class CategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         }
         titleLabel.snp.makeConstraints { make in
             make.bottom.equalTo(navigationView).inset(20)
-            make.left.right.equalTo(navigationView).inset(16)
+            make.left.equalTo(navigationView).inset(32)
+            make.right.equalTo(navigationView).inset(16)
         }
         tableView.snp.makeConstraints { make in
             make.top.equalTo(navigationView.snp_bottomMargin).inset(-8)
@@ -78,6 +79,7 @@ class CategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     private func setData() {
         data = JSONManager.shared.loadAndDecodeJSON(fromFileNamed: "categories", into: [CategoryModel].self) ?? []
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,11 +88,7 @@ class CategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
-        if LanguageManager().getLanguage() == "uz" {
-            cell.title = data[indexPath.row].name_uz
-        } else {
-            cell.title = data[indexPath.row].name_ru
-        }
+        cell.data = data[indexPath.row]
         return cell
     }
 

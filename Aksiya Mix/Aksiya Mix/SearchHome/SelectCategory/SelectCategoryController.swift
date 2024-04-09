@@ -1,15 +1,15 @@
 //
-//  SearchFilterController.swift
+//  SelectCategoryController.swift
 //  Aksiya Mix
 //
-//  Created by iBegaliev on 07/04/24.
+//  Created by iBegaliev on 09/04/24.
 //
 
 import UIKit
 
-class SearchFilterController: AksiyaViewController, SearchFilterViewDelegate {
+class SelectCategoryController: AksiyaViewController, CategoryViewDelegate {
     
-    let viewModel = SearchFilterViewModel()
+    let viewModel = SelectCategoryViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,6 @@ class SearchFilterController: AksiyaViewController, SearchFilterViewDelegate {
     }
     
     private func setController() {
-        title = "Filtrlar"
         viewModel.view.delegate = self
         view.addSubview(viewModel.view)
         viewModel.view.snp.makeConstraints { make in
@@ -25,14 +24,10 @@ class SearchFilterController: AksiyaViewController, SearchFilterViewDelegate {
         }
     }
     
-    func selectedCategoryTapped() {
-        let controller = SelectCategoryController()
+    func selected(index: Int){
+        let controller = SingleCategoryController()
         
         navigationController?.pushViewController(controller, animated: true)
-    }
-    
-    func selectedCityTapped() {
-        
     }
     
 }

@@ -1,72 +1,86 @@
 [
   {
     "id": 0,
+    "image": "category_icon_0_electronic",
     "name_uz": "Elektronika",
     "name_ru": "Электроника"
   },
   {
     "id": 1,
+    "image": "category_icon_1_man",
     "name_uz": "Erkaklar kiyimlari",
     "name_ru": "Мужская одежда"
   },
  {
     "id": 2,
+    "image": "category_icon_2_women",
     "name_uz": "Ayollar kiyimlari",
     "name_ru": "Женская одежда"
   },
 
   {
     "id": 3,
+    "image": "category_icon_3_service",
     "name_uz": "Xizmatlar",
     "name_ru": "Услуги"
   },
   {
     "id": 4,
+    "image": "category_icon_4_education",
     "name_uz": "Ta'lim",
     "name_ru": "Образование"
   },
   {
     "id": 5,
+    "image": "category_icon_5_car",
     "name_uz": "Transport",
     "name_ru": "Транспорт"
   },
   {
     "id": 6,
+    "image": "category_icon_6_furniture",
     "name_uz": "Mebellar",
     "name_ru": "Мебель"
   },
   {
     "id": 7,
+    "image": "category_icon_7_house",
     "name_uz": "Ko'chmas mulk",
     "name_ru": "Недвижимость"
   },
   {
     "id": 8,
+    "image": "category_icon_8_technice",
     "name_uz": "Maishiy texnika",
     "name_ru": "Бытовая техника"
   },
   {
     "id": 9,
+    "image": "category_icon_9_children",
     "name_uz": "Bolalar uchun",
     "name_ru": "Для детей"
   },
   {
     "id": 10,
+    "image": "category_icon_10_book",
     "name_uz": "Kitoblar",
     "name_ru": "Книги"
   },
   {
     "id": 11,
+    "image": "category_icon_11_food",
     "name_uz": "Taomlar",
     "name_ru": "Еда"
   },
   {
     "id": 12,
+    "image": "category_icon_12_remont",
     "name_uz": "Qurilish va taʼmirlash",
     "name_ru": "Строительство и ремонт"
   },
   {
     "id": 13,
+    "image": "category_icon_13_fruits",
     "name_uz": "Oziq-ovqat mahsulotlari",
     "name_ru": "Продукты питания"
   }
