@@ -19,7 +19,7 @@ class ShowResultView: UICollectionViewCell {
     lazy var changeButton: UIButton = {
         let button = UIButton()
         button.setImage(.switchVertical, for: .normal)
-        button.addTarget(self, action: #selector(changeButtonTapped(_:)), for: .touchUpInside)
+        
         return button
     }()
     
@@ -52,6 +52,7 @@ class ShowResultView: UICollectionViewCell {
         super.init(frame: frame)
         setUI()
         setConstraints()
+        changeButtonAddMenu()
     }
     
     required init?(coder: NSCoder) {
@@ -78,17 +79,23 @@ class ShowResultView: UICollectionViewCell {
         }
     }
     
-    @objc func changeButtonTapped(_ sender: UIButton) {
-        let menu = UIMenu(title: "Options", children: [
-            UIAction(title: "Option 1", handler: { _ in
-                // Option 1 selected
-            }),
-            UIAction(title: "Option 2", handler: { _ in
-                // Option 2 selected
-            }),
-            // Add more options as needed
-        ])
+    private func changeButtonAddMenu() {
+        let action1 = UIAction(title: "") { action in
+            print("action1111")
+        }
+        let action2 = UIAction(title: "NIMADR") { action in
+            print("action1111")
+        }
+        let action3 = UIAction(title: "NIMADR") { action in
+            print("action1111")
+        }
+        let action4 = UIAction(title: "NIMADR") { action in
+            print("action1111")
+        }
 
-        
+        let menu = UIMenu(title: "", children: [action1, action2, action3, action4])
+        changeButton.menu = menu
+        changeButton.showsMenuAsPrimaryAction = true
     }
+    
 }

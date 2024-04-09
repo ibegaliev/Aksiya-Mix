@@ -1377,6 +1377,7 @@
 				8CA3A0952B90DE6C00291D15 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8CB1C0E42B939FF400F510BB /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				8CDC8BB92BA32E3500FAC521 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+				8CF1C85C2BC46297003695BA /* XCRemoteSwiftPackageReference "menubutton" */,
 			);
 			productRefGroup = 8C19B0A62B63556A007D8872 /* Products */;
 			projectDirPath = "";
@@ -2006,6 +2007,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 8.4.0;
+			};
+		};
+		8CF1C85C2BC46297003695BA /* XCRemoteSwiftPackageReference "menubutton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zfort/menubutton";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
