@@ -77,9 +77,10 @@ extension NetworkService {
         
         defualtSession = URLSession(configuration: .default, delegate: self, delegateQueue: .main)
                 
-        var request = URLRequest(url: (URLManager.manager.url(path: urlPath)))
+        var request = URLRequest(url: (URLManager.manager.url(path: urlPath, appendPath: addToURL)))
         request.httpMethod = method.rawValue
         request.httpBody = Parser.shared.data(data: bodyData)
+                
         request.allHTTPHeaderFields = [
             "accept": "application/json",
             "Content-Type": "application/json",
@@ -89,8 +90,8 @@ extension NetworkService {
         
         let task = defualtSession?.dataTask(with: request) { data, response, error in
             if let httpResponse = response as? HTTPURLResponse {
-//                print(httpResponse.statusCode)
-//                print(JSON(data))
+                print(httpResponse.statusCode)
+                print(JSON(data))
                 if httpResponse.statusCode == 200 {
                     completion(data)
                 } else {

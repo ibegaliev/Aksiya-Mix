@@ -38,8 +38,8 @@ class URLManager {
         string: "https://api.aksiyamix.uz/api/v1"
     )!
     
-    func url(path: UrlPath) -> URL {
-        return URLManager.manager.url.appendingPathComponent(path.rawValue)
+    func url(path: UrlPath, appendPath: String = "") -> URL {
+        return URLManager.manager.url.appendingPathComponent(path.rawValue).appendingPathComponent(appendPath)
     }
-    
+        
 }

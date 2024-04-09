@@ -15,6 +15,12 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     var delegate: SingleCategoryViewDelegate?
     
+    var subData: [CategoryDM]? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.delegate = self
@@ -80,7 +86,7 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return 10
+            return subData?.count ?? 0
         }
     }
     
@@ -88,10 +94,13 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
             cell.mainImage.isHidden = true
+            cell.titleLabel.font = .appFont(ofSize: 16, weight: .medium)
+            cell.titleLabel.text = subData?[indexPath.row].name
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
             cell.chevronImage.isHidden = true
+            cell.titleLabel.text = titleLabel.text
             return cell
         }
     }

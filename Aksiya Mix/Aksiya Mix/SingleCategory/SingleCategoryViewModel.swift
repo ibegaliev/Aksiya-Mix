@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class SingleCategoryViewModel {
     
@@ -22,19 +23,36 @@ class SingleCategoryViewModel {
         }
     }
     
+    var subData: [CategoryDM]? {
+        didSet {
+            view.subData = subData
+        }
+    }
+    
     func getSubCategory(id: Int?) {
         guard let id else { return }
-        var bodyData: [String: String] = [:]
         
         NetworkService.shared.mainRequestWithToken(
             urlPath: .generalCategories,
+            addToURL: "\(id)/",
             method: .get,
-            bodyData: nil) { responseData in
-                
+            bodyData: nil) { [self] responseData in
+                subData = Parser.shared.parse(json: responseData)
             } errorData: { errorData in
-                
+                print(JSON(errorData))
             }
 
     }
     
+}
+
+struct CategoryDM: Codable {
+    let name: String?
+    let pk: Int?
+    let children: [SubCategoryDM]?
+}
+
+struct SubCategoryDM: Codable {
+    let name: String?
+    let pk: Int?
 }
