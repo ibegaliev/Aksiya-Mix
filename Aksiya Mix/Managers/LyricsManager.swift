@@ -22,6 +22,7 @@ enum LyricsManagerType {
     case save
     case name
     case departaments
+    case selectDepartaments
     case likedTitle
     case resentlySeen
     case endedTitle
@@ -89,6 +90,8 @@ class LyricsManager {
                     return "Ism"
                 case .departaments:
                     return "Bo'limlar"
+                case .selectDepartaments:
+                    return "Bo'limlarni tanlang"
                 case .likedTitle:
                     return "Saralanganlar"
                 case .resentlySeen:
@@ -175,6 +178,8 @@ class LyricsManager {
                     return "Имя"
                 case .departaments:
                     return "Отделы"
+                case .selectDepartaments:
+                    return "Выберите разделы"
                 case .likedTitle:
                     return "Сортированные"
                 case .resentlySeen:

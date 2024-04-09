@@ -22,9 +22,19 @@ class SingleCategoryController: AksiyaViewController, SingleCategoryViewDelegate
     }
     
     func selectCategory(index: Int) {
-        let controller = SingleCategoryController()
         
+    }
+    
+    func subCategorySelected(childs: [SubCategoryDM]?, categoryData: CategoryModel?) {
+        let controller = SingleCategoryController()
+        controller.viewModel.childData = childs
+        controller.viewModel.data = categoryData
         navigationController?.pushViewController(controller, animated: true)
     }
+
+    func chilCategorySelected(selectedChild: SubCategoryDM?) {
+        print(selectedChild)
+    }
+
     
 }

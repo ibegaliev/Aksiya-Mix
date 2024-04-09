@@ -11,21 +11,23 @@ import SwiftyJSON
 class SingleCategoryViewModel {
     
     let view = SingleCategoryView()
-    
+        
     var data: CategoryModel? {
         didSet {
             getSubCategory(id: data?.id)
-            if LanguageManager().getLanguage() == "uz" {
-                view.titleLabel.text = data?.name_uz
-            } else {
-                view.titleLabel.text = data?.name_ru
-            }
+            view.categoryData = data
         }
     }
     
     var subData: [CategoryDM]? {
         didSet {
             view.subData = subData
+        }
+    }
+    
+    var childData: [SubCategoryDM]? {
+        didSet {
+            view.childData = childData
         }
     }
     
@@ -39,7 +41,7 @@ class SingleCategoryViewModel {
             bodyData: nil) { [self] responseData in
                 subData = Parser.shared.parse(json: responseData)
             } errorData: { errorData in
-                print(JSON(errorData))
+                
             }
 
     }

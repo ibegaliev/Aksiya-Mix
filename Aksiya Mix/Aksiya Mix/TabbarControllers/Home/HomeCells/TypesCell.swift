@@ -16,6 +16,8 @@ class TypesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
     
     var delegate: TypesCellDelegate?
     
+    var data: [CategoryModel] = []
+    
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Разделы"
@@ -85,6 +87,7 @@ class TypesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
         super.init(frame: frame)
         setUI()
         setConstraints()
+        setData()
         contentView.backgroundColor = .white
     }
     
@@ -130,18 +133,28 @@ class TypesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
         }
     }
     
+    private func setData() {
+        data = JSONManager.shared.loadAndDecodeJSON(fromFileNamed: "categories", into: [CategoryModel].self) ?? []
+    }
+    
     @objc
     private func rightButtonTapped() {
         delegate?.showAllTapped()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeCell", for: indexPath) as! TypeCell
-        
+        cell.mainImage.image = UIImage(named: data[indexPath.row].image ?? "")
+        if LanguageManager().getLanguage() == "uz" {
+            cell.title.text = data[indexPath.row].name_uz
+        } else {
+            cell.title.text = data[indexPath.row].name_ru
+        }
+
         return cell
     }
     

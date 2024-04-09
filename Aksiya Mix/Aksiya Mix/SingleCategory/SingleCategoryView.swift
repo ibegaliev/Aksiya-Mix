@@ -9,11 +9,20 @@ import UIKit
 
 protocol SingleCategoryViewDelegate {
     func selectCategory(index: Int)
+    
+    func subCategorySelected(childs: [SubCategoryDM]?, categoryData: CategoryModel?)
+    func chilCategorySelected(selectedChild: SubCategoryDM?)
 }
 
 class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     var delegate: SingleCategoryViewDelegate?
+    
+    var categoryData: CategoryModel? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     var subData: [CategoryDM]? {
         didSet {
@@ -21,6 +30,12 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    var childData: [SubCategoryDM]? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+        
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.delegate = self
@@ -29,7 +44,6 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         tv.separatorStyle = .none
         tv.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 50, right: 0)
         tv.register(CategoryCell.self, forCellReuseIdentifier: "CategoryCell")
-        tv.register(SingleCategoryCell.self, forCellReuseIdentifier: "SingleCategoryCell")
         return tv
     }()
     
@@ -42,7 +56,7 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = .appFont(ofSize: 18, weight: .bold)
-        lbl.text = LyricsManager.getLyrics(type: .departaments)
+        lbl.text = LyricsManager.getLyrics(type: .selectDepartaments)
         return lbl
     }()
         
@@ -79,14 +93,24 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        if subData?.isEmpty ?? false || childData?.isEmpty ?? false {
+            return 1
+        } else {
+            return 2
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         } else {
-            return subData?.count ?? 0
+            if let count = childData?.count {
+                return count
+            }
+            if let count = subData?.count {
+                return count
+            }
+            return 0
         }
     }
     
@@ -94,43 +118,37 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
             cell.mainImage.isHidden = true
+            cell.chevronImage.isHidden = false
             cell.titleLabel.font = .appFont(ofSize: 16, weight: .medium)
-            cell.titleLabel.text = subData?[indexPath.row].name
+            if let name = subData?[indexPath.row].name {
+                cell.titleLabel.text = name
+            }
+            if let name = childData?[indexPath.row].name {
+                cell.titleLabel.text = name
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+            cell.mainImage.isHidden = false
             cell.chevronImage.isHidden = true
-            cell.titleLabel.text = titleLabel.text
+            cell.mainImage.image = UIImage(named: categoryData?.image ?? "")
+            if LanguageManager().getLanguage() == "uz" {
+                cell.titleLabel.text = categoryData?.name_uz
+            } else {
+                cell.titleLabel.text = categoryData?.name_ru
+            }
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
-            delegate?.selectCategory(index: indexPath.row)
+        if indexPath.section == 0 { return }
+        if !(childData?.isEmpty ?? true) {
+            delegate?.chilCategorySelected(selectedChild: childData?[indexPath.row])
+        } else if !(subData?.isEmpty ?? true) {
+            delegate?.subCategorySelected(childs: subData?[indexPath.row].children, categoryData: categoryData)
         }
-    }
-    
-}
 
-class SingleCategoryCell: UITableViewCell {
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setUI()
-        setCOnstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
-    
-    private func setUI() {
-        
-    }
-    
-    private func setCOnstraints() {
-        
     }
     
 }

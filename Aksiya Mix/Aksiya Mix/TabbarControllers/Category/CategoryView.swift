@@ -79,7 +79,6 @@ class CategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     private func setData() {
         data = JSONManager.shared.loadAndDecodeJSON(fromFileNamed: "categories", into: [CategoryModel].self) ?? []
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
