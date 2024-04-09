@@ -17,9 +17,9 @@ class CategoryController: UIViewController, CategoryViewDelegate {
         viewModel.view.delegate = self
     }
     
-    func selected(index: Int) {
+    func selected(index: CategoryModel?) {
         let controller = SingleCategoryController()
-        
+        controller.viewModel.data = index
         navigationController?.pushViewController(controller, animated: true)
     }
     

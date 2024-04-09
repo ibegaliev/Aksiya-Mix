@@ -33,7 +33,10 @@ class CategoryCell: UITableViewCell {
     
     lazy var mainImage: UIImageView = {
         let view = UIImageView()
-        view.contentMode = .scaleAspectFit
+        view.contentMode = .scaleToFill
+        view.layer.cornerRadius = 24
+        view.clipsToBounds = true
+        view.backgroundColor = [UIColor.orange, UIColor.blue, UIColor.cyan, UIColor.green].randomElement()
         return view
     }()
     

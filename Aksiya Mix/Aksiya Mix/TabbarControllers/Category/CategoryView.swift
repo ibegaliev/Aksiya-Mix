@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CategoryViewDelegate {
-    func selected(index: Int)
+    func selected(index: CategoryModel?)
 }
 
 class CategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
@@ -93,7 +93,7 @@ class CategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.selected(index: indexPath.row)
+        delegate?.selected(index: data[indexPath.row])
     }
     
 }

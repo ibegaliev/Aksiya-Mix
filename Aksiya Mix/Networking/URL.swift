@@ -20,6 +20,10 @@ enum UrlPath: String {
     
     //discounts
     
+    //general
+    case generalCategories = "/general/categories/"
+    case generalDistricts = "/general/districts/"
+    
     
     //user
     case usersProfile = "/users/profile/"

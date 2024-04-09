@@ -13,6 +13,7 @@ class SingleCategoryController: AksiyaViewController, SingleCategoryViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         viewModel.view.delegate = self
         view.addSubview(viewModel.view)
         viewModel.view.snp.makeConstraints { make in

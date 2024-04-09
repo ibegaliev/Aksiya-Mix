@@ -64,13 +64,20 @@ extension NetworkService {
         
     }
     
-    func mainRequestWithToken(urlPath: UrlPath, method: HttpMethodType, bodyData: [String: String]?, completion: @escaping (_ responseData: Data?)->(), errorData: @escaping (_ errorData: Data?)->()) {
+    func mainRequestWithToken(
+        urlPath: UrlPath,
+        addToURL: String = "",
+        method: HttpMethodType,
+        bodyData: [String: String]?,
+        completion: @escaping (_ responseData: Data?)->(),
+        errorData: @escaping (_ errorData: Data?)->())
+    {
         
         if !UserTokenManager().isHaveToken() { return }
         
         defualtSession = URLSession(configuration: .default, delegate: self, delegateQueue: .main)
                 
-        var request = URLRequest(url: URLManager.manager.url(path: urlPath))
+        var request = URLRequest(url: (URLManager.manager.url(path: urlPath)))
         request.httpMethod = method.rawValue
         request.httpBody = Parser.shared.data(data: bodyData)
         request.allHTTPHeaderFields = [

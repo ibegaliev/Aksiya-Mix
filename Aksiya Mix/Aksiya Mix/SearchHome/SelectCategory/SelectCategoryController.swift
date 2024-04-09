@@ -24,7 +24,7 @@ class SelectCategoryController: AksiyaViewController, CategoryViewDelegate {
         }
     }
     
-    func selected(index: Int){
+    func selected(index: CategoryModel?){
         let controller = SingleCategoryController()
         
         navigationController?.pushViewController(controller, animated: true)
