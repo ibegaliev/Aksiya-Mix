@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CategoryControllerDelegate {
+    func chilCategorySelected(selectedChild: SubCategoryDM?)
+}
+
 class CategoryController: UIViewController, CategoryViewDelegate, SingleCategoryControllerDelegate {
     
     let viewModel = CategoryViewModel()
@@ -33,6 +37,8 @@ class CategoryController: UIViewController, CategoryViewDelegate, SingleCategory
     }
 
     func chilCategorySelected(selectedChild: SubCategoryDM?) {
+        viewModel.delegate?.chilCategorySelected(selectedChild: selectedChild)
+        dismiss(animated: true)
         let controller = SearchController()
         
         navigationController?.pushViewController(controller, animated: true)

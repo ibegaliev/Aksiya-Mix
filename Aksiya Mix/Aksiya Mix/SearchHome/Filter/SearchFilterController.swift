@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchFilterController: AksiyaViewController, SearchFilterViewDelegate, CategoryViewDelegate {
+class SearchFilterController: AksiyaViewController, SearchFilterViewDelegate, CategoryViewDelegate, CategoryControllerDelegate {
     
     let viewModel = SearchFilterViewModel()
     
@@ -31,12 +31,16 @@ class SearchFilterController: AksiyaViewController, SearchFilterViewDelegate, Ca
     
     func selectedCategoryTapped() {
         let controller = CategoryController()
-        controller.viewModel
+        controller.viewModel.delegate = self
         present(UINavigationController(rootViewController: controller), animated: true)
     }
         
     func selectedCityTapped() {
         
+    }
+    
+    func chilCategorySelected(selectedChild: SubCategoryDM?) {
+        print(selectedChild)
     }
     
 }
