@@ -31,8 +31,8 @@ class SearchFilterController: AksiyaViewController, SearchFilterViewDelegate, Ca
     
     func selectedCategoryTapped() {
         let controller = CategoryController()
-        
-        navigationController?.pushViewController(controller, animated: true)
+        controller.viewModel
+        present(UINavigationController(rootViewController: controller), animated: true)
     }
         
     func selectedCityTapped() {
