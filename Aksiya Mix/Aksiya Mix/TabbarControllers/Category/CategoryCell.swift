@@ -31,12 +31,9 @@ class CategoryCell: UITableViewCell {
         return view
     }()
     
-    lazy var mainImage: UIImageView = {
-        let view = UIImageView()
-        view.contentMode = .scaleToFill
-        view.layer.cornerRadius = 24
-        view.clipsToBounds = true
-        view.backgroundColor = [UIColor.orange, UIColor.blue, UIColor.cyan, UIColor.green].randomElement()
+    lazy var mainImage: RoundableImageView = {
+        let view = RoundableImageView()
+        view.layer.cornerRadius = 30
         return view
     }()
     
@@ -106,7 +103,7 @@ class CategoryCell: UITableViewCell {
         }
         
         mainImage.snp.makeConstraints { make in
-            make.height.width.equalTo(48)
+            make.height.width.equalTo(60)
         }
         
     }

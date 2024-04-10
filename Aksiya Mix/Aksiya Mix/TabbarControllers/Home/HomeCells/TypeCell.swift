@@ -16,16 +16,14 @@ class TypeCell: UICollectionViewCell {
         return stack
     }()
     
-    lazy var mainImage: UIImageView = {
-        let view = UIImageView()
-        view.image = .typeAll
-        view.contentMode = .scaleAspectFit
+    lazy var mainImage: RoundableImageView = {
+        let view = RoundableImageView()
+        
         return view
     }()
     
     lazy var title: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Машина"
         lbl.font = .appFont(ofSize: 12, weight: .regular)
         lbl.textAlignment = .center
         return lbl
@@ -56,8 +54,7 @@ class TypeCell: UICollectionViewCell {
         mainImage.snp.makeConstraints { make in
             make.height.equalTo(frame.width)
         }
-        mainImage.layer.cornerRadius = mainImage.frame.width/2
-        mainImage.clipsToBounds = true
+        mainImage.layer.cornerRadius = frame.width/2
     }
     
 }

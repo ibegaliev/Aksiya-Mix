@@ -25,6 +25,10 @@ class SearchFilterController: AksiyaViewController, SearchFilterViewDelegate, Ca
         }
     }
     
+    func selected(index: CategoryModel?) {
+        
+    }
+    
     func selectedCategoryTapped() {
         let controller = CategoryController()
         
