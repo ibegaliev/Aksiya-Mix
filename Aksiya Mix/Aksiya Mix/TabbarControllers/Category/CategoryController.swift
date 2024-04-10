@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoryController: UIViewController, CategoryViewDelegate {
+class CategoryController: UIViewController, CategoryViewDelegate, SingleCategoryControllerDelegate {
     
     let viewModel = CategoryViewModel()
     
@@ -19,8 +19,24 @@ class CategoryController: UIViewController, CategoryViewDelegate {
     
     func selected(index: CategoryModel?) {
         let controller = SingleCategoryController()
+        controller.viewModel.delegate = self
         controller.viewModel.data = index
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    func subCategorySelected(childs: [SubCategoryDM]?, categoryData: CategoryModel?) {
+        let controller = SingleCategoryController()
+        controller.viewModel.delegate = self
+        controller.viewModel.childData = childs
+        controller.viewModel.data = categoryData
+        navigationController?.pushViewController(controller, animated: true)
+    }
+
+    func chilCategorySelected(selectedChild: SubCategoryDM?) {
+        let controller = SearchController()
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
+
     
 }

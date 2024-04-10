@@ -10,6 +10,8 @@ import SwiftyJSON
 
 class SingleCategoryViewModel {
     
+    var delegate: SingleCategoryControllerDelegate?
+    
     let view = SingleCategoryView()
         
     var data: CategoryModel? {

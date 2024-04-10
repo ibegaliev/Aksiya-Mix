@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol SingleCategoryControllerDelegate {
+    func subCategorySelected(childs: [SubCategoryDM]?, categoryData: CategoryModel?)
+    func chilCategorySelected(selectedChild: SubCategoryDM?)
+}
+
 class SingleCategoryController: AksiyaViewController, SingleCategoryViewDelegate {
     
     let viewModel = SingleCategoryViewModel()
@@ -26,16 +31,11 @@ class SingleCategoryController: AksiyaViewController, SingleCategoryViewDelegate
     }
     
     func subCategorySelected(childs: [SubCategoryDM]?, categoryData: CategoryModel?) {
-        let controller = SingleCategoryController()
-        controller.viewModel.childData = childs
-        controller.viewModel.data = categoryData
-        navigationController?.pushViewController(controller, animated: true)
+        viewModel.delegate?.subCategorySelected(childs: childs, categoryData: categoryData)
     }
 
     func chilCategorySelected(selectedChild: SubCategoryDM?) {
-        let controller = SearchController()
-        
-        navigationController?.pushViewController(controller, animated: true)
+        viewModel.delegate?.chilCategorySelected(selectedChild: selectedChild)
     }
 
     

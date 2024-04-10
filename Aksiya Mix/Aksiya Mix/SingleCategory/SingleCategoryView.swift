@@ -120,10 +120,9 @@ class SingleCategoryView: UIView, UITableViewDelegate, UITableViewDataSource {
             cell.mainImage.isHidden = true
             cell.chevronImage.isHidden = false
             cell.titleLabel.font = .appFont(ofSize: 16, weight: .medium)
-            if let name = subData?[indexPath.row].name {
-                cell.titleLabel.text = name
-            }
             if let name = childData?[indexPath.row].name {
+                cell.titleLabel.text = name
+            } else if let name = subData?[indexPath.row].name {
                 cell.titleLabel.text = name
             }
             return cell
