@@ -9,9 +9,18 @@ import UIKit
 
 class AddNewMarketController: AksiyaViewController {
     
+    let viewModel = AddNewMarketViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setController()
+    }
+    
+    private func setController() {
+        view.addSubview(viewModel.view)
+        viewModel.view.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
     }
     
 }

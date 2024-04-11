@@ -126,6 +126,8 @@
 		8CAB7CD02B7464AA0075C4DE /* Ex+UIFond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */; };
 		8CAD0BB12B6CE60A0001D02B /* UserCellViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */; };
 		8CAF9E152BC737CA0085763B /* AddNewMarketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAF9E142BC737CA0085763B /* AddNewMarketController.swift */; };
+		8CAF9E172BC7A9C00085763B /* AddNewMarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAF9E162BC7A9C00085763B /* AddNewMarketView.swift */; };
+		8CAF9E192BC7A9C90085763B /* AddNewMarketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAF9E182BC7A9C90085763B /* AddNewMarketViewModel.swift */; };
 		8CB7EC682BAD9B290031DB6E /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7EC662BAD9B290031DB6E /* regions.json */; };
 		8CB7EC692BAD9B290031DB6E /* districts.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7EC672BAD9B290031DB6E /* districts.json */; };
 		8CB9707D2BBD300800E54815 /* ProfileEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9707C2BBD300800E54815 /* ProfileEditCell.swift */; };
@@ -361,6 +363,8 @@
 		8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIFond.swift"; sourceTree = "<group>"; };
 		8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViews.swift; sourceTree = "<group>"; };
 		8CAF9E142BC737CA0085763B /* AddNewMarketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMarketController.swift; sourceTree = "<group>"; };
+		8CAF9E162BC7A9C00085763B /* AddNewMarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMarketView.swift; sourceTree = "<group>"; };
+		8CAF9E182BC7A9C90085763B /* AddNewMarketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMarketViewModel.swift; sourceTree = "<group>"; };
 		8CB7EC662BAD9B290031DB6E /* regions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = regions.json; sourceTree = "<group>"; };
 		8CB7EC672BAD9B290031DB6E /* districts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = districts.json; sourceTree = "<group>"; };
 		8CB9707C2BBD300800E54815 /* ProfileEditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditCell.swift; sourceTree = "<group>"; };
@@ -699,6 +703,8 @@
 			isa = PBXGroup;
 			children = (
 				8CAF9E142BC737CA0085763B /* AddNewMarketController.swift */,
+				8CAF9E162BC7A9C00085763B /* AddNewMarketView.swift */,
+				8CAF9E182BC7A9C90085763B /* AddNewMarketViewModel.swift */,
 			);
 			path = AddNewMarket;
 			sourceTree = "<group>";
@@ -1505,6 +1511,7 @@
 				8C8FE9972BA832CF00F77474 /* SearchItemsView.swift in Sources */,
 				8C8275D02B7B6A47004C445B /* LikedViewModel.swift in Sources */,
 				8C35BE9D2B9A0D96005459CE /* CompanyLocationsCell.swift in Sources */,
+				8CAF9E192BC7A9C90085763B /* AddNewMarketViewModel.swift in Sources */,
 				8CFF7A5F2BAAB58F0059BF4D /* AlertController.swift in Sources */,
 				8C930B712B95D81B0048778B /* UserTokenManager.swift in Sources */,
 				8CEF41602B6D3603000D9A0E /* StoreCell.swift in Sources */,
@@ -1534,6 +1541,7 @@
 				8C19B0A92B63556A007D8872 /* AppDelegate.swift in Sources */,
 				8CE67A302B6BA07100D6E428 /* SelectableView.swift in Sources */,
 				8C77E0EC2BA1AC5F004CF456 /* SingleProductCountView.swift in Sources */,
+				8CAF9E172BC7A9C00085763B /* AddNewMarketView.swift in Sources */,
 				8C7B9DC82B836ADB00372CB1 /* UserViewModel.swift in Sources */,
 				8CBA16B22B9CB80B00C82911 /* RatingStarsView.swift in Sources */,
 				8CAF9E152BC737CA0085763B /* AddNewMarketController.swift in Sources */,

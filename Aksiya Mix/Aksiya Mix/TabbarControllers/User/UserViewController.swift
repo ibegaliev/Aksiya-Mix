@@ -59,6 +59,12 @@ class UserViewController: AksiyaViewController, UserViewDelegate, AlertViewDeleg
 
 extension UserViewController {
     
+    func addMarketTapped() {
+        let controller = AddNewMarketController()
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
+
     func editProfileTapped() {
         let controller = ProfileEditController()
         

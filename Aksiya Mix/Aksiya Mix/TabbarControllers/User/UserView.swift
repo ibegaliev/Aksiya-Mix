@@ -9,6 +9,8 @@ import UIKit
 
 protocol UserViewDelegate {
     func auth()
+    
+    func addMarketTapped()
 
     func editProfileTapped()
     
@@ -162,7 +164,11 @@ extension UserView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
-        if indexPath.section == 1 {
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                delegate?.addMarketTapped()
+            }
+        } else if indexPath.section == 1 {
             if indexPath.row == 0 {
                 delegate?.editProfileTapped()
             } else if indexPath.row == 1 {
