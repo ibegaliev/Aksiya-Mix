@@ -125,6 +125,7 @@
 		8CA97E732B74F0B60020A80F /* InputNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA97E722B74F0B60020A80F /* InputNumberView.swift */; };
 		8CAB7CD02B7464AA0075C4DE /* Ex+UIFond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */; };
 		8CAD0BB12B6CE60A0001D02B /* UserCellViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */; };
+		8CAF9E152BC737CA0085763B /* AddNewMarketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAF9E142BC737CA0085763B /* AddNewMarketController.swift */; };
 		8CB7EC682BAD9B290031DB6E /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7EC662BAD9B290031DB6E /* regions.json */; };
 		8CB7EC692BAD9B290031DB6E /* districts.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7EC672BAD9B290031DB6E /* districts.json */; };
 		8CB9707D2BBD300800E54815 /* ProfileEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9707C2BBD300800E54815 /* ProfileEditCell.swift */; };
@@ -359,6 +360,7 @@
 		8CA97E722B74F0B60020A80F /* InputNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNumberView.swift; sourceTree = "<group>"; };
 		8CAB7CCF2B7464AA0075C4DE /* Ex+UIFond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIFond.swift"; sourceTree = "<group>"; };
 		8CAD0BB02B6CE60A0001D02B /* UserCellViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViews.swift; sourceTree = "<group>"; };
+		8CAF9E142BC737CA0085763B /* AddNewMarketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMarketController.swift; sourceTree = "<group>"; };
 		8CB7EC662BAD9B290031DB6E /* regions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = regions.json; sourceTree = "<group>"; };
 		8CB7EC672BAD9B290031DB6E /* districts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = districts.json; sourceTree = "<group>"; };
 		8CB9707C2BBD300800E54815 /* ProfileEditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditCell.swift; sourceTree = "<group>"; };
@@ -696,6 +698,7 @@
 		8C4D83502BB7FA1E000AC37F /* AddNewMarket */ = {
 			isa = PBXGroup;
 			children = (
+				8CAF9E142BC737CA0085763B /* AddNewMarketController.swift */,
 			);
 			path = AddNewMarket;
 			sourceTree = "<group>";
@@ -1533,6 +1536,7 @@
 				8C77E0EC2BA1AC5F004CF456 /* SingleProductCountView.swift in Sources */,
 				8C7B9DC82B836ADB00372CB1 /* UserViewModel.swift in Sources */,
 				8CBA16B22B9CB80B00C82911 /* RatingStarsView.swift in Sources */,
+				8CAF9E152BC737CA0085763B /* AddNewMarketController.swift in Sources */,
 				8C85AF6C2B77A6DD00B3A7FC /* CompanyMainCell.swift in Sources */,
 				8CD858282B7391C20077B2A8 /* ChooseLanguageViewModel.swift in Sources */,
 				8C958FDF2B73402300299AF8 /* LaunchScreenController.swift in Sources */,
