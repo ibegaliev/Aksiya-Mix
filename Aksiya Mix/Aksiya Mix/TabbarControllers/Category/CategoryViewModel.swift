@@ -9,5 +9,6 @@ import Foundation
 
 class CategoryViewModel {
     let view = CategoryView()
+    var selectableMode = true
     var delegate: CategoryControllerDelegate?
 }

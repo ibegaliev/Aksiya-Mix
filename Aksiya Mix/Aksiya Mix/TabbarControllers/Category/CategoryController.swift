@@ -19,6 +19,7 @@ class CategoryController: UIViewController, CategoryViewDelegate, SingleCategory
         super.viewDidLoad()
         view = viewModel.view
         viewModel.view.delegate = self
+        viewModel.selectableMode = false
     }
     
     func selected(index: CategoryModel?) {
@@ -37,11 +38,14 @@ class CategoryController: UIViewController, CategoryViewDelegate, SingleCategory
     }
 
     func chilCategorySelected(selectedChild: SubCategoryDM?) {
-        viewModel.delegate?.chilCategorySelected(selectedChild: selectedChild)
-        dismiss(animated: true)
-        let controller = SearchController()
-        
-        navigationController?.pushViewController(controller, animated: true)
+        if viewModel.selectableMode {
+            viewModel.delegate?.chilCategorySelected(selectedChild: selectedChild)
+            dismiss(animated: true)
+        } else {
+            let controller = SearchController()
+            
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
 
     
