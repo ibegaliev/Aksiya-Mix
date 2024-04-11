@@ -13,7 +13,13 @@ struct MarketBannerDM {
     var jsonFile: String
 }
 
+protocol AddNewMarketViewDelegate {
+    func tappedNextButton()
+}
+
 class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    var delegate: AddNewMarketViewDelegate?
     
     var data = [
         MarketBannerDM(
@@ -62,6 +68,7 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         let btn = BlueButton()
         btn.setTitle("Keyigisi", for: .normal)
         btn.setBorder()
+        btn.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
         return btn
     }()
     
@@ -102,6 +109,11 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         UIView.animate(withDuration: 0.5) { [self] in
             nextButton.transform = .identity
         }
+    }
+    
+    @objc
+    private func tappedNextButton() {
+        delegate?.tappedNextButton()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

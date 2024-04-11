@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddNewMarketController: AksiyaViewController {
+class AddNewMarketController: AksiyaViewController, AddNewMarketViewDelegate {
     
     let viewModel = AddNewMarketViewModel()
     
@@ -17,10 +17,15 @@ class AddNewMarketController: AksiyaViewController {
     }
         
     private func setController() {
+        viewModel.view.delegate = self
         view.addSubview(viewModel.view)
         viewModel.view.snp.makeConstraints { make in
             make.edges.equalTo(view)
         }
+    }
+    
+    func tappedNextButton() {
+        
     }
     
 }

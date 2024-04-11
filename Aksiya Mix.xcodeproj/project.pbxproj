@@ -717,10 +717,7 @@
 		8C4D83502BB7FA1E000AC37F /* AddNewMarket */ = {
 			isa = PBXGroup;
 			children = (
-				8CAF9E142BC737CA0085763B /* AddNewMarketController.swift */,
-				8CAF9E162BC7A9C00085763B /* AddNewMarketView.swift */,
-				8CAF9E182BC7A9C90085763B /* AddNewMarketViewModel.swift */,
-				8CF5F9CF2BC7ED21008BAF14 /* Cells */,
+				8C7023E82BC881B400D15614 /* Banner Page */,
 			);
 			path = AddNewMarket;
 			sourceTree = "<group>";
@@ -745,6 +742,17 @@
 				8C8282D42BC2505E0010D0E9 /* SelectableBrandCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		8C7023E82BC881B400D15614 /* Banner Page */ = {
+			isa = PBXGroup;
+			children = (
+				8CAF9E142BC737CA0085763B /* AddNewMarketController.swift */,
+				8CAF9E162BC7A9C00085763B /* AddNewMarketView.swift */,
+				8CAF9E182BC7A9C90085763B /* AddNewMarketViewModel.swift */,
+				8CF5F9CF2BC7ED21008BAF14 /* Cells */,
+			);
+			path = "Banner Page";
 			sourceTree = "<group>";
 		};
 		8C733BB12BB167B0000879A4 /* RecentlySearch */ = {
