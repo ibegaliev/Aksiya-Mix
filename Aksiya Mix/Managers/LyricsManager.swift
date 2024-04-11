@@ -47,6 +47,17 @@ enum LyricsManagerType {
     case popularOffers
     case lastSearchs
     
+    //new market
+    case haveMarketTitle
+    case haveMarketDescription
+    case createMarketTitle
+    case createMarketDescription
+    case moreCustomersTitle
+    case moreCustomersDescription
+    case websiteTitle
+    case websiteDescription
+
+    
     case discountSale
     case lastLaseProducts
     case MansSale
@@ -147,6 +158,22 @@ class LyricsManager {
                     return "Ayollar kiyimlari"
                 case .shoesSale:
                     return "Oyoq kiyimlar"
+                case .haveMarketTitle:
+                    return "Do'koningiz bormi?"
+                case .haveMarketDescription:
+                    return "Veb-sayt xarajatlari va harakatlaringizdan xalos boling, biz sizga osongina onlayn bolishingizga yordam beramiz."
+                case .createMarketTitle:
+                    return "Do'kon sahifasini yarating"
+                case .createMarketDescription:
+                    return "Do'koningiz uchun sahifa yarating va chegirmali mahsulotlaringizni bir necha bosqichda mutlaqo bepul namoyish eting"
+                case .moreCustomersTitle:
+                    return "Ko'proq mijozlarga erishing"
+                case .moreCustomersDescription:
+                    return "Do'koningiz o'sishi va mashhurligini oshirishi uchun mijozlarga sizni osonroq topishiga yordam beramiz"
+                case .websiteTitle:
+                    return "Agar veb-saytingiz bo'lsa ham!"
+                case .websiteDescription:
+                    return "Chegirmali mahsulot yoki xizmatlarizni topgan mijozlar sizning do'koningizga tashrif buyurib chegrimali mahsulot va xizmatlarizdan foydalanish ko'payadi."
             }
         } else {
             switch type {
@@ -236,6 +263,22 @@ class LyricsManager {
                 case .shoesSale:
                     return "Обувь"
 
+                case .haveMarketTitle:
+                    return "У тебя есть магазин?"
+                case .haveMarketDescription:
+                    return "Освободите себя от затрат и усилий на веб-сайт, мы поможем вам легко выйти в Интернет."
+                case .createMarketTitle:
+                    return "Создать страницу магазина"
+                case .createMarketDescription:
+                    return "Создайте страницу для своего магазина и продемонстрируйте товары со скидкой всего за несколько шагов, совершенно бесплатно."
+                case .moreCustomersTitle:
+                    return "Получите больше клиентов"
+                case .moreCustomersDescription:
+                    return "Мы помогаем покупателям легче вас найти, чтобы ваш магазин рос и становился более популярным."
+                case .websiteTitle:
+                    return "Даже если у вас есть сайт!"
+                case .websiteDescription:
+                    return "Клиенты, которые найдут ваши товары или услуги со скидкой, посетят ваш магазин и воспользуются вашими товарами и услугами со скидкой."
             }
         }
     }

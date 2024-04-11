@@ -17,23 +17,23 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
     
     var data = [
         MarketBannerDM(
-            name: "Do'koningiz bormi?",
-            description: "Veb-sayt xarajatlari va harakatlaringizdan xalos boling, biz sizga osongina onlayn bolishingizga yordam beramiz",
+            name: LyricsManager.getLyrics(type: .haveMarketTitle),
+            description: LyricsManager.getLyrics(type: .haveMarketDescription),
             jsonFile: "CreateNewMarket"
         ),
         MarketBannerDM(
-            name: "Do'kon sahifasini yarating",
-            description: "Do'koningiz uchun sahifa yarating va chegirmali mahsulotlaringizni bir necha bosqichda mutlaqo bepul namoyish eting",
+            name: LyricsManager.getLyrics(type: .createMarketTitle),
+            description: LyricsManager.getLyrics(type: .createMarketDescription),
             jsonFile: "CreateNewMarket"
         ),
         MarketBannerDM(
-            name: "Ko'proq mijozlarga erishing",
-            description: "Do'koningiz o'sishi va mashhurligini oshirishi uchun mijozlarga sizni osonroq topishiga yordam beramiz",
+            name: LyricsManager.getLyrics(type: .moreCustomersTitle),
+            description: LyricsManager.getLyrics(type: .moreCustomersDescription),
             jsonFile: "CreateNewMarket"
         ),
         MarketBannerDM(
-            name: "Agar veb-saytingiz bo'lsa ham!",
-            description: "Chegirmali mahsulot yoki xizmatlarizni topgan mijozlar sizning do'koningizga tashrif buyurib chegrimali mahsulot va xizmatlarizdan foydalanish ko'payadi.",
+            name: LyricsManager.getLyrics(type: .websiteTitle),
+            description: LyricsManager.getLyrics(type: .websiteDescription),
             jsonFile: "CreateNewMarket"
         )
     ]
