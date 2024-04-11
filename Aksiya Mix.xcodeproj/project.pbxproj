@@ -212,6 +212,8 @@
 		8CF5A7F82B73D51600D65039 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A7F72B73D51600D65039 /* UserDefaultsManager.swift */; };
 		8CF5A7FA2B73D58600D65039 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A7F92B73D58600D65039 /* LanguageManager.swift */; };
 		8CF5A7FC2B73D89700D65039 /* LyricsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A7FB2B73D89700D65039 /* LyricsManager.swift */; };
+		8CF5F9CB2BC7DD83008BAF14 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8CF5F9CA2BC7DD83008BAF14 /* Lottie */; };
+		8CF5F9CE2BC7DE14008BAF14 /* CreateNewMarket.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5F9CD2BC7DE14008BAF14 /* CreateNewMarket.json */; };
 		8CF7F3BF2BA1860300C36DC5 /* SaleTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7F3BE2BA1860300C36DC5 /* SaleTopView.swift */; };
 		8CFF7A5F2BAAB58F0059BF4D /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFF7A5E2BAAB58F0059BF4D /* AlertController.swift */; };
 /* End PBXBuildFile section */
@@ -449,6 +451,7 @@
 		8CF5A7F72B73D51600D65039 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		8CF5A7F92B73D58600D65039 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		8CF5A7FB2B73D89700D65039 /* LyricsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsManager.swift; sourceTree = "<group>"; };
+		8CF5F9CD2BC7DE14008BAF14 /* CreateNewMarket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CreateNewMarket.json; sourceTree = "<group>"; };
 		8CF7F3BE2BA1860300C36DC5 /* SaleTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleTopView.swift; sourceTree = "<group>"; };
 		8CFF7A5E2BAAB58F0059BF4D /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -460,6 +463,7 @@
 			files = (
 				8C345DB12BC4FB7B007E0EC5 /* SwiftyJSON in Frameworks */,
 				8C345DBF2BC4FBCF007E0EC5 /* SnapKit in Frameworks */,
+				8CF5F9CB2BC7DD83008BAF14 /* Lottie in Frameworks */,
 				8C345DAD2BC4FB6C007E0EC5 /* IQKeyboardManagerSwift in Frameworks */,
 				8C345DB72BC4FB87007E0EC5 /* GoogleMaps in Frameworks */,
 				8C345DB92BC4FB87007E0EC5 /* GoogleMapsBase in Frameworks */,
@@ -613,6 +617,7 @@
 			children = (
 				8C19B0A82B63556A007D8872 /* AppDelegate.swift */,
 				8C19B0AA2B63556A007D8872 /* SceneDelegate.swift */,
+				8CF5F9CC2BC7DE08008BAF14 /* Lottie Files */,
 				8CB7EC652BAD9B180031DB6E /* JSON Files */,
 				8C1D4B9F2B92D35800018A03 /* Networking */,
 				8CF5A7F62B73D50200D65039 /* Managers */,
@@ -1310,6 +1315,14 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		8CF5F9CC2BC7DE08008BAF14 /* Lottie Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CF5F9CD2BC7DE14008BAF14 /* CreateNewMarket.json */,
+			);
+			path = "Lottie Files";
+			sourceTree = "<group>";
+		};
 		8CFF7A602BAAB69E0059BF4D /* Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -1346,6 +1359,7 @@
 				8C345DBA2BC4FB87007E0EC5 /* GoogleMapsCore */,
 				8C345DBC2BC4FB87007E0EC5 /* GoogleMapsM4B */,
 				8C345DBE2BC4FBCF007E0EC5 /* SnapKit */,
+				8CF5F9CA2BC7DD83008BAF14 /* Lottie */,
 			);
 			productName = "Aksiya Mix";
 			productReference = 8C19B0A52B63556A007D8872 /* Aksiya Mix.app */;
@@ -1425,6 +1439,7 @@
 				8CA3A0952B90DE6C00291D15 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8CB1C0E42B939FF400F510BB /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				8CDC8BB92BA32E3500FAC521 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+				8CF5F9C92BC7DD83008BAF14 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = 8C19B0A62B63556A007D8872 /* Products */;
 			projectDirPath = "";
@@ -1451,6 +1466,7 @@
 				8CDDB8C32B8711D20095CB82 /* SFProText-Regular.ttf in Resources */,
 				8CDDB8C52B8711D20095CB82 /* SFProText-MediumItalic.ttf in Resources */,
 				8CE832F02B638480004B4E6D /* Colors.xcassets in Resources */,
+				8CF5F9CE2BC7DE14008BAF14 /* CreateNewMarket.json in Resources */,
 				8C19B0B82B63556C007D8872 /* LaunchScreen.storyboard in Resources */,
 				8CDDB8C02B8711D20095CB82 /* SFProText-Heavy.ttf in Resources */,
 				8CDDB8C72B8711D20095CB82 /* SFProText-Light.ttf in Resources */,
@@ -2062,6 +2078,14 @@
 				minimumVersion = 8.4.0;
 			};
 		};
+		8CF5F9C92BC7DD83008BAF14 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2104,6 +2128,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8CA3A0952B90DE6C00291D15 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		8CF5F9CA2BC7DD83008BAF14 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CF5F9C92BC7DD83008BAF14 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 

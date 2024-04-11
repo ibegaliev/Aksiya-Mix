@@ -11,11 +11,21 @@ class AddNewMarketView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .systemTeal
+        setUI()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    
+    private func setUI() {
+        backgroundColor = .backColor
+        
+    }
+    
+    private func setConstraints() {
+        
     }
     
 }

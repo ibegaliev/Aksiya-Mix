@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class UserNamesCell: UITableViewCell {
     
@@ -65,43 +66,47 @@ class UserNamesCell: UITableViewCell {
 }
 
 class UserMarketView: UIView {
-    
-    lazy var mainIcon: UIImageView = {
-        let ic = UIImageView()
-        ic.contentMode = .center
-        ic.backgroundColor = .backBlue
-        ic.layer.cornerRadius = 6
+
+    lazy var mainIcon: LottieAnimationView = {
+        let ic = LottieAnimationView(name: "CreateNewMarket")
+        ic.loopMode = .loop
         ic.clipsToBounds = true
-        ic.image = .shoppingBag
+        ic.layer.cornerRadius = 6
+        ic.backgroundColor = .backBlue
+        ic.contentMode = .scaleAspectFit
+        ic.play()
         return ic
     }()
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .appFont(ofSize: 12, weight: .medium)
+        lbl.font = .appFont(ofSize: 14, weight: .medium)
         lbl.numberOfLines = 0
         lbl.text = LyricsManager.getLyrics(type: .descriptionAddStore)
         return lbl
     }()
     
-    lazy var button: BlueButton = {
-        let btn = BlueButton()
-        btn.setTitle(LyricsManager.getLyrics(type: .addStore), for: .normal)
-        return btn
+    lazy var addStoreLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = .selectBlue
+        lbl.font = .appFont(ofSize: 14, weight: .bold)
+        lbl.text = LyricsManager.getLyrics(type: .addStore)
+        return lbl
     }()
     
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
-        stack.axis = .vertical
-        stack.spacing = 8
+        stack.axis = .horizontal
+        stack.alignment = .center
+        stack.spacing = 12
         return stack
     }()
 
     lazy var topStack: UIStackView = {
         let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.spacing = 8
-        stack.alignment = .center
+        stack.axis = .vertical
+        stack.spacing = 4
+        stack.alignment = .fill
         return stack
     }()
 
@@ -121,10 +126,10 @@ class UserMarketView: UIView {
         clipsToBounds = true
         
         addSubview(mainStack)
-        [topStack, button].forEach { item in
+        [mainIcon, topStack].forEach { item in
             mainStack.addArrangedSubview(item)
         }
-        [mainIcon, titleLabel].forEach { item in
+        [titleLabel, addStoreLabel].forEach { item in
             topStack.addArrangedSubview(item)
         }
     }
@@ -135,7 +140,7 @@ class UserMarketView: UIView {
             make.edges.equalTo(self).inset(8)
         }
         mainIcon.snp.makeConstraints { make in
-            make.height.width.equalTo(40.toScreen)
+            make.height.width.equalTo(70.toScreen)
         }
     }
     
