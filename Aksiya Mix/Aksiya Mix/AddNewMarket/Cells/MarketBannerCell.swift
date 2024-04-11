@@ -10,8 +10,19 @@ import Lottie
 
 class MarketBannerCell: UICollectionViewCell {
     
+    var data: MarketBannerDM? {
+        get {
+            return nil
+        }
+        set {
+            titleLabel.text = newValue?.name
+            descriptionLabel.text = newValue?.description
+            imageView.animation = .asset(newValue?.jsonFile ?? "")
+        }
+    }
+    
     lazy var imageView: LottieAnimationView = {
-        let ic = LottieAnimationView(name: "CreateNewMarket")
+        let ic = LottieAnimationView()
         ic.play()
         ic.loopMode = .loop
         ic.contentMode = .scaleAspectFit
@@ -20,13 +31,17 @@ class MarketBannerCell: UICollectionViewCell {
 
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "SOME"
+        lbl.numberOfLines = 0
+        lbl.textAlignment = .center
+        lbl.font = .appFont(ofSize: 18, weight: .bold)
         return lbl
     }()
     
     lazy var descriptionLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "SOME"
+        lbl.numberOfLines = 0
+        lbl.textAlignment = .center
+        lbl.font = .appFont(ofSize: 14, weight: .medium)
         return lbl
     }()
     
@@ -58,7 +73,8 @@ class MarketBannerCell: UICollectionViewCell {
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.center.equalTo(contentView)
+            make.centerY.equalTo(contentView)
+            make.centerX.equalTo(contentView).inset(100)
             make.left.right.equalTo(contentView).inset(20)
         }
         imageView.snp.makeConstraints { make in
