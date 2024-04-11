@@ -61,8 +61,8 @@ extension UserViewController {
     
     func addMarketTapped() {
         let controller = AddNewMarketController()
-        
-        navigationController?.pushViewController(controller, animated: true)
+        controller.modalPresentationStyle = .overFullScreen
+        present(controller, animated: true)
     }
 
     func editProfileTapped() {

@@ -37,14 +37,6 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
             jsonFile: "CreateNewMarket"
         )
     ]
-    
-    lazy var navigationView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 8
-        view.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        return view
-    }()
 
     lazy var collectionLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -59,9 +51,7 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         collection.dataSource = self
         collection.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
         collection.isPagingEnabled = true
-        collection.bouncesZoom = false
         collection.bounces = false
-        collection.alwaysBounceVertical = false
         collection.showsVerticalScrollIndicator = false
         collection.backgroundColor = .backColor
         collection.register(MarketBannerCell.self, forCellWithReuseIdentifier: "MarketBannerCell")
@@ -89,18 +79,12 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
     private func setUI() {
         backgroundColor = .backColor
         addSubview(collectionView)
-        addSubview(navigationView)
         addSubview(nextButton)
     }
     
     private func setConstraints() {
-        navigationView.snp.makeConstraints { make in
-            make.top.left.right.equalTo(self)
-            make.height.equalTo(100)
-        }
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(navigationView.snp_bottomMargin).inset(-8)
-            make.left.right.bottom.equalTo(self)
+            make.edges.equalTo(self)
         }
         nextButton.snp.makeConstraints { make in
             make.left.right.equalTo(self).inset(16)
@@ -134,30 +118,20 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == 3 {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 1900.toScreen {
             toUPButton()
         } else {
             toDownButton()
         }
     }
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y > collectionView.frame.height*4-100 {
-//            toUPButton()
-//        } else {
-//            toDownButton()
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        0
+    }
     
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        if scrollView.contentOffset.y > 2000 {
-//            collectionView.scrollToItem(
-//                at: IndexPath(row: 3, section: 0),
-//                at: .centeredHorizontally,
-//                animated: true
-//            )
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        0
+    }
     
 }

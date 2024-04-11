@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddNewMarketController: AksiyaViewController {
+class AddNewMarketController: UIViewController {
     
     let viewModel = AddNewMarketViewModel()
     
@@ -15,7 +15,7 @@ class AddNewMarketController: AksiyaViewController {
         super.viewDidLoad()
         setController()
     }
-    
+        
     private func setController() {
         view.addSubview(viewModel.view)
         viewModel.view.snp.makeConstraints { make in
