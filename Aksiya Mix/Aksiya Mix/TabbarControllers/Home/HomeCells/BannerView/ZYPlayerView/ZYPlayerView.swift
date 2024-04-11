@@ -48,7 +48,7 @@ extension ZYPlayerView {
         self.coverImageView?.contentMode = .scaleToFill
         self.coverImageView?.image = ZYPlayerTool.getBoundleImage("play_bgIcon")
         self.addSubview(self.coverImageView!)
-        self.loadingView = UIActivityIndicatorView(style: .gray)
+        self.loadingView = UIActivityIndicatorView(style: .large)
         self.loadingView?.center = self.contentView!.center
         self.loadingView?.startAnimating()
         self.addSubview(self.loadingView!)

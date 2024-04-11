@@ -214,6 +214,7 @@
 		8CF5A7FC2B73D89700D65039 /* LyricsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A7FB2B73D89700D65039 /* LyricsManager.swift */; };
 		8CF5F9CB2BC7DD83008BAF14 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8CF5F9CA2BC7DD83008BAF14 /* Lottie */; };
 		8CF5F9CE2BC7DE14008BAF14 /* CreateNewMarket.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5F9CD2BC7DE14008BAF14 /* CreateNewMarket.json */; };
+		8CF5F9D12BC7ED30008BAF14 /* MarketBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5F9D02BC7ED30008BAF14 /* MarketBannerCell.swift */; };
 		8CF7F3BF2BA1860300C36DC5 /* SaleTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7F3BE2BA1860300C36DC5 /* SaleTopView.swift */; };
 		8CFF7A5F2BAAB58F0059BF4D /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFF7A5E2BAAB58F0059BF4D /* AlertController.swift */; };
 /* End PBXBuildFile section */
@@ -452,6 +453,7 @@
 		8CF5A7F92B73D58600D65039 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		8CF5A7FB2B73D89700D65039 /* LyricsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsManager.swift; sourceTree = "<group>"; };
 		8CF5F9CD2BC7DE14008BAF14 /* CreateNewMarket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CreateNewMarket.json; sourceTree = "<group>"; };
+		8CF5F9D02BC7ED30008BAF14 /* MarketBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketBannerCell.swift; sourceTree = "<group>"; };
 		8CF7F3BE2BA1860300C36DC5 /* SaleTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleTopView.swift; sourceTree = "<group>"; };
 		8CFF7A5E2BAAB58F0059BF4D /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -710,6 +712,7 @@
 				8CAF9E142BC737CA0085763B /* AddNewMarketController.swift */,
 				8CAF9E162BC7A9C00085763B /* AddNewMarketView.swift */,
 				8CAF9E182BC7A9C90085763B /* AddNewMarketViewModel.swift */,
+				8CF5F9CF2BC7ED21008BAF14 /* Cells */,
 			);
 			path = AddNewMarket;
 			sourceTree = "<group>";
@@ -1323,6 +1326,14 @@
 			path = "Lottie Files";
 			sourceTree = "<group>";
 		};
+		8CF5F9CF2BC7ED21008BAF14 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8CF5F9D02BC7ED30008BAF14 /* MarketBannerCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		8CFF7A602BAAB69E0059BF4D /* Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -1651,6 +1662,7 @@
 				8CC185F82B751BCE00B13400 /* EnterCodeView.swift in Sources */,
 				8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */,
 				8C0658102B73249E00F6C9C3 /* RegisterViewModel.swift in Sources */,
+				8CF5F9D12BC7ED30008BAF14 /* MarketBannerCell.swift in Sources */,
 				8CC185FC2B75259900B13400 /* OtpFieldView.swift in Sources */,
 				8CE260F62B6CA98E00B4E2C9 /* UserDatesView.swift in Sources */,
 				8CA512F42BA7F90D0010624C /* UserNamesCell.swift in Sources */,
