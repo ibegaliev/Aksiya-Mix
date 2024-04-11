@@ -60,6 +60,10 @@
 		8C69C4BD2BC1E36A006D9E82 /* SelectableFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69C4BC2BC1E36A006D9E82 /* SelectableFilterCell.swift */; };
 		8C69C4BF2BC1ECAD006D9E82 /* SelectableCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69C4BE2BC1ECAD006D9E82 /* SelectableCategoryCell.swift */; };
 		8C69C4C12BC1F52F006D9E82 /* SelectableCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69C4C02BC1F52F006D9E82 /* SelectableCityCell.swift */; };
+		8C7023E22BC87ACD00D15614 /* createMarket.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C7023E02BC87ACD00D15614 /* createMarket.json */; };
+		8C7023E32BC87ACD00D15614 /* haveMarket.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C7023E12BC87ACD00D15614 /* haveMarket.json */; };
+		8C7023E52BC87EAF00D15614 /* WebAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C7023E42BC87EAF00D15614 /* WebAnimation.json */; };
+		8C7023E72BC880CD00D15614 /* PersonaAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C7023E62BC880CD00D15614 /* PersonaAnimation.json */; };
 		8C733BB42BB167E3000879A4 /* RecentlySearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C733BB32BB167E3000879A4 /* RecentlySearchController.swift */; };
 		8C733BB62BB16811000879A4 /* OfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C733BB52BB16811000879A4 /* OfferView.swift */; };
 		8C733BB82BB1681B000879A4 /* RecentlySearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C733BB72BB1681B000879A4 /* RecentlySearchViewModel.swift */; };
@@ -300,6 +304,10 @@
 		8C69C4BC2BC1E36A006D9E82 /* SelectableFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableFilterCell.swift; sourceTree = "<group>"; };
 		8C69C4BE2BC1ECAD006D9E82 /* SelectableCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCategoryCell.swift; sourceTree = "<group>"; };
 		8C69C4C02BC1F52F006D9E82 /* SelectableCityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCityCell.swift; sourceTree = "<group>"; };
+		8C7023E02BC87ACD00D15614 /* createMarket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createMarket.json; sourceTree = "<group>"; };
+		8C7023E12BC87ACD00D15614 /* haveMarket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = haveMarket.json; sourceTree = "<group>"; };
+		8C7023E42BC87EAF00D15614 /* WebAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WebAnimation.json; sourceTree = "<group>"; };
+		8C7023E62BC880CD00D15614 /* PersonaAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PersonaAnimation.json; sourceTree = "<group>"; };
 		8C733BB32BB167E3000879A4 /* RecentlySearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlySearchController.swift; sourceTree = "<group>"; };
 		8C733BB52BB16811000879A4 /* OfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferView.swift; sourceTree = "<group>"; };
 		8C733BB72BB1681B000879A4 /* RecentlySearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlySearchViewModel.swift; sourceTree = "<group>"; };
@@ -1322,6 +1330,10 @@
 			isa = PBXGroup;
 			children = (
 				8CF5F9CD2BC7DE14008BAF14 /* CreateNewMarket.json */,
+				8C7023E12BC87ACD00D15614 /* haveMarket.json */,
+				8C7023E42BC87EAF00D15614 /* WebAnimation.json */,
+				8C7023E62BC880CD00D15614 /* PersonaAnimation.json */,
+				8C7023E02BC87ACD00D15614 /* createMarket.json */,
 			);
 			path = "Lottie Files";
 			sourceTree = "<group>";
@@ -1471,9 +1483,12 @@
 				8CC9BD272B9DCBDF00180758 /* BannerView.bundle in Resources */,
 				8CDDB8C12B8711D20095CB82 /* SFProText-RegularItalic.ttf in Resources */,
 				8CC9BD232B9DCBDF00180758 /* PlayerView.bundle in Resources */,
+				8C7023E32BC87ACD00D15614 /* haveMarket.json in Resources */,
 				8CDDB8C62B8711D20095CB82 /* SFProText-LightItalic.ttf in Resources */,
 				8CDDB8BF2B8711D20095CB82 /* SFProText-Medium.ttf in Resources */,
 				8CB7EC682BAD9B290031DB6E /* regions.json in Resources */,
+				8C7023E72BC880CD00D15614 /* PersonaAnimation.json in Resources */,
+				8C7023E22BC87ACD00D15614 /* createMarket.json in Resources */,
 				8CDDB8C32B8711D20095CB82 /* SFProText-Regular.ttf in Resources */,
 				8CDDB8C52B8711D20095CB82 /* SFProText-MediumItalic.ttf in Resources */,
 				8CE832F02B638480004B4E6D /* Colors.xcassets in Resources */,
@@ -1489,6 +1504,7 @@
 				8CB7EC692BAD9B290031DB6E /* districts.json in Resources */,
 				8CDDB8C92B8711D20095CB82 /* SFProText-SemiboldItalic.ttf in Resources */,
 				8C19B0B52B63556C007D8872 /* Assets.xcassets in Resources */,
+				8C7023E52BC87EAF00D15614 /* WebAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

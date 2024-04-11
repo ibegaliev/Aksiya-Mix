@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddNewMarketController: UIViewController {
+class AddNewMarketController: AksiyaViewController {
     
     let viewModel = AddNewMarketViewModel()
     

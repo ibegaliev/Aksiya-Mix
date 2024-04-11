@@ -17,14 +17,14 @@ class MarketBannerCell: UICollectionViewCell {
         set {
             titleLabel.text = newValue?.name
             descriptionLabel.text = newValue?.description
-            imageView.animation = .asset(newValue?.jsonFile ?? "")
+            imageView.animation = .named(newValue?.jsonFile ?? "")
+            imageView.loopMode = .loop
+            imageView.play()
         }
     }
     
     lazy var imageView: LottieAnimationView = {
         let ic = LottieAnimationView()
-        ic.play()
-        ic.loopMode = .loop
         ic.contentMode = .scaleAspectFit
         return ic
     }()

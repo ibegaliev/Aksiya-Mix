@@ -19,22 +19,22 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         MarketBannerDM(
             name: LyricsManager.getLyrics(type: .haveMarketTitle),
             description: LyricsManager.getLyrics(type: .haveMarketDescription),
-            jsonFile: "CreateNewMarket"
+            jsonFile: "haveMarket"
         ),
         MarketBannerDM(
             name: LyricsManager.getLyrics(type: .createMarketTitle),
             description: LyricsManager.getLyrics(type: .createMarketDescription),
-            jsonFile: "CreateNewMarket"
+            jsonFile: "createMarket"
         ),
         MarketBannerDM(
             name: LyricsManager.getLyrics(type: .moreCustomersTitle),
             description: LyricsManager.getLyrics(type: .moreCustomersDescription),
-            jsonFile: "CreateNewMarket"
+            jsonFile: "PersonaAnimation"
         ),
         MarketBannerDM(
             name: LyricsManager.getLyrics(type: .websiteTitle),
             description: LyricsManager.getLyrics(type: .websiteDescription),
-            jsonFile: "CreateNewMarket"
+            jsonFile: "WebAnimation"
         )
     ]
 
