@@ -97,12 +97,6 @@ class ProfileEditCell: UITableViewCell {
             make.top.bottom.equalTo(contentView).inset(4)
             make.left.right.equalTo(contentView).inset(16)
         }
-        itemView.snp.makeConstraints { make in
-            make.height.equalTo(44.toScreen)
-        }
-        itemSelectableView.snp.makeConstraints { make in
-            make.height.equalTo(44.toScreen)
-        }
     }
     
 }
@@ -172,6 +166,7 @@ class ProfileEditItemView: UIView {
         textField.snp.makeConstraints { make in
             make.top.bottom.equalTo(self)
             make.left.right.equalTo(self).inset(8)
+            make.height.equalTo(44)
         }
     }
     
