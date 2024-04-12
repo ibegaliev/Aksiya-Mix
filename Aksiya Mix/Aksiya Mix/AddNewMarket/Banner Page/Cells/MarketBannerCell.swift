@@ -33,7 +33,7 @@ class MarketBannerCell: UICollectionViewCell {
         let lbl = UILabel()
         lbl.numberOfLines = 0
         lbl.textAlignment = .center
-        lbl.font = .appFont(ofSize: 18, weight: .bold)
+        lbl.font = .appFont(ofSize: 20, weight: .bold)
         return lbl
     }()
     
@@ -41,7 +41,7 @@ class MarketBannerCell: UICollectionViewCell {
         let lbl = UILabel()
         lbl.numberOfLines = 0
         lbl.textAlignment = .center
-        lbl.font = .appFont(ofSize: 14, weight: .medium)
+        lbl.font = .appFont(ofSize: 16, weight: .medium)
         return lbl
     }()
     

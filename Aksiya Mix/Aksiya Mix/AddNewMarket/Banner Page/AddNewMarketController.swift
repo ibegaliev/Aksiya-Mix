@@ -25,7 +25,9 @@ class AddNewMarketController: AksiyaViewController, AddNewMarketViewDelegate {
     }
     
     func tappedNextButton() {
+        let controller = CreateMarketController()
         
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }
