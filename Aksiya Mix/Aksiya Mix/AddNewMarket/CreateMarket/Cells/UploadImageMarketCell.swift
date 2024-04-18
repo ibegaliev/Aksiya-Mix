@@ -29,12 +29,39 @@ final class UploadImageMarketCell: UITableViewCell {
         return lbl
     }()
     
+    lazy var nameOfStoreUz: ProfileEditItemView = {
+        let field = ProfileEditItemView()
+        field.placeholder = "Do'kon nomi (UZ)"
+        return field
+    }()
+    
+    lazy var nameOfStoreRu: ProfileEditItemView = {
+        let field = ProfileEditItemView()
+        field.placeholder = "Do'kon nomi (RU)"
+        return field
+    }()
+
+
+    lazy var nameOfStoreOwner: ProfileEditItemView = {
+        let field = ProfileEditItemView()
+        field.placeholder = "Do'konning qisqacha nomi"
+        return field
+    }()
+    
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.spacing = 12
+        stack.axis = .vertical
         return stack
     }()
-    
+
+    lazy var topStack: UIStackView = {
+        let stack = UIStackView()
+        stack.spacing = 12
+        stack.axis = .horizontal
+        return stack
+    }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUI()
@@ -49,8 +76,11 @@ final class UploadImageMarketCell: UITableViewCell {
     private func setUI() {
         contentView.backgroundColor = .backColor
         contentView.addSubview(mainStack)
-        [selectableImageView, descriptionLabel].forEach { item in
+        [topStack, nameOfStoreUz, nameOfStoreRu, nameOfStoreOwner].forEach { item in
             mainStack.addArrangedSubview(item)
+        }
+        [selectableImageView, descriptionLabel].forEach { item in
+            topStack.addArrangedSubview(item)
         }
     }
     
