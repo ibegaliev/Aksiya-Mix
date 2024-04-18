@@ -23,7 +23,11 @@ class CreateMarketView: UIView {
         table.dataSource = self
         table.backgroundColor = .backColor
         table.separatorStyle = .none
+        table.showsVerticalScrollIndicator = false
         table.register(OwnerMarketCell.self, forCellReuseIdentifier: "OwnerMarketCell")
+        table.register(DatedMarketCell.self, forCellReuseIdentifier: "DatedMarketCell")
+        table.register(DeliverMarketCell.self, forCellReuseIdentifier: "DeliverMarketCell")
+        table.register(ProvinceMarketCell.self, forCellReuseIdentifier: "ProvinceMarketCell")
         table.register(UploadImageMarketCell.self, forCellReuseIdentifier: "UploadImageMarketCell")
         return table
     }()
@@ -73,6 +77,19 @@ extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UploadImageMarketCell", for: indexPath) as! UploadImageMarketCell
 
+            return cell
+        } else if indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DatedMarketCell", for: indexPath) as! DatedMarketCell
+            
+            return cell
+        } else if indexPath.row == 3 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DeliverMarketCell", for: indexPath) as! DeliverMarketCell
+            
+            return cell
+        } else if indexPath.row == 4 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProvinceMarketCell", for: indexPath) as! ProvinceMarketCell
+            cell.title = "Viloyat tuman"
+            cell.placeholder = "Viloyat tuman tanlang"
             return cell
         }
         return UITableViewCell()
