@@ -44,7 +44,7 @@ class OwnerMarketCell: UITableViewCell {
     
     lazy var textField: ProfileEditItemView = {
         let field = ProfileEditItemView()
-        field.placeholder = "SOME TEXT HERE!"
+
         return field
     }()
     
