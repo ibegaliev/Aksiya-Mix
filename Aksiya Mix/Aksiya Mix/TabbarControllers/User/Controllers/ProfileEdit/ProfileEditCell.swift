@@ -166,7 +166,7 @@ class ProfileEditItemView: UIView {
         textField.snp.makeConstraints { make in
             make.top.bottom.equalTo(self)
             make.left.right.equalTo(self).inset(8)
-            make.height.equalTo(44)
+            make.height.equalTo(44.toScreen)
         }
     }
     

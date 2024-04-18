@@ -11,7 +11,7 @@ class DeliverMarketCell: UITableViewCell {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Ish vaqti:"
+        lbl.text = "Yetkazib berish"
         lbl.font = .appFont(ofSize: 16, weight: .semibold)
         return lbl
     }()
@@ -26,6 +26,7 @@ class DeliverMarketCell: UITableViewCell {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 12
+        stack.alignment = .leading
         return stack
     }()
     
@@ -111,6 +112,7 @@ class DeliverMarketSelectableView: UIView {
         }
         yesButton.snp.makeConstraints { make in
             make.height.equalTo(40.toScreen)
+            make.width.equalTo(100.toScreen)
         }
     }
     

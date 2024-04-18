@@ -1,5 +1,5 @@
 //
-//  ProvinceMarketCell.swift
+//  LocationMarketCell.swift
 //  Aksiya Mix
 //
 //  Created by iBegaliev on 18/04/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProvinceMarketCell: UITableViewCell {
+class LocationMarketCell: UITableViewCell {
     
     var title: String? {
         get {
@@ -81,4 +81,5 @@ class ProvinceMarketCell: UITableViewCell {
     }
     
 }
+
 

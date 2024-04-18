@@ -24,9 +24,12 @@ class CreateMarketView: UIView {
         table.backgroundColor = .backColor
         table.separatorStyle = .none
         table.showsVerticalScrollIndicator = false
+        table.contentInset = .init(top: 0, left: 0, bottom: 50, right: 0)
         table.register(OwnerMarketCell.self, forCellReuseIdentifier: "OwnerMarketCell")
         table.register(DatedMarketCell.self, forCellReuseIdentifier: "DatedMarketCell")
+        table.register(NumberMarketCell.self, forCellReuseIdentifier: "NumberMarketCell")
         table.register(DeliverMarketCell.self, forCellReuseIdentifier: "DeliverMarketCell")
+        table.register(LocationMarketCell.self, forCellReuseIdentifier: "LocationMarketCell")
         table.register(ProvinceMarketCell.self, forCellReuseIdentifier: "ProvinceMarketCell")
         table.register(UploadImageMarketCell.self, forCellReuseIdentifier: "UploadImageMarketCell")
         return table
@@ -64,7 +67,7 @@ class CreateMarketView: UIView {
 extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -90,6 +93,16 @@ extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProvinceMarketCell", for: indexPath) as! ProvinceMarketCell
             cell.title = "Viloyat tuman"
             cell.placeholder = "Viloyat tuman tanlang"
+            return cell
+        } else if indexPath.row == 5 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LocationMarketCell", for: indexPath) as! LocationMarketCell
+            cell.title = "Joylashuv"
+            cell.placeholder = "Manzilni tanlang"
+            return cell
+        } else if indexPath.row == 6 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NumberMarketCell", for: indexPath) as! NumberMarketCell
+            cell.title = "Do'kon telefon raqami"
+            cell.placeholder = "+998 "
             return cell
         }
         return UITableViewCell()

@@ -1,5 +1,5 @@
 //
-//  ProvinceMarketCell.swift
+//  NumberMarketCell.swift
 //  Aksiya Mix
 //
 //  Created by iBegaliev on 18/04/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProvinceMarketCell: UITableViewCell {
+class NumberMarketCell: UITableViewCell {
     
     var title: String? {
         get {
@@ -23,7 +23,7 @@ class ProvinceMarketCell: UITableViewCell {
             return nil
         }
         set {
-            textField.setTitle(newValue, for: .normal)
+//            textField.placeholder = newValue
         }
     }
     
@@ -33,17 +33,25 @@ class ProvinceMarketCell: UITableViewCell {
         return lbl
     }()
     
-    lazy var textField: UIButton = {
-        let field = UIButton()
-        field.clipsToBounds = true
-        field.layer.cornerRadius = 8
-        field.backgroundColor = .white
-        field.titleLabel?.textAlignment = .left
-        field.setTitleColor(.placeholderText, for: .normal)
-        field.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
+    lazy var textField: InputNumberView = {
+        let input = InputNumberView()
+//        input.delegate = self
+        input.backgroundColor = .white
+        return input
+    }()
+    
+    lazy var textFieldUZ: ProfileEditItemView = {
+        let field = ProfileEditItemView()
+        field.placeholder = "Tavsif (uz)"
         return field
     }()
-
+    
+    lazy var textFieldRU: ProfileEditItemView = {
+        let field = ProfileEditItemView()
+        field.placeholder = "Tavsif (ru)"
+        return field
+    }()
+    
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -65,7 +73,7 @@ class ProvinceMarketCell: UITableViewCell {
         selectionStyle = .none
         contentView.backgroundColor = .backColor
         contentView.addSubview(mainStack)
-        [titleLabel, textField].forEach { item in
+        [titleLabel, textField, textFieldUZ, textFieldRU].forEach { item in
             mainStack.addArrangedSubview(item)
         }
     }

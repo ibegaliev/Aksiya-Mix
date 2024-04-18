@@ -63,6 +63,7 @@ class DatesMarketItems: UIView {
         let item = DatedMarketItem()
         item.titleLabel.text = "Dush"
         item.iconImage.isHidden = true
+        item.titleLabel.textColor = .placeholderText
         return item
     }()
     
@@ -70,6 +71,7 @@ class DatesMarketItems: UIView {
         let item = DatedMarketItem()
         item.titleLabel.text = "Juma"
         item.iconImage.isHidden = true
+        item.titleLabel.textColor = .placeholderText
         return item
     }()
     
@@ -77,6 +79,7 @@ class DatesMarketItems: UIView {
         let item = DatedMarketItem()
         item.titleLabel.text = "09:00"
         item.iconImage.isHidden = true
+        item.titleLabel.textColor = .placeholderText
         return item
     }()
     
@@ -84,6 +87,7 @@ class DatesMarketItems: UIView {
         let item = DatedMarketItem()
         item.titleLabel.text = "21:00"
         item.iconImage.isHidden = true
+        item.titleLabel.textColor = .placeholderText
         return item
     }()
     
