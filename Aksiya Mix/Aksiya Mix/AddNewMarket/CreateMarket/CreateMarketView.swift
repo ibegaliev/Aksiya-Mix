@@ -32,6 +32,7 @@ class CreateMarketView: UIView {
         table.register(LocationMarketCell.self, forCellReuseIdentifier: "LocationMarketCell")
         table.register(ProvinceMarketCell.self, forCellReuseIdentifier: "ProvinceMarketCell")
         table.register(UploadImageMarketCell.self, forCellReuseIdentifier: "UploadImageMarketCell")
+        table.register(CreateButtonMarketCell.self, forCellReuseIdentifier: "CreateButtonMarketCell")
         return table
     }()
     
@@ -67,7 +68,7 @@ class CreateMarketView: UIView {
 extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        7
+        8
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,6 +104,10 @@ extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "NumberMarketCell", for: indexPath) as! NumberMarketCell
             cell.title = "Do'kon telefon raqami"
             cell.placeholder = "+998 "
+            return cell
+        } else if indexPath.row == 7 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CreateButtonMarketCell", for: indexPath) as! CreateButtonMarketCell
+            
             return cell
         }
         return UITableViewCell()

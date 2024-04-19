@@ -67,7 +67,7 @@ extension UserViewController {
 
     func editProfileTapped() {
         let controller = ProfileEditController()
-        
+        controller.viewModel.userdata = viewModel.userdata
         navigationController?.pushViewController(controller, animated: true)
     }
     

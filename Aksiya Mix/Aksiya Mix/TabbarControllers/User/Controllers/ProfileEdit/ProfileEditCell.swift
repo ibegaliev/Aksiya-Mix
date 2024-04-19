@@ -18,26 +18,38 @@ class ProfileEditCell: UITableViewCell {
             switch newValue?.type {
                 case .name:
                     itemView.placeholder = "Ism"
+                    itemView.placeholder = newValue?.placeholder
                     itemView.isHidden = false
                     itemSelectableView.isHidden = true
                 case .bornData:
+                    itemSelectableView.placeholder = "01.01.1991"
+                    itemSelectableView.placeholder = newValue?.placeholder
                     itemView.isHidden = true
                     itemSelectableView.isHidden = false
                 case .sex:
+                    itemSelectableView.placeholder = "Tanlang"
+                    itemSelectableView.placeholder = newValue?.placeholder
                     itemView.isHidden = true
                     itemSelectableView.isHidden = false
                 case .region:
+                    itemSelectableView.placeholder = "Tanlang"
+                    itemSelectableView.placeholder = newValue?.placeholder
                     itemView.isHidden = true
                     itemSelectableView.isHidden = false
                 case .fok:
+                    itemSelectableView.placeholder = "Tanlang"
+                    itemSelectableView.placeholder = newValue?.placeholder
                     itemView.isHidden = true
                     itemSelectableView.isHidden = false
                 case .numberPhone:
-                    itemView.placeholder = "phone number"
+                    itemView
+                    itemView.placeholder = "+998 "
+                    itemView.placeholder = newValue?.placeholder
                     itemView.isHidden = false
                     itemSelectableView.isHidden = true
                 case .email:
-                    itemView.placeholder = "e mail"
+                    itemView.placeholder = "e-mail"
+                    itemView.placeholder = newValue?.placeholder
                     itemView.isHidden = false
                     itemSelectableView.isHidden = true
                 case nil:
@@ -103,7 +115,21 @@ class ProfileEditCell: UITableViewCell {
 
 class ProfileEditItemSelectableView: UIView {
     
+    var placeholder: String? {
+        get {
+            return nil
+        }
+        set {
+            label.text = newValue
+        }
+    }
     
+    lazy var label: UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = .placeholderText
+        lbl.font = .appFont(ofSize: 14, weight: .medium)
+        return lbl
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -120,10 +146,15 @@ class ProfileEditItemSelectableView: UIView {
         layer.cornerRadius = 8
         backgroundColor = .white
         
+        addSubview(label)
     }
     
     private func setConstraints() {
-        
+        label.snp.makeConstraints { make in
+            make.top.bottom.equalTo(self)
+            make.left.right.equalTo(self).inset(8)
+            make.height.equalTo(44.toScreen)
+        }
     }
     
 }

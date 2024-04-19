@@ -13,10 +13,13 @@ case name, bornData, sex, region, fok, numberPhone, email
 
 struct ProfileEditDM {
     var title: String?
+    var placeholder: String?
     var type: ProfileEditType
 }
 
 class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource {
+    
+    var userdata = UserData()
     
     var itemsData: [ProfileEditDM] = [
         ProfileEditDM(title: "Ism", type: .name),

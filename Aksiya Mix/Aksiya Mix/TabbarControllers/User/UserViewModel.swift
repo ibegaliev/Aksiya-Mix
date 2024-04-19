@@ -10,6 +10,7 @@ import SwiftyJSON
 class UserViewModel {
     
     var view = UserView()
+    
     var userdata: UserData? {
         didSet {
             view.userdata = self.userdata

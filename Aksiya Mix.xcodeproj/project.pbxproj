@@ -56,6 +56,7 @@
 		8C5758CA2BD1928000ADDB2D /* ProvinceMarketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5758C92BD1928000ADDB2D /* ProvinceMarketCell.swift */; };
 		8C5758CC2BD1957900ADDB2D /* LocationMarketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5758CB2BD1957900ADDB2D /* LocationMarketCell.swift */; };
 		8C5758CE2BD1960E00ADDB2D /* NumberMarketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5758CD2BD1960E00ADDB2D /* NumberMarketCell.swift */; };
+		8C5758D02BD19D5900ADDB2D /* CreateButtonMarketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5758CF2BD19D5900ADDB2D /* CreateButtonMarketCell.swift */; };
 		8C661F902B641D1C00437F0D /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F8F2B641D1C00437F0D /* BaseView.swift */; };
 		8C661F922B641E7500437F0D /* Ex+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F912B641E7500437F0D /* Ex+Int.swift */; };
 		8C661F952B64232300437F0D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F942B64232300437F0D /* SearchView.swift */; };
@@ -310,6 +311,7 @@
 		8C5758C92BD1928000ADDB2D /* ProvinceMarketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceMarketCell.swift; sourceTree = "<group>"; };
 		8C5758CB2BD1957900ADDB2D /* LocationMarketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMarketCell.swift; sourceTree = "<group>"; };
 		8C5758CD2BD1960E00ADDB2D /* NumberMarketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberMarketCell.swift; sourceTree = "<group>"; };
+		8C5758CF2BD19D5900ADDB2D /* CreateButtonMarketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateButtonMarketCell.swift; sourceTree = "<group>"; };
 		8C661F8F2B641D1C00437F0D /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		8C661F912B641E7500437F0D /* Ex+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+Int.swift"; sourceTree = "<group>"; };
 		8C661F942B64232300437F0D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -865,6 +867,7 @@
 				8C5758C92BD1928000ADDB2D /* ProvinceMarketCell.swift */,
 				8C5758CB2BD1957900ADDB2D /* LocationMarketCell.swift */,
 				8C5758CD2BD1960E00ADDB2D /* NumberMarketCell.swift */,
+				8C5758CF2BD19D5900ADDB2D /* CreateButtonMarketCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1738,6 +1741,7 @@
 				8C8B510C2BBBDC2C00C5E097 /* JSONManager.swift in Sources */,
 				8CA228592BB3EFD80010E713 /* OfferCell.swift in Sources */,
 				8CC185F82B751BCE00B13400 /* EnterCodeView.swift in Sources */,
+				8C5758D02BD19D5900ADDB2D /* CreateButtonMarketCell.swift in Sources */,
 				8CD354552B6B8985004FFE0F /* FeedbackItemsView.swift in Sources */,
 				8C0658102B73249E00F6C9C3 /* RegisterViewModel.swift in Sources */,
 				8CF5F9D12BC7ED30008BAF14 /* MarketBannerCell.swift in Sources */,
