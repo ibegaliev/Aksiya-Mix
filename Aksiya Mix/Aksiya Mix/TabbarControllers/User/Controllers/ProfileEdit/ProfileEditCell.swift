@@ -7,7 +7,13 @@
 
 import UIKit
 
-class ProfileEditCell: UITableViewCell {
+protocol ProfileEditCellDelegate {
+    func setData(data: String?, tag: Int?)
+}
+
+class ProfileEditCell: UITableViewCell, UITextFieldDelegate {
+    
+    var delegate: ProfileEditCellDelegate?
     
     var title: ProfileEditDM? {
         get {
@@ -17,8 +23,11 @@ class ProfileEditCell: UITableViewCell {
             titleLabel.text = newValue?.title
             switch newValue?.type {
                 case .name:
-                    itemView.placeholder = "Ism"
-                    itemView.placeholder = newValue?.placeholder
+                    if let placeholder = newValue?.placeholder {
+                        itemView.placeholder = placeholder
+                    } else {
+                        itemView.placeholder = "Ism"
+                    }
                     itemView.isHidden = false
                     itemSelectableView.isHidden = true
                 case .bornData:
@@ -42,9 +51,11 @@ class ProfileEditCell: UITableViewCell {
                     itemView.isHidden = true
                     itemSelectableView.isHidden = false
                 case .numberPhone:
-                    itemView
-                    itemView.placeholder = "+998 "
-                    itemView.placeholder = newValue?.placeholder
+                    if let placeholder = newValue?.placeholder {
+                        itemView.placeholder = placeholder
+                    } else {
+                        itemView.placeholder = "+998 "
+                    }
                     itemView.isHidden = false
                     itemSelectableView.isHidden = true
                 case .email:
@@ -67,7 +78,7 @@ class ProfileEditCell: UITableViewCell {
     
     lazy var itemView: ProfileEditItemView = {
         let view = ProfileEditItemView()
-        
+        view.textField.delegate = self
         return view
     }()
     
@@ -109,6 +120,12 @@ class ProfileEditCell: UITableViewCell {
             make.top.bottom.equalTo(contentView).inset(4)
             make.left.right.equalTo(contentView).inset(16)
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
+        delegate?.setData(data: newText, tag: tag)
+        return true
     }
     
 }
@@ -170,7 +187,7 @@ class ProfileEditItemView: UIView {
         }
     }
 
-    private lazy var textField: UITextField = {
+    lazy var textField: UITextField = {
         let field = UITextField()
         field.font = .appFont(ofSize: 14, weight: .medium)
         return field

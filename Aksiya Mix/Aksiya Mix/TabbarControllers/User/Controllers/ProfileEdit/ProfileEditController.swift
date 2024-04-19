@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileEditController: AksiyaViewController {
+class ProfileEditController: AksiyaViewController, ProfileEditViewDelegate {
     
     var viewModel = ProfileEditViewModel()
     
@@ -19,9 +19,14 @@ class ProfileEditController: AksiyaViewController {
     private func setController() {
         title = LyricsManager.getLyrics(type: .editProfile)
         view.addSubview(viewModel.view)
+        viewModel.view.delegate = self
         viewModel.view.snp.makeConstraints { make in
             make.edges.equalTo(view)
         }
+    }
+    
+    func save(data: UserData?) {
+        viewModel.uploadData(data: data)
     }
     
 }
