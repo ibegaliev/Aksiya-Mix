@@ -11,7 +11,7 @@ protocol ProfileEditCellDelegate {
     func setData(data: String?, tag: Int?)
 }
 
-class ProfileEditCell: UITableViewCell, UITextFieldDelegate {
+class ProfileEditCell: UITableViewCell, UITextFieldDelegate, ProfileEditItemSelectableViewDelegate {
     
     var delegate: ProfileEditCellDelegate?
     
@@ -31,23 +31,39 @@ class ProfileEditCell: UITableViewCell, UITextFieldDelegate {
                     itemView.isHidden = false
                     itemSelectableView.isHidden = true
                 case .bornData:
-                    itemSelectableView.placeholder = "01.01.1991"
-                    itemSelectableView.placeholder = newValue?.placeholder
+                    if let placeholder = newValue?.placeholder {
+                        itemSelectableView.placeholder = placeholder
+                    } else {
+                        itemSelectableView.placeholder = "Tanlang"
+                    }
                     itemView.isHidden = true
                     itemSelectableView.isHidden = false
+                    itemSelectableView.label.isHidden = true
                 case .sex:
-                    itemSelectableView.placeholder = "Tanlang"
-                    itemSelectableView.placeholder = newValue?.placeholder
+                    itemSelectableView.birthDatePicker.isHidden = true
+                    if let placeholder = newValue?.placeholder {
+                        itemSelectableView.placeholder = placeholder
+                    } else {
+                        itemSelectableView.placeholder = "Tanlang"
+                    }
                     itemView.isHidden = true
                     itemSelectableView.isHidden = false
                 case .region:
-                    itemSelectableView.placeholder = "Tanlang"
-                    itemSelectableView.placeholder = newValue?.placeholder
+                    itemSelectableView.birthDatePicker.isHidden = true
+                    if let placeholder = newValue?.placeholder {
+                        itemSelectableView.placeholder = placeholder
+                    } else {
+                        itemSelectableView.placeholder = "Tanlang"
+                    }
                     itemView.isHidden = true
                     itemSelectableView.isHidden = false
                 case .fok:
-                    itemSelectableView.placeholder = "Tanlang"
-                    itemSelectableView.placeholder = newValue?.placeholder
+                    itemSelectableView.birthDatePicker.isHidden = true
+                    if let placeholder = newValue?.placeholder {
+                        itemSelectableView.placeholder = placeholder
+                    } else {
+                        itemSelectableView.placeholder = "Tanlang"
+                    }
                     itemView.isHidden = true
                     itemSelectableView.isHidden = false
                 case .numberPhone:
@@ -84,7 +100,7 @@ class ProfileEditCell: UITableViewCell, UITextFieldDelegate {
     
     lazy var itemSelectableView: ProfileEditItemSelectableView = {
         let view = ProfileEditItemSelectableView()
-        
+        view.delegate = self
         return view
     }()
     
@@ -128,30 +144,49 @@ class ProfileEditCell: UITableViewCell, UITextFieldDelegate {
         return true
     }
     
+    func tapped() {
+        delegate?.setData(data: nil, tag: tag)
+    }
+    
+}
+
+protocol ProfileEditItemSelectableViewDelegate {
+    func tapped()
 }
 
 class ProfileEditItemSelectableView: UIView {
+    
+    var delegate: ProfileEditItemSelectableViewDelegate?
     
     var placeholder: String? {
         get {
             return nil
         }
         set {
-            label.text = newValue
+            label.setTitle(newValue, for: .normal)
         }
     }
     
-    lazy var label: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor = .placeholderText
-        lbl.font = .appFont(ofSize: 14, weight: .medium)
+    lazy var label: UIButton = {
+        let lbl = UIButton()
+        lbl.setTitleColor(.placeholderText, for: .normal)
+        lbl.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
+        lbl.addTarget(self, action: #selector(tapped), for: .touchUpInside)
         return lbl
+    }()
+    
+    lazy var birthDatePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.maximumDate = Date()
+        return datePicker
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
         setConstraints()
+        tapped()
     }
     
     required init?(coder: NSCoder) {
@@ -163,15 +198,42 @@ class ProfileEditItemSelectableView: UIView {
         layer.cornerRadius = 8
         backgroundColor = .white
         
+        addSubview(birthDatePicker)
         addSubview(label)
     }
     
     private func setConstraints() {
         label.snp.makeConstraints { make in
             make.top.bottom.equalTo(self)
-            make.left.right.equalTo(self).inset(8)
+            make.left.equalTo(self).inset(8)
             make.height.equalTo(44.toScreen)
         }
+        birthDatePicker.snp.makeConstraints { make in
+            make.top.bottom.equalTo(self)
+            make.left.equalTo(self).inset(8)
+            make.height.equalTo(44.toScreen)
+        }
+    }
+    
+    @objc
+    func tapped() {
+        let action1 = UIAction(title: "Erkak", image: nil) { [self] action in
+            label.setTitle("Erkak", for: .normal)
+        }
+        let action2 = UIAction(title: "Ayol", image: nil) { [self] action in
+            label.setTitle("Ayol", for: .normal)
+        }
+
+        if #available(iOS 15.0, *) {
+            let menu = UIMenu(title: "", options: .singleSelection, children: [action1, action2])
+            label.menu = menu
+            label.showsMenuAsPrimaryAction = true
+        } else {
+            let menu = UIMenu(title: "", children: [action1, action2])
+            label.menu = menu
+            label.showsMenuAsPrimaryAction = true
+        }
+        delegate?.tapped()
     }
     
 }

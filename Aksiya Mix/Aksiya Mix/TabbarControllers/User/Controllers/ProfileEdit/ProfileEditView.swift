@@ -127,6 +127,10 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
             //name
             newData.fullname = data
         }
+        if tag == 1 {
+            //data brightday
+            
+        }
         if tag == 5 {
             //phone number
             newData.phone_number = data
