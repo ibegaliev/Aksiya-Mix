@@ -9,6 +9,7 @@ import UIKit
 
 protocol ProfileEditCellDelegate {
     func setData(data: String?, tag: Int?)
+    func selectedRegion(id: Int?)
 }
 
 class ProfileEditCell: UITableViewCell, UITextFieldDelegate, ProfileEditItemSelectableViewDelegate {
@@ -40,6 +41,7 @@ class ProfileEditCell: UITableViewCell, UITextFieldDelegate, ProfileEditItemSele
                     itemSelectableView.isHidden = false
                     itemSelectableView.label.isHidden = true
                 case .sex:
+                    itemSelectableView.jinsAdded()
                     itemSelectableView.birthDatePicker.isHidden = true
                     if let placeholder = newValue?.placeholder {
                         itemSelectableView.placeholder = placeholder
@@ -49,6 +51,7 @@ class ProfileEditCell: UITableViewCell, UITextFieldDelegate, ProfileEditItemSele
                     itemView.isHidden = true
                     itemSelectableView.isHidden = false
                 case .region:
+                    itemSelectableView.provinceAdded()
                     itemSelectableView.birthDatePicker.isHidden = true
                     if let placeholder = newValue?.placeholder {
                         itemSelectableView.placeholder = placeholder
@@ -144,14 +147,64 @@ class ProfileEditCell: UITableViewCell, UITextFieldDelegate, ProfileEditItemSele
         return true
     }
     
+    func selectedRegion(id: Int?) {
+        delegate?.selectedRegion(id: id)
+    }
+    
     func tapped() {
         delegate?.setData(data: nil, tag: tag)
     }
     
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 protocol ProfileEditItemSelectableViewDelegate {
     func tapped()
+    func selectedRegion(id: Int?)
 }
 
 class ProfileEditItemSelectableView: UIView {
@@ -171,7 +224,6 @@ class ProfileEditItemSelectableView: UIView {
         let lbl = UIButton()
         lbl.setTitleColor(.placeholderText, for: .normal)
         lbl.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
-        lbl.addTarget(self, action: #selector(tapped), for: .touchUpInside)
         return lbl
     }()
     
@@ -186,7 +238,6 @@ class ProfileEditItemSelectableView: UIView {
         super.init(frame: frame)
         setUI()
         setConstraints()
-        tapped()
     }
     
     required init?(coder: NSCoder) {
@@ -215,13 +266,14 @@ class ProfileEditItemSelectableView: UIView {
         }
     }
     
-    @objc
-    func tapped() {
+    func jinsAdded() {
         let action1 = UIAction(title: "Erkak", image: nil) { [self] action in
             label.setTitle("Erkak", for: .normal)
+            label.setTitleColor(.black, for: .normal)
         }
         let action2 = UIAction(title: "Ayol", image: nil) { [self] action in
             label.setTitle("Ayol", for: .normal)
+            label.setTitleColor(.black, for: .normal)
         }
 
         if #available(iOS 15.0, *) {
@@ -234,6 +286,57 @@ class ProfileEditItemSelectableView: UIView {
             label.showsMenuAsPrimaryAction = true
         }
         delegate?.tapped()
+    }
+    
+    func provinceAdded() {
+        
+        var actions = [UIAction]()
+        var data: [RegionsDM] = []
+        
+        data = JSONManager.shared.loadAndDecodeJSON(fromFileNamed: "regions", into: [RegionsDM].self) ?? []
+        print(data)
+        for dt in data {
+            let action = UIAction(title: dt.name_ru ?? "", image: nil) { [self] action in
+                label.setTitleColor(.black, for: .normal)
+                if LanguageManager().getLanguage() == "uz" {
+                    label.setTitle(dt.name_uz, for: .normal)
+                } else {
+                    label.setTitle(dt.name_ru, for: .normal)
+                }
+                delegate?.selectedRegion(id: dt.order_index)
+            }
+            actions.append(action)
+        }
+        let menu = UIMenu(title: "", children: actions)
+        label.menu = menu
+        label.showsMenuAsPrimaryAction = true
+
+    }
+
+    func regionAdded(id: Int?) {
+        
+        var actions = [UIAction]()
+        let districts = JSONManager.shared.loadAndDecodeJSON(fromFileNamed: "districts", into: [DistrictsDM].self) ?? []
+
+        for dt in districts {
+            if dt.region_id == id {
+                let action = UIAction(title: dt.name_ru ?? "", image: nil) { [self] action in
+                    label.setTitleColor(.black, for: .normal)
+                    if LanguageManager().getLanguage() == "uz" {
+                        label.setTitle(dt.name_uz, for: .normal)
+                    } else {
+                        label.setTitle(dt.name_ru, for: .normal)
+                    }
+                }
+                actions.append(action)
+            }
+            
+        }
+        
+        let menu = UIMenu(title: "", children: actions)
+        label.menu = menu
+        label.showsMenuAsPrimaryAction = true
+
     }
     
 }
