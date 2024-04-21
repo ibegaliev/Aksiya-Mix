@@ -9,6 +9,7 @@ import SwiftyJSON
 
 class ProfileEditViewModel {
     
+    var delegate: ProfileEditControllerDelegate?
     let view = ProfileEditView()
     
     var userdata: UserData? {
@@ -18,7 +19,7 @@ class ProfileEditViewModel {
         }
     }
 
-    func uploadData(data: UserData?) {
+    func uploadData(data: UserData?, completion: @escaping (UserData?)->()) {
         
         var bodyData: [String: Any] = [:]
         
@@ -36,7 +37,7 @@ class ProfileEditViewModel {
             bodyData: bodyData)
         { [self] responseData in
             userdata = Parser.shared.parse(json: responseData)
-            print(JSON(responseData))
+            completion(userdata)
         } errorData: { errorData in
             print(JSON(errorData))
         }

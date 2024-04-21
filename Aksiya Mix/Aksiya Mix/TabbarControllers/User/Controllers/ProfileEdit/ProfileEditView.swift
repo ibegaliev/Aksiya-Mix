@@ -182,6 +182,7 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
     }
     
     func sentNewName(data: String?, tag: Int) {
+        print(data)
         if tag == 0 {
             //name
             newData.fullname = data

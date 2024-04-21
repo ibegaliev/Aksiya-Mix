@@ -67,6 +67,7 @@ extension UserViewController {
 
     func editProfileTapped() {
         let controller = ProfileEditController()
+        controller.viewModel.delegate = self
         controller.viewModel.userdata = viewModel.userdata
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -82,6 +83,14 @@ extension UserViewController {
         alert.viewModel.delegate = self
         alert.modalPresentationStyle = .overFullScreen
         present(alert, animated: false)
+    }
+    
+}
+
+extension UserViewController: ProfileEditControllerDelegate {
+    
+    func saveData(data: UserData?) {
+        viewModel.userdata = data
     }
     
 }

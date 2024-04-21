@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ProfileEditControllerDelegate {
+    func saveData(data: UserData?)
+}
+
 class ProfileEditController: AksiyaViewController, ProfileEditViewDelegate {
     
     var viewModel = ProfileEditViewModel()
@@ -26,7 +30,9 @@ class ProfileEditController: AksiyaViewController, ProfileEditViewDelegate {
     }
     
     func save(data: UserData?) {
-        viewModel.uploadData(data: data)
+        viewModel.uploadData(data: data) { [self] data in
+            viewModel.delegate?.saveData(data: data)
+        }
     }
     
 }
