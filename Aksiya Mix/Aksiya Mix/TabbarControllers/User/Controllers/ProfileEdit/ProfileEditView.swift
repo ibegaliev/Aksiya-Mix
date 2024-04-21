@@ -52,7 +52,7 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
         table.register(ProfileEditCell.self, forCellReuseIdentifier: "ProfileEditCell")
         table.register(ProfileNameEditCell.self, forCellReuseIdentifier: "ProfileNameEditCell")
         table.register(ProfileRegionsEditCell.self, forCellReuseIdentifier: "ProfileRegionsEditCell")
-        table.register(ProfileEditCell.self, forCellReuseIdentifier: "ProfileEditCell")
+        table.register(ProfileNumberEditCell.self, forCellReuseIdentifier: "ProfileNumberEditCell")
         table.register(ProfileEditCell.self, forCellReuseIdentifier: "ProfileEditCell")
         return table
     }()
@@ -126,13 +126,6 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
             return cell
         } else if indexPath.row == 5 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileNameEditCell", for: indexPath) as! ProfileNameEditCell
-            cell.title = "Telefon raqam"
-            cell.placeholder = userdata?.phone_number
-            cell.delegate = self
-            cell.tag = indexPath.row
-            return cell
-        } else if indexPath.row == 6 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileNameEditCell", for: indexPath) as! ProfileNameEditCell
             cell.title = "Email"
             cell.placeholder = userdata?.email
             cell.delegate = self
@@ -141,6 +134,14 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileRegionsEditCell", for: indexPath) as! ProfileRegionsEditCell
 
+            return cell
+        } else if indexPath.row == 4 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileNumberEditCell", for: indexPath) as! ProfileNumberEditCell
+            cell.title = "Telefon raqam"
+            cell.placeholder = userdata?.phone_number
+//            cell.delegate = self
+            
+            cell.tag = indexPath.row
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileEditCell", for: indexPath) as! ProfileEditCell

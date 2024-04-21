@@ -107,6 +107,7 @@
 		8C8742C32BBD239B00F897BB /* ProfileEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8742C22BBD239B00F897BB /* ProfileEditController.swift */; };
 		8C8742C52BBD25B400F897BB /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8742C42BBD25B400F897BB /* ProfileEditView.swift */; };
 		8C8742C72BBD25DC00F897BB /* ProfileEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8742C62BBD25DC00F897BB /* ProfileEditViewModel.swift */; };
+		8C8B0ACE2BD42D23001F1F20 /* ProfileNumberEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B0ACD2BD42D23001F1F20 /* ProfileNumberEditCell.swift */; };
 		8C8B26382B9C0F900068A52C /* RatingTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B26372B9C0F900068A52C /* RatingTitlesView.swift */; };
 		8C8B263A2B9C0FB60068A52C /* RatingCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B26392B9C0FB60068A52C /* RatingCountView.swift */; };
 		8C8B263C2B9C24580068A52C /* RatingDiagrammView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B263B2B9C24580068A52C /* RatingDiagrammView.swift */; };
@@ -365,6 +366,7 @@
 		8C8742C22BBD239B00F897BB /* ProfileEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditController.swift; sourceTree = "<group>"; };
 		8C8742C42BBD25B400F897BB /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		8C8742C62BBD25DC00F897BB /* ProfileEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewModel.swift; sourceTree = "<group>"; };
+		8C8B0ACD2BD42D23001F1F20 /* ProfileNumberEditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNumberEditCell.swift; sourceTree = "<group>"; };
 		8C8B26372B9C0F900068A52C /* RatingTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTitlesView.swift; sourceTree = "<group>"; };
 		8C8B26392B9C0FB60068A52C /* RatingCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCountView.swift; sourceTree = "<group>"; };
 		8C8B263B2B9C24580068A52C /* RatingDiagrammView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingDiagrammView.swift; sourceTree = "<group>"; };
@@ -635,6 +637,7 @@
 				8CB9707C2BBD300800E54815 /* ProfileEditCell.swift */,
 				8C1883212BD39AA400F66548 /* ProfileNameEditCell.swift */,
 				8C3DDD6D2BD42134009A18A5 /* ProfileRegionsEditCell.swift */,
+				8C8B0ACD2BD42D23001F1F20 /* ProfileNumberEditCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1657,6 +1660,7 @@
 				8C8EFF942B7871E0002DE31D /* CategoryController.swift in Sources */,
 				8C97CEAB2BA4CC4600310C21 /* ShareLink.swift in Sources */,
 				8C0143932BBE9B5A0095722F /* AboutViewModel.swift in Sources */,
+				8C8B0ACE2BD42D23001F1F20 /* ProfileNumberEditCell.swift in Sources */,
 				8C8742C72BBD25DC00F897BB /* ProfileEditViewModel.swift in Sources */,
 				8C47E7182B91D12900B59A25 /* NetworkService.swift in Sources */,
 				8C8282D32BC202350010D0E9 /* SelectablePrinceCell.swift in Sources */,
