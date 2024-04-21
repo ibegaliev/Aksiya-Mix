@@ -147,7 +147,7 @@ class ProfileEditCell: UITableViewCell, UITextFieldDelegate, ProfileEditItemSele
         return true
     }
     
-    func selectedRegion(id: Int?) {
+    func selectedRegion(view: UIView, id: Int?) {
         delegate?.selectedRegion(id: id)
     }
     
@@ -204,7 +204,7 @@ class ProfileEditCell: UITableViewCell, UITextFieldDelegate, ProfileEditItemSele
 
 protocol ProfileEditItemSelectableViewDelegate {
     func tapped()
-    func selectedRegion(id: Int?)
+    func selectedRegion(view: UIView, id: Int?)
 }
 
 class ProfileEditItemSelectableView: UIView {
@@ -294,7 +294,6 @@ class ProfileEditItemSelectableView: UIView {
         var data: [RegionsDM] = []
         
         data = JSONManager.shared.loadAndDecodeJSON(fromFileNamed: "regions", into: [RegionsDM].self) ?? []
-        print(data)
         for dt in data {
             let action = UIAction(title: dt.name_ru ?? "", image: nil) { [self] action in
                 label.setTitleColor(.black, for: .normal)
@@ -303,7 +302,7 @@ class ProfileEditItemSelectableView: UIView {
                 } else {
                     label.setTitle(dt.name_ru, for: .normal)
                 }
-                delegate?.selectedRegion(id: dt.order_index)
+                delegate?.selectedRegion(view: self, id: dt.order_index)
             }
             actions.append(action)
         }
@@ -327,6 +326,7 @@ class ProfileEditItemSelectableView: UIView {
                     } else {
                         label.setTitle(dt.name_ru, for: .normal)
                     }
+                    delegate?.selectedRegion(view: self, id: dt.id)
                 }
                 actions.append(action)
             }

@@ -7,7 +7,32 @@
 
 import UIKit
 
+protocol ProfileRegionsEditCellDelegate {
+    func selectProvinse(id: Int?)
+    func selectRegion(id: Int?)
+}
+
 class ProfileRegionsEditCell: UITableViewCell, ProfileEditItemSelectableViewDelegate {
+    
+    var delegate: ProfileRegionsEditCellDelegate?
+    
+    var provinceText: String? {
+        get {
+            return nil
+        }
+        set {
+            provinceSelectableView.placeholder = newValue
+        }
+    }
+    
+    var regionText: String? {
+        get {
+            return nil
+        }
+        set {
+            regionSelectableView.placeholder = newValue
+        }
+    }
     
     lazy var provinceLabel: UILabel = {
         let lbl = UILabel()
@@ -34,6 +59,7 @@ class ProfileRegionsEditCell: UITableViewCell, ProfileEditItemSelectableViewDele
     
     lazy var regionSelectableView: ProfileEditItemSelectableView = {
         let view = ProfileEditItemSelectableView()
+        view.delegate = self
         view.placeholder = "Tanlang"
         view.birthDatePicker.isHidden = true
         return view
@@ -96,8 +122,13 @@ class ProfileRegionsEditCell: UITableViewCell, ProfileEditItemSelectableViewDele
         
     }
     
-    func selectedRegion(id: Int?) {
+    func selectedRegion(view: UIView, id: Int?) {
         regionSelectableView.regionAdded(id: id)
+        if view == provinceSelectableView {
+            delegate?.selectProvinse(id: id)
+        } else {
+            delegate?.selectRegion(id: id)
+        }
     }
 
     

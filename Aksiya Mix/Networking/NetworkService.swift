@@ -35,7 +35,7 @@ class NetworkService: NSObject {
 extension NetworkService {
         
 //    MARK: request
-    func mainRequest(urlPath: UrlPath, method: HttpMethodType, bodyData: [String: String]?, completion: @escaping (_ responseData: Data?)->(), errorData: @escaping (_ errorData: Data?)->()) {
+    func mainRequest(urlPath: UrlPath, method: HttpMethodType, bodyData: [String: Any]?, completion: @escaping (_ responseData: Data?)->(), errorData: @escaping (_ errorData: Data?)->()) {
         
         defualtSession = URLSession(configuration: .default, delegate: self, delegateQueue: .main)
                 
@@ -68,7 +68,7 @@ extension NetworkService {
         urlPath: UrlPath,
         addToURL: String = "",
         method: HttpMethodType,
-        bodyData: [String: String]?,
+        bodyData: [String: Any]?,
         completion: @escaping (_ responseData: Data?)->(),
         errorData: @escaping (_ errorData: Data?)->())
     {

@@ -20,6 +20,7 @@ class UserViewModel {
     func getData() {
         NetworkService.shared.mainRequestWithToken(urlPath: .usersProfile, method: .get, bodyData: nil) { [self] responseData in
             userdata = Parser.shared.parse(json: responseData)
+            print(userdata)
         } errorData: { errorData in }
     }
     

@@ -24,15 +24,18 @@ class Parser {
         }
     }
     
-    func data(data: [String: String]?) -> Data? {
-        guard let data else { return nil }
-        do {
-            let data = try encoder.encode(data)
-            return data
-        } catch {
-            fatalError(error.localizedDescription)
+    func data(data: [String: Any]?) -> Data? {
+        guard let dictionary = data else {
+            print("Error: Input dictionary is nil")
+            return nil
         }
-    }
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: dictionary, options: [])
+            return jsonData
+        } catch {
+            print("Error converting dictionary to data: \(error)")
+            return nil
+        }    }
     
 }
 

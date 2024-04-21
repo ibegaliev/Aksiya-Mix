@@ -18,7 +18,7 @@
             "uz": "Сурхондарё вилояти",
             "uz_cyr": "Сурхондарё вилояти"
         },
-        "postal_id": 10,
+        "postal_id": 9,
         "name_uz_latn": "Surxondaryo viloyati",
         "soato": "1722",
         "hidden": false
@@ -35,7 +35,7 @@
         "name_ru": "Сырдарьинская область",
         "name_uz": "Сирдарё вилояти",
         "country_id": "5d91e0abbc4c7dade230f681",
-        "order_index": 9,
+        "order_index": 10,
         "names": {
             "qq": "Сирдарё вилояти",
             "ru": "Сирдарё вилояти",

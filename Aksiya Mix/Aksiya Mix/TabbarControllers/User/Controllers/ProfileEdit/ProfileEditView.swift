@@ -21,15 +21,15 @@ struct ProfileEditDM {
     var type: ProfileEditType
 }
 
-class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, ProfileEditCellDelegate, ProfileNameEditCellDelegate {
-    
+class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, ProfileEditCellDelegate, ProfileNameEditCellDelegate, ProfileRegionsEditCellDelegate {
+
     var newData = UserData()
     var itemsData: [ProfileEditDM] = []
     var delegate: ProfileEditViewDelegate?
     
     var userdata: UserData? {
         didSet {
-            initializeItemsData()
+            
         }
     }
     
@@ -105,8 +105,8 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
             ProfileEditDM(title: "Ism", placeholder: userdata?.fullname, type: .name),
             ProfileEditDM(title: "Tug'ilgan sana", type: .bornData),
             ProfileEditDM(title: "Jins", type: .sex),
-            ProfileEditDM(title: "Viloyat", type: .region),
-            ProfileEditDM(title: "Telefon raqam" ,placeholder: userdata?.phone_number, type: .numberPhone),
+            ProfileEditDM(title: "Viloyat", placeholder: userdata?.district_label, type: .region),
+            ProfileEditDM(title: "Telefon raqam", type: .numberPhone),
             ProfileEditDM(title: "Elektron pochta", type: .email)
         ]
         tableView.reloadData()
@@ -133,14 +133,14 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
             return cell
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileRegionsEditCell", for: indexPath) as! ProfileRegionsEditCell
-
+            cell.delegate = self
+            cell.provinceText = userdata?.region_label
+            cell.regionText = userdata?.district_label
             return cell
         } else if indexPath.row == 4 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileNumberEditCell", for: indexPath) as! ProfileNumberEditCell
             cell.title = "Telefon raqam"
             cell.placeholder = userdata?.phone_number
-//            cell.delegate = self
-            
             cell.tag = indexPath.row
             return cell
         }
@@ -195,6 +195,19 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
             newData.email = data
         }
 
+    }
+    
+    func selectProvinse(id: Int?) {
+        userdata?.region = id
+        newData = userdata ?? UserData()
+        newData.region = id
+        print(id)
+    }
+    
+    func selectRegion(id: Int?) {
+        userdata?.district = id
+        newData = userdata ?? UserData()
+        newData.district = id
     }
     
 }
