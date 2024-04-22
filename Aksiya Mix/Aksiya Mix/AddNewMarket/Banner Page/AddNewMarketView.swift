@@ -17,7 +17,9 @@ protocol AddNewMarketViewDelegate {
     func tappedNextButton()
 }
 
-class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+import UIKit
+
+class AddNewMarketView: UIView {
     
     var delegate: AddNewMarketViewDelegate?
     
@@ -43,25 +45,19 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
             jsonFile: "WebAnimation"
         )
     ]
-
-    lazy var collectionLayout: UICollectionViewFlowLayout = {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        return layout
+    
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.isPagingEnabled = true
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.delegate = self
+        return scrollView
     }()
     
-    lazy var collectionView: UICollectionView = { [self] in
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: collectionLayout)
-        collection.delegate = self
-        collection.dataSource = self
-        collection.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
-        collection.isPagingEnabled = true
-        collection.bounces = false
-        collection.showsVerticalScrollIndicator = false
-        collection.backgroundColor = .backColor
-        collection.register(MarketBannerCell.self, forCellWithReuseIdentifier: "MarketBannerCell")
-        return collection
+    lazy var contentView: UIView = {
+        let view = UIView()
+        
+        return view
     }()
     
     lazy var nextButton: BlueButton = {
@@ -85,12 +81,22 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
     
     private func setUI() {
         backgroundColor = .backColor
-        addSubview(collectionView)
+        addSubview(scrollView)
+        scrollView.addSubview(contentView)
         addSubview(nextButton)
+        
+        for (index, marketData) in data.enumerated() {
+            let marketBannerView = MarketBannerCell(frame: .zero)
+            marketBannerView.data = marketData
+            contentView.addSubview(marketBannerView)
+            marketBannerView.frame = CGRect(x: CGFloat(index) * bounds.width, y: 0, width: bounds.width, height: bounds.height)
+        }
+        
+        contentView.frame = CGRect(x: 0, y: 0, width: bounds.width * CGFloat(data.count), height: bounds.height)
     }
     
     private func setConstraints() {
-        collectionView.snp.makeConstraints { make in
+        scrollView.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }
         nextButton.snp.makeConstraints { make in
@@ -115,21 +121,9 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
     private func tappedNextButton() {
         delegate?.tappedNextButton()
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        data.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MarketBannerCell", for: indexPath) as! MarketBannerCell
-        cell.data = data[indexPath.row]
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-    }
-    
+}
+
+extension AddNewMarketView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y > 1900.toScreen {
             toUPButton()
@@ -137,13 +131,4 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
             toDownButton()
         }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        0
-    }
-    
 }

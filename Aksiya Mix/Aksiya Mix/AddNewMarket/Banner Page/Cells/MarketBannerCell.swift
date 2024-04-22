@@ -8,7 +8,7 @@
 import UIKit
 import Lottie
 
-class MarketBannerCell: UICollectionViewCell {
+class MarketBannerCell: UIView {
     
     var data: MarketBannerDM? {
         get {
@@ -65,7 +65,7 @@ class MarketBannerCell: UICollectionViewCell {
     }
     
     private func setUI() {
-        contentView.addSubview(mainStack)
+        addSubview(mainStack)
         [imageView, titleLabel, descriptionLabel].forEach { item in
             mainStack.addArrangedSubview(item)
         }
@@ -73,12 +73,12 @@ class MarketBannerCell: UICollectionViewCell {
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.centerY.equalTo(contentView)
-            make.centerX.equalTo(contentView).inset(100)
-            make.left.right.equalTo(contentView).inset(20)
+            make.centerY.equalTo(self)
+            make.centerX.equalTo(self).inset(100)
+            make.left.right.equalTo(self).inset(20)
         }
         imageView.snp.makeConstraints { make in
-            make.height.width.equalTo(contentView.frame.width - 40)
+            make.height.width.equalTo(self.frame.width - 40)
         }
     }
     

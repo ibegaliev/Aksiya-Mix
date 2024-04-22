@@ -137,7 +137,7 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             if indexPath.row == 0 {
                 return CGSize(width: 0.screenWight, height: 0.screenWight/2)
             } else if indexPath.row == 1 {
-                return CGSize(width: 0.screenWight, height: 168.toScreen)
+                return CGSize(width: 0.screenWight, height: 172.toScreen)
             } else if indexPath.row == 2 {
                 return CGSize(width: 0.screenWight, height: 290.toScreen)
             } else if indexPath.row == 3 {
