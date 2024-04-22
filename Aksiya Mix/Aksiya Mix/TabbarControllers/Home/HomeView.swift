@@ -11,6 +11,8 @@ protocol HomeViewDelegate {
     func tapped()
     func offerViewSelected(index: Int?)
     func showAllCategorys()
+    
+    func selectItem(index: CategoryModel?)
 }
 
 enum HomeViewType {
@@ -186,8 +188,8 @@ extension HomeView: TypesCellDelegate {
         delegate?.showAllCategorys()
     }
     
-    func selectItem(index: Int) {
-        
+    func selectItem(index: CategoryModel?) {
+        delegate?.selectItem(index: index)
     }
     
     

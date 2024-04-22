@@ -9,7 +9,7 @@ import UIKit
 
 protocol TypesCellDelegate {
     func showAllTapped()
-    func selectItem(index: Int)
+    func selectItem(index: CategoryModel?)
 }
 
 class TypesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -154,8 +154,11 @@ class TypesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
         } else {
             cell.title.text = data[indexPath.row].name_ru
         }
-
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.selectItem(index: data[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

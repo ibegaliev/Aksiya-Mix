@@ -7,16 +7,16 @@
 
 import UIKit
 
-class HomeViewController: AksiyaViewController, HomeViewDelegate {
+class HomeViewController: AksiyaViewController, HomeViewDelegate, SingleCategoryControllerDelegate {
     
-    let homeView = HomeView()
+    let viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mode = .home
-        homeView.delegate = self
-        backView.backView.addSubview(homeView)
-        homeView.snp.makeConstraints { make in
+        viewModel.view.delegate = self
+        backView.backView.addSubview(viewModel.view)
+        viewModel.view.snp.makeConstraints { make in
             make.edges.equalTo(backView.backView)
         }
     }
@@ -45,6 +45,27 @@ class HomeViewController: AksiyaViewController, HomeViewDelegate {
     
     func showAllCategorys() {
         tabBarController?.selectedIndex = 1
+    }
+    
+    func selectItem(index: CategoryModel?) {
+        let controller = SingleCategoryController()
+        controller.viewModel.delegate = self
+        controller.viewModel.data = index
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func subCategorySelected(childs: [SubCategoryDM]?, categoryData: CategoryModel?) {
+        let controller = SingleCategoryController()
+        controller.viewModel.delegate = self
+        controller.viewModel.childData = childs
+        controller.viewModel.data = categoryData
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func chilCategorySelected(selectedChild: SubCategoryDM?) {
+        let controller = SearchController()
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }
