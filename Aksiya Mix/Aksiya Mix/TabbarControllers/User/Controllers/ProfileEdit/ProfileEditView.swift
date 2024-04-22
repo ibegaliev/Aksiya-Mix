@@ -124,6 +124,12 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
             cell.delegate = self
             cell.tag = indexPath.row
             return cell
+        } else if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileEditCell", for: indexPath) as! ProfileEditCell
+            cell.title = itemsData[indexPath.row]
+            cell.tag = indexPath.row
+            cell.delegate = self
+            return cell
         } else if indexPath.row == 5 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileNameEditCell", for: indexPath) as! ProfileNameEditCell
             cell.title = "Email"
@@ -159,7 +165,7 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
         }
         if tag == 1 {
             //data brightday
-            
+            print(data)
         }
         if tag == 5 {
             //phone number
