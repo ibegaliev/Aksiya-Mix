@@ -20,6 +20,7 @@ class MarketBannerCell: UICollectionViewCell {
             imageView.animation = .named(newValue?.jsonFile ?? "")
             imageView.loopMode = .loop
             imageView.play()
+            animate()
         }
     }
     
@@ -79,6 +80,27 @@ class MarketBannerCell: UICollectionViewCell {
         }
         imageView.snp.makeConstraints { make in
             make.height.width.equalTo(contentView.frame.width - 40)
+        }
+    }
+    
+    func animate() {
+        print(data)
+        if data?.isAnimate ?? false {
+            let views = [titleLabel, descriptionLabel]
+            UIView.animate(withDuration: 0) {
+                views.forEach { item in
+                    item.transform = CGAffineTransform(translationX: 0, y: 1000)
+                }
+            } completion: { [self] isComplate in
+                data?.isAnimate = false
+                if isComplate {
+                    UIView.animate(withDuration: 1) {
+                        views.forEach { item in
+                            item.transform = .identity
+                        }
+                    }
+                }
+            }
         }
     }
     

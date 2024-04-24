@@ -11,6 +11,7 @@ struct MarketBannerDM {
     var name: String
     var description: String
     var jsonFile: String
+    var isAnimate: Bool = true
 }
 
 protocol AddNewMarketViewDelegate {
@@ -48,6 +49,7 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
+        layout.scrollDirection = .horizontal
         return layout
     }()
     
@@ -58,7 +60,7 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         collection.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
         collection.isPagingEnabled = true
         collection.bounces = false
-        collection.showsVerticalScrollIndicator = false
+        collection.showsHorizontalScrollIndicator = false
         collection.backgroundColor = .backColor
         collection.register(MarketBannerCell.self, forCellWithReuseIdentifier: "MarketBannerCell")
         return collection
@@ -76,7 +78,7 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         super.init(frame: frame)
         setUI()
         setConstraints()
-        toDownButton()
+        toDownButton(withDuration: 0)
     }
     
     required init?(coder: NSCoder) {
@@ -99,9 +101,9 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
-    private func toDownButton() {
-        UIView.animate(withDuration: 0) { [self] in
-            nextButton.transform = .init(translationX: 0, y: 300)
+    private func toDownButton(withDuration: Double = 1) {
+        UIView.animate(withDuration: withDuration) { [self] in
+            nextButton.transform = .init(translationX: 0.screenWight+100, y: 0)
         }
     }
     
@@ -130,8 +132,8 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y > 1900.toScreen {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == 3 {
             toUPButton()
         } else {
             toDownButton()
