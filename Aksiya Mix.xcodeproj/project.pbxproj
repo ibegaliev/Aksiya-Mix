@@ -589,6 +589,7 @@
 				8CBA40032B77905100F92F98 /* SingleCompany */,
 				8CBE7BC72B78F0E0001559E9 /* SingleCategory */,
 				8C4D83502BB7FA1E000AC37F /* AddNewMarket */,
+				8C8742C12BBD238C00F897BB /* ProfileEdit */,
 			);
 			path = "Aksiya Mix";
 			sourceTree = "<group>";
@@ -919,7 +920,6 @@
 		8C8742C02BBD237000F897BB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8C8742C12BBD238C00F897BB /* ProfileEdit */,
 				8CFF7A602BAAB69E0059BF4D /* Alert */,
 				8C01438F2BBE98030095722F /* AboutApp */,
 			);

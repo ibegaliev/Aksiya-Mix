@@ -20,7 +20,6 @@ class MarketBannerCell: UICollectionViewCell {
             imageView.animation = .named(newValue?.jsonFile ?? "")
             imageView.loopMode = .loop
             imageView.play()
-            animate()
         }
     }
     
@@ -29,7 +28,7 @@ class MarketBannerCell: UICollectionViewCell {
         ic.contentMode = .scaleAspectFit
         return ic
     }()
-
+    
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
@@ -84,20 +83,17 @@ class MarketBannerCell: UICollectionViewCell {
     }
     
     func animate() {
-        print(data)
-        if data?.isAnimate ?? false {
-            let views = [titleLabel, descriptionLabel]
-            UIView.animate(withDuration: 0) {
-                views.forEach { item in
-                    item.transform = CGAffineTransform(translationX: 0, y: 1000)
-                }
-            } completion: { [self] isComplate in
-                data?.isAnimate = false
-                if isComplate {
-                    UIView.animate(withDuration: 1) {
-                        views.forEach { item in
-                            item.transform = .identity
-                        }
+        let views = [titleLabel, descriptionLabel]
+        UIView.animate(withDuration: 0) {
+            views.forEach { item in
+                item.transform = CGAffineTransform(translationX: 0, y: 1000)
+            }
+        } completion: { [self] isComplate in
+            data?.isAnimate = false
+            if isComplate {
+                UIView.animate(withDuration: 1) {
+                    views.forEach { item in
+                        item.transform = .identity
                     }
                 }
             }

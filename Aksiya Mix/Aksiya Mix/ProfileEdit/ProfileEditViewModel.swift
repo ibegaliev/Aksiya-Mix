@@ -30,6 +30,7 @@ class ProfileEditViewModel {
         if let district = data?.district { bodyData["district"] = district }
         if let birthday = data?.birthday { bodyData["birthday"] = birthday }
         
+        print(bodyData)
         
         NetworkService.shared.mainRequestWithToken(
             urlPath: .usersProfile,
@@ -38,7 +39,8 @@ class ProfileEditViewModel {
         { [self] responseData in
             userdata = Parser.shared.parse(json: responseData)
             completion(userdata)
-        } errorData: { errorData in
+        } errorData: { [self] errorData in
+            delegate?.error()
             print(JSON(errorData))
         }
         

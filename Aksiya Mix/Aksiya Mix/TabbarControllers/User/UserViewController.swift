@@ -93,4 +93,11 @@ extension UserViewController: ProfileEditControllerDelegate {
         viewModel.userdata = data
     }
     
+    func error() {
+        let alert = UIAlertController(title: "Xatolik!", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .cancel)
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
+
 }

@@ -119,10 +119,10 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileNameEditCell", for: indexPath) as! ProfileNameEditCell
+            cell.tag = indexPath.row
             cell.title = "Ism"
             cell.placeholder = userdata?.fullname
             cell.delegate = self
-            cell.tag = indexPath.row
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileEditCell", for: indexPath) as! ProfileEditCell
@@ -188,7 +188,6 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
     }
     
     func sentNewName(data: String?, tag: Int) {
-        print(data)
         if tag == 0 {
             //name
             newData.fullname = data

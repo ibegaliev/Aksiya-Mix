@@ -66,6 +66,14 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         return collection
     }()
     
+    lazy var pageControl: UIPageControl = {
+        let controll = UIPageControl()
+        controll.numberOfPages = data.count
+        controll.currentPageIndicatorTintColor = .selectBlue
+        controll.pageIndicatorTintColor = .white
+        return controll
+    }()
+    
     lazy var nextButton: BlueButton = {
         let btn = BlueButton()
         btn.setTitle("Keyigisi", for: .normal)
@@ -89,6 +97,7 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         backgroundColor = .backColor
         addSubview(collectionView)
         addSubview(nextButton)
+        addSubview(pageControl)
     }
     
     private func setConstraints() {
@@ -98,6 +107,10 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         nextButton.snp.makeConstraints { make in
             make.left.right.equalTo(self).inset(16)
             make.bottom.equalTo(self).inset(50)
+        }
+        pageControl.snp.makeConstraints { make in
+            make.centerX.equalTo(self)
+            make.bottom.equalTo(self).inset(120.toScreen)
         }
     }
     
@@ -138,6 +151,7 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
         } else {
             toDownButton()
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -147,6 +161,11 @@ class AddNewMarketView: UIView, UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         0
     }
-
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width
+        let currentPage = Int((scrollView.contentOffset.x + width / 2) / width)
+        pageControl.currentPage = currentPage
+    }
     
 }

@@ -9,6 +9,7 @@ import UIKit
 
 protocol ProfileEditControllerDelegate {
     func saveData(data: UserData?)
+    func error()
 }
 
 class ProfileEditController: AksiyaViewController, ProfileEditViewDelegate {
