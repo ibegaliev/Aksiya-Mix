@@ -130,6 +130,13 @@ class ProfileRegionsEditCell: UITableViewCell, ProfileEditItemSelectableViewDele
             delegate?.selectRegion(id: id)
         }
     }
-
+    
+    func selectedMN() {
+        
+    }
+    
+    func selectedWM() {
+        
+    }
     
 }

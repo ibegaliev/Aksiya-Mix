@@ -101,10 +101,11 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
     }
     
     private func initializeItemsData() {
+        let placeholderForSex = userdata?.gender == 1 ? "Erkak" : "Ayol"
         itemsData = [
             ProfileEditDM(title: "Ism", placeholder: userdata?.fullname, type: .name),
             ProfileEditDM(title: "Tug'ilgan sana", type: .bornData),
-            ProfileEditDM(title: "Jins", type: .sex),
+            ProfileEditDM(title: "Jins", placeholder: placeholderForSex, type: .sex),
             ProfileEditDM(title: "Viloyat", placeholder: userdata?.district_label, type: .region),
             ProfileEditDM(title: "Telefon raqam", type: .numberPhone),
             ProfileEditDM(title: "Elektron pochta", type: .email)
@@ -202,12 +203,20 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
     func sentNewNumber(number: String?) {
         newData.phone_number = number
         print(newData)
-        
     }
     
     func errorNewNumber() {
         
     }
+    
+    func selectedMN() {
+        newData.gender = 1
+    }
+    
+    func selectedWM() {
+        newData.gender = 0
+    }
+
     
     func selectProvinse(id: Int?) {
         userdata?.region = id

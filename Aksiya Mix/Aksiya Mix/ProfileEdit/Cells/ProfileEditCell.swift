@@ -10,6 +10,8 @@ import UIKit
 protocol ProfileEditCellDelegate {
     func setData(data: String?, tag: Int?)
     func selectedRegion(id: Int?)
+    func selectedMN()
+    func selectedWM()
 }
 
 class ProfileEditCell: UITableViewCell, UITextFieldDelegate, ProfileEditItemSelectableViewDelegate {
@@ -155,6 +157,14 @@ class ProfileEditCell: UITableViewCell, UITextFieldDelegate, ProfileEditItemSele
         delegate?.setData(data: nil, tag: tag)
     }
     
+    func selectedMN() {
+        delegate?.selectedMN()
+    }
+    
+    func selectedWM() {
+        delegate?.selectedWM()
+    }
+    
 }
 
 
@@ -204,6 +214,8 @@ class ProfileEditCell: UITableViewCell, UITextFieldDelegate, ProfileEditItemSele
 
 protocol ProfileEditItemSelectableViewDelegate {
     func tapped()
+    func selectedMN()
+    func selectedWM()
     func selectedRegion(view: UIView, id: Int?)
 }
 
@@ -270,10 +282,12 @@ class ProfileEditItemSelectableView: UIView {
         let action1 = UIAction(title: "Erkak", image: nil) { [self] action in
             label.setTitle("Erkak", for: .normal)
             label.setTitleColor(.black, for: .normal)
+            delegate?.selectedMN()
         }
         let action2 = UIAction(title: "Ayol", image: nil) { [self] action in
             label.setTitle("Ayol", for: .normal)
             label.setTitleColor(.black, for: .normal)
+            delegate?.selectedWM()
         }
 
         if #available(iOS 15.0, *) {
