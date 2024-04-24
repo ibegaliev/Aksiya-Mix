@@ -21,8 +21,8 @@ struct ProfileEditDM {
     var type: ProfileEditType
 }
 
-class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, ProfileEditCellDelegate, ProfileNameEditCellDelegate, ProfileRegionsEditCellDelegate {
-
+class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, ProfileEditCellDelegate, ProfileNameEditCellDelegate, ProfileRegionsEditCellDelegate, ProfileNumberEditCellDelegate {
+    
     var newData = UserData()
     var itemsData: [ProfileEditDM] = []
     var delegate: ProfileEditViewDelegate?
@@ -147,6 +147,7 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileNumberEditCell", for: indexPath) as! ProfileNumberEditCell
             cell.title = "Telefon raqam"
             cell.placeholder = userdata?.phone_number
+            cell.delegate = self
             cell.tag = indexPath.row
             return cell
         }
@@ -167,10 +168,6 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
             //data brightday
             print(data)
         }
-        if tag == 5 {
-            //phone number
-            newData.phone_number = data
-        }
         if tag == 6 {
             //email
             newData.email = data
@@ -180,6 +177,9 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
     
     @objc
     func tappedSave() {
+        if newData.fullname?.isEmpty ?? true {
+            newData.fullname = userdata?.fullname
+        }
         delegate?.save(data: newData)
     }
     
@@ -192,10 +192,6 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
             //name
             newData.fullname = data
         }
-        if tag == 5 {
-            //name
-            newData.phone_number = data
-        }
         if tag == 6 {
             //name
             newData.email = data
@@ -203,11 +199,20 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
 
     }
     
+    func sentNewNumber(number: String?) {
+        newData.phone_number = number
+        print(newData)
+        
+    }
+    
+    func errorNewNumber() {
+        
+    }
+    
     func selectProvinse(id: Int?) {
         userdata?.region = id
         newData = userdata ?? UserData()
         newData.region = id
-        print(id)
     }
     
     func selectRegion(id: Int?) {

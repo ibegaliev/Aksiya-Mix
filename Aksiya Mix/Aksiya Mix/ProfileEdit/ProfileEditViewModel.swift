@@ -29,6 +29,7 @@ class ProfileEditViewModel {
         if let region = data?.region { bodyData["region"] = region }
         if let district = data?.district { bodyData["district"] = district }
         if let birthday = data?.birthday { bodyData["birthday"] = birthday }
+        if let phoneNumber = data?.phone_number { bodyData["phone_number"] = phoneNumber}
         
         print(bodyData)
         
