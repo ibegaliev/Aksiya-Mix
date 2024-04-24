@@ -210,11 +210,11 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
     }
     
     func selectedMN() {
-        newData.gender = 1
+        newData.gender = 0
     }
     
     func selectedWM() {
-        newData.gender = 0
+        newData.gender = 1
     }
 
     

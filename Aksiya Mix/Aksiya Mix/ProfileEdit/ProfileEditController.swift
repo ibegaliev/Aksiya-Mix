@@ -10,6 +10,7 @@ import UIKit
 protocol ProfileEditControllerDelegate {
     func saveData(data: UserData?)
     func error()
+    func reloadData()
 }
 
 class ProfileEditController: AksiyaViewController, ProfileEditViewDelegate {
@@ -33,6 +34,7 @@ class ProfileEditController: AksiyaViewController, ProfileEditViewDelegate {
     func save(data: UserData?) {
         viewModel.uploadData(data: data) { [self] data in
             viewModel.delegate?.saveData(data: data)
+            viewModel.delegate?.reloadData()
         }
     }
     

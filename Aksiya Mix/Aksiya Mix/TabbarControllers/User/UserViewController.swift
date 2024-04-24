@@ -99,5 +99,9 @@ extension UserViewController: ProfileEditControllerDelegate {
         alert.addAction(action)
         present(alert, animated: true)
     }
-
+    
+    func reloadData() {
+        viewModel.getData()
+    }
+    
 }
