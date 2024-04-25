@@ -78,7 +78,6 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
     }
     
     private func setUI() {
-        
         addSubview(tableView)
         addSubview(topNavigation)
         addSubview(saveButton)
