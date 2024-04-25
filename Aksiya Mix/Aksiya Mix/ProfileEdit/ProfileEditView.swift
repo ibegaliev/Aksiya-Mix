@@ -172,7 +172,6 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
             //email
             newData.email = data
         }
-        print(data, tag)
     }
     
     @objc
@@ -192,11 +191,9 @@ class ProfileEditView: UIView, UITableViewDelegate, UITableViewDataSource, Profi
             //name
             newData.fullname = data
         }
-        if tag == 6 {
-            //name
+        if tag == 5 {
             newData.email = data
         }
-
     }
     
     func sentNewNumber(number: String?) {
