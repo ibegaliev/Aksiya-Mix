@@ -76,7 +76,8 @@ extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "OwnerMarketCell", for: indexPath) as! OwnerMarketCell
             cell.title = "Do'kon egasining ma'lumotlari"
             cell.placeholder = "To'liq ism sharif"
-            cell.number = "+998 95 905 15 75"
+            cell.number = "+998 00 000 00 00"
+            cell.delegate = self
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UploadImageMarketCell", for: indexPath) as! UploadImageMarketCell
@@ -94,6 +95,8 @@ extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProvinceMarketCell", for: indexPath) as! ProvinceMarketCell
             cell.title = "Viloyat tuman"
             cell.placeholder = "Viloyat tuman tanlang"
+            cell.delegate = self
+            cell.setRegions()
             return cell
         } else if indexPath.row == 5 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LocationMarketCell", for: indexPath) as! LocationMarketCell
@@ -111,6 +114,23 @@ extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         return UITableViewCell()
+    }
+    
+}
+
+
+extension CreateMarketView: OwnerMarketCellDelegate {
+    
+    func changeField(text: String) {
+        print("NAME", text)
+    }
+    
+}
+
+extension CreateMarketView: ProvinceMarketCellDelegate {
+    
+    func selectedRegion(view: UIView, id: Int?) {
+        print(view, id)
     }
     
 }

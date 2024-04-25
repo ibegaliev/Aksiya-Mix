@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol ProvinceMarketCellDelegate {
+    func selectedRegion(view: UIView, id: Int?)
+}
+
 class ProvinceMarketCell: UITableViewCell {
+    
+    var delegate: ProvinceMarketCellDelegate?
     
     var title: String? {
         get {
@@ -73,12 +79,35 @@ class ProvinceMarketCell: UITableViewCell {
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
             make.top.bottom.equalTo(contentView).inset(12)
-            make.left.right.equalTo(contentView).inset(16)
+            make.left.equalTo(contentView).inset(16)
         }
         textField.snp.makeConstraints { make in
             make.height.equalTo(44.toScreen)
         }
     }
     
+    func setRegions() {
+        
+        var actions = [UIAction]()
+        var data: [RegionsDM] = []
+        
+        data = JSONManager.shared.loadAndDecodeJSON(fromFileNamed: "regions", into: [RegionsDM].self) ?? []
+        for dt in data {
+            let action = UIAction(title: dt.name_ru ?? "", image: nil) { [self] action in
+                textField.setTitleColor(.black, for: .normal)
+                if LanguageManager().getLanguage() == "uz" {
+                    textField.setTitle(dt.name_uz, for: .normal)
+                } else {
+                    textField.setTitle(dt.name_ru, for: .normal)
+                }
+                delegate?.selectedRegion(view: self, id: dt.order_index)
+            }
+            actions.append(action)
+        }
+        let menu = UIMenu(title: "", children: actions)
+        textField.menu = menu
+        textField.showsMenuAsPrimaryAction = true
+    }
+
 }
 

@@ -73,7 +73,7 @@ class LocationMarketCell: UITableViewCell {
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
             make.top.bottom.equalTo(contentView).inset(12)
-            make.left.right.equalTo(contentView).inset(16)
+            make.left.equalTo(contentView).inset(16)
         }
         textField.snp.makeConstraints { make in
             make.height.equalTo(44.toScreen)

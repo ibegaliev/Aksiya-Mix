@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol OwnerMarketCellDelegate {
+    func changeField(text: String)
+}
+
 class OwnerMarketCell: UITableViewCell {
+    
+    var delegate: OwnerMarketCellDelegate?
     
     var title: String? {
         get {
@@ -44,7 +50,7 @@ class OwnerMarketCell: UITableViewCell {
     
     lazy var textField: ProfileEditItemView = {
         let field = ProfileEditItemView()
-
+        field.textField.delegate = self
         return field
     }()
     
@@ -105,6 +111,16 @@ class OwnerMarketCell: UITableViewCell {
         numberIcon.snp.makeConstraints { make in
             make.width.height.equalTo(24)
         }
+    }
+    
+}
+
+extension OwnerMarketCell: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
+        delegate?.changeField(text: newText)
+        return true
     }
     
 }
