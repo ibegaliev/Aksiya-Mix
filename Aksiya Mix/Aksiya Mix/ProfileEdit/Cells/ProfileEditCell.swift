@@ -93,7 +93,7 @@ class ProfileEditCell: UITableViewCell, UITextFieldDelegate, ProfileEditItemSele
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .appFont(ofSize: 14, weight: .semibold)
+        lbl.font = .appFont(ofSize: 16, weight: .semibold)
         return lbl
     }()
     

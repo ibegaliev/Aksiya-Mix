@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol CreateButtonMarketCellDelegate {
+    func saveTapped()
+}
+
 class CreateButtonMarketCell: UITableViewCell {
+    
+    var delegate: CreateButtonMarketCellDelegate?
     
     lazy var mainButton: BlueButton = {
         let btn = BlueButton()
         btn.setHeight()
         btn.setBorder()
+        btn.addTarget(self, action: #selector(saveTapped), for: .touchUpInside)
         btn.setTitle("Create", for: .normal)
         return btn
     }()
@@ -39,6 +46,11 @@ class CreateButtonMarketCell: UITableViewCell {
             make.top.bottom.equalTo(contentView).inset(4)
             make.left.right.equalTo(contentView).inset(16)
         }
+    }
+    
+    @objc
+    func saveTapped() {
+        delegate?.saveTapped()
     }
     
 }

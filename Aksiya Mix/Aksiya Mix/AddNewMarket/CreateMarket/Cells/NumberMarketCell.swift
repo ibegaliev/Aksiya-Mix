@@ -7,7 +7,14 @@
 
 import UIKit
 
-class NumberMarketCell: UITableViewCell {
+protocol NumberMarketCellDelegate  {
+    func sentNewNumber(number: String?)
+    func errorNewNumber()
+}
+
+class NumberMarketCell: UITableViewCell, InputNumberViewDelegate, UITextFieldDelegate {
+    
+    var delegate: NumberMarketCellDelegate?
     
     var title: String? {
         get {
@@ -33,11 +40,11 @@ class NumberMarketCell: UITableViewCell {
         return lbl
     }()
     
-    lazy var textField: InputNumberView = {
-        let input = InputNumberView()
-//        input.delegate = self
-        input.backgroundColor = .white
-        return input
+    lazy var textField: ProfileNumberEditItemView = {
+        let view = ProfileNumberEditItemView()
+        view.textField.keyboardType = .phonePad
+        view.textField.delegate = self
+        return view
     }()
     
     lazy var textFieldUZ: ProfileEditItemView = {
@@ -87,6 +94,42 @@ class NumberMarketCell: UITableViewCell {
             make.height.equalTo(44.toScreen)
         }
     }
+    
+    func phoneNumber(number: String?) {
+        delegate?.sentNewNumber(number: number)
+    }
+    
+    func formatPhoneNumber(_ textField: UITextField, range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        if string.isEmpty { return true }
+        let newText = (text as NSString).replacingCharacters(in: range, with: string)
+        let numericText = newText.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        guard numericText.count <= 9 else { return false }
+        var formattedNumber = ""
+        let components = Array(numericText)
+        for (index, character) in components.enumerated() {
+            if index == 2 || index == 5 || index == 7 || index == 9 {
+                formattedNumber += " "
+            }
+            formattedNumber += String(character)
+        }
+        textField.text = formattedNumber
+        let phoneNumber = "+998\(formattedNumber.replacingOccurrences(of: " ", with: ""))"
+        if phoneNumber.count == 13 {
+            delegate?.sentNewNumber(number: phoneNumber)
+        } else {
+            delegate?.errorNewNumber()
+        }
+        return false
+    }
+    
+    func textField(
+        _ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String
+    ) -> Bool {
+        return formatPhoneNumber(textField, range: range, replacementString: string)
+    }
+    
+
     
 }
 

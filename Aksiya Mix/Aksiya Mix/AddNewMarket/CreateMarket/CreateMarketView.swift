@@ -30,7 +30,7 @@ class CreateMarketView: UIView {
         table.register(NumberMarketCell.self, forCellReuseIdentifier: "NumberMarketCell")
         table.register(DeliverMarketCell.self, forCellReuseIdentifier: "DeliverMarketCell")
         table.register(LocationMarketCell.self, forCellReuseIdentifier: "LocationMarketCell")
-        table.register(ProvinceMarketCell.self, forCellReuseIdentifier: "ProvinceMarketCell")
+        table.register(ProfileRegionsEditCell.self, forCellReuseIdentifier: "ProfileRegionsEditCell")
         table.register(UploadImageMarketCell.self, forCellReuseIdentifier: "UploadImageMarketCell")
         table.register(CreateButtonMarketCell.self, forCellReuseIdentifier: "CreateButtonMarketCell")
         return table
@@ -68,7 +68,7 @@ class CreateMarketView: UIView {
 extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        8
+        7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -92,25 +92,19 @@ extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
             
             return cell
         } else if indexPath.row == 4 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ProvinceMarketCell", for: indexPath) as! ProvinceMarketCell
-            cell.title = "Viloyat tuman"
-            cell.placeholder = "Viloyat tuman tanlang"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileRegionsEditCell", for: indexPath) as! ProfileRegionsEditCell
+            cell.mainStack.spacing = 12
             cell.delegate = self
-            cell.setRegions()
             return cell
         } else if indexPath.row == 5 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LocationMarketCell", for: indexPath) as! LocationMarketCell
-            cell.title = "Joylashuv"
-            cell.placeholder = "Manzilni tanlang"
-            return cell
-        } else if indexPath.row == 6 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "NumberMarketCell", for: indexPath) as! NumberMarketCell
             cell.title = "Do'kon telefon raqami"
             cell.placeholder = "+998 "
+            cell.delegate = self
             return cell
-        } else if indexPath.row == 7 {
+        } else if indexPath.row == 6 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CreateButtonMarketCell", for: indexPath) as! CreateButtonMarketCell
-            
+            cell.delegate = self
             return cell
         }
         return UITableViewCell()
@@ -127,10 +121,34 @@ extension CreateMarketView: OwnerMarketCellDelegate {
     
 }
 
-extension CreateMarketView: ProvinceMarketCellDelegate {
+extension CreateMarketView: ProfileRegionsEditCellDelegate {
     
-    func selectedRegion(view: UIView, id: Int?) {
-        print(view, id)
+    func selectProvinse(id: Int?) {
+        print(id)
+    }
+    
+    func selectRegion(id: Int?) {
+        print(id)
+    }
+
+}
+
+extension CreateMarketView: NumberMarketCellDelegate {
+    
+    func sentNewNumber(number: String?) {
+        print("NEW NUMBER:", number)
+    }
+    
+    func errorNewNumber() {
+        print("error")
+    }
+    
+}
+
+extension CreateMarketView: CreateButtonMarketCellDelegate {
+    
+    func saveTapped() {
+        
     }
     
 }

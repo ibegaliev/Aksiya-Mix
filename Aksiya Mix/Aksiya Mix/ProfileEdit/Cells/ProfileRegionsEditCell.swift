@@ -37,7 +37,7 @@ class ProfileRegionsEditCell: UITableViewCell, ProfileEditItemSelectableViewDele
     lazy var provinceLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Viloyatni tanlang"
-        lbl.font = .appFont(ofSize: 14, weight: .semibold)
+        lbl.font = .appFont(ofSize: 16, weight: .semibold)
         return lbl
     }()
     
@@ -53,7 +53,7 @@ class ProfileRegionsEditCell: UITableViewCell, ProfileEditItemSelectableViewDele
     lazy var regionLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Tumanni tanlang"
-        lbl.font = .appFont(ofSize: 14, weight: .semibold)
+        lbl.font = .appFont(ofSize: 16, weight: .semibold)
         return lbl
     }()
     

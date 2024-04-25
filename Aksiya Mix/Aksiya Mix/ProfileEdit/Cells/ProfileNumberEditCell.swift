@@ -43,7 +43,7 @@ class ProfileNumberEditCell: UITableViewCell, UITextFieldDelegate {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .appFont(ofSize: 14, weight: .semibold)
+        lbl.font = .appFont(ofSize: 16, weight: .semibold)
         return lbl
     }()
     
@@ -178,7 +178,7 @@ class ProfileNumberEditItemView: UIView {
     private func setConstraints() {
         stack.snp.makeConstraints { make in
             make.top.bottom.equalTo(self)
-            make.left.equalTo(self).inset(8)
+            make.left.right.equalTo(self).inset(8)
             make.height.equalTo(44.toScreen)
         }
     }
