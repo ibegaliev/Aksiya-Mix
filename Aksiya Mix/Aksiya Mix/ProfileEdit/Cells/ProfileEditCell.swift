@@ -365,7 +365,7 @@ class ProfileEditItemView: UIView {
             textField.placeholder = newValue
         }
     }
-
+    
     lazy var textField: UITextField = {
         let field = UITextField()
         field.font = .appFont(ofSize: 14, weight: .medium)

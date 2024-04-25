@@ -9,7 +9,10 @@ import UIKit
 
 final class UploadImageMarketCell: UITableViewCell {
     
+    lazy var imagePicker = UIImagePickerController()
+    
     lazy var selectableImageView: UIImageView = {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(selectImageTapped))
         let image = UIImageView()
         image.image = .storefront
         image.tintColor = UIColor.spacetext
@@ -18,6 +21,8 @@ final class UploadImageMarketCell: UITableViewCell {
         image.clipsToBounds = true
         image.layer.borderColor = UIColor.spacetext.cgColor
         image.layer.borderWidth = 2
+        image.addGestureRecognizer(gesture)
+        image.isUserInteractionEnabled = true
         return image
     }()
     
@@ -92,6 +97,26 @@ final class UploadImageMarketCell: UITableViewCell {
         selectableImageView.snp.makeConstraints { make in
             make.width.height.equalTo(70.toScreen)
         }
+    }
+    
+    @objc
+    func selectImageTapped() {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            print("Button capture")
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum
+            imagePicker.allowsEditing = false
+
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        self.dismiss(animated: true, completion: { () -> Void in
+            
+        })
+        
+        selectableImageView.image = image
     }
     
 }

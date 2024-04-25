@@ -8,5 +8,11 @@
 import Foundation
 
 class CreateMarketViewModel {
+    
     var view = CreateMarketView()
+    
+    func createMarket(completion: @escaping ()->()) {
+        
+    }
+    
 }

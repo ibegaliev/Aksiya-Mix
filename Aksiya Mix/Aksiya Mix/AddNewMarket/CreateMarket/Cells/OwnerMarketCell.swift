@@ -8,7 +8,9 @@
 import UIKit
 
 protocol OwnerMarketCellDelegate {
-    func changeField(text: String)
+    func changeNameField(text: String)
+    func changeSurnameField(text: String)
+    func changeMidnameField(text: String)
 }
 
 class OwnerMarketCell: UITableViewCell {
@@ -29,7 +31,7 @@ class OwnerMarketCell: UITableViewCell {
             return nil
         }
         set {
-            textField.placeholder = newValue
+
         }
     }
     
@@ -48,12 +50,27 @@ class OwnerMarketCell: UITableViewCell {
         return lbl
     }()
     
-    lazy var textField: ProfileEditItemView = {
+    lazy var nametextField: ProfileEditItemView = {
         let field = ProfileEditItemView()
         field.textField.delegate = self
+        field.placeholder = "Ism"
         return field
     }()
-    
+
+    lazy var surnametextField: ProfileEditItemView = {
+        let field = ProfileEditItemView()
+        field.textField.delegate = self
+        field.placeholder = "Familiya"
+        return field
+    }()
+
+    lazy var midnametextField: ProfileEditItemView = {
+        let field = ProfileEditItemView()
+        field.textField.delegate = self
+        field.placeholder = "Sharfi"
+        return field
+    }()
+
     lazy var numberLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = .appFont(ofSize: 12, weight: .medium)
@@ -95,7 +112,7 @@ class OwnerMarketCell: UITableViewCell {
         selectionStyle = .none
         contentView.backgroundColor = .backColor
         contentView.addSubview(mainStack)
-        [titleLabel, textField, bottomStack].forEach { item in
+        [titleLabel, nametextField, surnametextField, midnametextField, bottomStack].forEach { item in
             mainStack.addArrangedSubview(item)
         }
         [numberIcon, numberLabel].forEach { item in
@@ -105,7 +122,8 @@ class OwnerMarketCell: UITableViewCell {
     
     private func setConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.top.bottom.equalTo(contentView).inset(12)
+            make.top.equalTo(contentView).inset(12)
+            make.bottom.equalTo(contentView)
             make.left.right.equalTo(contentView).inset(16)
         }
         numberIcon.snp.makeConstraints { make in
@@ -119,7 +137,14 @@ extension OwnerMarketCell: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let newText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
-        delegate?.changeField(text: newText)
+        if textField == nametextField {
+            delegate?.changeNameField(text: newText)
+        } else if textField == surnametextField {
+            delegate?.changeSurnameField(text: newText)
+        } else if textField == midnametextField {
+            delegate?.changeMidnameField(text: newText)
+        }
+
         return true
     }
     

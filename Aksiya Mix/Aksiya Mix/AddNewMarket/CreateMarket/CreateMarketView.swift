@@ -114,9 +114,16 @@ extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
 
 
 extension CreateMarketView: OwnerMarketCellDelegate {
+    func changeNameField(text: String) {
+        print(text)
+    }
     
-    func changeField(text: String) {
-        print("NAME", text)
+    func changeSurnameField(text: String) {
+        print(text)
+    }
+    
+    func changeMidnameField(text: String) {
+        print(text)
     }
     
 }
