@@ -24,6 +24,8 @@ enum UrlPath: String {
     case generalCategories = "/general/categories/"
     case generalDistricts = "/general/districts/"
     
+    //stores
+    case stores = "/stores/"
     
     //user
     case usersProfile = "/users/profile/"

@@ -56,12 +56,12 @@ class DatedMarketCell: UITableViewCell, DatesMarketItemsDelegate {
             make.left.right.equalTo(contentView).inset(16)
         }
     }
-    
-    func setbeginData(data: String) {
+        
+    func setbeginData(data: Int) {
         delegate?.setbeginData(data: data)
     }
     
-    func setendData(data: String) {
+    func setendData(data: Int) {
         delegate?.setendData(data: data)
     }
     
@@ -77,8 +77,8 @@ class DatedMarketCell: UITableViewCell, DatesMarketItemsDelegate {
 }
 
 protocol DatesMarketItemsDelegate {
-    func setbeginData(data: String)
-    func setendData(data: String)
+    func setbeginData(data: Int)
+    func setendData(data: Int)
     func setbeginTime(data: String)
     func setendTime(data: String)
 }
@@ -165,10 +165,10 @@ class DatesMarketItems: UIView {
     
     func beginDataAction() {
         var actions = [UIAction]()
-        ["Du", "Se", "Cho", "Pa", "Ju", "Sha", "Yak"].forEach { item in
-            let action = UIAction(title: item) { [self] action in
-                beginData.setTitle(item, for: .normal)
-                delegate?.setbeginData(data: item)
+        for day in ["Du", "Se", "Cho", "Pa", "Ju", "Sha", "Yak"].enumerated() {
+            let action = UIAction(title: day.element) { [self] action in
+                beginData.setTitle(day.element, for: .normal)
+                delegate?.setbeginData(data: day.offset)
             }
             actions.append(action)
         }
@@ -179,10 +179,10 @@ class DatesMarketItems: UIView {
 
     func endDataAction() {
         var actions = [UIAction]()
-        ["Du", "Se", "Cho", "Pa", "Ju", "Sha", "Yak"].forEach { item in
-            let action = UIAction(title: item) { [self] action in
-                endData.setTitle(item, for: .normal)
-                delegate?.setendData(data: item)
+        for day in ["Du", "Se", "Cho", "Pa", "Ju", "Sha", "Yak"].enumerated() {
+            let action = UIAction(title: day.element) { [self] action in
+                endData.setTitle(day.element, for: .normal)
+                delegate?.setendData(data: day.offset)
             }
             actions.append(action)
         }

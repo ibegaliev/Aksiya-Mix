@@ -74,11 +74,11 @@ class DeliverMarketSelectableView: UIView {
     
     lazy var yesButton: BlueButton = {
         let btn = BlueButton()
-        btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .white
         btn.setTitle("Ha", for: .normal)
         btn.titleLabel?.font = .appFont(ofSize: 14, weight: .medium)
         btn.addTarget(self, action: #selector(uzsTapped), for: .touchUpInside)
+        btn.setTitleColor(.selectBlue, for: .normal)
         return btn
     }()
     

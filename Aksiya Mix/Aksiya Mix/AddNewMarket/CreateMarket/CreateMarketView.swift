@@ -50,10 +50,26 @@ class CreateMarketView: UIView {
         }
     }
 
-    var marketfirstDay: String?
-    var marketLastDay: String?
-    var marketfirstTime: String?
-    var marketLastTime: String?
+    var marketfirstDay: Int? {
+        didSet {
+            resultData.working_day_start = marketfirstDay
+        }
+    }
+    var marketLastDay: Int? {
+        didSet {
+            resultData.working_day_end = marketLastDay
+        }
+    }
+    var marketfirstTime: String? {
+        didSet {
+            resultData.working_time_start = marketfirstTime
+        }
+    }
+    var marketLastTime: String? {
+        didSet {
+            resultData.working_time_end = marketLastTime
+        }
+    }
     
     var isHaveDelivery: Bool? {
         didSet {
@@ -225,11 +241,11 @@ extension CreateMarketView: DeliverMarketCellDelegate {
 
 extension CreateMarketView: DatesMarketItemsDelegate {
     
-    func setbeginData(data: String) {
+    func setbeginData(data: Int) {
         marketfirstDay = data
     }
     
-    func setendData(data: String) {
+    func setendData(data: Int) {
         marketLastDay = data
     }
     
@@ -261,6 +277,15 @@ extension CreateMarketView: NumberMarketCellDelegate {
         numberOfStore = number
     }
     
+    func descriptionUZ(data: String?) {
+        desctiptionOfStoreUz = data
+    }
+    
+    func descriptionRU(data: String?) {
+        desctiptionOfStoreRu = data
+    }
+
+    
     func errorNewNumber() {
         print("error")
     }
@@ -290,7 +315,7 @@ extension CreateMarketView: UploadImageMarketCellDelegate {
 extension CreateMarketView: CreateButtonMarketCellDelegate {
     
     func saveTapped() {
-        print(resultData)
+        delegate?.saveDataTapped(data: resultData)
     }
     
 }

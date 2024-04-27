@@ -9,6 +9,8 @@ import UIKit
 
 protocol NumberMarketCellDelegate  {
     func sentNewNumber(number: String?)
+    func descriptionUZ(data: String?)
+    func descriptionRU(data: String?)
     func errorNewNumber()
 }
 
@@ -50,12 +52,14 @@ class NumberMarketCell: UITableViewCell, InputNumberViewDelegate, UITextFieldDel
     lazy var textFieldUZ: ProfileEditItemView = {
         let field = ProfileEditItemView()
         field.placeholder = "Tavsif (uz)"
+        field.textField.delegate = self
         return field
     }()
     
     lazy var textFieldRU: ProfileEditItemView = {
         let field = ProfileEditItemView()
         field.placeholder = "Tavsif (ru)"
+        field.textField.delegate = self
         return field
     }()
     
@@ -126,7 +130,17 @@ class NumberMarketCell: UITableViewCell, InputNumberViewDelegate, UITextFieldDel
     func textField(
         _ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String
     ) -> Bool {
-        return formatPhoneNumber(textField, range: range, replacementString: string)
+        if textField == self.textField.textField {
+            return formatPhoneNumber(textField, range: range, replacementString: string)
+        } else {
+            let newText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
+            if textField == textFieldUZ.textField {
+                delegate?.descriptionUZ(data: newText)
+            } else {
+                delegate?.descriptionRU(data: newText)
+            }
+        }
+        return true
     }
     
 
