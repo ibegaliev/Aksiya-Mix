@@ -7,7 +7,14 @@
 
 import UIKit
 
-final class UploadImageMarketCell: UITableViewCell {
+protocol UploadImageMarketCellDelegate {
+    func imageSelectTapped()
+    func nameUZ(text: String?)
+    func nameRU(text: String?)
+    func shortName(text: String?)
+}
+
+final class UploadImageMarketCell: UITableViewCell, UITextFieldDelegate {
     
     var delegate: UploadImageMarketCellDelegate?
     
@@ -37,19 +44,22 @@ final class UploadImageMarketCell: UITableViewCell {
     lazy var nameOfStoreUz: ProfileEditItemView = {
         let field = ProfileEditItemView()
         field.placeholder = "Do'kon nomi (UZ)"
+        field.textField.delegate = self
         return field
     }()
     
     lazy var nameOfStoreRu: ProfileEditItemView = {
         let field = ProfileEditItemView()
         field.placeholder = "Do'kon nomi (RU)"
+        field.textField.delegate = self
         return field
     }()
 
 
-    lazy var nameOfStoreOwner: ProfileEditItemView = {
+    lazy var shortNameOfStoreOwner: ProfileEditItemView = {
         let field = ProfileEditItemView()
         field.placeholder = "Do'konning qisqacha nomi"
+        field.textField.delegate = self
         return field
     }()
     
@@ -81,7 +91,7 @@ final class UploadImageMarketCell: UITableViewCell {
     private func setUI() {
         contentView.backgroundColor = .backColor
         contentView.addSubview(mainStack)
-        [topStack, nameOfStoreUz, nameOfStoreRu, nameOfStoreOwner].forEach { item in
+        [topStack, nameOfStoreUz, nameOfStoreRu, shortNameOfStoreOwner].forEach { item in
             mainStack.addArrangedSubview(item)
         }
         [selectableImageView, descriptionLabel].forEach { item in
@@ -102,6 +112,18 @@ final class UploadImageMarketCell: UITableViewCell {
     @objc
     func selectImageTapped() {
         delegate?.imageSelectTapped()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
+        if textField == nameOfStoreUz.textField {
+            delegate?.nameUZ(text: newText)
+        } else if textField == nameOfStoreRu.textField {
+            delegate?.nameRU(text: newText)
+        } else if textField == shortNameOfStoreOwner.textField {
+            delegate?.shortName(text: newText)
+        }
+        return true
     }
     
 }

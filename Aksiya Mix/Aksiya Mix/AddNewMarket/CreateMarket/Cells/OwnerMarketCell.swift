@@ -137,14 +137,13 @@ extension OwnerMarketCell: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let newText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
-        if textField == nametextField {
+        if textField == nametextField.textField {
             delegate?.changeNameField(text: newText)
-        } else if textField == surnametextField {
+        } else if textField == surnametextField.textField {
             delegate?.changeSurnameField(text: newText)
-        } else if textField == midnametextField {
+        } else if textField == midnametextField.textField {
             delegate?.changeMidnameField(text: newText)
         }
-
         return true
     }
     

@@ -7,17 +7,26 @@
 
 import UIKit
 
-protocol UploadImageMarketCellDelegate {
-    func imageSelectTapped()
-}
-
 class CreateMarketView: UIView {
 
     var delegate: CreateMarketViewDelegate?
     
-    var nameOfOwner: String?
-    var surnameOfOwner: String?
-    var midNameOfOwner: String?
+    var nameOfOwner: String? {
+        didSet {
+            print(nameOfOwner)
+            resultData.owner_firstname = nameOfOwner
+        }
+    }
+    var surnameOfOwner: String? {
+        didSet {
+            resultData.owner_lastname = surnameOfOwner
+        }
+    }
+    var midNameOfOwner: String? {
+        didSet {
+            resultData.owner_fathername = midNameOfOwner
+        }
+    }
 
     var selectedImage: UIImage? {
         didSet {
@@ -25,24 +34,67 @@ class CreateMarketView: UIView {
         }
     }
     
-    var marketNameUZ: String?
-    var marketNameRU: String?
-    var marketDesctiption: String?
-    
+    var marketNameUZ: String? {
+        didSet {
+            resultData.name_uz = marketNameUZ
+        }
+    }
+    var marketNameRU: String? {
+        didSet {
+            resultData.name_ru = marketNameRU
+        }
+    }
+    var marketUsername: String? {
+        didSet {
+            resultData.shortname = marketUsername
+        }
+    }
+
     var marketfirstDay: String?
     var marketLastDay: String?
     var marketfirstTime: String?
     var marketLastTime: String?
     
-    var isHaveDelivery: Bool?
+    var isHaveDelivery: Bool? {
+        didSet {
+            resultData.delivery = isHaveDelivery
+        }
+    }
     
-    var provinceID: Int?
-    var regionID: Int?
+    var provinceID: Int? {
+        didSet {
+            resultData.region = provinceID
+        }
+    }
+    var regionID: Int? {
+        didSet {
+            resultData.district = regionID
+        }
+    }
+    var address: String? {
+        didSet {
+            resultData.address = address
+        }
+    }
     
-    var numberOfStore: String?
-    var desctiptionOfStoreUz: String?
-    var desctiptionOfStoreRu: String?
+    var numberOfStore: String? {
+        didSet {
+            resultData.main_phone_number = numberOfStore
+        }
+    }
+    var desctiptionOfStoreUz: String? {
+        didSet {
+            resultData.desc_uz = desctiptionOfStoreUz
+        }
+    }
+    var desctiptionOfStoreRu: String? {
+        didSet {
+            resultData.desc_ru = desctiptionOfStoreRu
+        }
+    }
 
+    var resultData: CreateMarketDM = CreateMarketDM()
+    
     lazy var topNavigation: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -217,6 +269,18 @@ extension CreateMarketView: NumberMarketCellDelegate {
 
 extension CreateMarketView: UploadImageMarketCellDelegate {
     
+    func nameUZ(text: String?) {
+        marketNameUZ = text
+    }
+    
+    func nameRU(text: String?) {
+        marketNameRU = text
+    }
+    
+    func shortName(text: String?) {
+        marketUsername = text
+    }
+    
     func imageSelectTapped() {
         delegate?.imageSelected()
     }
@@ -226,7 +290,7 @@ extension CreateMarketView: UploadImageMarketCellDelegate {
 extension CreateMarketView: CreateButtonMarketCellDelegate {
     
     func saveTapped() {
-        
+        print(resultData)
     }
     
 }

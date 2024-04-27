@@ -9,7 +9,6 @@ import UIKit
 
 protocol CreateMarketViewDelegate {
     func imageSelected()
-    
 }
 
 class CreateMarketViewModel {

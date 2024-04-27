@@ -107,6 +107,7 @@
 		8C8742C32BBD239B00F897BB /* ProfileEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8742C22BBD239B00F897BB /* ProfileEditController.swift */; };
 		8C8742C52BBD25B400F897BB /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8742C42BBD25B400F897BB /* ProfileEditView.swift */; };
 		8C8742C72BBD25DC00F897BB /* ProfileEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8742C62BBD25DC00F897BB /* ProfileEditViewModel.swift */; };
+		8C87BB5C2BDCC51300DD300E /* CreateMarketDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87BB5B2BDCC51300DD300E /* CreateMarketDM.swift */; };
 		8C8B0ACE2BD42D23001F1F20 /* ProfileNumberEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B0ACD2BD42D23001F1F20 /* ProfileNumberEditCell.swift */; };
 		8C8B26382B9C0F900068A52C /* RatingTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B26372B9C0F900068A52C /* RatingTitlesView.swift */; };
 		8C8B263A2B9C0FB60068A52C /* RatingCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B26392B9C0FB60068A52C /* RatingCountView.swift */; };
@@ -365,6 +366,7 @@
 		8C8742C22BBD239B00F897BB /* ProfileEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditController.swift; sourceTree = "<group>"; };
 		8C8742C42BBD25B400F897BB /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		8C8742C62BBD25DC00F897BB /* ProfileEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewModel.swift; sourceTree = "<group>"; };
+		8C87BB5B2BDCC51300DD300E /* CreateMarketDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMarketDM.swift; sourceTree = "<group>"; };
 		8C8B0ACD2BD42D23001F1F20 /* ProfileNumberEditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNumberEditCell.swift; sourceTree = "<group>"; };
 		8C8B26372B9C0F900068A52C /* RatingTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTitlesView.swift; sourceTree = "<group>"; };
 		8C8B26392B9C0FB60068A52C /* RatingCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCountView.swift; sourceTree = "<group>"; };
@@ -870,6 +872,7 @@
 				8C847CD82BC8E77800E1C854 /* CreateMarketController.swift */,
 				8C847CDA2BC8EBE400E1C854 /* CreateMarketView.swift */,
 				8C847CDC2BC8F5DF00E1C854 /* CreateMarketViewModel.swift */,
+				8C87BB5B2BDCC51300DD300E /* CreateMarketDM.swift */,
 				8C847CDE2BC8FA5400E1C854 /* Cells */,
 			);
 			path = CreateMarket;
@@ -1763,6 +1766,7 @@
 				8CEA8A422B775CA7000071FC /* CompanyViewModel.swift in Sources */,
 				8C85BC2B2B8265220047F54C /* UserViewController.swift in Sources */,
 				8CF23A1F2B6C6FB60044BB4D /* SingleProductHorizontalCell.swift in Sources */,
+				8C87BB5C2BDCC51300DD300E /* CreateMarketDM.swift in Sources */,
 				8CC9BD1E2B9DCBDF00180758 /* BannerBaseDataInfo.swift in Sources */,
 				8C847CE22BC90C1800E1C854 /* UploadImageMarketCell.swift in Sources */,
 				8C19B0AB2B63556A007D8872 /* SceneDelegate.swift in Sources */,
