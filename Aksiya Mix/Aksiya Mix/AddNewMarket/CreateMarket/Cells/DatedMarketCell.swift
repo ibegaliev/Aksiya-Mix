@@ -7,8 +7,10 @@
 
 import UIKit
 
-class DatedMarketCell: UITableViewCell {
+class DatedMarketCell: UITableViewCell, DatesMarketItemsDelegate {
     
+    var delegate: DatesMarketItemsDelegate?
+
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Ish vaqti:"
@@ -18,7 +20,7 @@ class DatedMarketCell: UITableViewCell {
     
     lazy var selectableView: DatesMarketItems = {
         let view = DatesMarketItems()
-        
+        view.delegate = self
         return view
     }()
         
@@ -55,11 +57,35 @@ class DatedMarketCell: UITableViewCell {
         }
     }
     
+    func setbeginData(data: String) {
+        delegate?.setbeginData(data: data)
+    }
+    
+    func setendData(data: String) {
+        delegate?.setendData(data: data)
+    }
+    
+    func setbeginTime(data: String) {
+        delegate?.setbeginTime(data: data)
+    }
+    
+    func setendTime(data: String) {
+        delegate?.setendTime(data: data)
+    }
+
+    
 }
 
-
+protocol DatesMarketItemsDelegate {
+    func setbeginData(data: String)
+    func setendData(data: String)
+    func setbeginTime(data: String)
+    func setendTime(data: String)
+}
 
 class DatesMarketItems: UIView {
+    
+    var delegate: DatesMarketItemsDelegate?
     
     lazy var beginData: UIButton = {
         let item = UIButton()
@@ -142,6 +168,7 @@ class DatesMarketItems: UIView {
         ["Du", "Se", "Cho", "Pa", "Ju", "Sha", "Yak"].forEach { item in
             let action = UIAction(title: item) { [self] action in
                 beginData.setTitle(item, for: .normal)
+                delegate?.setbeginData(data: item)
             }
             actions.append(action)
         }
@@ -155,6 +182,7 @@ class DatesMarketItems: UIView {
         ["Du", "Se", "Cho", "Pa", "Ju", "Sha", "Yak"].forEach { item in
             let action = UIAction(title: item) { [self] action in
                 endData.setTitle(item, for: .normal)
+                delegate?.setendData(data: item)
             }
             actions.append(action)
         }
@@ -217,6 +245,7 @@ class DatesMarketItems: UIView {
         ].forEach { item in
             let action = UIAction(title: item) { [self] action in
                 beginTime.setTitle(item, for: .normal)
+                delegate?.setbeginTime(data: item)
             }
             actions.append(action)
         }
@@ -279,6 +308,7 @@ class DatesMarketItems: UIView {
         ].forEach { item in
             let action = UIAction(title: item) { [self] action in
                 endTime.setTitle(item, for: .normal)
+                delegate?.setendTime(data: item)
             }
             actions.append(action)
         }

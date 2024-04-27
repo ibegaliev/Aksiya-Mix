@@ -120,7 +120,7 @@ extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DatedMarketCell", for: indexPath) as! DatedMarketCell
-            
+            cell.delegate = self
             return cell
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DeliverMarketCell", for: indexPath) as! DeliverMarketCell
@@ -167,6 +167,26 @@ extension CreateMarketView: DeliverMarketCellDelegate {
     
     func isHaveDelivery(isHave: Bool?) {
         isHaveDelivery = isHave
+    }
+    
+}
+
+extension CreateMarketView: DatesMarketItemsDelegate {
+    
+    func setbeginData(data: String) {
+        marketfirstDay = data
+    }
+    
+    func setendData(data: String) {
+        marketLastDay = data
+    }
+    
+    func setbeginTime(data: String) {
+        marketfirstTime = data
+    }
+    
+    func setendTime(data: String) {
+        marketLastTime = data
     }
     
 }
