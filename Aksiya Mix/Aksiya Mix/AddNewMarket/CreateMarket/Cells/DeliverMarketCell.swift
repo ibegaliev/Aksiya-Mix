@@ -7,7 +7,13 @@
 
 import UIKit
 
-class DeliverMarketCell: UITableViewCell {
+protocol DeliverMarketCellDelegate {
+    func isHaveDelivery(isHave: Bool?)
+}
+
+class DeliverMarketCell: UITableViewCell, DeliverMarketCellDelegate {
+    
+    var delegate: DeliverMarketCellDelegate?
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
@@ -18,7 +24,7 @@ class DeliverMarketCell: UITableViewCell {
     
     lazy var selectableView: DeliverMarketSelectableView = {
         let view = DeliverMarketSelectableView()
-        
+        view.delegate = self
         return view
     }()
     
@@ -56,9 +62,15 @@ class DeliverMarketCell: UITableViewCell {
         }
     }
     
+    func isHaveDelivery(isHave: Bool?) {
+        delegate?.isHaveDelivery(isHave: isHave)
+    }
+    
 }
 
 class DeliverMarketSelectableView: UIView {
+    
+    var delegate: DeliverMarketCellDelegate?
     
     lazy var yesButton: BlueButton = {
         let btn = BlueButton()
@@ -118,6 +130,7 @@ class DeliverMarketSelectableView: UIView {
     
     @objc
     private func uzsTapped() {
+        delegate?.isHaveDelivery(isHave: true)
         yesButton.backgroundColor = .selectBlue
         yesButton.setTitleColor(.white, for: .normal)
         
@@ -127,6 +140,7 @@ class DeliverMarketSelectableView: UIView {
     
     @objc
     private func usdTapped() {
+        delegate?.isHaveDelivery(isHave: false)
         yesButton.backgroundColor = .white
         yesButton.setTitleColor(.selectBlue, for: .normal)
         

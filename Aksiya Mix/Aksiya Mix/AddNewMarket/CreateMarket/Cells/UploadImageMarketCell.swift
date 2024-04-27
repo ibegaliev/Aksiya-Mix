@@ -9,7 +9,7 @@ import UIKit
 
 final class UploadImageMarketCell: UITableViewCell {
     
-    lazy var imagePicker = UIImagePickerController()
+    var delegate: UploadImageMarketCellDelegate?
     
     lazy var selectableImageView: UIImageView = {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(selectImageTapped))
@@ -101,22 +101,7 @@ final class UploadImageMarketCell: UITableViewCell {
     
     @objc
     func selectImageTapped() {
-        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-            print("Button capture")
-            imagePicker.delegate = self
-            imagePicker.sourceType = .savedPhotosAlbum
-            imagePicker.allowsEditing = false
-
-            present(imagePicker, animated: true, completion: nil)
-        }
-    }
-    
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
-        self.dismiss(animated: true, completion: { () -> Void in
-            
-        })
-        
-        selectableImageView.image = image
+        delegate?.imageSelectTapped()
     }
     
 }

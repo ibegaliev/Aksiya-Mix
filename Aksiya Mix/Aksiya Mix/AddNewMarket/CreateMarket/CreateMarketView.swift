@@ -7,8 +7,42 @@
 
 import UIKit
 
+protocol UploadImageMarketCellDelegate {
+    func imageSelectTapped()
+}
+
 class CreateMarketView: UIView {
+
+    var delegate: CreateMarketViewDelegate?
     
+    var nameOfOwner: String?
+    var surnameOfOwner: String?
+    var midNameOfOwner: String?
+
+    var selectedImage: UIImage? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    var marketNameUZ: String?
+    var marketNameRU: String?
+    var marketDesctiption: String?
+    
+    var marketfirstDay: String?
+    var marketLastDay: String?
+    var marketfirstTime: String?
+    var marketLastTime: String?
+    
+    var isHaveDelivery: Bool?
+    
+    var provinceID: Int?
+    var regionID: Int?
+    
+    var numberOfStore: String?
+    var desctiptionOfStoreUz: String?
+    var desctiptionOfStoreRu: String?
+
     lazy var topNavigation: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -81,7 +115,8 @@ extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UploadImageMarketCell", for: indexPath) as! UploadImageMarketCell
-
+            cell.delegate = self
+            if let img = selectedImage { cell.selectableImageView.image = img; cell.selectableImageView.contentMode = .scaleAspectFill }
             return cell
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DatedMarketCell", for: indexPath) as! DatedMarketCell
@@ -89,7 +124,7 @@ extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DeliverMarketCell", for: indexPath) as! DeliverMarketCell
-            
+            cell.delegate = self
             return cell
         } else if indexPath.row == 4 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileRegionsEditCell", for: indexPath) as! ProfileRegionsEditCell
@@ -115,15 +150,23 @@ extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
 
 extension CreateMarketView: OwnerMarketCellDelegate {
     func changeNameField(text: String) {
-        print(text)
+        nameOfOwner = text
     }
     
     func changeSurnameField(text: String) {
-        print(text)
+        surnameOfOwner = text
     }
     
     func changeMidnameField(text: String) {
-        print(text)
+        midNameOfOwner = text
+    }
+    
+}
+
+extension CreateMarketView: DeliverMarketCellDelegate {
+    
+    func isHaveDelivery(isHave: Bool?) {
+        isHaveDelivery = isHave
     }
     
 }
@@ -131,23 +174,31 @@ extension CreateMarketView: OwnerMarketCellDelegate {
 extension CreateMarketView: ProfileRegionsEditCellDelegate {
     
     func selectProvinse(id: Int?) {
-        print(id)
+        provinceID = id
     }
     
     func selectRegion(id: Int?) {
-        print(id)
+        regionID = id
     }
-
+    
 }
 
 extension CreateMarketView: NumberMarketCellDelegate {
     
     func sentNewNumber(number: String?) {
-        print("NEW NUMBER:", number)
+        numberOfStore = number
     }
     
     func errorNewNumber() {
         print("error")
+    }
+    
+}
+
+extension CreateMarketView: UploadImageMarketCellDelegate {
+    
+    func imageSelectTapped() {
+        delegate?.imageSelected()
     }
     
 }
