@@ -48,10 +48,21 @@ extension CreateMarketController: CreateMarketViewDelegate, UIImagePickerControl
                                let _ = data.working_time_start,
                                let _ = data.working_time_end {
                                 if let _ = data.delivery {
-                                    if let _ = data.region, let _ = data.district {
+                                    if let _ = data.region,
+                                        let _ = data.district {
                                         if let _ = data.main_phone_number {
-                                            if let _ = data.desc_ru, let _ = data.desc_uz {
-                                                createMarket(data: data)
+                                            if let _ = data.desc_ru,
+                                                let _ = data.desc_uz {
+                                                if let _ = data.longitude,
+                                                    let _ = data.latitude {
+                                                    if let _ = data.address {
+                                                        createMarket(data: data)
+                                                    } else {
+                                                        setAlert(title: "Do'konni manzilini kiriting")
+                                                    }
+                                                } else {
+                                                    setAlert(title: "Do'konni xaritadan tanlang")
+                                                }
                                             } else {
                                                 setAlert(title: "Do'konning qisqacha tasnifini kiriting")
                                             }
