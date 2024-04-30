@@ -130,10 +130,11 @@ class CreateMarketView: UIView {
         table.register(OwnerMarketCell.self, forCellReuseIdentifier: "OwnerMarketCell")
         table.register(DatedMarketCell.self, forCellReuseIdentifier: "DatedMarketCell")
         table.register(NumberMarketCell.self, forCellReuseIdentifier: "NumberMarketCell")
+        table.register(AddressMarketCell.self, forCellReuseIdentifier: "AddressMarketCell")
         table.register(DeliverMarketCell.self, forCellReuseIdentifier: "DeliverMarketCell")
         table.register(LocationMarketCell.self, forCellReuseIdentifier: "LocationMarketCell")
-        table.register(ProfileRegionsEditCell.self, forCellReuseIdentifier: "ProfileRegionsEditCell")
         table.register(UploadImageMarketCell.self, forCellReuseIdentifier: "UploadImageMarketCell")
+        table.register(ProfileRegionsEditCell.self, forCellReuseIdentifier: "ProfileRegionsEditCell")
         table.register(CreateButtonMarketCell.self, forCellReuseIdentifier: "CreateButtonMarketCell")
         return table
     }()
@@ -170,7 +171,7 @@ class CreateMarketView: UIView {
 extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        7
+        8
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -206,6 +207,10 @@ extension CreateMarketView: UITableViewDelegate, UITableViewDataSource {
             cell.delegate = self
             return cell
         } else if indexPath.row == 6 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AddressMarketCell", for: indexPath) as! AddressMarketCell
+            
+            return cell
+        } else if indexPath.row == 7 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CreateButtonMarketCell", for: indexPath) as! CreateButtonMarketCell
             cell.delegate = self
             return cell
