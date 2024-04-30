@@ -16,7 +16,14 @@ class LikedController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .backColor
+        setController()
+    }
+    
+    private func setController() {
+        view.addSubview(viewModel.view)
+        viewModel.view.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
     }
     
 }
