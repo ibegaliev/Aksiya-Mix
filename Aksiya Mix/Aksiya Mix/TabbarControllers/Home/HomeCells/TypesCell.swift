@@ -166,7 +166,7 @@ class TypesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        14
+        8
     }
     
 }

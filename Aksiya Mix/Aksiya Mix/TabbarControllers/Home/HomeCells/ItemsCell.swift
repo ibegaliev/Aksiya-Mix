@@ -15,9 +15,18 @@ class ItemsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
     
     var delegate: ItemsCellDelegate?
     
+    var title: String? {
+        get {
+            return titleLabel.text
+        }
+        set {
+            titleLabel.text = newValue
+        }
+    }
+    
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Новинки"
+        lbl.text = "some text here!"
         lbl.font = .appFont(ofSize: 16, weight: .bold)
         return lbl
     }()

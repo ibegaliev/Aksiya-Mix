@@ -24,7 +24,7 @@ class TypeCell: UICollectionViewCell {
     
     lazy var title: UILabel = {
         let lbl = UILabel()
-        lbl.font = .appFont(ofSize: 12, weight: .regular)
+        lbl.font = .appFont(ofSize: 12, weight: .semibold)
         lbl.textAlignment = .center
         return lbl
     }()

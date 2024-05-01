@@ -94,7 +94,7 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return 5
+            return 4
         } else {
             return 20
         }
@@ -113,12 +113,9 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             } else if indexPath.row == 2 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsCell", for: indexPath) as! ItemsCell
                 cell.delegate = self
+                cell.title = "Yaqinda ko'rilganlar"
                 return cell
             } else if indexPath.row == 3 {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsCell", for: indexPath) as! ItemsCell
-                cell.delegate = self
-                return cell
-            } else if indexPath.row == 4 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BottomTypeCell", for: indexPath) as! BottomTypeCell
                 
                 return cell
@@ -134,6 +131,7 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         }
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
@@ -143,8 +141,6 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             } else if indexPath.row == 2 {
                 return CGSize(width: 0.screenWight, height: 290.toScreen)
             } else if indexPath.row == 3 {
-                return CGSize(width: 0.screenWight, height: 290.toScreen)
-            } else if indexPath.row == 4 {
                 return CGSize(width: 0.screenWight, height: 48.toScreen)
             } else {
                 return CGSize(width: (0.screenWight-36)/2, height: 290.toScreen)
@@ -153,6 +149,60 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             return CGSize(width: (0.screenWight-36)/2, height: 255.toScreen)
         }
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        if indexPath.section == 0 {
+//            if indexPath.row == 0 {
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as! BannerCell
+//                
+//                return cell
+//            } else if indexPath.row == 1 {
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypesCell", for: indexPath) as! TypesCell
+//                cell.delegate = self
+//                return cell
+//            } else if indexPath.row == 2 {
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsCell", for: indexPath) as! ItemsCell
+//                cell.delegate = self
+//                return cell
+//            } else if indexPath.row == 3 {
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsCell", for: indexPath) as! ItemsCell
+//                cell.delegate = self
+//                return cell
+//            } else if indexPath.row == 4 {
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BottomTypeCell", for: indexPath) as! BottomTypeCell
+//                
+//                return cell
+//            } else {
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SingleProductCell", for: indexPath) as! SingleProductCell
+//                
+//                return cell
+//            }
+//        } else {
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SingleProductCell", for: indexPath) as! SingleProductCell
+//            
+//            return cell
+//        }
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        if indexPath.section == 0 {
+//            if indexPath.row == 0 {
+//                return CGSize(width: 0.screenWight, height: 0.screenWight/2)
+//            } else if indexPath.row == 1 {
+//                return CGSize(width: 0.screenWight, height: 172.toScreen)
+//            } else if indexPath.row == 2 {
+//                return CGSize(width: 0.screenWight, height: 290.toScreen)
+//            } else if indexPath.row == 3 {
+//                return CGSize(width: 0.screenWight, height: 290.toScreen)
+//            } else if indexPath.row == 4 {
+//                return CGSize(width: 0.screenWight, height: 48.toScreen)
+//            } else {
+//                return CGSize(width: (0.screenWight-36)/2, height: 290.toScreen)
+//            }
+//        } else {
+//            return CGSize(width: (0.screenWight-36)/2, height: 255.toScreen)
+//        }
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if section == 0 {
