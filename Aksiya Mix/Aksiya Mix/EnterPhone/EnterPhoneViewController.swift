@@ -35,9 +35,9 @@ class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate, EnterC
         
         viewModel.validateUzbekPhoneNumber(telPhone) { [self] isNumber in
             if isNumber {
-                viewModel.sentCode(number: telPhone) { [self] phoneNumber in
+                viewModel.sentCode(number: telPhone) { [self] phoneNumber, otp  in
                     let controller = EnterCodeViewController()
-                    controller.viewModel.phoneNumber = telPhone
+                    controller.viewModel.phoneNumber = telPhone + "\ncode: \(otp ?? 0)"
                     controller.viewModel.delegate = self
                     navigationController?.pushViewController(controller, animated: true)
                 } error: { [self] error in

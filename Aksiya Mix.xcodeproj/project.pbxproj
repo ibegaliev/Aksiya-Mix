@@ -1055,14 +1055,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		8CA197B12B7471EF0025E9F9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				8CA197B62B74723D0025E9F9 /* EnterPhoneViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		8CA197B22B7471F70025E9F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1074,7 +1066,6 @@
 		8CA197B32B7471FE0025E9F9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8CA197B82B7472440025E9F9 /* EnterPhoneView.swift */,
 				8CA97E722B74F0B60020A80F /* InputNumberView.swift */,
 			);
 			path = View;
@@ -1092,9 +1083,10 @@
 			isa = PBXGroup;
 			children = (
 				8CA197B42B7472170025E9F9 /* EnterPhoneViewController.swift */,
+				8CA197B82B7472440025E9F9 /* EnterPhoneView.swift */,
+				8CA197B62B74723D0025E9F9 /* EnterPhoneViewModel.swift */,
 				8CA197B32B7471FE0025E9F9 /* View */,
 				8CA197B22B7471F70025E9F9 /* Model */,
-				8CA197B12B7471EF0025E9F9 /* ViewModel */,
 			);
 			path = EnterPhone;
 			sourceTree = "<group>";
@@ -1138,9 +1130,10 @@
 			isa = PBXGroup;
 			children = (
 				8CC185F32B751A5400B13400 /* EnterCodeViewController.swift */,
+				8CC185F72B751BCE00B13400 /* EnterCodeView.swift */,
+				8CC185F92B751BDC00B13400 /* EnterCodeViewModel.swift */,
 				8CC185F22B751A0E00B13400 /* View */,
 				8CC185F12B7519FB00B13400 /* Model */,
-				8CC185F02B7519F300B13400 /* ViewModel */,
 			);
 			path = EnterCode;
 			sourceTree = "<group>";
@@ -1156,14 +1149,6 @@
 			path = EnterName;
 			sourceTree = "<group>";
 		};
-		8CC185F02B7519F300B13400 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				8CC185F92B751BDC00B13400 /* EnterCodeViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		8CC185F12B7519FB00B13400 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1175,7 +1160,6 @@
 		8CC185F22B751A0E00B13400 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8CC185F72B751BCE00B13400 /* EnterCodeView.swift */,
 				8CC185FB2B75259900B13400 /* OtpFieldView.swift */,
 				8CA6F5A82B95610000F9FD42 /* OTPField.swift */,
 			);

@@ -20,11 +20,12 @@ class EnterPhoneViewModel {
         completion(regex.firstMatch(in: phoneNumber, options: [], range: range) != nil)
     }
     
-    func sentCode(number: String?, completion: @escaping (_ phoneNumber: String?)->(), error: @escaping (_ error: String?)->()) {
+    func sentCode(number: String?, completion: @escaping (_ phoneNumber: String?, _ otp: Int?)->(), error: @escaping (_ error: String?)->()) {
         guard let number else { return }
         let data = ["phone_number": number]
         NetworkService.shared.mainRequest(urlPath: .authCode, method: .post, bodyData: data) { responseData in 
-            completion(number)
+            let code: EnterPhoneViewModelDM? = Parser.shared.parse(json: responseData)
+            completion(number, code?.code)
         } errorData: { data in
             var errorData: ErrorResponse?
             errorData = Parser.shared.parse(json: data)
@@ -32,4 +33,8 @@ class EnterPhoneViewModel {
         }
     }
     
+}
+
+struct EnterPhoneViewModelDM: Codable {
+    var code: Int
 }
