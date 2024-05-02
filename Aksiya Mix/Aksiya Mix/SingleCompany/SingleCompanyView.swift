@@ -17,6 +17,12 @@ class SingleCompanyView: UIView {
     
     var contentY: CGFloat?
     
+    var data: SingleCompanyDM? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     lazy var topNavigation: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -41,9 +47,7 @@ class SingleCompanyView: UIView {
         bannerView.imageViewContentMode = .scaleAspectFill
         bannerView.imageDatas = [
             "https://picsum.photos/id/1/1000/1000",
-            "https://picsum.photos/id/2/1000/1000",
-            "https://picsum.photos/id/3/1000/1000",
-            "https://picsum.photos/id/4/1000/1000"
+            "https://picsum.photos/id/2/1000/1001"
         ]
         return bannerView
     }()
@@ -117,6 +121,8 @@ extension SingleCompanyView: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyHeaderCell", for: indexPath) as! CompanyHeaderCell
             cell.backgroundColor = .clear
+            cell.nameOfStore = data?.name
+            cell.usernameOfStore = data?.shortname
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyCountsCell", for: indexPath) as! CompanyCountsCell

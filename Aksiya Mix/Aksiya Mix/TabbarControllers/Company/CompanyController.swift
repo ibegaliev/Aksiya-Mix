@@ -24,7 +24,7 @@ class CompanyController: AksiyaViewController, CompanyViewDelegate {
     
     func selectedCompany(index: Int) {
         let controller = SingleCompanyController()
-        
+        controller.viewModel.id = 2
         navigationController?.pushViewController(controller, animated: true)
     }
     

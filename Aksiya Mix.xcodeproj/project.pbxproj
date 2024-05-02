@@ -60,6 +60,7 @@
 		8C5758CC2BD1957900ADDB2D /* LocationMarketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5758CB2BD1957900ADDB2D /* LocationMarketCell.swift */; };
 		8C5758CE2BD1960E00ADDB2D /* NumberMarketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5758CD2BD1960E00ADDB2D /* NumberMarketCell.swift */; };
 		8C5758D02BD19D5900ADDB2D /* CreateButtonMarketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5758CF2BD19D5900ADDB2D /* CreateButtonMarketCell.swift */; };
+		8C6585872BE34BF90058E3F6 /* SingleCompanyDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6585862BE34BF90058E3F6 /* SingleCompanyDM.swift */; };
 		8C661F902B641D1C00437F0D /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F8F2B641D1C00437F0D /* BaseView.swift */; };
 		8C661F922B641E7500437F0D /* Ex+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F912B641E7500437F0D /* Ex+Int.swift */; };
 		8C661F952B64232300437F0D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F942B64232300437F0D /* SearchView.swift */; };
@@ -320,6 +321,7 @@
 		8C5758CB2BD1957900ADDB2D /* LocationMarketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMarketCell.swift; sourceTree = "<group>"; };
 		8C5758CD2BD1960E00ADDB2D /* NumberMarketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberMarketCell.swift; sourceTree = "<group>"; };
 		8C5758CF2BD19D5900ADDB2D /* CreateButtonMarketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateButtonMarketCell.swift; sourceTree = "<group>"; };
+		8C6585862BE34BF90058E3F6 /* SingleCompanyDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCompanyDM.swift; sourceTree = "<group>"; };
 		8C661F8F2B641D1C00437F0D /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		8C661F912B641E7500437F0D /* Ex+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+Int.swift"; sourceTree = "<group>"; };
 		8C661F942B64232300437F0D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -1116,6 +1118,7 @@
 				8CBA40082B77935200F92F98 /* SingleCompanyController.swift */,
 				8CBA40062B77934300F92F98 /* SingleCompanyView.swift */,
 				8CBA40042B77933800F92F98 /* SingleCompanyViewModel.swift */,
+				8C6585862BE34BF90058E3F6 /* SingleCompanyDM.swift */,
 				8C85AF6A2B77A6C600B3A7FC /* Cells */,
 			);
 			path = SingleCompany;
@@ -1763,6 +1766,7 @@
 				8C1EB31B2B9B45B3007061CD /* CompanyRatingCell.swift in Sources */,
 				8C9BA7982B6A1F93008C9420 /* SingleProductView.swift in Sources */,
 				8C5758C82BD18EC000ADDB2D /* DeliverMarketCell.swift in Sources */,
+				8C6585872BE34BF90058E3F6 /* SingleCompanyDM.swift in Sources */,
 				8CE832F22B6384A8004B4E6D /* Ex+UIColor.swift in Sources */,
 				8C0143912BBE98F30095722F /* AboutAppConstroller.swift in Sources */,
 				8C69C4C12BC1F52F006D9E82 /* SelectableCityCell.swift in Sources */,

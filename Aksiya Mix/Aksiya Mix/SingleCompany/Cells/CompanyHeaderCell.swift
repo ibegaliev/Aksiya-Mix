@@ -9,6 +9,33 @@ import UIKit
 
 class CompanyHeaderCell: UITableViewCell {
     
+    var imageFormain: UIImage? {
+        get {
+            return nil
+        }
+        set {
+            mainImage.image = newValue
+        }
+    }
+    
+    var nameOfStore: String? {
+        get {
+            return nil
+        }
+        set {
+            titleLabel.text = newValue
+        }
+    }
+    
+    var usernameOfStore: String? {
+        get {
+            return nil
+        }
+        set {
+            usernameLabel.text = newValue
+        }
+    }
+    
     lazy var backView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -28,7 +55,6 @@ class CompanyHeaderCell: UITableViewCell {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Korzinka MCHJ"
         lbl.font = .appFont(ofSize: 20, weight: .bold)
         return lbl
     }()
@@ -44,7 +70,6 @@ class CompanyHeaderCell: UITableViewCell {
         let lbl = UILabel()
         lbl.layer.cornerRadius = 4
         lbl.clipsToBounds = true
-        lbl.text = "@korzinka_uz"
         lbl.textAlignment = .center
         lbl.textColor = .selectBlue
         lbl.backgroundColor = .backColor

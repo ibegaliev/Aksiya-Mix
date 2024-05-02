@@ -11,7 +11,6 @@ class LikedView: UIView {
     
     lazy var navigationView: UIView = {
         let view = UIView()
-        view.addShadow()
         view.backgroundColor = .white
         return view
     }()
