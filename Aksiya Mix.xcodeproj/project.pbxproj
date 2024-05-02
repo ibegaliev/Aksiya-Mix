@@ -982,25 +982,17 @@
 			isa = PBXGroup;
 			children = (
 				8C9BA7932B6A1ED5008C9420 /* SingleProductViewController.swift */,
+				8C9BA7972B6A1F93008C9420 /* SingleProductView.swift */,
+				8C9BA7992B6A1F9E008C9420 /* SingleProductViewModel.swift */,
 				8C926F992B69F3800049A1B7 /* Model */,
 				8C926F982B69F3760049A1B7 /* View */,
-				8C926F962B69F3610049A1B7 /* ViewModel */,
 			);
 			path = SingleProduct;
-			sourceTree = "<group>";
-		};
-		8C926F962B69F3610049A1B7 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				8C9BA7992B6A1F9E008C9420 /* SingleProductViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8C926F982B69F3760049A1B7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8C9BA7972B6A1F93008C9420 /* SingleProductView.swift */,
 				8C73A90C2B6A272000AA80B5 /* SingleTopCell.swift */,
 				8C77E0EB2BA1AC5F004CF456 /* SingleProductCountView.swift */,
 				8CF7F3BE2BA1860300C36DC5 /* SaleTopView.swift */,

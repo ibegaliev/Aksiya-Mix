@@ -29,7 +29,7 @@ class HomeViewController: AksiyaViewController, HomeViewDelegate, SingleCategory
     
     func tapped() {
         let controller = SingleProductViewController()
-        
+        controller.viewModel.id = 106
         navigationController?.pushViewController(controller, animated: true)
     }
     
