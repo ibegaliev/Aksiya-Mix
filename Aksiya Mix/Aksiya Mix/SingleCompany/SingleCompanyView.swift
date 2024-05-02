@@ -127,10 +127,17 @@ extension SingleCompanyView: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyCountsCell", for: indexPath) as! CompanyCountsCell
             cell.backgroundColor = .clear
+            cell.fallowersCount = data?.followers
+            cell.likedCount = data?.likes
+            cell.commentCount = data?.comments
             return cell
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyLocationsCell", for: indexPath) as! CompanyLocationsCell
             cell.backgroundColor = .clear
+//            cell.timeText = "123456"
+            cell.locationText = data?.address
+            cell.numberText = data?.main_phone_number
+            cell.dataText = data?.created_at?.replacingOccurrences(of: "-", with: ".")
             return cell
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyMainCell", for: indexPath) as! CompanyMainCell
@@ -139,6 +146,8 @@ extension SingleCompanyView: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.row == 4 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyDescriptionCell", for: indexPath) as! CompanyDescriptionCell
             cell.backgroundColor = .clear
+            cell.title = data?.name
+            cell.descriptionText = data?.desc
             return cell
         } else if indexPath.row == 5 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyRatingCell", for: indexPath) as! CompanyRatingCell

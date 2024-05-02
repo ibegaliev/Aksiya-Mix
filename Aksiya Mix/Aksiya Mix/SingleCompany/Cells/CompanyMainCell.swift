@@ -34,7 +34,7 @@ class CompanyMainCell: UITableViewCell {
         let lbl = UILabel()
         lbl.textColor = .spacetext
         lbl.textAlignment = .center
-        lbl.text = "На aksiyamix с март 2018 г."
+//        lbl.text = "На aksiyamix с март 2018 г."
         lbl.font = .appFont(ofSize: 12, weight: .regular)
         return lbl
     }()

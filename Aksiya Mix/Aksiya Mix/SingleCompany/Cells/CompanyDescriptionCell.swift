@@ -9,9 +9,27 @@ import UIKit
 
 class CompanyDescriptionCell: UITableViewCell {
     
+    var title: String? {
+        get {
+            return nil
+        }
+        set {
+            guard let text = newValue else { return }
+            titleLabel.text = "\(text) haqida"
+        }
+    }
+    
+    var descriptionText: String? {
+        get {
+            return nil
+        }
+        set {
+            descriptionLabel.text = newValue
+        }
+    }
+    
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Korzinka MCHJ"
         lbl.font = .appFont(ofSize: 20, weight: .bold)
         return lbl
     }()
@@ -20,13 +38,12 @@ class CompanyDescriptionCell: UITableViewCell {
         let lbl = UILabel()
         lbl.numberOfLines = 6
         lbl.font = .appFont(ofSize: 12, weight: .regular)
-        lbl.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis iaculis tincidunt. Quisque sagittis massa aliquam, elementum risus eu, fermentum justo. Integer id blandit eros, a viverra dolor. Maecenas bibendum placerat condimentum."
         return lbl
     }()
     
     lazy var showAllDescriptionButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Batafsil", for: .normal)
+//        btn.setTitle("Batafsil", for: .normal)
         btn.addTarget(self, action: #selector(tappedShowAll), for: .touchUpInside)
         btn.titleLabel?.font = .appFont(ofSize: 12, weight: .medium)
         btn.setTitleColor(.selectBlue, for: .normal)

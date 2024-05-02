@@ -9,6 +9,36 @@ import UIKit
 
 class CompanyCountsCell: UITableViewCell {
     
+    var fallowersCount: String? {
+        get {
+            return nil
+        }
+        set {
+            fallowers.topTitle.text = newValue
+            fallowers.descriptionLabel.text = "Obunachilar"
+        }
+    }
+    
+    var likedCount: String? {
+        get {
+            return nil
+        }
+        set {
+            liked.topTitle.text = newValue
+            liked.descriptionLabel.text = "Sevimlilar"
+        }
+    }
+    
+    var commentCount: String? {
+        get {
+            return nil
+        }
+        set {
+            comment.topTitle.text = newValue
+            comment.descriptionLabel.text = "Sharhlar"
+        }
+    }
+    
     lazy var fallowers: CompanyCountItem = {
         let item = CompanyCountItem()
         
@@ -67,14 +97,12 @@ class CompanyCountItem: UIView {
     
     lazy var topTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "2.5 тыс"
         lbl.font = .appFont(ofSize: 18, weight: .bold)
         return lbl
     }()
     
     lazy var descriptionLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Obunachilar"
         lbl.font = .appFont(ofSize: 12, weight: .regular)
         lbl.textColor = .spacetext
         return lbl

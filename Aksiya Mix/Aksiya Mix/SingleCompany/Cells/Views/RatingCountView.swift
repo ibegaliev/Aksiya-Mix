@@ -24,7 +24,7 @@ class RatingCountView: UIView {
     
     lazy var counsLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "2.5 тыс"
+        lbl.text = "3ta baho"
         lbl.font = .appFont(ofSize: 12, weight: .regular)
         lbl.textColor = .spacetext
         return lbl

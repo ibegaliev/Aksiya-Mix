@@ -61,10 +61,11 @@ class CompanyBottomItems: UITableViewCell, UICollectionViewDelegate, UICollectio
     
     private func setConstraints() {
         stack.snp.makeConstraints { make in
-            make.edges.equalTo(contentView)
+            make.top.equalTo(contentView).inset(8)
+            make.left.right.bottom.equalTo(contentView)
         }
         collectionView.snp.makeConstraints { make in
-            make.height.equalTo(250.toScreen)
+            make.height.equalTo(220.toScreen)
         }
     }
  

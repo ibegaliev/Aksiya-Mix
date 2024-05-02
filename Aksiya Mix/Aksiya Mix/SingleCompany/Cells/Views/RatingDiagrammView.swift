@@ -31,7 +31,7 @@ class RatingDiagrammView: UIView {
         for i in (1...5).enumerated() {
             let view = DiagrammView()
             view.title = "\(i.offset + 1)"
-            view.percent = 60
+            if i.offset > 2 { view.percent = i.offset * 10 }
             mainStack.insertArrangedSubview(view, at: 0)
         }
     }
@@ -66,17 +66,17 @@ class DiagrammView: UIView {
                 indicatorView.snp.makeConstraints { make in
                     make.width.equalTo(Int(backView.frame.width) * newValue / 100)
                 }
-                DispatchQueue.global(qos: .userInitiated).sync {
+                DispatchQueue.global(qos: .default).sync {
                     indicatorView.backgroundColor = .selectBlue
                     indicatorView.applyGradient(
-                        colors: [.garnierPink, .garnierOrgane],
+                        colors: [.garnierOrgane, .garnierPink],
                         startPoint: CGPoint(
                             x: 0,
                             y: 0
                         ),
                         endPoint: CGPoint(
-                            x: 0.8,
-                            y: 0.5
+                            x: 0.5,
+                            y: 1
                         )
                     )
                 }
@@ -123,20 +123,20 @@ class DiagrammView: UIView {
         fatalError()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        indicatorView.applyGradient(
-            colors: [.garnierPink, .garnierOrgane],
-            startPoint: CGPoint(
-                x: 0,
-                y: 0
-            ),
-            endPoint: CGPoint(
-                x: 0.8,
-                y: 0.5
-            )
-        )
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        indicatorView.applyGradient(
+//            colors: [.garnierOrgane, .garnierPink],
+//            startPoint: CGPoint(
+//                x: 0,
+//                y: 0
+//            ),
+//            endPoint: CGPoint(
+//                x: 1,
+//                y: 0
+//            )
+//        )
+//    }
     
     private func setUI() {
         addSubview(mainStack)

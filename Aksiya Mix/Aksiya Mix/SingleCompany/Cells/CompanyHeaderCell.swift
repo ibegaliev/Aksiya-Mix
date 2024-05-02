@@ -32,7 +32,9 @@ class CompanyHeaderCell: UITableViewCell {
             return nil
         }
         set {
-            usernameLabel.text = newValue
+            guard let text = newValue else { return }
+            usernameLabel.text = " @\(text)  "
+            setConstraints()
         }
     }
     
@@ -68,7 +70,7 @@ class CompanyHeaderCell: UITableViewCell {
     
     lazy var usernameLabel: UILabel = {
         let lbl = UILabel()
-        lbl.layer.cornerRadius = 4
+        lbl.layer.cornerRadius = 6
         lbl.clipsToBounds = true
         lbl.textAlignment = .center
         lbl.textColor = .selectBlue
@@ -158,13 +160,16 @@ class CompanyHeaderCell: UITableViewCell {
             make.width.height.equalTo(16)
         }
         usernameLabel.snp.makeConstraints { make in
-            make.width.equalTo(
-                14 + (usernameLabel.text?.widthOfString(usingFont: .appFont(ofSize: 12, weight: .regular)) ?? 0)
-            )
-            make.height.equalTo(
-                6 + (usernameLabel.text?.heightOfString(usingFont: .appFont(ofSize: 12, weight: .regular)) ?? 0)
-            )
+            make.height.equalTo(20)
         }
+//        usernameLabel.snp.makeConstraints { make in
+//            make.width.equalTo(
+//                14 + (usernameLabel.text?.widthOfString(usingFont: .appFont(ofSize: 12, weight: .regular)) ?? 0)
+//            )
+//            make.height.equalTo(
+//                6 + (usernameLabel.text?.heightOfString(usingFont: .appFont(ofSize: 12, weight: .regular)) ?? 0)
+//            )
+//        }
     }
     
 }

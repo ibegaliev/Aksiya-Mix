@@ -9,6 +9,42 @@ import UIKit
 
 class CompanyLocationsCell: UITableViewCell {
  
+    var timeText: String? {
+        get {
+            return nil
+        }
+        set {
+            timeView.descrip = newValue
+        }
+    }
+    
+    var locationText: String? {
+        get {
+            return nil
+        }
+        set {
+            locationView.descrip = newValue
+        }
+    }
+
+    var numberText: String? {
+        get {
+            return nil
+        }
+        set {
+            phoneNumberView.descrip = newValue
+        }
+    }
+
+    var dataText: String? {
+        get {
+            return nil
+        }
+        set {
+            registrationDataView.descrip = newValue
+        }
+    }
+
     lazy var backView: UIView = {
         let view = UIView()
         view.backgroundColor = .backColor
@@ -36,7 +72,6 @@ class CompanyLocationsCell: UITableViewCell {
     lazy var locationView: CompanyLocationItemView = {
         let view = CompanyLocationItemView()
         view.title = "Joylashuv"
-        view.descrip = "Toshkent, Yunusobod"
         view.descriptionLabel.textColor = .link
         return view
     }()
@@ -44,14 +79,12 @@ class CompanyLocationsCell: UITableViewCell {
     lazy var phoneNumberView: CompanyLocationItemView = {
         let view = CompanyLocationItemView()
         view.title = "Telefon raqam:"
-        view.descrip = "+998 90 043 77 47"
         return view
     }()
 
     lazy var registrationDataView: CompanyLocationItemView = {
         let view = CompanyLocationItemView()
         view.title = "Ro'yxatga olingan sana:"
-        view.descrip = "Yanvar 2024"
         return view
     }()
     
