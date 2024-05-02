@@ -7,8 +7,13 @@
 
 import UIKit
 
+struct HomeBottomDM {
+    var name: String
+    var isSelected: Bool
+}
+
 class BottomTypeCell: UICollectionViewCell {
-    
+        
     lazy var backView: BottomTypeView = {
         let view = BottomTypeView()
         
@@ -70,11 +75,18 @@ class BottomTypeTableCell: UITableViewCell {
 
 class BottomTypeView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    var bottomCollectionData: [HomeBottomDM] = [
+        .init(name: "Hammasi", isSelected: true),
+        .init(name: "Siz uchun", isSelected: false),
+        .init(name: "Tanlanganlar", isSelected: false),
+        .init(name: "Yaqinda ko'rilganlar", isSelected: false)
+    ]
+    
     lazy var collectionView: UICollectionView = { [self] in
         let cv = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         cv.delegate = self
         cv.dataSource = self
-        cv.contentInset = .init(top: 8, left: 16, bottom: 8, right: 16)
+        cv.contentInset = .init(top: 8, left: 10, bottom: 8, right: 10)
         cv.showsHorizontalScrollIndicator = false
         cv.showsVerticalScrollIndicator = false
         cv.register(BottomItemsCell.self, forCellWithReuseIdentifier: "BottomItemsCell")
@@ -111,28 +123,50 @@ class BottomTypeView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        bottomCollectionData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BottomItemsCell", for: indexPath) as! BottomItemsCell
-        if indexPath.row == 0 {
-            cell.contentView.backgroundColor = .backColor
-        }
+        cell.data = bottomCollectionData[indexPath.row]
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 90, height: collectionView.frame.height - 12)
+        CGSize(
+            width: 16 + bottomCollectionData[indexPath.row].name.widthOfString(usingFont: .appFont(ofSize: 14, weight: .semibold)),
+            height: collectionView.frame.height - 12
+        )
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        for dt in bottomCollectionData.enumerated() {
+            bottomCollectionData[dt.offset].isSelected = false
+        }
+        bottomCollectionData[indexPath.row].isSelected = true
+        collectionView.reloadData()
     }
     
 }
 
 class BottomItemsCell: UICollectionViewCell {
     
+    var data: HomeBottomDM? {
+        get {
+            return nil
+        }
+        set {
+            lebal.text = newValue?.name
+            if newValue?.isSelected ?? false {
+                contentView.backgroundColor = .backColor
+            } else {
+                contentView.backgroundColor = .white
+            }
+        }
+    }
+    
     var lebal: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Ommabop"
         lbl.textAlignment = .center
         lbl.font = .appFont(ofSize: 14, weight: .semibold)
         return lbl
@@ -152,7 +186,6 @@ class BottomItemsCell: UICollectionViewCell {
         contentView.addSubview(lebal)
         contentView.layer.cornerRadius = 8
         contentView.clipsToBounds = true
-        contentView.backgroundColor = .white
     }
     
     private func setConstraints() {

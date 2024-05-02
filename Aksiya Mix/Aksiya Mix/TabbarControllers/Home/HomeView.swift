@@ -22,7 +22,7 @@ enum HomeViewType {
 class HomeView: UIView, OfferViewDelegate {
     
     var delegate: HomeViewDelegate?
-    
+        
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
