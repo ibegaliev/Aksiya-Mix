@@ -86,9 +86,9 @@ class BottomTypeView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         let cv = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         cv.delegate = self
         cv.dataSource = self
-        cv.contentInset = .init(top: 8, left: 10, bottom: 8, right: 10)
-        cv.showsHorizontalScrollIndicator = false
         cv.showsVerticalScrollIndicator = false
+        cv.showsHorizontalScrollIndicator = false
+        cv.contentInset = .init(top: 4, left: 10, bottom: 8, right: 10)
         cv.register(BottomItemsCell.self, forCellWithReuseIdentifier: "BottomItemsCell")
         return cv
     }()
