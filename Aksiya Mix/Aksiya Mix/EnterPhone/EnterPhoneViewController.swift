@@ -37,7 +37,8 @@ class EnterPhoneViewController: UIViewController, EnterPhoneViewDelegate, EnterC
             if isNumber {
                 viewModel.sentCode(number: telPhone) { [self] phoneNumber, otp  in
                     let controller = EnterCodeViewController()
-                    controller.viewModel.phoneNumber = telPhone + "\ncode: \(otp ?? 0)"
+                    controller.viewModel.number = telPhone
+                    controller.viewModel.phoneNumber = telPhone + "\n\ncode: \(otp ?? 0)"
                     controller.viewModel.delegate = self
                     navigationController?.pushViewController(controller, animated: true)
                 } error: { [self] error in
