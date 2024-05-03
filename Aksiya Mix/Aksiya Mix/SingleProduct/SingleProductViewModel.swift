@@ -20,7 +20,7 @@ class SingleProductViewModel {
     
     var data: SingleProductDM? {
         didSet {
-            print(data)
+            view.data = data
         }
     }
     
@@ -33,9 +33,10 @@ class SingleProductViewModel {
             method: .get,
             bodyData: nil) { [self] responseData in
                 print(JSON(responseData ?? ""))
-                data = Parser.shared.parse(json: responseData)
+                data = SingleProductDM(json: JSON(responseData ?? ""))
+//                data = Parser.shared.parse(json: responseData)
             } errorData: { errorData in
-                print(JSON(errorData))
+                print(JSON(errorData ?? "error"))
             }
 
         

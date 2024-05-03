@@ -16,6 +16,12 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
     var delegate: SingleProductViewDelegate?
 
     var contentY: CGFloat?
+    
+    var data: SingleProductDM? {
+        didSet {
+            mainImage.imageDatas = data?.images
+        }
+    }
 
     lazy var tableView: UITableView = {
         let view = UITableView()
@@ -62,12 +68,6 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
         bannerView.itemWidth = 0.screenWight
         bannerView.itemSpace = -32
         bannerView.imageViewContentMode = .scaleAspectFill
-        bannerView.imageDatas = [
-            "https://picsum.photos/id/1/1000/1000",
-            "https://picsum.photos/id/2/1000/1000",
-            "https://picsum.photos/id/3/1000/1000",
-            "https://picsum.photos/id/4/1000/1000"
-        ]
         return bannerView
     }()
     
