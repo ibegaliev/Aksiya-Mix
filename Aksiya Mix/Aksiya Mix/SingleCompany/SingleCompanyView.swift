@@ -19,6 +19,9 @@ class SingleCompanyView: UIView {
     
     var data: SingleCompanyDM? {
         didSet {
+            mainImage.imageDatas = [
+                data?.logo ?? ""
+            ]
             tableView.reloadData()
         }
     }
@@ -45,10 +48,6 @@ class SingleCompanyView: UIView {
         bannerView.itemWidth = 0.screenWight
         bannerView.itemSpace = -40
         bannerView.imageViewContentMode = .scaleAspectFill
-        bannerView.imageDatas = [
-            "https://picsum.photos/id/1/1000/1000",
-            "https://picsum.photos/id/2/1000/1001"
-        ]
         return bannerView
     }()
     
