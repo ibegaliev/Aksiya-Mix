@@ -42,4 +42,12 @@ class SingleProductViewModel {
         
     }
     
+    func liked() {
+        
+    }
+    
+    func disLiked() {
+        
+    }
+    
 }

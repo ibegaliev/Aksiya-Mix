@@ -75,6 +75,14 @@ class SingleProductViewController: AksiyaViewController {
 
 extension SingleProductViewController: SingleProductViewDelegate {
     
+    func liked() {
+        viewModel.liked()
+    }
+    
+    func disliked() {
+        viewModel.disLiked()
+    }
+    
     func backViewTapped() {
         navigationController?.popViewController(animated: true)
     }

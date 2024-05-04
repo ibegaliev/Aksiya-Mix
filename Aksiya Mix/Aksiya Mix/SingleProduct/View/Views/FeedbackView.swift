@@ -7,17 +7,25 @@
 
 import UIKit
 
-class FeedbackView: UIView {
+protocol FeedbackViewDelegate {
+    func liked()
+    func disliked()
+}
+
+class FeedbackView: UIView, FeedbackItemsViewDelegate {
+    
+    var delegate: FeedbackViewDelegate?
     
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
-        stack.spacing = 20
+        stack.spacing = 8
+        stack.axis = .vertical
         return stack
     }()
     
     lazy var item: FeedbackItemsView = {
         let view = FeedbackItemsView()
-        
+        view.delegate = self
         return view
     }()
     
@@ -50,6 +58,14 @@ class FeedbackView: UIView {
         mainStack.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }
+    }
+    
+    func liked() {
+        delegate?.liked()
+    }
+    
+    func disliked() {
+        delegate?.disliked()
     }
     
 }

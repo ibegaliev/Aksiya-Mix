@@ -1940,7 +1940,7 @@
 				DEVELOPMENT_TEAM = 8996593D3H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Aksiya Mix/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Aksiya Mix";
+				INFOPLIST_KEY_CFBundleDisplayName = AksiyaMix;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1978,7 +1978,7 @@
 				DEVELOPMENT_TEAM = 8996593D3H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Aksiya Mix/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Aksiya Mix";
+				INFOPLIST_KEY_CFBundleDisplayName = AksiyaMix;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

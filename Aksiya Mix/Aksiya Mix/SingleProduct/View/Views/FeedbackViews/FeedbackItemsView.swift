@@ -7,8 +7,15 @@
 
 import UIKit
 
-class FeedbackItemsView: UIView {
-        
+protocol FeedbackItemsViewDelegate {
+    func liked()
+    func disliked()
+}
+
+class FeedbackItemsView: UIView, FeedbackButtonDelegate {
+    
+    var delegate: FeedbackItemsViewDelegate?
+    
     lazy var lineView: UIView = {
         let line = UIView()
         line.backgroundColor = .spaceLine
@@ -26,12 +33,14 @@ class FeedbackItemsView: UIView {
     lazy var likeButton: FeedbackButton = {
         let btn = FeedbackButton()
         btn.image = .thumbUp
+        btn.delegate = self
         return btn
     }()
     
     lazy var dislikeButton: FeedbackButton = {
         let btn = FeedbackButton()
         btn.image = .thumbDown
+        btn.delegate = self
         return btn
     }()
     
@@ -64,6 +73,15 @@ class FeedbackItemsView: UIView {
         lineView.snp.makeConstraints { make in
             make.width.equalTo(1)
             make.height.equalTo(16)
+        }
+    }
+    
+    func tappedFeedback(view: UIView) {
+        if view == likeButton {
+            delegate?.liked()
+        }
+        if view == dislikeButton {
+            delegate?.disliked()
         }
     }
     

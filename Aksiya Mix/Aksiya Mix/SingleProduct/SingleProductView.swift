@@ -8,7 +8,8 @@
 import UIKit
 
 protocol SingleProductViewDelegate: SingleNavigationViewDelegate {
-    
+    func liked()
+    func disliked()
 }
 
 class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, SingleNavigationViewDelegate {
@@ -123,6 +124,7 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SingleTopView", for: indexPath) as! SingleTopView
                 cell.data = data
+                cell.delegate = self
                 return cell
             } else if indexPath.row == 1 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LineCell", for: indexPath) as! LineCell
@@ -204,6 +206,18 @@ extension SingleProductView {
         delegate?.likeButtonTapped()
     }
 
+}
+
+extension SingleProductView: SingleTopViewDelegate {
+    
+    func liked() {
+        delegate?.liked()
+    }
+    
+    func disliked() {
+        delegate?.disliked()
+    }
+    
 }
 
 class LineCell: UITableViewCell {

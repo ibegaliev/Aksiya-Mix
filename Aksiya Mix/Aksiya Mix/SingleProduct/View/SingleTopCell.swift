@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol SingleTopViewDelegate {
+    func liked()
+    func disliked()
+}
+
 class SingleTopView: UITableViewCell {
+    
+    var delegate: SingleTopViewDelegate?
     
     var data: SingleProductDM? {
         get {
@@ -32,6 +39,9 @@ class SingleTopView: UITableViewCell {
             costView.newPrince.text = formatMoneyAmount(amount: priceInt, currency: "so'm")
             
             costView.feedbackView.item.likeButton.title = data?.likes
+            
+            costView.feedbackView.item.likeButton.isLiked = data?.userLike
+            costView.feedbackView.item.likeButton.isDisLiked = data?.userDislike
             
             for item in itemsStack.arrangedSubviews {
                 item.removeFromSuperview()
@@ -107,7 +117,7 @@ class SingleTopView: UITableViewCell {
             
     lazy var costView: CostView = {
         let view = CostView()
-        
+        view.delegate = self
         return view
     }()
     
@@ -179,4 +189,14 @@ class SingleTopView: UITableViewCell {
     
 }
 
-
+extension SingleTopView: CostViewDelegate {
+    
+    func liked() {
+        delegate?.liked()
+    }
+    
+    func disliked() {
+        delegate?.disliked()
+    }
+    
+}

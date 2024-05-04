@@ -7,11 +7,18 @@
 
 import UIKit
 
-class CostView: UIView {
+protocol CostViewDelegate {
+    func liked()
+    func disliked()
+}
+
+class CostView: UIView, FeedbackViewDelegate {
+    
+    var delegate: CostViewDelegate?
     
     lazy var feedbackView: FeedbackView = {
         let view = FeedbackView()
-        
+        view.delegate = self
         return view
     }()
     
@@ -87,4 +94,12 @@ class CostView: UIView {
         }
     }
     
+    func liked() {
+        delegate?.liked()
+    }
+    
+    func disliked() {
+        delegate?.disliked()
+    }
+
 }

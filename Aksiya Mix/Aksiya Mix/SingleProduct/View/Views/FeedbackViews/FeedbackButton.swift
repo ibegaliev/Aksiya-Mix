@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol FeedbackButtonDelegate {
+    func tappedFeedback(view: UIView)
+}
+
 class FeedbackButton: UIView {
+    
+    var delegate: FeedbackButtonDelegate?
     
     var image: UIImage? {
         get {
@@ -26,6 +32,33 @@ class FeedbackButton: UIView {
             textLabel.text = newValue
         }
     }
+
+    var isLiked: Bool? {
+        get {
+            return nil
+        }
+        set {
+            if newValue ?? false {
+                icon.image = .thumbUp
+            } else {
+                icon.image = .thumbDown
+            }
+        }
+    }
+    
+    var isDisLiked: Bool? {
+        get {
+            return nil
+        }
+        set {
+            if newValue ?? false {
+                icon.image = .thumbUp
+            } else {
+                icon.image = .thumbDown
+            }
+        }
+    }
+
     
     lazy var icon: UIImageView = {
         let image = UIImageView()
@@ -49,6 +82,7 @@ class FeedbackButton: UIView {
         super.init(frame: frame)
         setUI()
         setConstraints()
+        setGestures()
     }
     
     required init?(coder: NSCoder) {
@@ -72,6 +106,17 @@ class FeedbackButton: UIView {
         icon.snp.makeConstraints { make in
             make.width.height.equalTo(18)
         }
+    }
+    
+    private func setGestures() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        addGestureRecognizer(gesture)
+        isUserInteractionEnabled = true
+    }
+    
+    @objc
+    func tapped() {
+        delegate?.tappedFeedback(view: self)
     }
     
 }
