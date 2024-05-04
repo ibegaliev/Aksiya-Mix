@@ -9,6 +9,14 @@ import UIKit
 
 class SingleTopView: UITableViewCell {
     
+    var data: SingleProductDM? {
+        didSet {
+            saleView.titleLabel.text = "Chegirma \(data?.startDate ?? "") dan \(data?.endDate ?? "") gacha"
+            titleLabel.text = data?.title
+            
+        }
+    }
+
     lazy var backView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -47,7 +55,6 @@ class SingleTopView: UITableViewCell {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Смартфон Apple iPhone 14 nano-SIM+eSIM, 5G, Wi-Fi 6, NFC"
         lbl.numberOfLines = 2
         lbl.font = .boldSystemFont(ofSize: 14)
         return lbl

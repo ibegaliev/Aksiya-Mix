@@ -18,7 +18,6 @@ class SaleTopView: UIView {
     
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Chegirma 20.10.2023 dan 20.12.2023 gacha"
         lbl.font = .appFont(ofSize: 10, weight: .regular)
         lbl.textColor = .white
         return lbl

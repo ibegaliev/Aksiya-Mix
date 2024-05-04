@@ -20,6 +20,7 @@ class SingleProductView: UIView, UITableViewDelegate, UITableViewDataSource, Sin
     var data: SingleProductDM? {
         didSet {
             mainImage.imageDatas = data?.images
+            tableView.reloadData()
         }
     }
 
