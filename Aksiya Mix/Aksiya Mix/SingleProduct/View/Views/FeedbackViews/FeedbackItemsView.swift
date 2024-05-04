@@ -25,7 +25,6 @@ class FeedbackItemsView: UIView {
     
     lazy var likeButton: FeedbackButton = {
         let btn = FeedbackButton()
-        btn.title = "5.6 тыс"
         btn.image = .thumbUp
         return btn
     }()

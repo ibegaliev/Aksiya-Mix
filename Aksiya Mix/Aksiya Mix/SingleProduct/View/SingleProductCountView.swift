@@ -17,7 +17,6 @@ class SingleProductCountView: UIView {
     
     lazy var countLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "5.6 ming"
         lbl.font = .appFont(ofSize: 10)
         lbl.textColor = .spacetext
         return lbl
@@ -32,7 +31,6 @@ class SingleProductCountView: UIView {
     
     lazy var dataView: UILabel = {
         let lbl = UILabel()
-        lbl.text = "3 kun oldin"
         lbl.font = .appFont(ofSize: 10)
         lbl.textColor = .spacetext
         return lbl
@@ -70,7 +68,7 @@ class SingleProductCountView: UIView {
         }
         lineView.snp.makeConstraints { make in
             make.width.equalTo(1)
-            make.height.equalTo(12)
+            make.height.equalTo(8)
         }
         icon.snp.makeConstraints { make in
             make.height.width.equalTo(10)

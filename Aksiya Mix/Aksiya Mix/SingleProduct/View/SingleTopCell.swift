@@ -11,8 +11,23 @@ class SingleTopView: UITableViewCell {
     
     var data: SingleProductDM? {
         didSet {
+            
+            let discountAmount: Double = 100 - (Double(data?.discountAmount ?? "1") ?? 0)
+            let price: Double = Double(data?.price ?? "1") ?? 0
+            let priceInt: Int = Int(Double(data?.price ?? "1") ?? 0)
+
+            let oldPrince = Int(price * 100 / discountAmount)
+            
             saleView.titleLabel.text = "Chegirma \(data?.startDate ?? "") dan \(data?.endDate ?? "") gacha"
             titleLabel.text = data?.title
+            
+            countView.countLabel.text = data?.views
+            countView.dataView.text = "1 xafta oldin"
+
+            costView.oldPrince.text = formatMoneyAmount(amount: oldPrince, currency: "so'm")
+            costView.newPrince.text = formatMoneyAmount(amount: priceInt, currency: "so'm")
+            
+            costView.feedbackView.item.likeButton.title = data?.likes
             
         }
     }
@@ -20,6 +35,7 @@ class SingleTopView: UITableViewCell {
     lazy var backView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
+        view.backgroundColor = .red
         return view
     }()
     

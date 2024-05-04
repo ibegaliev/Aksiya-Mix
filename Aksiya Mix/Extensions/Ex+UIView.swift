@@ -31,4 +31,15 @@ extension UIView {
         layer.insertSublayer(gradientLayer, at: 0)
     }
 
+    func formatMoneyAmount(amount: Int, currency: String) -> String? {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        
+        guard let formattedAmount = formatter.string(from: NSNumber(value: amount)) else {
+            return nil
+        }
+        
+        return "\(formattedAmount) \(currency)"
+    }
+    
 }
