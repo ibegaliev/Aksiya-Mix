@@ -18,6 +18,12 @@ class SelectableTextView: UIView, UICollectionViewDelegate, UICollectionViewData
         }
     }
     
+    var values: [SingleProductFeatureValue]? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.spacing = 8
@@ -76,17 +82,20 @@ class SelectableTextView: UIView, UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        2
+        values?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectableTextCell", for: indexPath) as! SelectableTextCell
-        
+        cell.label.text = values?[indexPath.row].value
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 55, height: 32)
+        CGSize(
+            width: 32 + (values?[indexPath.row].value.widthOfString(usingFont: .appFont(ofSize: 12, weight: .medium)) ?? 0),
+            height: 32
+        )
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -99,8 +108,8 @@ class SelectableTextCell: UICollectionViewCell {
     
     lazy var label: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Новый"
-        lbl.font = .systemFont(ofSize: 12)
+        lbl.textAlignment = .center
+        lbl.font = .appFont(ofSize: 12, weight: .medium)
         return lbl
     }()
     

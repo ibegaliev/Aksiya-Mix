@@ -10,13 +10,17 @@ import UIKit
 class SingleTopView: UITableViewCell {
     
     var data: SingleProductDM? {
-        didSet {
-            
+        get {
+            return nil
+        }
+        set {
+            let data = newValue
             let discountAmount: Double = 100 - (Double(data?.discountAmount ?? "1") ?? 0)
             let price: Double = Double(data?.price ?? "1") ?? 0
             let priceInt: Int = Int(Double(data?.price ?? "1") ?? 0)
-
             let oldPrince = Int(price * 100 / discountAmount)
+            
+            discountView.title = Int(Double(data?.discountAmount ?? "1") ?? 0)
             
             saleView.titleLabel.text = "Chegirma \(data?.startDate ?? "") dan \(data?.endDate ?? "") gacha"
             titleLabel.text = data?.title
@@ -29,13 +33,29 @@ class SingleTopView: UITableViewCell {
             
             costView.feedbackView.item.likeButton.title = data?.likes
             
+            for item in itemsStack.arrangedSubviews {
+                item.removeFromSuperview()
+            }
+            data?.features.forEach({ feature in
+                let view = SelectableTextView()
+                view.title = feature.name
+                view.values = feature.values
+                itemsStack.addArrangedSubview(view)
+            })
+            
         }
     }
+    
+    lazy var discountView: AksiyaDiscountView = {
+        let view = AksiyaDiscountView()
+        
+        return view
+    }()
 
     lazy var backView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-        view.backgroundColor = .red
+//        view.backgroundColor = .red
         return view
     }()
     
@@ -46,6 +66,15 @@ class SingleTopView: UITableViewCell {
     }()
     
     lazy var mainStack: UIStackView = {
+        let stack = UIStackView()
+        stack.spacing = 8
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .equalSpacing
+        return stack
+    }()
+    
+    lazy var itemsStack: UIStackView = {
         let stack = UIStackView()
         stack.spacing = 8
         stack.axis = .vertical
@@ -72,7 +101,7 @@ class SingleTopView: UITableViewCell {
     lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 2
-        lbl.font = .boldSystemFont(ofSize: 14)
+        lbl.font = .appFont(ofSize: 16, weight: .bold)
         return lbl
     }()
             
@@ -81,25 +110,6 @@ class SingleTopView: UITableViewCell {
         
         return view
     }()
-    
-    lazy var selectIsNew: SelectableTextView = {
-        let view = SelectableTextView()
-        view.title = "Состояние товара"
-        return view
-    }()
-    
-    lazy var selectColors: SelectableColorView = {
-        let view = SelectableColorView()
-        view.title = "Цвет товара: Черный"
-        return view
-    }()
-    
-    lazy var selectRom: SelectableTextView = {
-        let view = SelectableTextView()
-        view.title = "Встроенная память (ROM)"
-        return view
-    }()
-    
     
     lazy var descriptionView: DescriptionView = {
         let view = DescriptionView()
@@ -122,10 +132,12 @@ class SingleTopView: UITableViewCell {
         
         contentView.addSubview(saleView)
         contentView.addSubview(backView)
-
+        
+        contentView.addSubview(discountView)
+        
         backView.addSubview(mainStack)
         
-        [titlesStack, costView, selectIsNew, selectColors, selectRom].forEach { item in
+        [titlesStack, costView, itemsStack].forEach { item in
             mainStack.addArrangedSubview(item)
         }
         
@@ -136,12 +148,8 @@ class SingleTopView: UITableViewCell {
         [backView, saleView].forEach { item in
             item.clipsToBounds = true
             item.layer.cornerRadius = 8
-//            item.layer.maskedCorners = [
-//                .layerMinXMinYCorner,
-//                .layerMaxXMinYCorner
-//            ]
         }
-        
+                
         backgroundColor = .clear
     }
     
@@ -161,6 +169,11 @@ class SingleTopView: UITableViewCell {
         saleView.snp.makeConstraints { make in
             make.left.right.equalTo(contentView)
             make.bottom.equalTo(backView.snp_topMargin).inset(15)
+        }
+        discountView.snp.makeConstraints { make in
+            make.top.equalTo(backView)
+            make.right.equalTo(contentView).inset(12)
+            make.width.height.equalTo(50)
         }
     }
     
