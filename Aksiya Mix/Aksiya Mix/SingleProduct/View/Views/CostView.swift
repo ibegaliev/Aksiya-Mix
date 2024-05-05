@@ -37,14 +37,14 @@ class CostView: UIView, FeedbackViewDelegate {
         )
         lbl.attributedText = attributeString
         lbl.textColor = .spacetext
-        lbl.font = .appFont(ofSize: 12, weight: .medium)
+        lbl.font = .appFont(ofSize: 14, weight: .semibold)
         return lbl
     }()
     
     lazy var newPrince: UILabel = {
         let lbl = UILabel()
         lbl.text = "13 499 000 сум"
-        lbl.font = .appFont(ofSize: 22, weight: .bold)
+        lbl.font = .appFont(ofSize: 24, weight: .bold)
         lbl.applyGradientWith(
             startColor: .garnierPink,
             endColor: .garnierOrgane

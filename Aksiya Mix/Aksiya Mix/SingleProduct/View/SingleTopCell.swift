@@ -21,6 +21,7 @@ class SingleTopView: UITableViewCell {
             return nil
         }
         set {
+            
             let data = newValue
             let discountAmount: Double = 100 - (Double(data?.discountAmount ?? "1") ?? 0)
             let price: Double = Double(data?.price ?? "1") ?? 0
